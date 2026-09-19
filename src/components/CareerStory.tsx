@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { CAREER_CHAPTERS } from '../data/portfolioData';
+import { CAREER_CHAPTERS, FULL_CIRCLE_QUOTE } from '../data/portfolioData';
 import { Language } from '../types';
-import { Compass, ArrowRight, Lightbulb, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { Compass, ArrowRight, Lightbulb, ArrowUpRight, CheckCircle2, Sparkles, RefreshCw } from 'lucide-react';
 
 interface CareerStoryProps {
   lang: Language;
@@ -70,7 +70,7 @@ export const CareerStory: React.FC<CareerStoryProps> = ({ lang }) => {
             </div>
 
             {/* Step Nodes */}
-            <div className="relative z-10 grid grid-cols-5 gap-3">
+            <div className="relative z-10 grid grid-cols-6 gap-2">
               {CAREER_CHAPTERS.map((chapter, idx) => {
                 const isActive = idx === activeChapterIndex;
                 const isPassed = idx < activeChapterIndex;
@@ -83,7 +83,7 @@ export const CareerStory: React.FC<CareerStoryProps> = ({ lang }) => {
                   >
                     {/* Node circle */}
                     <div
-                      className={`w-12 h-12 rounded-full flex items-center justify-center font-mono font-bold text-sm transition-all duration-300 ${
+                      className={`w-11 h-11 rounded-full flex items-center justify-center font-mono font-bold text-xs transition-all duration-300 relative ${
                         isActive
                           ? 'bg-[#0068FF] text-white ring-4 ring-[#0068FF]/20 shadow-md scale-110'
                           : isPassed
@@ -92,15 +92,20 @@ export const CareerStory: React.FC<CareerStoryProps> = ({ lang }) => {
                       }`}
                     >
                       {chapter.number}
+                      {chapter.isCurrent && (
+                        <span className="absolute -top-2 -right-1 px-1.5 py-0.2 bg-emerald-500 text-white text-[9px] font-bold rounded-full uppercase tracking-tighter">
+                          Now
+                        </span>
+                      )}
                     </div>
 
                     {/* Node label */}
-                    <div className="mt-3 px-1">
-                      <span className="text-[11px] font-mono uppercase tracking-wider text-slate-500 block">
+                    <div className="mt-2.5 px-1">
+                      <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 block truncate max-w-[140px]">
                         {chapter.period}
                       </span>
                       <span
-                        className={`text-xs font-semibold leading-tight line-clamp-2 mt-0.5 transition-colors ${
+                        className={`text-[11px] font-semibold leading-tight line-clamp-2 mt-0.5 transition-colors ${
                           isActive ? 'text-[#0068FF] font-bold' : 'text-slate-700 group-hover:text-slate-900'
                         }`}
                       >
@@ -146,13 +151,24 @@ export const CareerStory: React.FC<CareerStoryProps> = ({ lang }) => {
           
           {/* Top Info Bar */}
           <div className="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-slate-100">
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-2.5">
               <span className="px-3.5 py-1 rounded-full bg-[#0068FF]/10 text-[#0068FF] font-mono font-bold text-xs">
                 Chapter {activeChapter.number}
               </span>
               <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
                 {activeChapter.period}
               </span>
+              {activeChapter.isCurrent && (
+                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[11px] font-bold border border-emerald-200">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  <span>{lang === 'vi' ? 'Vị trí hiện tại' : 'Current Role'}</span>
+                </span>
+              )}
+              {activeChapter.internalProgression && (
+                <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-blue-50 text-[#0068FF] text-[11px] font-bold font-mono border border-blue-200">
+                  <span>{activeChapter.internalProgression}</span>
+                </span>
+              )}
             </div>
 
             {activeChapter.contextHighlight && (
@@ -262,6 +278,38 @@ export const CareerStory: React.FC<CareerStoryProps> = ({ lang }) => {
 
           </div>
 
+        </div>
+
+        {/* ============================================================== */}
+        {/* FULL-CIRCLE JOURNEY CONCLUSION BANNER */}
+        {/* ============================================================== */}
+        <div className="mt-10 sm:mt-14 p-6 sm:p-10 rounded-[24px] sm:rounded-[32px] bg-gradient-to-br from-slate-900 via-[#0B2559] to-[#0047BA] text-white relative overflow-hidden shadow-xl border border-blue-500/20">
+          {/* Subtle tech grid background */}
+          <div
+            className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]"
+            aria-hidden="true"
+          />
+
+          <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center gap-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/20 text-blue-200 text-xs font-mono font-semibold border border-blue-400/30">
+              <RefreshCw className="w-3.5 h-3.5 text-blue-300 animate-spin-slow" />
+              <span>{lang === 'vi' ? 'Hành trình trọn vẹn • Full-Circle Journey' : 'Full-Circle Evolution'}</span>
+            </div>
+
+            <blockquote className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-snug">
+              {FULL_CIRCLE_QUOTE[lang]}
+            </blockquote>
+
+            <p className="text-xs sm:text-sm md:text-base text-blue-100/80 max-w-2xl leading-relaxed">
+              {lang === 'vi'
+                ? 'Sự trở về FPT University năm 2025 không phải là một chu kỳ lặp lại, mà là điểm hội tụ của những năng lực đã được tôi luyện: tư duy hệ thống nhân sự, kiến trúc trải nghiệm và năng lực lãnh đạo tổ chức.'
+                : 'Returning to FPT University in 2025 is not a closed cycle, but the powerful synthesis of mature corporate capabilities: organizational systems thinking, experience architecture, and empathetic leadership.'}
+            </p>
+
+            <span className="text-[11px] font-mono tracking-wider text-blue-300/70 uppercase">
+              {FULL_CIRCLE_QUOTE.author}
+            </span>
+          </div>
         </div>
 
       </div>

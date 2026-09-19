@@ -29,6 +29,8 @@ export interface CareerChapter {
   keyRealization: { vi: string; en: string };
   toolkit: string[];
   contextHighlight?: { vi: string; en: string };
+  internalProgression?: string;
+  isCurrent?: boolean;
 }
 
 export interface ExperienceRole {
@@ -38,9 +40,11 @@ export interface ExperienceRole {
   period: string;
   location: string;
   workType?: string;
+  tier: 'flagship' | 'high' | 'compact';
   mandateScope: { vi: string[]; en: string[] };
   actualScopeNote?: { vi: string; en: string };
   leadershipScope?: { vi: string; en: string };
+  scopeDistinction?: { vi: string; en: string };
   selectedImpact: { vi: string[]; en: string[] };
   relatedCaseId?: string;
 }
@@ -103,4 +107,15 @@ export interface CertificationItem {
   year?: string;
   domain: 'AI' | 'Leadership' | 'Culture & Comms' | 'People & Experience';
   status: 'verified' | 'pending-confirmation';
+  verificationUrl?: string;
+}
+
+export interface SelectedWorkItem {
+  id: string;
+  title: { vi: string; en: string };
+  category: { vi: string; en: string };
+  context: { vi: string; en: string };
+  description: { vi: string; en: string };
+  highlights?: { vi: string[]; en: string[] };
+  image?: PortfolioImage;
 }

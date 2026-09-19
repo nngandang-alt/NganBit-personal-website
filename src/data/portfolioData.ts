@@ -7,6 +7,7 @@ import {
   MethodologyStep,
   NavItem,
   PhilosophyPillar,
+  SelectedWorkItem,
   VerifiedStat,
 } from '../types';
 
@@ -36,8 +37,8 @@ export const PERSONAL_INFO = {
     en: 'Human Insight First. AI Amplified.',
   },
   bioSummary: {
-    vi: 'Tôi là Thùy Ngân (Ngân Bit) — chuyên gia kết nối con người và văn hóa tổ chức. Tôi chuyển hóa chiến lược thành những câu chuyện sống động, quy chuẩn hành vi rõ ràng và những trải nghiệm nhân sự có chiều sâu.',
-    en: 'I’m Thùy Ngân (Ngân Bit) — an organizational culture & communication professional bridging executive strategy with human reality through authentic storytelling, experiential design, and system-level alignment.',
+    vi: 'Tôi là Thùy Ngân (Ngân Bit) — chuyên gia Internal Communication & Corporate Culture. Tôi định hình trải nghiệm và gắn kết tổ chức ở cấp độ hệ thống: từ chiến lược truyền thông, quy chuẩn hành vi văn hóa đến thiết kế chương trình trải nghiệm quy mô lớn.',
+    en: 'I’m Thùy Ngân (Ngân Bit) — an Internal Communication & Corporate Culture professional bridging executive strategy with human reality through systems thinking, observable behavioral codification, and large-scale experiential design.',
   },
   email: 'n.ngandang@gmail.com',
   linkedin: 'https://linkedin.com/in/thuyngandang',
@@ -60,141 +61,176 @@ export const NAV_ITEMS: NavItem[] = [
   { id: 'connect', label: { vi: 'Kết nối', en: 'Connect' }, href: '#connect' },
 ];
 
+export const FULL_CIRCLE_QUOTE = {
+  vi: '“Tôi trở về nơi sự nghiệp bắt đầu — với một bộ công cụ hoàn toàn khác biệt.”',
+  en: '“I returned to where my career started — with a completely different toolkit.”',
+  author: 'ĐẶNG VŨ THÙY NGÂN (NGÂN BIT)',
+};
+
 export const CAREER_CHAPTERS: CareerChapter[] = [
   {
     id: 'ch-01',
     number: '01',
-    period: 'Early Career',
+    period: 'Apr 2025 — Present',
+    isCurrent: true,
     title: {
-      vi: 'Học cách kết nối',
-      en: 'Learning to Connect',
+      vi: 'FPT University: Dẫn dắt trải nghiệm quy mô lớn',
+      en: 'FPT University: Leading Experience at Scale',
     },
     tagline: {
-      vi: 'Khởi đầu từ truyền thông, thấu cảm và sự gắn kết cộng đồng',
-      en: 'Starting from communication, storytelling and human participation',
+      vi: 'NOW: LEADING EXPERIENCE AT SCALE (Student Relations Officer → Head of Student Relations Office)',
+      en: 'NOW: LEADING EXPERIENCE AT SCALE (Student Relations Officer → Head of Student Relations Office)',
     },
     story: {
-      vi: 'Tôi bắt đầu hành trình từ những công việc truyền thông, nội dung và kết nối cộng đồng tại môi trường giáo dục (FPT University). Đây là giai đoạn tôi học cách quan sát tâm lý số đông, rèn luyện nghệ thuật kể chuyện chân thực và nhận ra rằng: thông tin chỉ thực sự có giá trị khi nó khơi gợi được sự tham gia và tạo nên trải nghiệm thuộc về.',
-      en: 'My professional journey began with communication, community engagement, and student connection in higher education. During this formative phase, I learned the craft of empathetic storytelling, crowd resonance, and realized that communication is not just about sending messages—it is about creating shared participation.',
+      vi: 'Đảm nhiệm vai trò Trưởng phòng Quan hệ Doanh nghiệp & Sinh viên (Head of Student Relations Office), thăng tiến từ vị trí Cán bộ (Student Relations Officer). Tôi dẫn dắt hệ sinh thái trải nghiệm sinh viên quy mô lớn, danh mục chương trình trọng điểm (tiêu biểu như TechX Camp), quản trị mối quan hệ đa bên phức tạp giữa Nhà trường - Sinh viên - Doanh nghiệp công nghệ, và thiết lập cơ chế vận hành hệ thống dựa trên dữ liệu & đòn bẩy AI.',
+      en: 'Serving as Head of Student Relations Office, advancing from Student Relations Officer. Directing large-scale student experience ecosystems, a multifaceted program portfolio (flagship TechX Camp), multi-stakeholder governance across Academia, Students, and Industry Partners, and instituting data-informed operations amplified by AI workflows.',
     },
     coreShift: {
-      from: { vi: 'Truyền phát thông tin một chiều', en: 'Broadcasting messages' },
-      to: { vi: 'Tạo dựng sự gắn kết & trải nghiệm', en: 'Creating connection & belonging' },
+      from: { vi: 'Thực thi hoạt động đơn lẻ', en: 'Isolated program coordination' },
+      to: { vi: 'Lãnh đạo hệ thống trải nghiệm, danh mục chương trình & đòn bẩy AI', en: 'Ecosystem leadership, program portfolio & AI scale' },
     },
     keyRealization: {
-      vi: 'Truyền thông không phải là gửi đi thông cáo, mà là cách chúng ta tạo ra sự hiện diện và lắng nghe.',
-      en: 'Communication is not just delivering announcements; it is about cultivating presence, trust, and active listening.',
+      vi: 'Lãnh đạo trải nghiệm ở quy mô lớn đòi hỏi tư duy hệ thống: chuẩn hóa quy trình, thiết lập sự an toàn tâm lý cho đội ngũ và kết nối mục tiêu giáo dục với giá trị thực tế của đối tác doanh nghiệp.',
+      en: 'Leading experience at scale demands systems thinking: process standardisation, team empowerment, and aligning institutional goals with industry ecosystem value.',
     },
-    toolkit: ['Storytelling', 'Internal Communications', 'Community Engagement', 'Event Activation'],
-    contextHighlight: { vi: 'Môi trường giáo dục & gắn kết cộng đồng', en: 'Higher Education & Community Building' },
+    toolkit: ['Program Leadership', 'Experience Architecture', 'Multi-Stakeholder Governance', 'Data-informed Operations', 'AI-Amplified Workflows'],
+    contextHighlight: { vi: 'Chức danh: Head of Student Relations Office (Apr 2025 — Present)', en: 'Official Title: Head of Student Relations Office (Apr 2025 — Present)' },
   },
   {
     id: 'ch-02',
     number: '02',
-    period: 'Vua Nệm → Savvycom',
+    period: 'Jul 2024 — Mar 2025',
     title: {
-      vi: 'Từ truyền thông đến văn hóa',
-      en: 'From Communication to Culture',
+      vi: 'transcosmos Vietnam: Vượt trên văn hóa — Kiến tạo hệ thống',
+      en: 'transcosmos Vietnam: Beyond Culture — Building the System',
     },
     tagline: {
-      vi: 'Câu hỏi mở rộng: "Làm sao để con người thực sự sống cùng văn hóa?"',
-      en: 'How do we communicate? → How do people understand, experience and live the culture?',
+      vi: 'BEYOND CULTURE: BUILDING THE SYSTEM (Senior Specialist, Organizational Development)',
+      en: 'BEYOND CULTURE: BUILDING THE SYSTEM (Senior Specialist, Organizational Development)',
     },
     story: {
-      vi: 'Bước vào môi trường bán lẻ quy mô phân tán (Vua Nệm) và công ty công nghệ đa văn hóa (Savvycom), câu hỏi nghề nghiệp của tôi mở rộng: Không chỉ là "Chúng ta truyền thông điều gì?", mà là "Nhân viên cảm nhận văn hóa như thế nào giữa các điểm chạm mỗi ngày?". Tôi phát triển sâu vào Truyền thông nội bộ, Kích hoạt văn hóa, Trải nghiệm nhân viên (EX) và Thương hiệu tuyển dụng (EVP).',
-      en: 'Stepping into retail distribution (Vua Nệm) and dynamic technology consulting (Savvycom), my core question evolved from “What do we communicate?” to “How do people understand, experience, and truly live the culture?”. I broadened my scope across Internal Comms, Culture Activation, Employee Engagement, and EVP.',
+      vi: 'Đảm nhiệm vai trò Chuyên viên cao cấp Phát triển Tổ chức (Senior Specialist, Organizational Development). Đây là bước chuyển mình mang tính bước ngoặt: từ hoạt động truyền thông văn hóa đơn thuần sang xây dựng hệ thống nền tảng tổ chức. Tập trung chuyên sâu vào toàn bộ vòng đời nhân viên (employee lifecycle), hành trình hội nhập & giữ chân (15/60/90-day journey), thu thập dữ liệu thấu hiểu nhân viên (employee insight), chuẩn hóa chức danh & phạm vi công việc (role/SOW standardization), cùng hệ thống khung năng lực và quản trị hiệu suất.',
+      en: 'Served as Senior Specialist, Organizational Development. A pivotal career elevation from internal comms campaigns to foundational organizational systems: architecting the employee lifecycle, structured retention touchpoints (15/60/90-day onboarding journey), employee sentiment insights, role/SOW standardization, competency rubrics, and performance frameworks.',
     },
     coreShift: {
-      from: { vi: 'Communication as Output (Sản phẩm truyền thông)', en: 'Communication as Output' },
-      to: { vi: 'Communication as Experience & Culture (Trải nghiệm & Văn hóa)', en: 'Communication as Experience & Culture' },
+      from: { vi: 'Thực thi chiến dịch truyền thông văn hóa', en: 'Culture campaign execution' },
+      to: { vi: 'Kiến tạo hệ thống nhân sự, chuẩn hóa năng lực & vòng đời nhân viên', en: 'Employee lifecycle architecture & systemic role/competency frameworks' },
     },
     keyRealization: {
-      vi: 'Văn hóa không phải khẩu hiệu trên tường phòng họp; văn hóa là những gì nhân viên trải qua vào mỗi sáng thứ Hai.',
-      en: 'Authentic culture is not what leadership writes on a boardroom wall—it is what employees feel and experience every single day.',
+      vi: 'Văn hóa không thể bền vững nếu thiếu hệ thống vận hành hỗ trợ: hành vi chỉ thực sự thay đổi khi các tiêu chuẩn vai trò, mốc đánh giá năng lực và trải nghiệm hội nhập được đồng bộ hóa.',
+      en: 'Culture cannot endure without underlying operating systems: genuine behavior shift requires synchronizing role clarity, competency rubrics, and structured lifecycle checkpoints.',
     },
-    toolkit: ['Culture Activation', 'Employee Experience (EX)', 'EVP & Employer Branding', 'All-Hands Modernization'],
-    contextHighlight: { vi: 'Quy mô bán lẻ toàn quốc & Công nghệ IT Outsourcing', en: 'Omnichannel Retail & Tech Hybrid Operations' },
+    toolkit: ['Organizational Development', 'Employee Lifecycle Architecture', '15/60/90-Day Retention Journey', 'Role/SOW Standardization', 'Competency & Performance Systems'],
+    contextHighlight: { vi: 'Official Title: Senior Specialist, Organizational Development', en: 'Official Title: Senior Specialist, Organizational Development' },
   },
   {
     id: 'ch-03',
     number: '03',
-    period: 'transcosmos Vietnam',
+    period: '2023 — 2024',
     title: {
-      vi: 'Xây dựng hệ thống vận hành văn hóa',
-      en: 'Building the System Behind Culture',
+      vi: 'Savvycom: Mở rộng sang People & Culture toàn diện',
+      en: 'Savvycom: Expanding into People & Culture',
     },
     tagline: {
-      vi: 'Chuyển hóa từ thực thi truyền thông sang tư duy hệ thống tổ chức',
-      en: 'Communication Execution → System Thinking',
+      vi: 'EXPANDING INTO PEOPLE & CULTURE (People & Culture Lead)',
+      en: 'EXPANDING INTO PEOPLE & CULTURE (People & Culture Lead)',
     },
     story: {
-      vi: 'Đảm nhiệm vai trò Phát triển Tổ chức (Organizational Development) tại transcosmos Vietnam. Đây là bước ngoặt quan trọng khi tôi không còn nhìn văn hóa qua từng chiến dịch ngắn hạn, mà nhìn qua lăng kính hệ thống: Bộ Giá trị cốt lõi (Values), Chuẩn mực hành vi quan sát được (Behaviors), Sự đồng thuận của dàn lãnh đạo (Leadership Alignment) và Cơ chế đo lường.',
-      en: 'Serving in Organizational Development at transcosmos Vietnam marked a pivotal elevation to systems thinking. Culture was no longer viewed through standalone campaigns, but through systemic architecture: Core Values, Observable Behaviors, Leadership Alignment, and Employee Experience frameworks.',
+      vi: 'Đảm nhiệm vai trò People & Culture Lead tại doanh nghiệp công nghệ thông tin Savvycom. Phạm vi quản trị mở rộng toàn diện: dẫn dắt truyền thông nội bộ (IC), chiến lược gắn kết nhân sự (engagement), củng cố văn hóa tổ chức, xây dựng thương hiệu nhà tuyển dụng (EVP & Employer Branding), điều phối học tập & phát triển (L&D), các sáng kiến trách nhiệm xã hội (CSR), và trực tiếp xử lý truyền thông thay đổi & khủng hoảng (change & crisis communication).',
+      en: 'Led People & Culture at Savvycom in a high-growth tech consultancy environment. Broadened mandate across Internal Communications (IC), employee engagement, organizational culture, employer value proposition (EVP & EB), learning & development (L&D), CSR initiatives, and executive change/crisis communications.',
     },
     coreShift: {
-      from: { vi: 'Triển khai chiến dịch truyền thông', en: 'Standalone campaign execution' },
-      to: { vi: 'Tư duy hệ thống & Chuẩn hóa hành vi tổ chức', en: 'Systemic frameworks & behavioral codification' },
+      from: { vi: 'Phạm vi chuyên viên chức năng', en: 'Specialist-level delivery' },
+      to: { vi: 'Lãnh đạo mảng People & Culture đa chức năng', en: 'Holistic cross-functional People & Culture leadership' },
     },
     keyRealization: {
-      vi: 'Văn hóa chỉ có thể chuyển biến khi giá trị tinh thần được chuyển hóa thành những hành vi cụ thể, lặp lại hàng ngày.',
-      en: 'Culture only transforms when abstract values are translated into concrete, repeatable, daily workplace behaviors.',
+      vi: 'Trong môi trường công nghệ làm việc linh hoạt (hybrid), sự gắn kết không đến từ sự giám sát mà đến từ tính minh bạch, văn hóa học tập liên tục và niềm tự hào về sứ mệnh tổ chức.',
+      en: 'In agile and hybrid tech environments, belonging is driven not by oversight, but by radical transparency, continuous learning cultures, and collective mission pride.',
     },
-    toolkit: ['Organizational Development', 'Behavioral Rubrics', 'Values Codification', 'Leadership Alignment'],
-    contextHighlight: { vi: 'Official Title: Organizational Development', en: 'Official Title: Organizational Development' },
+    toolkit: ['People & Culture Leadership', 'Internal Communications (IC)', 'Employer Branding & EVP', 'L&D & CSR Programs', 'Change & Crisis Management'],
+    contextHighlight: { vi: 'Official Title: People & Culture Lead', en: 'Official Title: People & Culture Lead' },
   },
   {
     id: 'ch-04',
     number: '04',
-    period: '2025',
+    period: '2020 — 2023',
+    internalProgression: 'F88 → CMC → Vua Nệm',
     title: {
-      vi: 'Bước ngoặt quay về',
-      en: 'A Career Plot Twist',
+      vi: 'F88 → CMC → Vua Nệm: Từ truyền thông đến văn hóa',
+      en: 'F88 → CMC → Vua Nệm: From Communication to Culture',
     },
     tagline: {
-      vi: 'Trở lại nơi bắt đầu — nhưng với một bộ công cụ hoàn toàn mới',
-      en: 'I came back to where my career started — with a completely different toolkit',
+      vi: 'FROM COMMUNICATION TO CULTURE (Progression: F88 → CMC → Vua Nệm)',
+      en: 'FROM COMMUNICATION TO CULTURE (Progression: F88 → CMC → Vua Nệm)',
     },
     story: {
-      vi: 'Năm 2025, tôi quay trở lại FPT University — lĩnh vực giáo dục nơi tôi từng chập chững bước vào nghề — sau nhiều năm tôi luyện bản lĩnh tại các doanh nghiệp. Đây không phải một bước lùi hay "reset" sự nghiệp, mà là sự trở về với một bộ công cụ trưởng thành: Truyền thông chiến lược, Văn hóa, Thiết kế trải nghiệm, Quản trị các bên liên quan và Phát triển con người.',
-      en: 'In 2025, I returned to FPT University—the educational environment where my journey originally began—after years of building my identity in corporate culture. This was not a career reset, but a return with an expanded, mature toolkit: Strategic Comms, Culture, Experience Design, Stakeholder Management, and People Development.',
+      vi: 'Giai đoạn tiến hóa bản lề với hành trình trải qua 3 môi trường kinh doanh đặc thù (F88 → CMC → Vua Nệm). Tôi chuyển mình rõ rệt từ Truyền thông nội bộ (F88) sang Phát triển văn hóa doanh nghiệp (CMC) và tiến đến Kích hoạt văn hóa, dẫn dắt thay đổi và quản lý (Vua Nệm - Acting Internal Communication Lead). Tại Vua Nệm, tôi hiện thực hóa việc chuyển đổi giá trị thành hành vi hàng ngày thông qua chương trình Happy Journey, Bộ quy tắc ứng xử (Code of Conduct) và Thói quen C7+ kết nối hội sở với hàng trăm cửa hàng bán lẻ toàn quốc.',
+      en: 'A decisive developmental trajectory spanning three distinct business landscapes (F88 → CMC → Vua Nệm). Progressed from foundational Internal Communications (F88) to corporate culture development (CMC), and culminated in culture activation, change leadership, and team management (Vua Nệm - Acting Internal Communication Lead). At Vua Nệm, codified values into observable behaviors through Happy Journey, Code of Conduct, and C7+ Habits uniting HQ with nationwide retail stores.',
     },
     coreShift: {
-      from: { vi: 'Thực thi trong bối cảnh doanh nghiệp truyền thống', en: 'Standard corporate context' },
-      to: { vi: 'Ứng dụng năng lực transferable vào hệ sinh thái giáo dục', en: 'Applying transferable culture & EX toolkits to education' },
+      from: { vi: 'Sản xuất nội dung truyền thông (Communication)', en: 'Communication output & content creation' },
+      to: { vi: 'Phát triển & Kích hoạt văn hóa, dẫn dắt thay đổi (Culture & Change Leadership)', en: 'Culture activation, behavioral codification & change leadership' },
     },
     keyRealization: {
-      vi: 'Trải nghiệm sinh viên hay trải nghiệm nhân viên đều có chung gốc rễ: nhu cầu được thấu hiểu, được gắn kết và có môi trường để tỏa sáng.',
-      en: 'Student Experience and Employee Experience share the same human core: the fundamental need to feel seen, valued, and empowered.',
+      vi: 'Truyền thông là công cụ, nhưng Văn hóa mới là đích đến. Để kết nối được nhân sự tuyến đầu phân tán, thông điệp lãnh đạo phải chuyển hóa thành sự tôn vinh chân thành và những thói quen hành vi cụ thể.',
+      en: 'Communication is the catalyst, but Culture is the destination. Frontline retail alignment requires translating executive vision into genuine recognition and tangible behavioral habits.',
     },
-    toolkit: ['Experience Architecture', 'Transferable EX/Culture Toolkits', 'Stakeholder Management', 'Program Leadership'],
-    contextHighlight: { vi: 'Sự giao thoa giữa EX và Student Experience', en: 'Bridging Corporate EX into Educational Communities' },
+    toolkit: ['Culture Activation', 'Values Into Behaviors (C7+)', 'Happy Journey Recognition', 'Retail Frontline Engagement', 'Omnichannel Internal Media'],
+    contextHighlight: { vi: 'Tiến trình nội bộ: F88 → CMC → Vua Nệm (Acting Internal Communication Lead)', en: 'Internal Progression: F88 → CMC → Vua Nệm (Acting Internal Communication Lead)' },
   },
   {
     id: 'ch-05',
     number: '05',
-    period: 'Present',
+    period: '2019 — 2020',
     title: {
-      vi: 'Từ người kiến tạo đến người dẫn dắt',
-      en: 'From Creating Experiences to Leading Them',
+      vi: 'Bellsystem24-Hoasao: Định hình bản sắc trong truyền thông',
+      en: 'Bellsystem24-Hoasao: Finding My Voice in Communication',
     },
     tagline: {
-      vi: 'Dẫn dắt hệ sinh thái trải nghiệm, phát triển đội ngũ và ứng dụng AI',
-      en: 'From operational delivery to systemic leadership & AI-enabled scale',
+      vi: 'FINDING MY VOICE IN COMMUNICATION (Internal Communication Specialist)',
+      en: 'FINDING MY VOICE IN COMMUNICATION (Internal Communication Specialist)',
     },
     story: {
-      vi: 'Tại FPT University, tôi thăng tiến từ vị trí Chuyên viên (Student Relations Officer) lên Trưởng phòng Quan hệ Doanh nghiệp & Sinh viên (Head of Student Relations Office). Ở vị trí này, tôi chịu trách nhiệm thiết kế và dẫn dắt các chương trình trải nghiệm quy mô lớn (tiêu biểu như TechX Camp), điều phối mạng lưới đối tác đa dạng, phát triển đội ngũ và ứng dụng AI vào quy trình phân tích, tổng hợp thông tin.',
-      en: 'Advancing from Student Relations Officer to Head of Student Relations Office at FPT University, my focus expanded to leading high-impact experiential ecosystems (such as TechX Camp), coordinating complex stakeholder networks, mentoring teams, and embedding AI-assisted workflows for data synthesis and agile communication.',
+      vi: 'Đảm nhiệm vai trò Chuyên viên Truyền thông nội bộ tại Bellsystem24-Hoasao — môi trường dịch vụ contact center quy mô lớn với hàng nghìn nhân sự làm việc theo ca. Tôi rèn giũa nghệ thuật kể chuyện (storytelling), tổ chức sự kiện nội bộ, sản xuất nội dung đa phương tiện (video nội bộ, bản tin phát thanh/radio), và thiết lập mạng lưới truyền thông kết nối các chi nhánh trên toàn quốc.',
+      en: 'Served as Internal Communication Specialist at Bellsystem24-Hoasao within a large-scale 24/7 contact center operations environment. Honed the craft of empathetic storytelling, internal engagement events, multimedia content production (internal video, radio broadcasts), and established nationwide branch communication networks.',
     },
     coreShift: {
-      from: { vi: 'Tự tay kiến tạo từng trải nghiệm nhỏ', en: 'Individual experiential delivery' },
-      to: { vi: 'Dẫn dắt hệ thống trải nghiệm, lãnh đạo đội ngũ & đòn bẩy AI', en: 'Ecosystem leadership, team empowerment & AI leverage' },
+      from: { vi: 'Truyền thông nghiệp dư theo cảm xúc', en: 'Informal community engagement' },
+      to: { vi: 'Truyền thông nội bộ chuyên nghiệp, đa phương tiện quy mô doanh nghiệp', en: 'Professional multi-channel corporate internal communications' },
     },
     keyRealization: {
-      vi: 'Vai trò của người dẫn dắt là tạo ra một sân khấu nơi mọi thành viên đều có thể tự tin kiến tạo giá trị tốt nhất của mình.',
-      en: 'True leadership is building the stage and psychological safety so every team member can deliver their highest impact.',
+      vi: 'Trong môi trường vận hành ca kíp cường độ cao, những câu chuyện ấm áp về sự tận tụy và chương trình phát thanh nội bộ có sức mạnh gắn kết tinh thần vượt xa mọi bản thông báo khô khan.',
+      en: 'In fast-paced operational shift environments, heartfelt human stories and internal broadcasts generate authentic connection that formal memos never achieve.',
     },
-    toolkit: ['Program Leadership', 'Complex Stakeholder Alignment', 'AI-Amplified Workflows', 'Experiential Immersion'],
-    contextHighlight: { vi: 'Official Title: Head of Student Relations Office', en: 'Official Title: Head of Student Relations Office' },
+    toolkit: ['Internal Storytelling', 'Video & Audio Radio Production', 'Branch Communication Networks', 'Large-Scale Engagement Events'],
+    contextHighlight: { vi: 'Official Title: Internal Communication Specialist', en: 'Official Title: Internal Communication Specialist' },
+  },
+  {
+    id: 'ch-06',
+    number: '06',
+    period: '2018 — 2019',
+    title: {
+      vi: 'FPT University: Nơi mọi thứ bắt đầu',
+      en: 'FPT University: Where It All Started',
+    },
+    tagline: {
+      vi: 'WHERE IT ALL STARTED (Student Relations & Community Foundations)',
+      en: 'WHERE IT ALL STARTED (Student Relations & Community Foundations)',
+    },
+    story: {
+      vi: 'Khởi đầu sự nghiệp tại FPT University với các công việc gắn kết con người, xây dựng cộng đồng, hỗ trợ câu lạc bộ sinh viên và điều phối các hoạt động phát triển kỹ năng. Giai đoạn này đặt nền móng sâu sắc cho niềm tin nghề nghiệp của tôi: bất kỳ tổ chức nào muốn thành công bền vững đều phải bắt đầu từ việc thấu hiểu con người và tạo dựng môi trường thuộc về.',
+      en: 'Career launchpad at FPT University, focused on human connection, community building, student club mentorship, and youth development initiatives. Established the fundamental conviction that every thriving community begins with deep empathy and cultivating a shared sense of belonging.',
+    },
+    coreShift: {
+      from: { vi: 'Nghiên cứu học thuật thuần túy', en: 'Academic student mindset' },
+      to: { vi: 'Hành động thực tiễn: Kết nối con người & nuôi dưỡng cộng đồng', en: 'Active practice: Connecting humans & nurturing vibrant communities' },
+    },
+    keyRealization: {
+      vi: 'Nền tảng của sự gắn kết là lắng nghe chân thành. Khi người trẻ cảm nhận được sự tin cậy, họ sẽ phát huy nguồn năng lượng sáng tạo vượt ngoài mong đợi.',
+      en: 'The foundation of connection is genuine listening. When people feel trusted, their creative potential unfolds beyond expectations.',
+    },
+    toolkit: ['Community Nurturing', 'Youth & Student Engagement', 'Club Mentorship', 'Interpersonal Empathy'],
+    contextHighlight: { vi: 'Khởi đầu sự nghiệp trong môi trường giáo dục', en: 'Foundational career launchpad in higher education' },
   },
 ];
 
@@ -215,8 +251,8 @@ export const PHILOSOPHY_QUESTIONS = [
       en: '“What did people genuinely experience?”',
     },
     detail: {
-      vi: 'Không chỉ dừng lại ở danh sách việc cần hoàn thành (What we deliver), mà là chất lượng của từng điểm chạm tương tác trong tổ chức.',
-      en: 'Beyond task deliverables, examining the experiential quality of human touchpoints across the organization.',
+      vi: 'Không chỉ dừng lại ở danh sách nhiệm vụ bàn giao, mà là chất lượng của từng điểm chạm tương tác và sự thấu cảm trong tổ chức.',
+      en: 'Beyond task deliverables, examining the experiential quality and human empathy across organizational touchpoints.',
     },
   },
   {
@@ -225,8 +261,8 @@ export const PHILOSOPHY_QUESTIONS = [
       en: '“How did they honestly feel?”',
     },
     detail: {
-      vi: 'Cảm xúc quyết định sự gắn kết. Khi nhân sự cảm thấy được tôn trọng, được tin tưởng, họ sẽ tự nguyện cống hiến hết tiềm năng.',
-      en: 'Emotion governs commitment. When employees feel seen, respected and trusted, dedication becomes intrinsic.',
+      vi: 'Cảm xúc quyết định sự gắn kết. Khi con người cảm thấy được nhìn nhận, được tôn trọng và an toàn, sự cam kết trở thành nội tại.',
+      en: 'Emotion governs commitment. When individuals feel seen, respected, and safe, dedication becomes intrinsic.',
     },
   },
   {
@@ -235,8 +271,8 @@ export const PHILOSOPHY_QUESTIONS = [
       en: '“What measurably changed afterwards?”',
     },
     detail: {
-      vi: 'Một chiến dịch thành công không kết thúc khi sự kiện hạ màn, mà bắt đầu từ những thay đổi tích cực trong thói quen và sự cộng tác.',
-      en: 'Success is not a finished event; it is the lasting shift in collaborative habits, morale, and organizational resilience.',
+      vi: 'Một chương trình thành công không dừng lại ở tiếng vỗ tay khi sự kiện kết thúc, mà ở sự chuyển biến tích cực trong thói quen và sự cộng tác bền lâu.',
+      en: 'Success is not applause when curtains close; it is the lasting shift in collaborative habits, morale, and organizational resilience.',
     },
   },
 ];
@@ -248,7 +284,7 @@ export const PHILOSOPHY_PILLARS: PhilosophyPillar[] = [
       en: 'Empathy-First Communication',
     },
     desc: {
-      vi: 'Chuyển hóa chiến lược trừu tượng của ban điều hành thành những thông điệp gần gũi, tôn trọng và khơi gợi cảm hứng hành động.',
+      vi: 'Chuyển hóa chiến lược trừu tượng của ban điều hành thành những câu chuyện sống động, gần gũi và khơi gợi cảm hứng hành động.',
       en: 'Translating executive strategy into human narratives that resonate with frontline and leadership teams alike.',
     },
   },
@@ -258,8 +294,8 @@ export const PHILOSOPHY_PILLARS: PhilosophyPillar[] = [
       en: 'Culture Backed by Systems',
     },
     desc: {
-      vi: 'Đưa giá trị cốt lõi vào nghi thức làm việc, khung đánh giá hành vi và sự gương mẫu của đội ngũ lãnh đạo thay vì để trên giấy tờ.',
-      en: 'Grounding core values in concrete daily rituals, behavioral rubrics, and leadership accountability.',
+      vi: 'Đưa giá trị cốt lõi vào nghi thức làm việc, khung chuẩn hóa hành vi và cơ chế quản trị thay vì chỉ là khẩu hiệu trên giấy.',
+      en: 'Grounding core values in concrete daily rituals, behavioral rubrics, and governance systems.',
     },
   },
   {
@@ -268,7 +304,7 @@ export const PHILOSOPHY_PILLARS: PhilosophyPillar[] = [
       en: 'Human Insight First, AI Amplified',
     },
     desc: {
-      vi: 'Sử dụng AI như trợ thủ đắc lực trong phân tích xu hướng, tối ưu quy trình và sáng tạo nội dung, trong khi trái tim của thông điệp luôn thuộc về con người.',
+      vi: 'Ứng dụng AI như trợ thủ đắc lực trong phân tích xu hướng, tổng hợp dữ liệu và tối ưu vận hành; trong khi sự thấu hiểu con người luôn dẫn dắt mọi quyết định.',
       en: 'Harnessing AI to eliminate operational friction and synthesize insights, while human empathy guides every strategic intent.',
     },
   },
@@ -282,161 +318,394 @@ export const EXPERIENCE_ROLES: ExperienceRole[] = [
       en: 'Head of Student Relations Office',
     },
     company: 'FPT University',
-    period: '2025 — Present',
+    period: 'Apr 2025 — Present',
     location: 'Ho Chi Minh City',
     workType: 'Full-time',
+    tier: 'flagship',
+    scopeDistinction: {
+      vi: 'Lĩnh vực Trải nghiệm Sinh viên (Student Experience - SX) quy mô lớn, tách biệt rõ rệt với Trải nghiệm Nhân viên doanh nghiệp (EX).',
+      en: 'Student Experience (SX) ecosystem at scale, clearly distinct from corporate Employee Experience (EX).',
+    },
     mandateScope: {
       vi: [
-        'Dẫn dắt và quản lý toàn diện Phòng Quan hệ Doanh nghiệp & Sinh viên, chịu trách nhiệm thiết kế trải nghiệm, gắn kết cộng đồng sinh viên và đối tác doanh nghiệp.',
-        'Trực tiếp chỉ đạo và điều phối các chương trình trải nghiệm quy mô lớn như TechX Camp, kết nối đa bên giữa nhà trường, sinh viên và doanh nghiệp công nghệ.',
-        'Ứng dụng tư duy trải nghiệm (Experience Design) và các công cụ AI hỗ trợ để nâng cao chất lượng dịch vụ sinh viên và hiệu suất công việc của phòng ban.',
+        'Dẫn dắt toàn diện Phòng Quan hệ Doanh nghiệp & Sinh viên: hoạch định chiến lược trải nghiệm sinh viên, danh mục chương trình trọng điểm và quản trị vận hành phòng ban.',
+        'Trực tiếp chỉ đạo và điều phối các chương trình trải nghiệm quy mô lớn tiêu biểu như TechX Camp, kết nối đa bên giữa Nhà trường, sinh viên và mạng lưới doanh nghiệp công nghệ.',
+        'Ứng dụng tư duy hệ thống và đòn bẩy AI trong chuẩn hóa quy trình phân tích phản hồi, tổng hợp dữ liệu khảo sát và tối ưu hóa vận hành dịch vụ sinh viên.',
+        'Quản lý mối quan hệ đối tác chiến lược với các doanh nghiệp công nghệ hàng đầu, tạo hành lang cơ hội nghề nghiệp và dự án thực chiến cho sinh viên.',
       ],
       en: [
-        'Leading the Student Relations Office, responsible for holistic student experience design, community belonging, and corporate engagement partnerships.',
-        'Directing high-impact immersive programs including TechX Camp, coordinating cross-sector collaboration between university, student body, and industry.',
-        'Applying corporate Experience Design (EX) toolkits and AI-assisted workflows to modernize student relations and operational efficiency.',
+        'Directing the Student Relations Office: orchestrating holistic student experience strategy, flagship program portfolio, and department operational governance.',
+        'Leading high-impact experiential boot camps including TechX Camp, bridging university academia, student cohorts, and tech industry ecosystems.',
+        'Embedding systems thinking and AI-assisted workflows to synthesize student sentiment data, streamline reporting, and elevate service quality.',
+        'Managing strategic enterprise partnerships with premier tech corporations, securing project immersion and career pathways for students.',
       ],
     },
     actualScopeNote: {
-      vi: 'Mở rộng từ Student Relations Officer lên Head of Office — dẫn dắt chiến lược trải nghiệm, phát triển đội ngũ và kết nối hệ sinh thái đa bên.',
-      en: 'Advanced from Officer to Head of Office — leading experiential strategy, team mentorship, and multi-stakeholder ecosystem alignment.',
+      vi: 'Thăng tiến từ Student Relations Officer lên Head of Student Relations Office: mở rộng từ điều phối nghiệp vụ sang lãnh đạo chiến lược, phát triển đội ngũ và kiến trúc hệ sinh thái trải nghiệm đa bên.',
+      en: 'Promoted from Student Relations Officer to Head of Student Relations Office: elevated from operational coordination to strategic leadership, team development, and multi-stakeholder ecosystem architecture.',
     },
     leadershipScope: {
-      vi: 'Dẫn dắt đội ngũ nhân sự phòng ban, chỉ đạo các dự án trọng điểm và điều phối các đơn vị đối tác liên quan.',
-      en: 'Leading department members, overseeing flagship initiatives, and directing cross-departmental coordination.',
+      vi: 'Quản lý trực tiếp đội ngũ nhân sự phòng ban, chỉ đạo ban tổ chức các dự án quy mô toàn trường, và điều phối mạng lưới đối tác doanh nghiệp.',
+      en: 'Direct leadership of department staff, presiding over university-wide flagship task forces, and coordinating industry partner networks.',
     },
     selectedImpact: {
       vi: [
-        'Tái cấu trúc các chuỗi hoạt động sinh viên từ sự kiện đơn lẻ thành hệ sinh thái trải nghiệm có lộ trình và đo lường sự hài lòng.',
-        'Triển khai thành công chuỗi sự kiện TechX Camp, tạo dấu ấn gắn kết cộng đồng sinh viên và doanh nghiệp.',
+        'Hệ thống hóa toàn diện quy trình quan hệ sinh viên thành khung trải nghiệm có lộ trình rõ ràng và cơ chế đo lường sự hài lòng.',
+        'Tổ chức thành công chuỗi sự kiện TechX Camp, tạo dấu ấn gắn kết cộng đồng học thuật và doanh nghiệp công nghệ.',
+        'Nâng cao hiệu suất xử lý thông tin và chất lượng gắn kết sinh viên thông qua ứng dụng công cụ hỗ trợ AI.',
       ],
       en: [
-        'Restructured student initiatives from standalone events into holistic experiential ecosystems with measurable engagement.',
-        'Successfully delivered TechX Camp, strengthening community pride and university-industry connectivity.',
+        'Systematized student relations into a structured experiential framework with measurable satisfaction metrics.',
+        'Successfully directed TechX Camp, strengthening institutional pride and university-industry connectivity.',
+        'Accelerated operational responsiveness and engagement quality via AI-augmented administrative workflows.',
       ],
     },
-    relatedCaseId: 'case-techx',
+    relatedCaseId: 'case-sro-system',
   },
   {
     id: 'exp-transcosmos',
     officialTitle: {
-      vi: 'Organizational Development',
-      en: 'Organizational Development',
+      vi: 'Senior Specialist, Organizational Development',
+      en: 'Senior Specialist, Organizational Development',
     },
     company: 'transcosmos Vietnam',
-    period: 'Giai đoạn OD',
+    period: 'Jul 2024 — Mar 2025',
     location: 'Ho Chi Minh City',
+    workType: 'Full-time',
+    tier: 'high',
     mandateScope: {
       vi: [
-        'Đảm nhiệm công tác Phát triển Tổ chức (Organizational Development): chuẩn hóa các giá trị cốt lõi và hành vi chuẩn mực của nhân sự.',
-        'Tham gia thiết kế và thúc đẩy các chương trình gắn kết văn hóa, nâng cao sự thấu hiểu mục tiêu chung giữa các bộ phận.',
-        'Hỗ trợ ban lãnh đạo trong việc truyền thông định hướng chiến lược và xây dựng môi trường làm việc minh bạch, gắn bó.',
+        'Thiết kế và chuẩn hóa các điểm chạm trong toàn bộ vòng đời nhân viên (Employee Lifecycle), trọng tâm là hành trình hội nhập và giữ chân nhân sự (15/60/90-day retention journey).',
+        'Xây dựng các cơ chế khảo sát và thu thập dữ liệu thấu hiểu nhân viên (Employee Insight) nhằm phát hiện sớm các rủi ro rời bỏ tổ chức và đo lường cảm nhận nhân sự.',
+        'Tham gia chuẩn hóa bản mô tả vai trò & phạm vi công việc (Role/SOW standardization), đồng bộ hóa khung năng lực chuyên môn và hệ thống quản trị hiệu suất.',
+        'Chuyển hóa định hướng chiến lược của ban lãnh đạo thành các chỉ dẫn văn hóa và tiêu chuẩn hành vi cụ thể cho nhân sự.',
       ],
       en: [
-        'Spearheaded Organizational Development initiatives: aligning organizational core values with observable behavioral benchmarks.',
-        'Designed culture engagement programs to strengthen cross-functional collaboration and strategic alignment.',
-        'Facilitated executive leadership communications to nurture workplace transparency and employee belonging.',
+        'Architected critical touchpoints across the employee lifecycle, establishing structured retention checkpoints during the 15/60/90-day onboarding journey.',
+        'Built employee insight pulse surveys and qualitative sentiment checkpoints to identify retention risks and measure engagement.',
+        'Standardized job profiles and scope of work (Role/SOW standardization), aligning competency rubrics and performance management frameworks.',
+        'Translated corporate strategic objectives into actionable cultural guidelines and observable behavioral benchmarks.',
       ],
     },
     actualScopeNote: {
-      vi: 'Official title: Organizational Development. Thể hiện bước chuyển mình then chốt từ thực thi truyền thông sang tư duy hệ thống và chuẩn hóa hành vi tổ chức.',
-      en: 'Official title: Organizational Development. Marked the pivotal shift from comms execution to organizational systems thinking.',
+      vi: 'Official Title: Senior Specialist, Organizational Development. Thể hiện bước chuyển then chốt từ truyền thông văn hóa đơn thuần sang tư duy kiến trúc hệ thống nhân sự và quản trị tổ chức.',
+      en: 'Official Title: Senior Specialist, Organizational Development. Represented the critical evolution from comms execution to systemic organizational development and employee lifecycle architecture.',
+    },
+    leadershipScope: {
+      vi: 'Chủ trì các dự án chuẩn hóa vòng đời nhân viên và điều phối liên phòng ban giữa OD, Tuyển dụng, Đào tạo và Vận hành.',
+      en: 'Led employee lifecycle standardization initiatives, coordinating cross-functionally across OD, Talent Acquisition, L&D, and Operations.',
     },
     selectedImpact: {
       vi: [
-        'Góp phần chuyển hóa các giá trị doanh nghiệp thành các chỉ dẫn hành vi dễ hiểu, áp dụng vào công việc hàng ngày.',
-        'Nâng cao mức độ gắn kết và đồng thuận của nhân sự với định hướng phát triển của công ty.',
+        'Thiết lập hành trình trải nghiệm 15/60/90 ngày giúp nhân sự mới hòa nhập văn hóa nhanh chóng và giảm tỷ lệ thôi việc sớm.',
+        'Chuẩn hóa thành công bộ chỉ dẫn hành vi tương thích với khung năng lực và tiêu chí đánh giá hiệu suất của tổ chức.',
       ],
       en: [
-        'Codified corporate values into accessible daily behavioral rubrics across operational units.',
-        'Enhanced workforce cohesion and alignment with company-wide strategic trajectories.',
+        'Instituted structured 15/60/90-day journey milestones accelerating cultural assimilation and curbing early attrition.',
+        'Standardized behavioral benchmarks aligned with organizational competency frameworks and performance evaluations.',
       ],
     },
-    relatedCaseId: 'case-values',
+    relatedCaseId: 'case-15-60-90',
   },
   {
     id: 'exp-savvycom',
     officialTitle: {
-      vi: 'People & Culture / Internal Communication',
-      en: 'People & Culture / Internal Communication',
+      vi: 'People & Culture Lead',
+      en: 'People & Culture Lead',
     },
     company: 'Savvycom',
-    period: 'Giai đoạn Tech Culture',
-    location: 'Ho Chi Minh City / Hybrid',
+    period: '2023 — 2024',
+    location: 'Hanoi / Ho Chi Minh City / Hybrid',
+    workType: 'Full-time',
+    tier: 'high',
     mandateScope: {
       vi: [
-        'Quản trị truyền thông nội bộ và kích hoạt văn hóa doanh nghiệp trong môi trường công ty công nghệ phát triển năng động.',
-        'Xây dựng các kênh đối thoại mở, kết nối nhân sự kỹ thuật số và đội ngũ kinh doanh trong mô hình làm việc linh hoạt (hybrid).',
-        'Phát triển nội dung thương hiệu nhà tuyển dụng (EVP & Employer Branding), tôn vinh câu chuyện của nhân sự nổi bật.',
+        'Lãnh đạo toàn diện mảng People & Culture: hoạch định chiến lược truyền thông nội bộ (IC), chương trình gắn kết nhân sự (engagement) và nuôi dưỡng văn hóa tổ chức.',
+        'Xây dựng và phát triển Thương hiệu nhà tuyển dụng (EVP & Employer Branding), định vị giá trị nhân tài trong ngành công nghệ thông tin.',
+        'Chỉ đạo các hoạt động Học tập & Phát triển (L&D), các dự án Trách nhiệm xã hội (CSR) và các chương trình đối thoại lãnh đạo.',
+        'Trực tiếp quản lý truyền thông thay đổi & xử lý khủng hoảng (change & crisis communication) trong các giai đoạn chuyển đổi tổ chức.',
       ],
       en: [
-        'Orchestrated internal communications and culture activation in an agile, fast-paced technology environment.',
-        'Built two-way dialogue channels connecting distributed engineering and business teams in hybrid workflows.',
-        'Developed authentic employer value proposition (EVP) content, highlighting staff growth and engineering stories.',
+        'Led comprehensive People & Culture functions: directing internal communications strategy, employee engagement, and culture cultivation.',
+        'Formulated and activated Employer Value Proposition (EVP & Employer Branding), highlighting engineering excellence.',
+        'Directed Learning & Development (L&D) roadmaps, Corporate Social Responsibility (CSR) initiatives, and townhall dialogue sessions.',
+        'Spearheaded executive change communication and crisis response during key organizational transitions.',
       ],
+    },
+    actualScopeNote: {
+      vi: 'Official Title: People & Culture Lead. Quản trị đa chức năng kết hợp chặt chẽ giữa Truyền thông nội bộ, Nhân sự và Văn hóa trong môi trường công nghệ hybrid.',
+      en: 'Official Title: People & Culture Lead. Multi-functional leadership combining Internal Comms, HR engagement, and culture within a hybrid tech landscape.',
+    },
+    leadershipScope: {
+      vi: 'Lãnh đạo bộ phận People & Culture, dẫn dắt các sáng kiến gắn kết toàn công ty và làm việc trực tiếp cùng Ban Giám Đốc (C-Level).',
+      en: 'Led People & Culture function, orchestrating company-wide culture initiatives and partnering directly with C-Level executives.',
     },
     selectedImpact: {
       vi: [
-        'Duy trì tinh thần gắn kết và sự thấu cảm giữa các nhóm dự án công nghệ làm việc linh hoạt.',
-        'Nâng cao tỷ lệ tham gia và mức độ hài lòng của nhân viên qua các bản tin và hoạt động all-hands tương tác.',
+        'Củng cố sự gắn kết và tính minh bạch thông tin giữa các nhóm kỹ sư làm việc phân tán trong mô hình hybrid.',
+        'Nâng cao mức độ nhận diện thương hiệu tuyển dụng thông qua các ấn phẩm văn hóa và câu chuyện nhân vật truyền cảm hứng.',
       ],
       en: [
-        'Fostered cross-functional empathy and community cohesion across hybrid technical project teams.',
-        'Elevated voluntary engagement rates across all-hands forums and internal cultural publications.',
+        'Reinforced team cohesion and communication transparency across distributed engineering teams in hybrid settings.',
+        'Elevated employer brand visibility through human-centered culture narratives and staff spotlights.',
       ],
     },
-    relatedCaseId: 'case-hybrid',
+    relatedCaseId: 'case-savvycom',
   },
   {
     id: 'exp-vuanem',
     officialTitle: {
-      vi: 'Internal Communication & Culture Activation',
-      en: 'Internal Communication & Culture Activation',
+      vi: 'Acting Internal Communication Lead',
+      en: 'Acting Internal Communication Lead',
     },
     company: 'Vua Nệm',
-    period: 'Giai đoạn Retail Growth',
+    period: '2022 — 2023',
     location: 'Ho Chi Minh City',
+    workType: 'Full-time',
+    tier: 'compact',
     mandateScope: {
       vi: [
-        'Phụ trách truyền thông nội bộ kết nối giữa khối Văn phòng hội sở và hàng trăm nhân sự tại hệ thống cửa hàng bán lẻ trên toàn quốc.',
-        'Thiết kế và duy trì các nghi thức văn hóa, phong trào thi đua nội bộ và hoạt động tri ân nhân sự tuyến đầu.',
-        'Đảm bảo thông tin chiến lược kinh doanh được giải thích mạch lạc, gần gũi đến từng nhân viên bán hàng.',
+        'Phụ trách dẫn dắt Truyền thông nội bộ và Kích hoạt văn hóa doanh nghiệp: kết nối thông tin giữa khối Hội sở và hệ thống cửa hàng bán lẻ toàn quốc.',
+        'Chuyển hóa giá trị cốt lõi thành hành vi cụ thể: triển khai chương trình Happy Journey, Bộ quy tắc ứng xử (Code of Conduct) và Thói quen C7+.',
+        'Thiết kế các chiến dịch thi đua bán hàng, nghi thức vinh danh nhân viên tuyến đầu và ấn phẩm truyền thông nội bộ sống động.',
       ],
       en: [
-        'Led frontline-to-HQ internal communication, bridging corporate headquarters with nationwide retail showroom teams.',
-        'Designed workplace rituals, recognition campaigns, and engagement activities honoring frontline retail champions.',
-        'Ensured commercial strategies were translated into clear, inspiring messages for store-level execution.',
+        'Led Internal Communications and Culture Activation, bridging corporate headquarters with nationwide retail store networks.',
+        'Codified core values into observable daily habits: rolling out Happy Journey, Code of Conduct, and C7+ Habits framework.',
+        'Engineered frontline recognition campaigns, retail sales motivators, and dynamic internal storytelling platforms.',
+      ],
+    },
+    actualScopeNote: {
+      vi: 'Official Title: Acting Internal Communication Lead. Bước phát triển then chốt về năng lực lãnh đạo đội ngũ và kích hoạt văn hóa ở quy mô chuỗi bán lẻ phân tán.',
+      en: 'Official Title: Acting Internal Communication Lead. Marked a key milestone in team leadership and retail frontline culture activation.',
+    },
+    selectedImpact: {
+      vi: [
+        'Đưa Bộ quy tắc ứng xử và thói quen C7+ vào đời sống hàng ngày của nhân viên tại hệ thống showroom trên toàn quốc.',
+        'Gia tăng niềm tự hào và sự gắn kết của khối bán lẻ tuyến đầu thông qua chương trình vinh danh Happy Journey.',
+      ],
+      en: [
+        'Embedded Code of Conduct and C7+ Habits into everyday routines across nationwide retail showrooms.',
+        'Elevated frontline pride and connection to organizational mission via Happy Journey recognition.',
+      ],
+    },
+    relatedCaseId: 'case-values-behaviors',
+  },
+  {
+    id: 'exp-cmc',
+    officialTitle: {
+      vi: 'Corporate Culture Specialist',
+      en: 'Corporate Culture Specialist',
+    },
+    company: 'CMC Corporation',
+    period: '2021 — 2022',
+    location: 'Hanoi / Nationwide',
+    workType: 'Full-time',
+    tier: 'compact',
+    mandateScope: {
+      vi: [
+        'Thực thi các chương trình văn hóa doanh nghiệp và truyền thông nội bộ quy mô tập đoàn công nghệ.',
+        'Tham gia phát triển nền tảng truyền thông nội bộ Together We Shine, kết nối các đơn vị thành viên.',
+        'Sản xuất các ấn phẩm văn hóa, video bản tin và phong trào gắn kết cán bộ nhân viên.',
+      ],
+      en: [
+        'Executed corporate culture programs and group-level internal communications for a premier tech corporation.',
+        'Co-developed Together We Shine internal communication platform connecting subsidiary business units.',
+        'Produced culture publications, news videos, and employee engagement campaigns.',
       ],
     },
     selectedImpact: {
       vi: [
-        'Rút ngắn khoảng cách thông tin giữa hội sở và các chi nhánh cửa hàng xa xôi.',
-        'Tạo dựng niềm tự hào nghề nghiệp và sự gắn kết cho nhân viên tuyến đầu thông qua các câu chuyện người thật việc thật.',
+        'Lan tỏa giá trị văn hóa và nâng cao tỷ lệ tương tác của nhân sự trên nền tảng truyền thông tập đoàn.',
       ],
       en: [
-        'Significantly bridged the geographic and emotional divide between headquarters and regional branches.',
-        'Built frontline morale and cultural pride through authentic storytelling celebrating everyday employee contributions.',
+        'Amplified core cultural values and boosted interaction rates across corporate internal channels.',
       ],
     },
-    relatedCaseId: 'case-frontline',
+    relatedCaseId: 'case-together-we-shine',
+  },
+  {
+    id: 'exp-f88',
+    officialTitle: {
+      vi: 'Internal Communication & Culture Specialist',
+      en: 'Internal Communication & Culture Specialist',
+    },
+    company: 'F88',
+    period: '2020 — 2021',
+    location: 'Hanoi / Nationwide',
+    workType: 'Full-time',
+    tier: 'compact',
+    mandateScope: {
+      vi: [
+        'Phát triển các kênh truyền thông nội bộ kết nối mạng lưới phòng giao dịch trên toàn quốc.',
+        'Xây dựng các câu chuyện văn hóa tuyến đầu, tôn vinh tinh thần vượt khó và phục vụ khách hàng.',
+      ],
+      en: [
+        'Developed internal comms channels connecting extensive nationwide branch office networks.',
+        'Created frontline cultural human-interest stories celebrating service excellence.',
+      ],
+    },
+    selectedImpact: {
+      vi: [
+        'Thiết lập mạng lưới truyền thông hai chiều hiệu quả giữa hội sở và các phòng giao dịch địa phương.',
+      ],
+      en: [
+        'Established effective two-way communication rhythms between corporate HQ and regional branches.',
+      ],
+    },
+  },
+  {
+    id: 'exp-bellsystem',
+    officialTitle: {
+      vi: 'Internal Communication Specialist',
+      en: 'Internal Communication Specialist',
+    },
+    company: 'Bellsystem24-Hoasao',
+    period: '2019 — 2020',
+    location: 'Hanoi / Nationwide',
+    workType: 'Full-time',
+    tier: 'compact',
+    mandateScope: {
+      vi: [
+        'Sản xuất nội dung truyền thông đa phương tiện: video nội bộ, chương trình phát thanh Radio kết nối nhân sự trực tổng đài.',
+        'Tổ chức các sự kiện văn hóa, ngày hội gia đình và hoạt động ghi nhận nhân viên làm việc theo ca.',
+      ],
+      en: [
+        'Produced multimedia communications: internal video documentaries and radio broadcasts for contact center teams.',
+        'Organized corporate culture festivals, family days, and shift-based employee recognition initiatives.',
+      ],
+    },
+    selectedImpact: {
+      vi: [
+        'Xây dựng kênh phát thanh nội bộ trở thành điểm chạm tinh thần thân thuộc cho hàng nghìn nhân sự ca kíp.',
+      ],
+      en: [
+        'Turned internal radio into a beloved cultural touchpoint for thousands of 24/7 operational staff.',
+      ],
+    },
+  },
+  {
+    id: 'exp-fpt-early',
+    officialTitle: {
+      vi: 'Student Relations Officer / Community Coordinator',
+      en: 'Student Relations Officer / Community Coordinator',
+    },
+    company: 'FPT University',
+    period: '2018 — 2019',
+    location: 'Ho Chi Minh City',
+    workType: 'Full-time',
+    tier: 'compact',
+    mandateScope: {
+      vi: [
+        'Hỗ trợ công tác quan hệ sinh viên, gắn kết các câu lạc bộ và điều phối hoạt động phong trào thanh niên.',
+        'Lắng nghe tâm tư sinh viên và tạo dựng môi trường sinh hoạt ngoại khóa năng động, gắn kết.',
+      ],
+      en: [
+        'Supported student affairs, coordinated student club activities, and facilitated youth engagement programs.',
+        'Listened to student sentiment and fostered a vibrant, inclusive extracurricular community environment.',
+      ],
+    },
+    selectedImpact: {
+      vi: [
+        'Đặt nền móng thấu cảm và phương pháp luận gắn kết cộng đồng cho toàn bộ sự nghiệp sau này.',
+      ],
+      en: [
+        'Laid the foundations of human-first empathy and community-building methodology for future career chapters.',
+      ],
+    },
   },
 ];
 
 export const CASE_STUDIES: CaseStudy[] = [
   {
-    id: 'case-techx',
+    id: 'case-sro-system',
     title: {
-      vi: 'TechX Camp: Kiến tạo trải nghiệm & Bản sắc cộng đồng',
-      en: 'TechX Camp: Experiential Immersion & Community Belonging',
+      vi: 'Xây dựng Hệ thống Quản trị Quan hệ Sinh viên — FPTU',
+      en: 'Building the Student Relations System — FPTU',
     },
     subtitle: {
-      vi: 'Thiết kế chương trình trải nghiệm kết nối đa bên giữa sinh viên, nhà trường và doanh nghiệp công nghệ',
-      en: 'Designing high-impact experiential immersion bridging students, university and tech industry leaders',
+      vi: 'Hệ thống hóa trải nghiệm sinh viên, khung vận hành phòng ban và quản trị đối tác doanh nghiệp dựa trên dữ liệu',
+      en: 'Systematizing student experience architecture, operational governance, and data-informed corporate relations',
+    },
+    organization: 'FPT University',
+    year: '2025 — Present',
+    category: {
+      vi: 'Kiến trúc Hệ thống & Lãnh đạo Trải nghiệm',
+      en: 'System Architecture & Experience Leadership',
+    },
+    accentBadge: {
+      vi: 'Chiến lược & Hệ thống',
+      en: 'Strategy & Systems',
+    },
+    coverImage: {
+      src: null,
+      alt: { vi: 'Hệ thống Quản trị Quan hệ Sinh viên FPTU', en: 'FPTU Student Relations System Architecture' },
+      category: 'framework',
+      recommendedRatio: '16:9',
+      placeholderHint: {
+        vi: 'Sơ đồ kiến trúc trải nghiệm sinh viên hoặc hình ảnh điều phối hoạt động phòng ban',
+        en: 'Student experience architecture blueprint or department coordination photo',
+      },
+    },
+    context: {
+      vi: 'Khi quy mô đào tạo ngày càng phát triển, việc hỗ trợ sinh viên không thể dựa trên xử lý sự vụ rời rạc mà đòi hỏi một hệ thống quản trị trải nghiệm toàn diện (Student Experience - SX), đồng bộ giữa hỗ trợ học thuật, hoạt động ngoại khóa và kết nối cơ hội nghề nghiệp với các đối tác doanh nghiệp.',
+      en: 'As student enrollment expands, student support cannot rely on ad-hoc coordination. It demands an institutional Student Experience (SX) system bridging academic pathways, experiential activities, and enterprise industry partnerships.',
+    },
+    challenge: {
+      vi: 'Chuyển đổi phương thức làm việc từ sự vụ sang vận hành theo chuẩn mực hệ thống; điều phối nhịp nhàng giữa các phòng ban chức năng và bảo đảm mọi phản hồi của sinh viên đều được ghi nhận, phân tích và phản hồi kịp thời.',
+      en: 'Transforming operational culture from reactive problem-solving to systemic governance; aligning multiple academic faculties and ensuring student sentiment is systematically analyzed and addressed.',
+    },
+    insight: {
+      vi: 'Trải nghiệm của người học cũng như trải nghiệm nhân sự: sự gắn bó và tự hào chỉ xuất hiện khi họ cảm thấy ý kiến của mình được lắng nghe và các điểm chạm dịch vụ diễn ra một cách minh bạch, nhất quán.',
+      en: 'Student Experience mirrors Employee Experience: institutional belonging flourishes when people feel heard and touchpoints are transparent, predictable, and supportive.',
+    },
+    myRole: {
+      vi: 'Head of Student Relations Office: Thiết kế khung vận hành trải nghiệm sinh viên, phân bổ chỉ tiêu nhiệm vụ cho đội ngũ, chỉ đạo chuẩn hóa quy trình và ứng dụng AI vào phân tích dữ liệu phản hồi.',
+      en: 'Head of Student Relations Office: Designed the experiential governance model, allocated team mandates, standardized operating procedures, and integrated AI tools for feedback analysis.',
+    },
+    stakeholders: {
+      vi: 'Ban Giám hiệu FPT University, các Trưởng khoa/Viện chuyên môn, mạng lưới doanh nghiệp đối tác, đội ngũ cán bộ phòng ban và toàn thể cộng đồng sinh viên.',
+      en: 'University Executive Board, Academic Deans, corporate enterprise partners, student relations officers, and student body.',
+    },
+    approach: {
+      vi: 'Xây dựng bản đồ hành trình sinh viên (Student Journey Mapping) từ lúc nhập học, giai đoạn trải nghiệm dự án thực tế đến khi tốt nghiệp; thiết lập cơ chế đo lường mức độ hài lòng theo từng kỳ học.',
+      en: 'Constructed an end-to-end Student Journey Map from matriculation to industry practicum and graduation; instituted semester-based sentiment and CSAT measurement mechanisms.',
+    },
+    systemFramework: {
+      vi: 'Mô hình 3C trong quản trị trải nghiệm sinh viên: Connection (Gắn kết cộng đồng) - Competence (Cọ xát năng lực thực tế) - Continuity (Hành trình xuyên suốt có đo lường).',
+      en: '3C Student Experience Governance Model: Connection (Belonging) - Competence (Real-world immersion) - Continuity (Measurable lifecycle tracking).',
+    },
+    impact: {
+      vi: [
+        'Chuẩn hóa thành công quy trình tiếp nhận và xử lý phản hồi sinh viên với thời gian phản hồi được rút ngắn rõ rệt.',
+        'Thiết lập mạng lưới liên kết chặt chẽ với các doanh nghiệp công nghệ, mở rộng cơ hội thực tập và dự án thực chiến.',
+        'Nâng cao sự hài lòng của sinh viên thông qua các chương trình trải nghiệm có định hướng và cấu trúc bài bản.',
+      ],
+      en: [
+        'Standardized student feedback workflows, substantially improving turnaround resolution times.',
+        'Established formal enterprise networks, expanding student internships and real-world tech practicums.',
+        'Elevated student satisfaction indices through structured, meaningful experiential initiatives.',
+      ],
+    },
+    learning: {
+      vi: 'Một hệ thống dịch vụ lấy con người làm trọng tâm phải kết hợp được sự chuẩn xác của quy trình và sự tinh tế, ấm áp của người phục vụ.',
+      en: 'A human-centered system must seamlessly unite operational precision with empathetic, authentic interpersonal care.',
+    },
+  },
+  {
+    id: 'case-techx',
+    title: {
+      vi: 'FPTU Tech XCamp — Thiết kế Trải nghiệm & Dẫn dắt Chương trình',
+      en: 'FPTU Tech XCamp — Experience Design & Program Leadership',
+    },
+    subtitle: {
+      vi: 'Thiết kế chương trình trại nhập vai công nghệ quy mô lớn kết nối sinh viên, chuyên gia và doanh nghiệp',
+      en: 'Designing large-scale immersive tech boot camps bridging students, mentors, and industry pioneers',
     },
     organization: 'FPT University',
     year: '2025',
     category: {
-      vi: 'Thiết kế trải nghiệm & Lãnh đạo chương trình',
+      vi: 'Thiết kế Trải nghiệm & Dẫn dắt Chương trình',
       en: 'Experience Design & Program Leadership',
     },
     accentBadge: {
@@ -445,235 +714,504 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
     coverImage: {
       src: null,
-      alt: { vi: 'Hình ảnh toàn cảnh TechX Camp', en: 'TechX Camp Overview Visual' },
+      alt: { vi: 'Toàn cảnh chương trình FPTU Tech XCamp', en: 'FPTU Tech XCamp Program Overview' },
       category: 'case-cover',
       recommendedRatio: '16:9',
       placeholderHint: {
-        vi: 'Ảnh chụp hoạt động TechX Camp hoặc banner nhận diện chính thức',
-        en: 'Photo of TechX Camp activity or official branding material',
+        vi: 'Hình ảnh hoạt động chính Tech XCamp, sinh viên làm việc nhóm hoặc sân khấu tổng kết',
+        en: 'Photo of Tech XCamp team challenges, participant activities, or keynote stage',
       },
     },
     context: {
-      vi: 'Sinh viên thế hệ mới cần những không gian trải nghiệm thực tế hơn là các buổi hội thảo một chiều. TechX Camp được thiết kế nhằm tạo ra một đợt nhập vai toàn diện, nơi sinh viên khám phá công nghệ, cọ xát với chuyên gia và xây dựng tinh thần đồng đội sâu sắc.',
-      en: 'Next-gen learners seek authentic immersion over passive auditoriums. TechX Camp was conceived as an interactive playground where students touch industry tech, engage with leaders, and forge lasting team bonds.',
+      vi: 'Sinh viên công nghệ thế hệ mới cần những trải nghiệm cọ xát thực chiến hơn là các buổi tọa đàm một chiều. Tech XCamp được thiết kế như một đấu trường trải nghiệm nhập vai, nơi người tham dự trực tiếp giải bài toán công nghệ cùng chuyên gia doanh nghiệp và rèn luyện tinh thần đồng đội.',
+      en: 'Next-gen learners require hands-on real-world immersion beyond traditional lectures. Tech XCamp was conceived as an experiential boot camp where students tackle authentic tech challenges alongside industry mentors in high-energy team settings.',
     },
     challenge: {
-      vi: 'Phải dung hòa giữa yêu cầu học thuật chuyên môn và yếu tố truyền cảm hứng, giải trí; đồng thời điều phối nhiều đối tác doanh nghiệp cùng hàng trăm sinh viên tham gia với yêu cầu an toàn, kỷ luật và năng lượng cao.',
-      en: 'Balancing rigorous tech content with dynamic engagement, while coordinating external tech partners, student logistics, and ensuring seamless safety and team synergy.',
+      vi: 'Dung hòa giữa chiều sâu tri thức công nghệ và tính hấp dẫn, hào hứng của một trại trải nghiệm; điều phối an toàn, hậu cần và năng lượng cho hàng trăm người tham gia cùng lúc.',
+      en: 'Harmonizing technical intellectual depth with high-spirited gamified engagement; managing logistics, team safety, and energy across large participant cohorts.',
     },
     insight: {
-      vi: 'Trải nghiệm đáng nhớ không đến từ số lượng slide bài giảng, mà đến từ khoảnh khắc sinh viên cùng nhau vượt qua thử thách và cảm thấy mình là một phần của điều gì đó lớn hơn.',
-      en: 'Memorable experience is never about slide counts—it is forged when participants conquer shared challenges and feel genuine collective belonging.',
+      vi: 'Khoảnh khắc tạo nên ký ức sâu đậm nhất không phải là lượng slide trình chiếu, mà là khoảnh khắc người tham gia cùng nhau vượt qua áp lực thời gian để hoàn thành giải pháp chung.',
+      en: 'The most enduring memories are never forged by slide decks, but in intense moments where diverse teams conquer high-pressure challenges together.',
     },
     myRole: {
-      vi: 'Chỉ đạo chương trình: Xây dựng ý tưởng tổng thể, thiết kế hành trình trải nghiệm người tham gia, điều phối nguồn lực và dẫn dắt đội ngũ thực thi.',
-      en: 'Program Director: Conceptualized narrative journey, architected participant touchpoints, aligned stakeholders and led execution teams.',
+      vi: 'Chỉ đạo chương trình (Program Director): Khởi xướng ý tưởng, thiết kế toàn bộ hành trình trải nghiệm người tham dự, quản trị tiến độ và trực tiếp điều phối nguồn lực thực thi.',
+      en: 'Program Director: Conceptualized overarching narrative, architected participant touchpoints, governed timelines, and directed cross-functional delivery teams.',
     },
     stakeholders: {
-      vi: 'Ban giám hiệu FPT University, các doanh nghiệp công nghệ đối tác, đội ngũ cán bộ văn phòng, diễn giả chuyên gia và sinh viên tham dự.',
-      en: 'University Leadership, tech corporate partners, operational staff, expert mentors, and student cohorts.',
+      vi: 'Ban Lãnh đạo Trường, các đối tác công nghệ đồng hành, đội ngũ chuyên gia cố vấn, ban tổ chức phòng ban và các đội sinh viên tham dự.',
+      en: 'University Leadership, tech corporate partners, expert industry judges, operations staff, and participating cohorts.',
     },
     approach: {
-      vi: 'Áp dụng quy trình Thiết kế trải nghiệm (Experience Journey Mapping): từ trước sự kiện (kỳ vọng & tò mò) → trong sự kiện (nhập vai & gắn kết cao độ) → sau sự kiện (tự hào & lan tỏa giá trị).',
-      en: 'Employed comprehensive Experience Journey Mapping: Pre-camp (anticipation & curiosity) → In-camp (deep immersion & bonding) → Post-camp (pride & enduring connection).',
+      vi: 'Áp dụng phương pháp Journey Mapping 3 giai đoạn: Kích thích tò mò (Pre-camp) → Nhập vai & Chinh phục thử thách (In-camp) → Lan tỏa tự hào & Duy trì kết nối (Post-camp).',
+      en: 'Employed a 3-stage Journey Mapping framework: Provoke Curiosity (Pre-camp) → Deep Immersion & Challenge (In-camp) → Enduring Pride & Community (Post-camp).',
     },
     systemFramework: {
-      vi: 'Mô hình 4E trong thiết kế trải nghiệm: Entertainment (Hào hứng) - Education (Tri thức) - Escapism (Hóa thân) - Esthetics (Môi trường thẩm mỹ).',
-      en: '4E Experience Framework: Entertainment - Education - Escapism - Esthetics applied to program rundown and activities.',
+      vi: 'Mô hình 4E trong thiết kế trải nghiệm: Entertainment (Hào hứng) - Education (Học hỏi) - Escapism (Hóa thân vào bối cảnh) - Esthetics (Môi trường thẩm mỹ ấn tượng).',
+      en: '4E Experience Design Architecture: Entertainment - Education - Escapism - Esthetics applied to every program touchpoint.',
     },
     impact: {
       vi: [
-        'Tạo dấu ấn sâu sắc cho sinh viên về môi trường học tập năng động và gắn kết thực tế.',
-        'Thiết lập tiêu chuẩn mới cho các chương trình trải nghiệm sinh viên quy mô lớn tại trường.',
-        'Tăng cường mức độ hài lòng và cam kết gắn bó của các đối tác doanh nghiệp đồng hành.',
+        'Tạo lập chuẩn mực mới cho các chương trình trải nghiệm sinh viên quy mô lớn tại FPT University.',
+        'Thắt chặt mối quan hệ hợp tác chiến lược giữa nhà trường và các doanh nghiệp công nghệ đồng hành.',
+        'Ghi nhận tỷ lệ phản hồi hào hứng và đánh giá cao từ người tham gia về sự chuyên nghiệp và cảm xúc mang lại.',
       ],
       en: [
-        'Created enduring pride and collaborative momentum across participating cohorts.',
-        'Set a new benchmark for immersive student experience programs across the institution.',
-        'Strengthened mutual commitment and long-term goodwill with industry partners.',
+        'Set a transformative benchmark for large-scale experiential education initiatives at FPT University.',
+        'Deepened institutional alignment and goodwill with premier technology enterprise partners.',
+        'Achieved outstanding positive participant feedback regarding engagement, teamwork, and emotional resonance.',
       ],
     },
     learning: {
-      vi: 'Sự tỉ mỉ trong từng chi tiết nhỏ nhất (từ cách chào đón, âm thanh đến cử chỉ của người điều phối) là yếu tố quyết định cảm xúc của cả một chương trình lớn.',
-      en: 'Deliberate care in micro-moments (from greeting to pacing) defines the emotional resonance of a large-scale program.',
+      vi: 'Năng lượng của một sự kiện quy mô lớn được quyết định bởi sự chuẩn bị chu đáo đến từng chi tiết vi mô: từ lời chào đón ban đầu, âm nhạc nền đến nhịp độ chuyển giao giữa các hoạt động.',
+      en: 'The collective energy of large-scale programs is determined by meticulous care in micro-moments: from initial greeting and acoustic pacing to seamless activity transitions.',
     },
   },
   {
-    id: 'case-values',
+    id: 'case-15-60-90',
     title: {
-      vi: 'Hệ thống hóa Giá trị thành Hành vi chuẩn mực',
-      en: 'Values Into Behaviors: Systemic Organizational Alignment',
+      vi: 'Trải nghiệm Nhân viên Dựa trên Dữ liệu — Hành trình 15/60/90 Ngày',
+      en: 'Data-driven Employee Experience — 15/60/90-Day Journey',
     },
     subtitle: {
-      vi: 'Chuyển đổi những tuyên bố giá trị trừu tượng thành thước đo hành vi quan sát được và cơ chế khen thưởng',
-      en: 'Translating abstract value statements into observable workplace behaviors and peer recognition',
+      vi: 'Thiết kế hành trình hội nhập và giữ chân nhân sự qua các điểm chạm đo lường cảm nhận và phân tích insight',
+      en: 'Architecting onboarding and retention touchpoints via structured sentiment checkpoints and data insights',
     },
     organization: 'transcosmos Vietnam',
-    year: 'Giai đoạn OD',
+    year: 'Jul 2024 — Mar 2025',
     category: {
-      vi: 'Phát triển tổ chức & Tư duy hệ thống',
-      en: 'Organizational Development & Systems Thinking',
+      vi: 'Vòng đời Nhân viên & Giữ chân Nhân tài',
+      en: 'Employee Lifecycle & Retention Architecture',
     },
     accentBadge: {
-      vi: 'Tư duy Hệ thống',
-      en: 'Systems Thinking',
+      vi: 'Hệ thống OD & EX',
+      en: 'OD & EX Systems',
     },
     coverImage: {
       src: null,
-      alt: { vi: 'Sơ đồ chuẩn hóa hành vi tổ chức', en: 'Behavioral Framework Visual' },
+      alt: { vi: 'Hành trình 15/60/90 ngày tại transcosmos', en: '15/60/90-Day Retention Journey Architecture' },
       category: 'framework',
       recommendedRatio: '16:9',
       placeholderHint: {
-        vi: 'Sơ đồ ma trận giá trị cốt lõi hoặc bộ cẩm nang hành vi nội bộ',
-        en: 'Matrix diagram of core values or behavioral codebook snippet',
+        vi: 'Sơ đồ hành trình vòng đời nhân viên hoặc bảng chỉ số đo lường khảo sát hội nhập',
+        en: 'Employee lifecycle journey diagram or onboarding sentiment analytics dashboard',
       },
     },
     context: {
-      vi: 'Trong tổ chức quy mô lớn, nhân viên thường biết đến khẩu hiệu công ty nhưng gặp lúng túng khi đối chiếu với công việc cụ thể hàng ngày.',
-      en: 'In large-scale operations, employees frequently memorize company slogans but struggle to map them to daily behavioral choices.',
+      vi: 'Giai đoạn thử việc và những tháng đầu tiên là thời điểm nhạy cảm nhất quyết định sự gắn bó lâu dài của nhân sự. Tại môi trường dịch vụ quy mô lớn, việc thiếu các điểm chạm lắng nghe định kỳ dẫn đến tỷ lệ thôi việc sớm và làm gián đoạn kế hoạch vận hành.',
+      en: 'The probationary period and initial months represent the most fragile window determining long-term retention. In high-scale service environments, the lack of structured listening checkpoints causes early attrition and operational friction.',
     },
     challenge: {
-      vi: 'Làm thế nào để các giá trị không dừng lại trên giấy tờ mà trở thành chuẩn mực để mọi người ra quyết định, giao tiếp và đánh giá đóng góp của nhau?',
-      en: 'How do we move values from static wall posters into living criteria for daily decision-making, team communication, and peer evaluation?',
+      vi: 'Thiết kế cơ chế thu thập phản hồi có hệ thống mà không làm phiền công việc hàng ngày của nhân viên; đồng thời chuyển hóa dữ liệu khảo sát thành các hành động can thiệp kịp thời của người quản lý trực tiếp.',
+      en: 'Designing systematic pulse checkpoints without interrupting operational workflows, while translating sentiment data into immediate, actionable managerial interventions.',
     },
     insight: {
-      vi: 'Con người không hành động theo định nghĩa trừu tượng; con người hành động theo những gì họ thấy đồng nghiệp và sếp của họ được ghi nhận mỗi ngày.',
-      en: 'People don’t act on abstract definitions; they act on what they witness colleagues and leaders praised for every day.',
+      vi: 'Nhân viên không rời bỏ công ty vào ngày thứ 90 vì một lý do đột ngột; những băn khoăn và cảm giác lạc lõng thường bắt đầu từ tuần thứ 2 (ngày 15) nhưng bị bỏ qua vì thiếu kênh đối thoại an toàn.',
+      en: 'Employees rarely decide to leave on day 90 out of nowhere; feelings of disconnect take root around day 15 and escalate when safe dialogue channels are absent.',
     },
     myRole: {
-      vi: 'Chuyên viên Phát triển Tổ chức (OD): Phân tích bối cảnh, đồng kiến tạo các tiêu chí hành vi quan sát được, xây dựng nội dung hướng dẫn cho quản lý.',
-      en: 'Organizational Development Specialist: Diagnosed cultural friction, co-defined observable behaviors, and crafted manager communication guidelines.',
+      vi: 'Senior Specialist, Organizational Development: Thiết kế toàn bộ kiến trúc hành trình 15/60/90 ngày, xây dựng bộ câu hỏi khảo sát thấu hiểu, thiết lập bảng điều khiển dữ liệu và đào tạo quản lý về kỹ năng phản hồi.',
+      en: 'Senior Specialist, Organizational Development: Architected the complete 15/60/90-day framework, designed pulse survey questions, established insight dashboards, and coached people managers on constructive follow-up.',
+    },
+    stakeholders: {
+      vi: 'Giám đốc Vận hành, Quản lý Bộ phận trực tiếp, Bộ phận Tuyển dụng, Đội ngũ Đào tạo (L&D) và toàn bộ nhân sự mới gia nhập.',
+      en: 'Operations Directors, Line Managers, Talent Acquisition, Training & Enablement, and newly onboarded employees.',
     },
     approach: {
-      vi: 'Mỗi giá trị cốt lõi được bẻ nhỏ thành 3 mức độ: Hành vi khuyến khích (Do) - Hành vi cần tránh (Don’t) - Cách ứng xử trong tình huống xung đột.',
-      en: 'Structured each value into practical matrices: Encouraged Behaviors (Do) - Discouraged Behaviors (Don’t) - Resolution in Conflict.',
+      vi: 'Thiết lập 3 mốc đo lường chiến lược: Ngày 15 (Sự an tâm & Tiếp cận công cụ) → Ngày 60 (Sự hòa nhập văn hóa & Tiến độ công việc) → Ngày 90 (Sự tự tin & Cam kết gắn bó dài lâu).',
+      en: 'Deployed 3 strategic measurement milestones: Day 15 (Psychological safety & enablement) → Day 60 (Cultural integration & role clarity) → Day 90 (Autonomy & long-term commitment).',
+    },
+    systemFramework: {
+      vi: 'Khung vòng lặp thấu hiểu 4 bước: Listen (Khảo sát vi mô) → Analyze (Phân tích xu hướng) → Intervene (Can thiệp cùng quản lý) → Retain (Giữ chân & Củng cố niềm tin).',
+      en: '4-Step Insight Loop: Listen (Micro-pulses) → Analyze (Trend diagnostics) → Intervene (Managerial alignment) → Retain (Reinforcing trust).',
     },
     impact: {
       vi: [
-        'Giúp nhân sự các cấp có chung một ngôn ngữ khi thảo luận về hiệu suất và văn hóa làm việc.',
-        'Trang bị cho đội ngũ quản lý công cụ phản hồi mang tính xây dựng dựa trên hành vi cụ thể thay vì phán xét cảm tính.',
+        'Cung cấp dữ liệu thời gian thực giúp ban quản lý nhận diện sớm các nguy cơ thôi việc ngay từ tháng đầu tiên.',
+        'Cải thiện rõ rệt trải nghiệm hội nhập và mức độ hài lòng của nhân viên mới đối với sự đồng hành của tổ chức.',
+        'Chuẩn hóa trách nhiệm đồng hành của cấp quản lý trực tiếp trong quy trình phát triển con người.',
       ],
       en: [
-        'Established a common vocabulary for discussing performance and workplace culture across all levels.',
-        'Empowered team managers with constructive, behavior-anchored feedback toolkits.',
+        'Delivered real-time sentiment analytics enabling management to preempt early attrition within the initial month.',
+        'Substantially improved onboarding satisfaction indices and new hire sentiment regarding managerial support.',
+        'Standardized people-management accountability during early-tenure employee development.',
       ],
     },
     learning: {
-      vi: 'Đơn giản hóa là chìa khóa. Một framework chỉ sống được khi người nhân viên bận rộn nhất cũng có thể nhớ và áp dụng ngay.',
-      en: 'Simplicity is adoption. A framework only survives if the busiest frontline employee can easily remember and apply it.',
+      vi: 'Dữ liệu chỉ là những con số vô tri nếu không có sự can thiệp chân thành và kịp thời từ người quản lý trực tiếp để giải tỏa những băn khoăn của nhân sự.',
+      en: 'Data remains passive numbers without compassionate, prompt managerial intervention addressing human vulnerabilities in real time.',
     },
   },
   {
-    id: 'case-hybrid',
+    id: 'case-savvycom',
     title: {
-      vi: 'Nuôi dưỡng Văn hóa Kết nối trong Môi trường Hybrid',
-      en: 'Nurturing Culture & EVP in a Hybrid Tech Environment',
+      vi: 'People & Culture tại Savvycom — Gắn kết Tổ chức Công nghệ',
+      en: 'People & Culture at Savvycom — High-Tech Engagement',
     },
     subtitle: {
-      vi: 'Thiết kế các điểm chạm truyền thông và sự kiện tương tác xóa nhòa khoảng cách vật lý của đội ngũ công nghệ',
-      en: 'Designing touchpoints and engaging townhalls to bridge the physical divide in agile tech teams',
+      vi: 'Dẫn dắt truyền thông nội bộ, văn hóa học tập, EVP và gắn kết nhân sự trong môi trường làm việc linh hoạt (hybrid)',
+      en: 'Leading internal comms, continuous learning, EVP, and employee engagement in hybrid engineering environments',
     },
     organization: 'Savvycom',
-    year: 'Giai đoạn Tech Culture',
+    year: '2023 — 2024',
     category: {
-      vi: 'Văn hóa Công nghệ & EVP',
-      en: 'Tech Culture & Employer Branding',
+      vi: 'Lãnh đạo People & Culture',
+      en: 'People & Culture Leadership',
     },
     accentBadge: {
-      vi: 'Gắn kết Hybrid',
-      en: 'Hybrid Engagement',
+      vi: 'Lãnh đạo Văn hóa',
+      en: 'Culture Leadership',
     },
     coverImage: {
       src: null,
-      alt: { vi: 'Hoạt động gắn kết đội ngũ Savvycom', en: 'Team Engagement Activity at Savvycom' },
+      alt: { vi: 'Văn hóa People & Culture tại Savvycom', en: 'Savvycom People & Culture Overview' },
       category: 'case-cover',
       recommendedRatio: '16:9',
       placeholderHint: {
-        vi: 'Ảnh sự kiện Townhall hoặc ấn phẩm nội bộ tôn vinh nhân sự',
-        en: 'Townhall event photo or internal employee spotlight spotlight material',
+        vi: 'Hình ảnh sự kiện All-Hands hybrid, hoạt động văn hóa công nghệ hoặc ấn phẩm EVP',
+        en: 'Photo of hybrid All-Hands townhall, engineering culture festival, or EVP branding asset',
       },
     },
     context: {
-      vi: 'Mô hình làm việc linh hoạt giúp gia tăng năng suất nhưng tiềm ẩn nguy cơ đứt gãy sợi dây gắn kết cảm xúc giữa các lập trình viên và tổ chức.',
-      en: 'Hybrid work accelerated development velocity but risked eroding emotional cohesion between remote engineers and the corporate mission.',
+      vi: 'Trong lĩnh vực tư vấn phần mềm và phát triển công nghệ, nhân sự kỹ sư thường làm việc phân tán tại nhiều dự án khách hàng khác nhau. Thách thức lớn là duy trì bản sắc văn hóa chung, tinh thần tự hào và sự gắn bó với thương hiệu mẹ trong mô hình hybrid.',
+      en: 'In fast-paced software consultancy, engineers often work dispersed across disparate client project streams. The core leadership challenge is sustaining unified corporate identity, peer belonging, and pride in a hybrid work environment.',
     },
     challenge: {
-      vi: 'Duy trì văn hóa cởi mở, khuyến khích chia sẻ tri thức và xây dựng niềm tự hào nghề nghiệp khi nhân sự ít có cơ hội gặp mặt trực tiếp.',
-      en: 'Maintaining transparency, peer knowledge-sharing, and professional pride when teams rarely share a physical room.',
+      vi: 'Kết nối hai nhóm đối tượng có phong cách tư duy khác nhau: khối kỹ sư công nghệ chú trọng hiệu quả thực tế và khối văn phòng/kinh doanh; đồng thời quản trị truyền thông thay đổi trong các giai đoạn tái cơ cấu.',
+      en: 'Bridging diverse employee mindsets: pragmatically minded software engineers and business development teams; while leading change comms during organizational pivots.',
+    },
+    insight: {
+      vi: 'Dân công nghệ không thích những bài diễn thuyết sáo rỗng; họ gắn kết thông qua sự minh bạch về định hướng của ban lãnh đạo, sự tôn vinh tài năng kỹ thuật và những cơ hội học tập phát triển bản thân.',
+      en: 'Tech professionals resist hollow slogans; they engage through executive transparency, celebration of technical mastery, and concrete professional growth pathways.',
     },
     myRole: {
-      vi: 'Phụ trách Truyền thông & Văn hóa (People & Culture): Đổi mới định dạng All-Hands, sản xuất nội dung EVP và thúc đẩy đối thoại hai chiều.',
-      en: 'People & Culture / Comms Lead: Re-architected All-Hands townhalls, produced authentic EVP stories, and facilitated transparent Q&A.',
+      vi: 'People & Culture Lead: Hoạch định chiến lược truyền thông nội bộ, chủ trì các buổi All-Hands định kỳ, định vị thương hiệu nhà tuyển dụng (EVP), điều phối chương trình CSR và làm việc chặt chẽ cùng Ban Giám Đốc.',
+      en: 'People & Culture Lead: Formulated internal comms roadmaps, hosted interactive All-Hands townhalls, developed EVP branding, led CSR initiatives, and advised executive leadership.',
+    },
+    stakeholders: {
+      vi: 'Ban Tổng Giám Đốc (C-Level), Đội ngũ Quản lý Dự án (PM/Tech Leads), toàn thể kỹ sư phần mềm và các ứng viên tiềm năng.',
+      en: 'C-Level Executives, Project Managers, Engineering Leads, software developer squads, and talent prospective pipeline.',
     },
     approach: {
-      vi: 'Chuyển đổi các cuộc họp thông báo khô khan thành các buổi All-Hands giàu năng lượng với phần đối thoại ẩn danh, kết hợp video phỏng vấn câu chuyện nhân viên thực tế.',
-      en: 'Turned dry executive broadcasts into dynamic townhalls with anonymous leadership Q&A and documentary-style engineer spotlight videos.',
+      vi: 'Tái thiết kế định dạng All-Hands thành diễn đàn hỏi đáp mở (Ask Me Anything) với ban điều hành; xây dựng các chuỗi bài viết tôn vinh kỹ sư tiêu biểu và triển khai các chiến dịch CSR gắn liền với công nghệ.',
+      en: 'Redesigned All-Hands meetings into dynamic, open Ask-Me-Anything forums with executives; crafted spotlight engineering stories, and led tech-for-good CSR campaigns.',
+    },
+    systemFramework: {
+      vi: 'Khung gắn kết nhân tài công nghệ 3 trụ cột: Transparency (Minh bạch thông tin) - Recognition (Ghi nhận chuyên môn) - Growth (Cơ hội học tập và đóng góp cộng đồng).',
+      en: '3-Pillar Tech Talent Engagement: Transparency (Open dialogue) - Recognition (Technical mastery) - Growth (Learning & purpose-driven impact).',
     },
     impact: {
       vi: [
-        'Tạo ra diễn đàn cởi mở nơi mọi thắc mắc của nhân sự đều được lắng nghe và giải đáp chân thành.',
-        'Nâng cao sự thấu hiểu mục tiêu kinh doanh và gắn kết giữa các nhóm dự án độc lập.',
+        'Gia tăng đáng kể tỷ lệ tham gia tự nguyện và tương tác tích cực của nhân sự kỹ thuật tại các buổi All-Hands toàn công ty.',
+        'Nâng cao uy tín thương hiệu tuyển dụng thông qua các câu chuyện người thật việc thật được chia sẻ rộng rãi.',
+        'Duy trì sự ổn định tâm lý và tinh thần đoàn kết của đội ngũ trong các giai đoạn chuyển đổi chiến lược.',
       ],
       en: [
-        'Created a transparent forum where employee questions were authentically addressed by leadership.',
-        'Deepened organizational alignment and cross-project solidarity across distributed squads.',
+        'Significantly increased voluntary attendance and active engagement among technical staff in corporate townhalls.',
+        'Enhanced employer brand reputation through authentic employee-driven stories celebrating engineering excellence.',
+        'Maintained workforce morale, clarity, and trust across strategic change management phases.',
+      ],
+    },
+    learning: {
+      vi: 'Văn hóa công nghệ mạnh mẽ không phụ thuộc vào không gian văn phòng cố định, mà được nuôi dưỡng bằng sự tin tưởng trao quyền và dòng chảy thông tin thông suốt.',
+      en: 'A vibrant tech culture does not depend on a physical office—it is nurtured through autonomous trust and unimpeded, candid communication channels.',
+    },
+  },
+  {
+    id: 'case-values-behaviors',
+    title: {
+      vi: 'Hệ thống hóa Giá trị thành Hành vi: Happy Journey + C7+ Habits — Vua Nệm',
+      en: 'Values Into Behaviors: Happy Journey + C7+ Habits — Vua Nệm',
+    },
+    subtitle: {
+      vi: 'Chuyển hóa giá trị cốt lõi thành thói quen hành vi hàng ngày và cơ chế vinh danh kết nối hội sở với mạng lưới bán lẻ toàn quốc',
+      en: 'Codifying corporate core values into observable daily habits and frontline recognition connecting HQ with retail stores',
+    },
+    organization: 'Vua Nệm',
+    year: '2022 — 2023',
+    category: {
+      vi: 'Kích hoạt Văn hóa & Chuẩn mực Hành vi',
+      en: 'Culture Activation & Behavioral Systems',
+    },
+    accentBadge: {
+      vi: 'Văn hóa Tuyến đầu',
+      en: 'Frontline Culture',
+    },
+    coverImage: {
+      src: null,
+      alt: { vi: 'Hành trình Happy Journey và chuẩn mực C7+ tại Vua Nệm', en: 'Vua Nem Happy Journey & C7+ Behavioral Codification' },
+      category: 'material',
+      recommendedRatio: '16:9',
+      placeholderHint: {
+        vi: 'Ấn phẩm cẩm nang Happy Journey, bộ nhận diện Thói quen C7+ hoặc khoảnh khắc vinh danh nhân viên showroom',
+        en: 'Happy Journey handbook, C7+ Habits identity visual, or retail showroom recognition ceremony photo',
+      },
+    },
+    context: {
+      vi: 'Với mạng lưới hàng trăm cửa hàng bán lẻ trải dài trên toàn quốc, khoảng cách địa lý và thông tin giữa khối văn phòng hội sở và nhân sự bán hàng tuyến đầu là một rào cản lớn. Các giá trị cốt lõi trên giấy tờ khó có thể đi vào thực tế nếu không được đơn giản hóa thành hành vi dễ hiểu.',
+      en: 'Across nationwide retail showrooms, geographic and emotional distance between corporate HQ and frontline retail associates posed a critical challenge. Corporate value statements risked remaining mere boardroom theory unless translated into observable daily habits.',
+    },
+    challenge: {
+      vi: 'Làm thế nào để một nhân viên bán hàng ở chi nhánh xa xôi cảm thấy mình được tôn trọng, thấu hiểu giá trị công ty và tự hào về công việc phục vụ khách hàng mỗi ngày.',
+      en: 'Ensuring frontline sales champions in remote stores feel genuinely seen, clearly understand company ethos, and take deep personal pride in their everyday service mission.',
+    },
+    insight: {
+      vi: 'Nhân viên bán lẻ không cần những cẩm nang lý thuyết dày đặc; họ cần những quy tắc hành vi cụ thể (Thói quen C7+), những chỉ dẫn ứng xử rõ ràng (Code of Conduct) và được ghi nhận công khai mỗi khi làm điều đúng đắn (Happy Journey).',
+      en: 'Frontline staff do not need dense theoretical handbooks; they need actionable, memorable habits (C7+), clear conduct guidelines, and public celebration when living those values (Happy Journey).',
+    },
+    myRole: {
+      vi: 'Acting Internal Communication Lead: Dẫn dắt nhóm truyền thông nội bộ, phối hợp cùng ban điều hành xây dựng Bộ quy tắc ứng xử, thiết kế chiến dịch Happy Journey và truyền thông đa kênh đến từng điểm bán.',
+      en: 'Acting Internal Communication Lead: Guided internal comms team, partnered with leadership to draft Code of Conduct, conceptualized Happy Journey, and orchestrated omnichannel frontline rollouts.',
+    },
+    stakeholders: {
+      vi: 'Ban Điều Hành, Giám đốc Chuỗi Bán Lẻ, Quản lý Vùng/Khu vực, Cửa hàng trưởng và hàng trăm chuyên viên tư vấn bán hàng toàn quốc.',
+      en: 'Executive Committee, Retail Operations Directors, Regional Sales Managers, Store Managers, and nationwide showroom consultants.',
+    },
+    approach: {
+      vi: 'Chuyển đổi giá trị thành thói quen: Đơn giản hóa thành bộ Thói quen C7+ (những việc nên làm và không nên làm); kết hợp chương trình vinh danh Happy Journey định kỳ để tạo động lực thi đua lành mạnh.',
+      en: 'Translated values into daily micro-habits: Codified C7+ Habits (do’s and don’ts); reinforced by recurring Happy Journey peer and leadership recognition initiatives.',
+    },
+    systemFramework: {
+      vi: 'Khung chuyển hóa hành vi: Awareness (Biết & Hiểu) → Habituation (Thực hành Thói quen C7+) → Recognition (Tôn vinh Happy Journey) → Embodiment (Trở thành bản sắc).',
+      en: 'Behavioral Assimilation Loop: Awareness (Clarity) → Habituation (C7+ Daily Habits) → Recognition (Happy Journey Spotlight) → Embodiment (Organic Culture).',
+    },
+    impact: {
+      vi: [
+        'Rút ngắn khoảng cách thông tin và tâm lý giữa hội sở và các cửa hàng bán lẻ trên toàn quốc.',
+        'Đưa bộ quy chuẩn hành vi C7+ trở thành ngôn ngữ chung được áp dụng thường nhật trong giao tiếp và phục vụ khách hàng.',
+        'Tạo dựng niềm tự hào nghề nghiệp mạnh mẽ cho đội ngũ bán hàng tuyến đầu thông qua các câu chuyện người thật việc thật.',
+      ],
+      en: [
+        'Significantly bridged the geographic and psychological divide between HQ and remote retail showrooms.',
+        'Turned C7+ behavioral habits into the shared operational language across daily customer service touchpoints.',
+        'Ignited authentic frontline morale and service pride through genuine peer and managerial recognition.',
+      ],
+    },
+    learning: {
+      vi: 'Văn hóa doanh nghiệp bán lẻ nằm ở ánh mắt và nụ cười của nhân viên tiếp xúc với khách hàng; khi họ cảm nhận được sự hạnh phúc từ tổ chức, họ sẽ mang sự tận tâm đó trao gửi cho khách hàng.',
+      en: 'Retail corporate culture lives in the eyes and smile of frontline staff; when they feel supported and valued by the organization, they naturally extend that empathy to every customer.',
+    },
+  },
+  {
+    id: 'case-together-we-shine',
+    title: {
+      vi: 'Together We Shine — Nền tảng Truyền thông & Thương hiệu Nhà Tuyển dụng',
+      en: 'Together We Shine — EVP, Brand & Internal Communication Platform',
+    },
+    subtitle: {
+      vi: 'Xây dựng nền tảng truyền thông kết nối đa kênh, lan tỏa giá trị EVP và tôn vinh câu chuyện nhân sự trên toàn hệ thống',
+      en: 'Building an omnichannel internal communications ecosystem, activating EVP, and celebrating employee pride nationwide',
+    },
+    organization: 'CMC Corporation / F88 / Bellsystem24',
+    year: '2020 — 2022',
+    category: {
+      vi: 'EVP & Nền tảng Truyền thông',
+      en: 'EVP & Internal Communication Platform',
+    },
+    accentBadge: {
+      vi: 'Nền tảng Truyền thông',
+      en: 'Comms Platform',
+    },
+    coverImage: {
+      src: null,
+      alt: { vi: 'Nền tảng truyền thông Together We Shine', en: 'Together We Shine Communication Platform' },
+      category: 'material',
+      recommendedRatio: '16:9',
+      placeholderHint: {
+        vi: 'Giao diện bản tin Together We Shine, hình ảnh phát thanh nội bộ hoặc chiến dịch lan tỏa EVP',
+        en: 'Together We Shine newsletter UI, internal radio broadcast photo, or EVP activation asset',
+      },
+    },
+    context: {
+      vi: 'Trong các tập đoàn và doanh nghiệp có nhiều chi nhánh phân tán, thông tin nội bộ thường bị phân mảnh hoặc chỉ mang tính một chiều khô khan. Nhu cầu đặt ra là xây dựng một nền tảng truyền thông hiện đại (Together We Shine) kết hợp giữa bản tin, video, radio và sự kiện trực tiếp để gắn kết toàn diện.',
+      en: 'In large distributed corporations with multi-branch footprints, internal communications frequently suffer from fragmentation and one-way top-down broadcast. The mandate was to engineer an omnichannel platform (Together We Shine) uniting newsletters, video, radio, and live events into a cohesive shared identity.',
+    },
+    challenge: {
+      vi: 'Thu hút sự chú ý của nhân sự trong bối cảnh công việc bận rộn; làm cho thông điệp chiến lược của ban lãnh đạo trở nên hấp dẫn, dễ nhớ và tạo được diễn đàn để nhân viên các chi nhánh tương tác cùng nhau.',
+      en: 'Capturing employee mindshare amidst demanding operational schedules; translating executive mandates into engaging storytelling and giving regional staff a genuine voice.',
+    },
+    insight: {
+      vi: 'Nhân viên muốn nhìn thấy chính họ và đồng nghiệp của mình được xuất hiện trên các ấn phẩm truyền thông; sự tự hào lan tỏa mạnh mẽ nhất khi những đóng góp thầm lặng được công nhận công khai.',
+      en: 'Employees yearn to see themselves and their peers represented in corporate media; organizational pride surges when silent contributions receive authentic public celebration.',
+    },
+    myRole: {
+      vi: 'Chuyên viên Truyền thông & Văn hóa: Trực tiếp biên tập nội dung, chỉ đạo sản xuất video phóng sự, phát triển format phát thanh nội bộ, và điều phối mạng lưới cộng tác viên truyền thông tại các chi nhánh.',
+      en: 'Internal Communication & Culture Specialist: Managed editorial content, directed internal video features, produced radio broadcasts, and coordinated regional communication champion networks.',
+    },
+    stakeholders: {
+      vi: 'Ban Lãnh Đạo Tập Đoàn, Giám đốc các Khối chuyên môn, mạng lưới cộng tác viên truyền thông chi nhánh và toàn thể cán bộ nhân viên.',
+      en: 'Corporate Executive Leadership, Functional Division Heads, branch communication champions, and company-wide workforce.',
+    },
+    approach: {
+      vi: 'Xây dựng hệ sinh thái nội dung đa định dạng: Bản tin tuần (Weekly Digest), Phóng sự nhân vật (Spotlight Heroes), Chương trình phát thanh radio vào giờ nghỉ và các minigame tương tác trực tuyến.',
+      en: 'Architected a multi-format content ecosystem: Weekly Digest, Spotlight Heroes video features, lunchtime internal radio broadcasts, and interactive digital engagement contests.',
+    },
+    systemFramework: {
+      vi: 'Mô hình truyền thông 3 nhịp: Inform (Thông tin chính xác) - Inspire (Truyền cảm hứng qua câu chuyện) - Involve (Khuyến khích đối thoại và đóng góp ý kiến).',
+      en: '3-Beat Communication Cadence: Inform (Accurate updates) - Inspire (Human stories) - Involve (Interactive feedback and dialogue).',
+    },
+    impact: {
+      vi: [
+        'Biến nền tảng Together We Shine thành kênh kết nối tinh thần thân thuộc và được đón chờ hàng tuần của nhân sự toàn quốc.',
+        'Góp phần củng cố định vị thương hiệu nhà tuyển dụng (EVP) thông qua kho tư liệu câu chuyện thực tế phong phú.',
+        'Nâng cao mức độ thấu hiểu của nhân viên đối với các mục tiêu chiến lược và định hướng kinh doanh của công ty.',
+      ],
+      en: [
+        'Established Together We Shine as a beloved weekly cultural touchpoint eagerly anticipated across nationwide branches.',
+        'Solidified Employer Value Proposition (EVP) foundations through a rich repository of authentic employee narratives.',
+        'Strengthened employee comprehension of strategic milestones and organizational trajectories.',
+      ],
+    },
+    learning: {
+      vi: 'Kênh truyền thông nội bộ hiệu quả nhất không phải là kênh nói nhiều nhất về lãnh đạo, mà là kênh tôn vinh nhiều nhất những con người bình dị đang tạo nên thành công của doanh nghiệp.',
+      en: 'The most impactful internal communications channel is never the one speaking most about leadership, but the one honoring the everyday champions building the company’s success.',
+    },
+  },
+];
+
+export const SELECTED_WORK_DATA: SelectedWorkItem[] = [
+  {
+    id: 'sw-the-face',
+    title: {
+      vi: 'The Face — Cuộc thi & Vinh danh Bản sắc Nhân tài Nội bộ',
+      en: 'The Face — Internal Talent & Culture Identification Program',
+    },
+    category: {
+      vi: 'Gắn kết & Tôn vinh Văn hóa',
+      en: 'Culture & Talent Engagement',
+    },
+    context: {
+      vi: 'Chương trình thi đua và nhận diện nhân vật đại diện cho giá trị văn hóa tổ chức',
+      en: 'Company-wide culture ambassadorship and talent spotlight competition',
+    },
+    description: {
+      vi: 'Thiết kế và triển khai cuộc thi nội bộ tôn vinh những cá nhân tiêu biểu hiện thân cho giá trị văn hóa doanh nghiệp. Tạo sân chơi lành mạnh, khơi dậy niềm tự hào nghề nghiệp và tìm kiếm các đại sứ văn hóa lan tỏa năng lượng tích cực.',
+      en: 'Designed and executed an internal competition spotlighting individuals who embody corporate cultural values. Fostered healthy camaraderie, pride, and nurtured peer culture ambassadors.',
+    },
+    highlights: {
+      vi: [
+        'Thu hút sự tham gia sôi nổi từ các khối phòng ban và chi nhánh toàn quốc.',
+        'Tạo ra chuỗi câu chuyện truyền thông người thật việc thật chạm đến cảm xúc đồng nghiệp.',
+      ],
+      en: [
+        'Mobilized widespread voluntary participation across departments and regional branches.',
+        'Generated an authentic storytelling series celebrating inspiring workplace role models.',
       ],
     },
   },
   {
-    id: 'case-frontline',
+    id: 'sw-video-storytelling',
     title: {
-      vi: 'Thu hẹp Khoảng cách: Kết nối Tuyến đầu & Hội sở',
-      en: 'Bridging the Divide: Frontline-to-HQ Communication Rituals',
+      vi: 'Video Storytelling & Bản tin Truyền thông Đa phương tiện',
+      en: 'Video Storytelling & Multimedia Internal Broadcasts',
     },
-    subtitle: {
-      vi: 'Tạo dựng sự đồng cảm và niềm tự hào cho hàng trăm nhân viên bán lẻ qua các nghi thức văn hóa thường nhật',
-      en: 'Building empathy and cultural pride for hundreds of distributed retail showroom champions',
-    },
-    organization: 'Vua Nệm',
-    year: 'Giai đoạn Retail',
     category: {
-      vi: 'Truyền thông Nội bộ & Nghi thức Văn hóa',
-      en: 'Internal Communication & Ritual Design',
-    },
-    accentBadge: {
-      vi: 'Kết nối Tuyến đầu',
-      en: 'Frontline Connection',
-    },
-    coverImage: {
-      src: null,
-      alt: { vi: 'Nhân viên bán lẻ Vua Nệm kết nối', en: 'Retail Frontline Team Visual' },
-      category: 'case-cover',
-      recommendedRatio: '16:9',
-      placeholderHint: {
-        vi: 'Ảnh hoạt động cửa hàng hoặc bản tin vinh danh nhân viên bán lẻ',
-        en: 'Store activity photo or retail champion recognition feature',
-      },
+      vi: 'Sản xuất Nội dung Truyền thông',
+      en: 'Internal Media Production',
     },
     context: {
-      vi: 'Hệ thống cửa hàng phân bố rộng khắp các tỉnh thành dễ dẫn đến cảm giác "bị bỏ quên" của nhân viên tuyến đầu so với khối văn phòng trung tâm.',
-      en: 'Geographically dispersed store branches frequently lead frontline staff to feel isolated from corporate decision-making at headquarters.',
+      vi: 'Sản xuất phóng sự video, bản tin phát thanh và podcast truyền cảm hứng nội bộ',
+      en: 'Internal documentary features, radio broadcasts, and inspiring podcasts',
     },
-    challenge: {
-      vi: 'Làm sao để người bán hàng ở tỉnh xa cảm nhận được sự quan tâm, thấu hiểu và tự hào về sứ mệnh chung của công ty?',
-      en: 'How to make frontline staff in remote provinces feel deeply valued, heard, and aligned with company-wide customer promises?',
+    description: {
+      vi: 'Trực tiếp lên ý tưởng, viết kịch bản và đạo diễn sản xuất các video phóng sự nhân vật, bản tin tổng kết quý và các số phát thanh radio nội bộ, mang hơi thở ấm áp và năng lượng gắn kết đến với nhân sự ca kíp.',
+      en: 'Conceptualized, scripted, and directed employee video documentaries, quarterly recap broadcasts, and internal radio episodes, bringing warmth and energy to shift-based teams.',
     },
-    myRole: {
-      vi: 'Chuyên viên Truyền thông nội bộ: Sáng tạo nội dung gần gũi, tổ chức các chiến dịch ghi nhận và xây dựng kênh phản hồi từ tuyến đầu.',
-      en: 'Internal Comms Specialist: Crafted relatable frontline storytelling, coordinated peer recognition, and opened direct listening channels.',
-    },
-    approach: {
-      vi: 'Kể những câu chuyện của nhân viên tuyến đầu bằng chính ngôn ngữ của họ; vinh danh các hành động chăm sóc khách hàng xuất sắc trên toàn hệ thống.',
-      en: 'Championed unsung frontline heroes through authentic narrative features, celebrating exceptional customer empathy nationwide.',
-    },
-    impact: {
+    highlights: {
       vi: [
-        'Gia tăng sự tin cậy và gắn bó của nhân viên cửa hàng đối với thương hiệu và ban lãnh đạo.',
-        'Tạo ra dòng chảy thông tin hai chiều thông suốt giữa chiến trường kinh doanh và văn phòng hội sở.',
+        'Chuyển hóa thông tin khô khan thành định dạng hình ảnh và âm thanh sống động.',
+        'Xây dựng thư viện tư liệu truyền thông chân thực phục vụ thương hiệu tuyển dụng.',
       ],
       en: [
-        'Enhanced store-level retention and trust in executive leadership across regional markets.',
-        'Established smooth two-way information flow between frontline realities and corporate headquarters.',
+        'Transformed corporate communications into dynamic, engaging audiovisual formats.',
+        'Built an authentic media archive serving internal pride and employer branding.',
+      ],
+    },
+  },
+  {
+    id: 'sw-university-relations',
+    title: {
+      vi: 'Quan hệ Doanh nghiệp & Hướng nghiệp Sinh viên',
+      en: 'University Relations & Corporate Partnership Programs',
+    },
+    category: {
+      vi: 'Quan hệ Đối tác & Hệ sinh thái',
+      en: 'Partnership & Ecosystem',
+    },
+    context: {
+      vi: 'Kết nối Nhà trường với các doanh nghiệp công nghệ hàng đầu',
+      en: 'Bridging higher education with premier tech industry partners',
+    },
+    description: {
+      vi: 'Thiết lập và duy trì quan hệ hợp tác chiến lược với các đối tác doanh nghiệp công nghệ, phối hợp tổ chức các ngày hội việc làm, hội thảo chuyên gia và chương trình tham quan thực tế (company tour) cho sinh viên.',
+      en: 'Established and maintained strategic alliances with tech industry partners, coordinating career fairs, expert tech talks, and on-site enterprise company tours for students.',
+    },
+    highlights: {
+      vi: [
+        'Ký kết và triển khai nhiều thỏa thuận hợp tác đào tạo và tuyển dụng thực tập.',
+        'Tạo cầu nối thực tiễn giúp sinh viên sẵn sàng đáp ứng yêu cầu tuyển dụng của thị trường.',
+      ],
+      en: [
+        'Brokered long-term corporate partnerships for student internships and practicums.',
+        'Created direct practical pathways preparing graduates for competitive tech markets.',
+      ],
+    },
+  },
+  {
+    id: 'sw-csr-community',
+    title: {
+      vi: 'Các Sáng kiến Trách nhiệm Xã hội (CSR) & Gắn kết Cộng đồng',
+      en: 'CSR & Purpose-driven Community Initiatives',
+    },
+    category: {
+      vi: 'CSR & Mục đích Tổ chức',
+      en: 'CSR & Organizational Purpose',
+    },
+    context: {
+      vi: 'Gắn kết nhân sự thông qua các hoạt động chia sẻ giá trị vì cộng đồng',
+      en: 'Uniting workforce commitment through meaningful community social impact',
+    },
+    description: {
+      vi: 'Hoạch định và điều phối các chiến dịch vì cộng đồng: hoạt động thiện nguyện, ngày hội hiến máu nhân đạo, chương trình trao tặng sách và các dự án lan tỏa tri thức công nghệ đến thanh niên có hoàn cảnh khó khăn.',
+      en: 'Orchestrated community impact campaigns: charitable outreach, blood donation drives, educational book initiatives, and tech-enablement projects for underserved youth.',
+    },
+    highlights: {
+      vi: [
+        'Khơi dậy niềm tự hào và sự gắn kết nhân văn giữa các thành viên trong tổ chức.',
+        'Góp phần khẳng định trách nhiệm xã hội và giá trị nhân văn của thương hiệu.',
+      ],
+      en: [
+        'Strengthened employee emotional connection and humanistic organizational pride.',
+        'Reinforced company social responsibility and corporate civic citizenship.',
+      ],
+    },
+  },
+  {
+    id: 'sw-culture-materials',
+    title: {
+      vi: 'Cẩm nang Văn hóa, Sổ tay Nhân viên & Quy chuẩn Hành vi',
+      en: 'Culture Handbooks, Onboarding Kits & Behavioral Guidelines',
+    },
+    category: {
+      vi: 'Chuẩn hóa Tài liệu Văn hóa',
+      en: 'Culture Codification',
+    },
+    context: {
+      vi: 'Hệ thống hóa tài liệu văn hóa và hướng dẫn ứng xử chuyên nghiệp',
+      en: 'Codifying culture literature, onboarding welcome kits, and conduct guidelines',
+    },
+    description: {
+      vi: 'Biên soạn và thiết kế các tài liệu văn hóa nền tảng: Cẩm nang chào đón nhân sự mới (Welcome Kit), Sổ tay giá trị cốt lõi, Bộ chỉ dẫn ứng xử văn minh và tài liệu hướng dẫn giao tiếp dành cho cấp quản lý.',
+      en: 'Authored and designed foundational culture publications: New Hire Welcome Kits, Core Values Handbook, Code of Conduct Guides, and Managerial Communication Playbooks.',
+    },
+    highlights: {
+      vi: [
+        'Tài liệu hóa các giá trị vô hình thành công cụ trực quan, dễ hiểu và dễ áp dụng.',
+        'Đồng bộ hóa nhận thức về quy chuẩn hành vi trong toàn bộ hệ thống.',
+      ],
+      en: [
+        'Codified abstract cultural ideals into visual, accessible, daily workplace guides.',
+        'Aligned behavioral standards and shared corporate etiquette across all levels.',
       ],
     },
   },
@@ -682,21 +1220,21 @@ export const CASE_STUDIES: CaseStudy[] = [
 export const METHODOLOGY_STEPS: MethodologyStep[] = [
   {
     number: '01',
-    name: { vi: 'Lắng nghe & Thấu hiểu', en: 'Understand' },
-    headline: { vi: 'Lắng nghe trước khi viết', en: 'Listening before drafting' },
+    name: { vi: 'Lắng nghe & Thấu cảm', en: 'Understand' },
+    headline: { vi: 'Lắng nghe trước khi lên tiếng', en: 'Listening before broadcasting' },
     details: {
-      vi: 'Lắng nghe bằng sự thấu cảm qua các buổi phỏng vấn sâu, khảo sát cảm nhận và quan sát thực tế để hiểu điều gì đang thực sự diễn ra trong tâm tư con người.',
-      en: 'Conducting empathy interviews, pulse audits, and direct observation to understand genuine human sentiment before drafting a single sentence.',
+      vi: 'Tiếp cận tổ chức không bằng những định kiến có sẵn mà bằng sự lắng nghe chủ động qua khảo sát, phỏng vấn sâu và quan sát các tương tác thường nhật.',
+      en: 'Approaching organizations through active qualitative listening: pulse checks, in-depth interviews, and observing daily organic interactions.',
     },
-    deliverable: { vi: 'Bản đồ cảm nhận nhân sự', en: 'Sentiment Landscape Map' },
+    deliverable: { vi: 'Báo cáo thấu hiểu bối cảnh', en: 'Contextual Empathy Map' },
   },
   {
     number: '02',
-    name: { vi: 'Chẩn đoán Bối cảnh', en: 'Diagnose' },
-    headline: { vi: 'Tìm điểm nghẽn tổ chức', en: 'Uncovering organizational friction' },
+    name: { vi: 'Chẩn đoán Điểm nghẽn', en: 'Diagnose' },
+    headline: { vi: 'Tìm ra căn nguyên của sự rời rạc', en: 'Uncovering root causes of disconnect' },
     details: {
-      vi: 'Đối chiếu mục tiêu kinh doanh của ban lãnh đạo với thực tế trải nghiệm của nhân sự, xác định các nút thắt trong giao tiếp và văn hóa.',
-      en: 'Mapping leadership strategic priorities against frontline employee realities to identify systemic bottlenecks and cultural disconnects.',
+      vi: 'Phân tích khoảng cách giữa điều ban lãnh đạo kỳ vọng và điều nhân viên tuyến đầu thực sự cảm nhận; xác định rõ các rào cản tâm lý và điểm nghẽn thông tin.',
+      en: 'Analyzing the gap between executive strategic expectations and frontline reality; identifying psychological friction and communication silos.',
     },
     deliverable: { vi: 'Báo cáo khoảng cách văn hóa', en: 'Cultural Disconnect Audit' },
   },
@@ -760,41 +1298,41 @@ export const VERIFIED_STATS: VerifiedStat[] = [
       en: 'Years in Culture & Internal Communication',
     },
     context: {
-      vi: 'Hành trình phát triển qua Higher Education, Bán lẻ, IT Outsourcing và BPO.',
-      en: 'Dedicated evolution spanning Higher Education, Retail, IT Outsourcing, and BPO.',
+      vi: 'Hành trình xuyên suốt từ 2018: FPT University, Bellsystem24, F88, CMC, Vua Nệm, Savvycom, transcosmos.',
+      en: 'Continuous dedicated journey from 2018 spanning higher education, tech, and retail.',
     },
   },
   {
-    value: '4+',
+    value: '4',
     label: {
-      vi: 'Môi trường & Quy mô tổ chức đa dạng',
+      vi: 'Lĩnh vực chuyên môn cốt lõi',
+      en: 'Core Professional Domains',
+    },
+    context: {
+      vi: 'Internal Communication · Corporate Culture · Employee Engagement · Employee Experience.',
+      en: 'Internal Communication · Corporate Culture · Employee Engagement · Employee Experience.',
+    },
+  },
+  {
+    value: '6',
+    label: {
+      vi: 'Môi trường & Quy mô tổ chức thực chiến',
       en: 'Diverse Organizational Contexts',
     },
     context: {
-      vi: 'Kinh nghiệm thích ứng từ quy mô chi nhánh bán lẻ toàn quốc đến đội ngũ công nghệ hybrid và trường đại học.',
-      en: 'Proven adaptability from nationwide retail showrooms to distributed tech squads and universities.',
-    },
-  },
-  {
-    value: '100+',
-    label: {
-      vi: 'Chương trình & Điểm chạm trải nghiệm',
-      en: 'Experiential Initiatives & Culture Touchpoints',
-    },
-    context: {
-      vi: 'Bao gồm All-Hands townhall, trại nhập vai (TechX Camp), chiến dịch gắn kết và cẩm nang hành vi.',
-      en: 'Encompassing townhalls, immersive camps (TechX Camp), recognition rituals, and codebooks.',
+      vi: 'FPT University, transcosmos Vietnam, Savvycom, Vua Nệm, CMC Corporation, F88.',
+      en: 'FPT University, transcosmos Vietnam, Savvycom, Vua Nệm, CMC Corporation, F88.',
     },
   },
   {
     value: 'AI',
     label: {
       vi: 'Khai phóng năng lực & Tối ưu quy trình',
-      en: 'AI-Amplified Workflow Agility',
+      en: 'AI-Amplified Operational Agility',
     },
     context: {
-      vi: 'Ứng dụng AI vào nghiên cứu, tổng hợp insight, phác thảo nội dung và tối ưu vận hành.',
-      en: 'Leveraging AI tools for research synthesis, content localization, and workflow acceleration.',
+      vi: 'Human Insight First. AI Amplified: Đòn bẩy phân tích dữ liệu, tổng hợp insight và tăng tốc thực thi.',
+      en: 'Human Insight First. AI Amplified: Accelerating research, sentiment analysis and execution.',
     },
   },
 ];
@@ -824,42 +1362,13 @@ export const EDUCATION_DATA: EducationItem[] = [
 export const CERTIFICATIONS_DATA: CertificationItem[] = [
   {
     title: {
-      vi: 'AI for Productivity & Workflow Optimization',
-      en: 'AI for Productivity & Workflow Optimization',
+      vi: 'Chứng chỉ chuyên môn cập nhật trên hồ sơ LinkedIn chính thức',
+      en: 'Professional Certifications Verified on Official LinkedIn Profile',
     },
-    issuer: 'Professional Credential',
-    year: '2024',
-    domain: 'AI',
-    status: 'verified',
-  },
-  {
-    title: {
-      vi: 'Leadership & People Management Principles',
-      en: 'Leadership & People Management Principles',
-    },
-    issuer: 'Professional Development',
-    year: '2023',
-    domain: 'Leadership',
-    status: 'verified',
-  },
-  {
-    title: {
-      vi: 'Internal Communication & Employee Experience Architecture',
-      en: 'Internal Communication & Employee Experience Architecture',
-    },
-    issuer: 'Industry Workshop',
-    year: '2022',
+    issuer: 'LinkedIn Verified Profile',
+    year: 'Continuous',
     domain: 'Culture & Comms',
     status: 'verified',
-  },
-  {
-    title: {
-      vi: 'Organizational Development & Culture Transformation Foundations',
-      en: 'Organizational Development & Culture Transformation Foundations',
-    },
-    issuer: 'Management Training',
-    year: '2021',
-    domain: 'People & Experience',
-    status: 'verified',
+    verificationUrl: 'https://linkedin.com/in/thuyngandang',
   },
 ];
