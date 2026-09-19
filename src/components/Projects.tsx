@@ -1,126 +1,114 @@
 import React from 'react';
-import { PROJECT_ITEMS } from '../data/portfolioData';
-import { ProjectItem } from '../types';
-import { ArrowRight, Calendar, Sparkles } from 'lucide-react';
+import { CASE_STUDIES } from '../data/portfolioData';
+import { CaseStudy, Language } from '../types';
+import { ImagePlaceholder } from './ImagePlaceholder';
+import { ArrowUpRight, CheckCircle2, Layers, Sparkles } from 'lucide-react';
 
 interface ProjectsProps {
-  onSelectProject: (project: ProjectItem) => void;
+  lang: Language;
+  onSelectCase: (caseStudy: CaseStudy) => void;
 }
 
-export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
+export const Projects: React.FC<ProjectsProps> = ({ lang, onSelectCase }) => {
   return (
     <section
-      id="projects"
-      className="w-full py-20 sm:py-28 md:py-36 px-6 sm:px-10 md:px-14 lg:px-16 bg-[#F5F5F3] border-b border-black/5"
+      id="cases"
+      className="w-full py-20 sm:py-28 md:py-36 px-4 sm:px-8 md:px-12 lg:px-16 bg-white border-b border-slate-200/70"
     >
       <div className="max-w-7xl mx-auto">
+        
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16 sm:mb-20">
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-xs sm:text-sm font-semibold tracking-widest text-[#2563EB] uppercase">
-                03 — Selected Work
-              </span>
-              <div className="h-px w-12 bg-[#2563EB]/30" />
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#111111] tracking-tight max-w-2xl">
-              Projects that moved people &amp; culture forward.
-            </h2>
+        <div className="flex flex-col gap-3 mb-12 sm:mb-16">
+          <div className="flex items-center gap-3">
+            <span className="text-xs font-bold tracking-widest text-[#0068FF] uppercase">
+              {lang === 'vi' ? 'Lớp 3: Bằng chứng thực tế' : 'Layer 3: Evidence & Flagship Case Studies'}
+            </span>
+            <div className="h-px w-12 bg-[#0068FF]/30" />
           </div>
-          <p className="text-sm sm:text-base text-[#666666] max-w-md">
-            Case studies showcasing strategic internal communications, values-driven culture programs, and digital engagement ecosystems.
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
+            {lang === 'vi' ? (
+              <>
+                Các Case Study Tiêu Biểu:<br />
+                <span className="text-[#0068FF]">Giải quyết bài toán tổ chức &amp; Thiết kế trải nghiệm.</span>
+              </>
+            ) : (
+              <>
+                Flagship Case Studies:<br />
+                <span className="text-[#0068FF]">Solving Organizational Challenges with Impact.</span>
+              </>
+            )}
+          </h2>
+
+          <p className="text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed">
+            {lang === 'vi'
+              ? 'Tập hợp 4 case study phản ánh năng lực giải quyết vấn đề đa chiều: từ thiết kế trải nghiệm nhập vai quy mô lớn, chuẩn hóa hành vi tổ chức, đến duy trì gắn kết trong mô hình làm việc phân tán.'
+              : 'Curated flagship case studies demonstrating multidimensional problem-solving: from large-scale experiential immersion and systemic behavioral codification, to distributed culture engagement.'}
           </p>
         </div>
 
-        {/* Alternating Project Cards List */}
-        <div className="flex flex-col gap-12 sm:gap-16">
-          {PROJECT_ITEMS.map((project, index) => {
-            const isImageLeft = index % 2 === 0;
+        {/* Case Studies Grid (2x2 Editorial Layout) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
+          {CASE_STUDIES.map((c) => (
+            <div
+              key={c.id}
+              onClick={() => onSelectCase(c)}
+              className="group cursor-pointer bg-[#F8FAFC] hover:bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 hover:border-[#0068FF]/50 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+            >
+              <div>
+                {/* Visual Cover Placeholder / Image */}
+                <div className="mb-6 overflow-hidden rounded-2xl">
+                  <ImagePlaceholder
+                    image={c.coverImage}
+                    category={c.coverImage.category}
+                    recommendedRatio={c.coverImage.recommendedRatio}
+                    hint={c.coverImage.placeholderHint}
+                    lang={lang}
+                    className="w-full transition-transform duration-500 group-hover:scale-[1.01]"
+                  />
+                </div>
 
-            return (
-              <div
-                key={project.id}
-                className="group relative bg-white rounded-[28px] sm:rounded-[36px] overflow-hidden border border-black/5 shadow-sm hover:shadow-xl transition-all duration-300"
-              >
-                <div
-                  className={`grid grid-cols-1 lg:grid-cols-12 items-center ${
-                    isImageLeft ? '' : 'lg:grid-flow-dense'
-                  }`}
-                >
-                  {/* Image Column */}
-                  <div
-                    className={`lg:col-span-7 h-72 sm:h-96 lg:h-[480px] overflow-hidden relative ${
-                      isImageLeft ? '' : 'lg:col-start-6'
-                    }`}
-                  >
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60" />
+                {/* Tags & Meta row */}
+                <div className="flex items-center justify-between gap-3 mb-3">
+                  <span className="px-3 py-1 rounded-full bg-[#0068FF]/10 text-[#0068FF] text-xs font-bold font-mono">
+                    {c.organization}
+                  </span>
+                  <span className="text-xs font-semibold text-slate-500">
+                    {c.accentBadge[lang]}
+                  </span>
+                </div>
 
-                    {/* Accent Tag Badge */}
-                    <div className="absolute top-6 left-6 z-10">
-                      <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/90 backdrop-blur-md text-[#111111] shadow-md">
-                        <Sparkles className="w-3.5 h-3.5 text-[#2563EB]" />
-                        {project.accentTag}
-                      </span>
+                {/* Title & Subtitle */}
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-[#0068FF] transition-colors leading-tight mb-2">
+                  {c.title[lang]}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed line-clamp-2 mb-4">
+                  {c.subtitle[lang]}
+                </p>
+
+                {/* Key Impact preview */}
+                <div className="pt-4 border-t border-slate-200/70 space-y-1.5">
+                  {c.impact.slice(0, 2).map((imp, idx) => (
+                    <div key={idx} className="flex items-start gap-2 text-xs text-slate-700">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                      <span className="line-clamp-1">{imp}</span>
                     </div>
-                  </div>
-
-                  {/* Content Column */}
-                  <div
-                    className={`lg:col-span-5 p-8 sm:p-10 lg:p-12 flex flex-col justify-between gap-6 ${
-                      isImageLeft ? '' : 'lg:col-start-1'
-                    }`}
-                  >
-                    <div className="flex flex-col gap-3">
-                      {/* Meta Tags */}
-                      <div className="flex items-center gap-3 text-xs font-semibold text-[#2563EB]">
-                        <span>{project.category}</span>
-                        <span className="text-[#CCCCCC]">•</span>
-                        <span className="text-[#666666] flex items-center gap-1 font-normal">
-                          <Calendar className="w-3.5 h-3.5" />
-                          {project.year}
-                        </span>
-                      </div>
-
-                      {/* Title & Subtitle */}
-                      <h3 className="text-2xl sm:text-3xl font-bold text-[#111111] tracking-tight group-hover:text-[#2563EB] transition-colors">
-                        {project.title}
-                      </h3>
-                      <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#777777]">
-                        {project.subtitle}
-                      </p>
-
-                      {/* Description */}
-                      <p className="text-sm sm:text-base text-[#555555] leading-relaxed mt-2">
-                        {project.description}
-                      </p>
-                    </div>
-
-                    {/* View Project Action */}
-                    <div className="pt-4 border-t border-black/5 flex items-center justify-between">
-                      <button
-                        onClick={() => onSelectProject(project)}
-                        className="inline-flex items-center gap-2 text-sm font-semibold text-[#111111] group-hover:text-[#2563EB] transition-colors cursor-pointer py-1"
-                      >
-                        <span>View Case Study</span>
-                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-[#2563EB]" />
-                      </button>
-
-                      <span className="text-xs font-mono text-[#999999]">
-                        0{index + 1} / 0{PROJECT_ITEMS.length}
-                      </span>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
-            );
-          })}
+
+              {/* View Deep-dive Link */}
+              <div className="pt-6 mt-6 border-t border-slate-200/70 flex items-center justify-between text-xs font-semibold text-[#0068FF]">
+                <span>{lang === 'vi' ? 'Xem chi tiết Case Study' : 'Read Full Case Study'}</span>
+                <div className="w-8 h-8 rounded-full bg-blue-50 group-hover:bg-[#0068FF] group-hover:text-white flex items-center justify-center transition-colors">
+                  <ArrowUpRight className="w-4 h-4" />
+                </div>
+              </div>
+
+            </div>
+          ))}
         </div>
+
       </div>
     </section>
   );

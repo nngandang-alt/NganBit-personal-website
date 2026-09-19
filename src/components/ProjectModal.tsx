@@ -1,166 +1,215 @@
 import React, { useEffect } from 'react';
-import { X, CheckCircle2, Calendar, Tag, ArrowRight } from 'lucide-react';
-import { ProjectItem } from '../types';
+import { X, CheckCircle2, Lightbulb, Users, Compass, Layers, Award, Sparkles } from 'lucide-react';
+import { CaseStudy, Language } from '../types';
+import { ImagePlaceholder } from './ImagePlaceholder';
 
 interface ProjectModalProps {
-  project: ProjectItem | null;
+  caseStudy: CaseStudy | null;
+  lang: Language;
   onClose: () => void;
-  onConnect: () => void;
+  onConnectClick?: () => void;
 }
 
 export const ProjectModal: React.FC<ProjectModalProps> = ({
-  project,
+  caseStudy,
+  lang,
   onClose,
-  onConnect,
+  onConnectClick,
 }) => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
     };
-    if (project) {
+    if (caseStudy) {
       document.body.style.overflow = 'hidden';
       window.addEventListener('keydown', handleKeyDown);
     }
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = 'unset';
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [project, onClose]);
+  }, [caseStudy, onClose]);
 
-  if (!project) return null;
+  if (!caseStudy) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 lg:p-10 overflow-y-auto bg-black/70 backdrop-blur-md animate-in fade-in duration-200">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-8 overflow-y-auto bg-black/75 backdrop-blur-md animate-in fade-in duration-200"
+      onClick={onClose}
+    >
       <div
-        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white rounded-[32px] shadow-2xl border border-black/10 text-[#111111] animate-in zoom-in-95 duration-200"
+        className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto bg-white rounded-3xl sm:rounded-[36px] shadow-2xl border border-slate-200 p-6 sm:p-10 md:p-12 text-slate-900 animate-in zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Sticky Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 z-20 w-10 h-10 rounded-full bg-white/80 hover:bg-white border border-black/10 flex items-center justify-center text-[#111111] shadow-md transition-transform hover:scale-105 cursor-pointer"
-          aria-label="Close Project Modal"
+          className="sticky top-0 float-right z-20 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition-colors cursor-pointer shadow-xs"
+          aria-label="Close modal"
         >
           <X className="w-5 h-5" />
         </button>
 
-        {/* Hero Image Header */}
-        <div className="relative w-full h-64 sm:h-80 md:h-96 overflow-hidden rounded-t-[32px]">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-          <div className="absolute bottom-6 left-6 right-6 text-white">
-            <div className="flex flex-wrap items-center gap-2 mb-2">
-              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#2563EB] text-white">
-                {project.category}
-              </span>
-              <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/20 backdrop-blur-sm text-white flex items-center gap-1">
-                <Calendar className="w-3 h-3" />
-                {project.year}
-              </span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
-              {project.title}
-            </h2>
+        {/* Modal Header */}
+        <div className="mb-8 pr-12">
+          <div className="flex flex-wrap items-center gap-2 mb-3">
+            <span className="px-3 py-1 rounded-full bg-[#0068FF]/10 text-[#0068FF] text-xs font-bold font-mono">
+              {caseStudy.organization}
+            </span>
+            <span className="text-xs font-semibold text-slate-500">
+              {caseStudy.category[lang]}
+            </span>
+            <span className="text-xs text-slate-400 font-mono">• {caseStudy.year}</span>
           </div>
+
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-900 leading-tight">
+            {caseStudy.title[lang]}
+          </h2>
+          <p className="text-base sm:text-lg text-slate-600 mt-2 leading-relaxed">
+            {caseStudy.subtitle[lang]}
+          </p>
         </div>
 
-        {/* Modal Body */}
-        <div className="p-6 sm:p-10 flex flex-col gap-8">
-          {/* Subtitle & Overview */}
-          <div>
-            <h3 className="text-xl font-bold text-[#111111] mb-3">
-              {project.subtitle}
-            </h3>
-            <p className="text-base sm:text-lg text-[#444444] leading-relaxed">
-              {project.description}
-            </p>
-          </div>
+        {/* Cover Visual / Placeholder */}
+        <div className="mb-10 overflow-hidden rounded-2xl">
+          <ImagePlaceholder
+            image={caseStudy.coverImage}
+            category={caseStudy.coverImage.category}
+            recommendedRatio={caseStudy.coverImage.recommendedRatio}
+            hint={caseStudy.coverImage.placeholderHint}
+            lang={lang}
+          />
+        </div>
 
-          {/* Challenge & Solution Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-[#F9F9F8] p-6 sm:p-8 rounded-2xl border border-black/5">
+        {/* Deep Dive Case Content Sections */}
+        <div className="flex flex-col gap-8">
+          
+          {/* 1. Context & Challenge */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 rounded-2xl bg-slate-50 border border-slate-200/80">
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#888888] mb-2 flex items-center gap-1.5">
-                <Tag className="w-3.5 h-3.5 text-[#2563EB]" />
-                <span>The Challenge</span>
-              </h4>
-              <p className="text-sm text-[#333333] leading-relaxed">
-                {project.challenge || 'Navigating organizational alignment during rapid strategic transition.'}
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-1.5">
+                {lang === 'vi' ? 'Bối cảnh (Context)' : 'Context'}
+              </span>
+              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                {caseStudy.context[lang]}
               </p>
             </div>
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#888888] mb-2 flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                <span>Strategic Communication Approach</span>
-              </h4>
-              <p className="text-sm text-[#333333] leading-relaxed">
-                {project.solution || 'Designed structured feedback loops, multi-tiered narrative playbooks, and manager micro-habits.'}
+              <span className="text-xs font-bold uppercase tracking-wider text-rose-600 block mb-1.5">
+                {lang === 'vi' ? 'Thách thức đặt ra (Challenge)' : 'Challenge'}
+              </span>
+              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                {caseStudy.challenge[lang]}
               </p>
             </div>
           </div>
 
-          {/* Impact Metrics */}
-          {project.impactMetrics && project.impactMetrics.length > 0 && (
-            <div className="flex flex-col gap-3">
-              <h4 className="text-sm font-bold uppercase tracking-wider text-[#111111]">
-                Measurable Impact &amp; Results
-              </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {project.impactMetrics.map((metric, idx) => (
-                  <div
-                    key={idx}
-                    className="p-4 rounded-xl bg-blue-50/70 border border-blue-100 flex items-start gap-2.5"
-                  >
-                    <CheckCircle2 className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
-                    <span className="text-xs sm:text-sm font-medium text-[#1E3A8A]">
-                      {metric}
-                    </span>
-                  </div>
-                ))}
+          {/* 2. Insight (if present) */}
+          {caseStudy.insight && (
+            <div className="p-5 sm:p-6 rounded-2xl bg-blue-50/60 border border-[#0068FF]/20 flex items-start gap-4">
+              <Lightbulb className="w-5 h-5 text-[#0068FF] shrink-0 mt-0.5" />
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-[#0068FF] block mb-1">
+                  {lang === 'vi' ? 'Góc nhìn & Thấu cảm cốt lõi (Insight)' : 'Key Human Insight'}
+                </span>
+                <p className="text-sm text-slate-800 font-medium leading-relaxed italic">
+                  “{caseStudy.insight[lang]}”
+                </p>
               </div>
             </div>
           )}
 
-          {/* Scope Deliverables */}
-          {project.scopeDeliverables && (
-            <div className="flex flex-col gap-2 pt-4 border-t border-black/5">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#888888]">
-                Key Deliverables
-              </h4>
-              <ul className="flex flex-wrap gap-2">
-                {project.scopeDeliverables.map((item, idx) => (
-                  <li
-                    key={idx}
-                    className="px-3 py-1.5 rounded-lg bg-[#ECECEA] text-xs font-medium text-[#222222]"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
+          {/* 3. My Role & Stakeholders */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-5 rounded-2xl bg-white border border-slate-200/80">
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5 mb-2">
+                <Compass className="w-4 h-4 text-[#0068FF]" />
+                <span>{lang === 'vi' ? 'Vai trò & Trách nhiệm (My Role)' : 'My Role & Ownership'}</span>
+              </span>
+              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                {caseStudy.myRole[lang]}
+              </p>
+            </div>
+
+            {caseStudy.stakeholders && (
+              <div className="p-5 rounded-2xl bg-white border border-slate-200/80">
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5 mb-2">
+                  <Users className="w-4 h-4 text-[#0068FF]" />
+                  <span>{lang === 'vi' ? 'Các bên liên quan (Stakeholders)' : 'Key Stakeholders'}</span>
+                </span>
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                  {caseStudy.stakeholders[lang]}
+                </p>
+              </div>
+            )}
+          </div>
+
+          {/* 4. Approach & Framework */}
+          <div className="space-y-4">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900 flex items-center gap-2">
+              <Layers className="w-4 h-4 text-[#0068FF]" />
+              <span>{lang === 'vi' ? 'Cách tiếp cận & Mô hình (Approach & Framework)' : 'Approach & Framework'}</span>
+            </h4>
+            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-3">
+              <p>{caseStudy.approach[lang]}</p>
+              {caseStudy.systemFramework && (
+                <div className="pt-3 border-t border-slate-200 font-medium text-slate-800">
+                  <span className="text-[#0068FF] font-semibold">Framework: </span>
+                  {caseStudy.systemFramework[lang]}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* 5. Measurement & Impact */}
+          <div className="p-6 sm:p-8 rounded-2xl bg-[#F0F6FF]/70 border border-[#0068FF]/25 space-y-4">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-[#0068FF] flex items-center gap-2">
+              <Award className="w-4 h-4" />
+              <span>{lang === 'vi' ? 'Kết quả & Tác động thực tế (Impact)' : 'Verified Impact & Outcomes'}</span>
+            </h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {caseStudy.impact[lang].map((imp, idx) => (
+                <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800 bg-white p-3.5 rounded-xl border border-[#0068FF]/15">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                  <span>{imp}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 6. Key Learning (if present) */}
+          {caseStudy.learning && (
+            <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700">
+              <span className="font-semibold text-slate-900 block mb-1">
+                {lang === 'vi' ? 'Bài học rút ra (Key Takeaway):' : 'Key Learning:'}
+              </span>
+              <p className="italic text-slate-600">“{caseStudy.learning[lang]}”</p>
             </div>
           )}
 
-          {/* Bottom Action Footer */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-black/10">
-            <p className="text-xs text-[#777777]">
-              Interested in implementing a similar culture framework at your organization?
-            </p>
-            <button
-              onClick={() => {
-                onClose();
-                onConnect();
-              }}
-              className="inline-flex items-center gap-2 bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-sm font-medium px-6 py-3 rounded-full transition-all cursor-pointer shadow-md"
-            >
-              <span>Discuss This Program</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
         </div>
+
+        {/* Modal Bottom Close & Connect CTA */}
+        <div className="mt-10 pt-6 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+          <button
+            onClick={onClose}
+            className="px-6 py-2.5 rounded-full border border-slate-300 text-slate-700 text-xs font-semibold hover:bg-slate-50 transition-colors cursor-pointer"
+          >
+            {lang === 'vi' ? 'Đóng cửa sổ' : 'Close'}
+          </button>
+
+          <a
+            href="#connect"
+            onClick={() => {
+              onClose();
+              if (onConnectClick) onConnectClick();
+            }}
+            className="px-6 py-2.5 rounded-full bg-[#0068FF] hover:bg-[#0052CC] text-white text-xs font-semibold shadow-sm transition-colors cursor-pointer"
+          >
+            {lang === 'vi' ? 'Trao đổi thêm về Case này' : 'Discuss This Case'}
+          </a>
+        </div>
+
       </div>
     </div>
   );

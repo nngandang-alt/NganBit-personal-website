@@ -1,56 +1,47 @@
 import React from 'react';
-import { IMPACT_STATS } from '../data/portfolioData';
+import { VERIFIED_STATS } from '../data/portfolioData';
+import { Language } from '../types';
+import { ShieldCheck } from 'lucide-react';
 
-export const ImpactStats: React.FC = () => {
+interface ImpactStatsProps {
+  lang: Language;
+}
+
+export const ImpactStats: React.FC<ImpactStatsProps> = ({ lang }) => {
   return (
-    <section className="w-full py-20 sm:py-28 md:py-32 px-6 sm:px-10 md:px-14 lg:px-16 bg-[#111111] text-white">
+    <section className="w-full py-16 sm:py-20 px-4 sm:px-8 md:px-12 lg:px-16 bg-white border-b border-slate-200/70">
       <div className="max-w-7xl mx-auto">
-        {/* Header Tag */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16 sm:mb-20">
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-xs sm:text-sm font-semibold tracking-widest text-[#3B82F6] uppercase">
-                04 — Impact by the Numbers
-              </span>
-              <div className="h-px w-12 bg-[#3B82F6]/40" />
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white max-w-2xl">
-              Proven results, measurable connection.
-            </h2>
-          </div>
-          <p className="text-sm sm:text-base text-white/60 max-w-md">
-            Culture isn’t intangible—it reflects in retention, participation rates, clarity scores, and workplace psychological safety.
-          </p>
+        
+        {/* Sub-header badge */}
+        <div className="flex items-center gap-2 mb-8">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold">
+            <ShieldCheck className="w-3.5 h-3.5 text-[#0068FF]" />
+            <span>{lang === 'vi' ? 'Chỉ số được xác thực (Verified Metrics with Context)' : 'Verified Metrics with Context'}</span>
+          </span>
         </div>
 
-        {/* Oversized Numbers Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 divide-y sm:divide-y-0 sm:divide-x divide-white/15">
-          {IMPACT_STATS.map((stat, idx) => (
+        {/* 4 Metrics Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          {VERIFIED_STATS.map((stat, idx) => (
             <div
               key={idx}
-              className={`flex flex-col justify-between pt-6 sm:pt-0 ${
-                idx > 0 ? 'sm:pl-8 lg:pl-10' : ''
-              }`}
+              className="p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-[#F8FAFC] border border-slate-200/80 hover:border-[#0068FF]/30 transition-all flex flex-col justify-between"
             >
-              {/* Oversized Number Display */}
-              <div className="mb-4">
-                <span className="block text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-none">
+              <div>
+                <span className="text-4xl sm:text-5xl font-extrabold text-[#0068FF] tracking-tight font-mono block mb-2">
                   {stat.value}
                 </span>
-              </div>
-
-              {/* Minimal Supporting Text */}
-              <div className="flex flex-col gap-1.5">
-                <h3 className="text-base sm:text-lg font-semibold text-white/95 leading-snug">
-                  {stat.label}
+                <h3 className="text-sm sm:text-base font-bold text-slate-900 leading-snug mb-2">
+                  {stat.label[lang]}
                 </h3>
-                <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
-                  {stat.description}
-                </p>
               </div>
+              <p className="text-xs text-slate-500 leading-relaxed pt-3 border-t border-slate-200/60 mt-2">
+                {stat.context[lang]}
+              </p>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

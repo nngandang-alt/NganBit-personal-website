@@ -1,130 +1,164 @@
-import React, { useState } from 'react';
-import { EXPERIENCE_ITEMS } from '../data/portfolioData';
-import { ChevronDown, ChevronUp, MapPin, Award, CheckCircle } from 'lucide-react';
+import React from 'react';
+import { EXPERIENCE_ROLES } from '../data/portfolioData';
+import { Language } from '../types';
+import { Briefcase, Building2, MapPin, CheckCircle2, ArrowUpRight, ShieldCheck } from 'lucide-react';
 
-export const Experience: React.FC = () => {
-  // Expand first item by default
-  const [expandedId, setExpandedId] = useState<string | null>('exp-1');
+interface ExperienceProps {
+  lang: Language;
+  onSelectCase?: (caseId: string) => void;
+}
 
-  const toggleExpand = (id: string) => {
-    setExpandedId((prev) => (prev === id ? null : id));
-  };
-
+export const Experience: React.FC<ExperienceProps> = ({ lang, onSelectCase }) => {
   return (
-    <section id="experience" className="w-full py-20 sm:py-28 md:py-36 px-6 sm:px-10 md:px-14 lg:px-16 bg-white border-b border-black/5">
+    <section
+      id="experience"
+      className="w-full py-20 sm:py-28 md:py-36 px-4 sm:px-8 md:px-12 lg:px-16 bg-[#F8FAFC] border-b border-slate-200/70"
+    >
       <div className="max-w-7xl mx-auto">
+        
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16 sm:mb-20">
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-xs sm:text-sm font-semibold tracking-widest text-[#2563EB] uppercase">
-                02 — Experience
-              </span>
-              <div className="h-px w-12 bg-[#2563EB]/30" />
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#111111] tracking-tight max-w-2xl">
-              Experience that connects people with purpose.
-            </h2>
+        <div className="flex flex-col gap-3 mb-12 sm:mb-16">
+          <div className="flex items-center gap-3">
+            <span className="text-xs font-bold tracking-widest text-[#0068FF] uppercase">
+              {lang === 'vi' ? 'Lớp 2: Kinh nghiệm & Trách nhiệm thực tế' : 'Layer 2: Experience & Verified Scope'}
+            </span>
+            <div className="h-px w-12 bg-[#0068FF]/30" />
           </div>
-          <p className="text-sm sm:text-base text-[#666666] max-w-md">
-            Six+ years orchestrating cultural transformation, leadership alignment, and internal communications across enterprise and high-growth scales.
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
+            {lang === 'vi' ? (
+              <>
+                Kinh nghiệm thực tiễn:<br />
+                <span className="text-[#0068FF]">Phạm vi trách nhiệm &amp; Dấu ấn triển khai.</span>
+              </>
+            ) : (
+              <>
+                Professional Experience:<br />
+                <span className="text-[#0068FF]">Authentic Scope, Ownership &amp; Impact.</span>
+              </>
+            )}
+          </h2>
+
+          <p className="text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed">
+            {lang === 'vi'
+              ? 'Tôn trọng sự thật khách quan về chức danh chính thức (Official Titles) và bối cảnh tổ chức. Năng lực được chứng minh qua phạm vi quản trị thực tế (Scope), mức độ phức tạp của các bên liên quan và kết quả tạo ra.'
+              : 'Preserving factual integrity regarding official titles and organizational context. Demonstrating capability through authentic ownership, leadership scope, and tangible contributions.'}
           </p>
         </div>
 
-        {/* Modern Editorial Timeline with Horizontal Dividers */}
-        <div className="flex flex-col divide-y divide-black/10 border-t border-b border-black/10">
-          {EXPERIENCE_ITEMS.map((item) => {
-            const isExpanded = expandedId === item.id;
-
-            return (
-              <div
-                key={item.id}
-                className="group py-8 sm:py-10 transition-colors duration-200 hover:bg-[#F9F9F8]/70 px-4 sm:px-6 rounded-2xl cursor-pointer"
-                onClick={() => toggleExpand(item.id)}
-              >
-                {/* Main Row Header */}
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start">
-                  {/* Period & Location */}
-                  <div className="md:col-span-3 flex flex-col">
-                    <span className="text-sm font-semibold text-[#2563EB] tracking-wide">
-                      {item.period}
+        {/* Roles Grid / Timeline Cards */}
+        <div className="flex flex-col gap-8 sm:gap-10">
+          {EXPERIENCE_ROLES.map((role) => (
+            <div
+              key={role.id}
+              className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden"
+            >
+              {/* Header: Title, Company, Period */}
+              <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 pb-6 border-b border-slate-100">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2.5 mb-2">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-[#0068FF] text-xs font-semibold border border-[#0068FF]/20">
+                      <ShieldCheck className="w-3.5 h-3.5" />
+                      <span>{lang === 'vi' ? 'Chức danh chính thức' : 'Official Title'}</span>
                     </span>
-                    <span className="text-xs text-[#777777] flex items-center gap-1 mt-1">
-                      <MapPin className="w-3 h-3" />
-                      {item.location}
-                    </span>
+                    {role.workType && (
+                      <span className="text-xs text-slate-500 font-medium px-2 py-0.5 rounded bg-slate-100">
+                        {role.workType}
+                      </span>
+                    )}
                   </div>
 
-                  {/* Role & Company */}
-                  <div className="md:col-span-8 flex flex-col gap-1.5">
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#111111] group-hover:text-[#2563EB] transition-colors">
-                      {item.role}
-                    </h3>
-                    <p className="text-base font-medium text-[#444444]">
-                      {item.company}
-                    </p>
-                    <p className="text-sm text-[#666666] mt-2 leading-relaxed">
-                      {item.summary}
-                    </p>
-                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+                    {role.officialTitle[lang]}
+                  </h3>
 
-                  {/* Expand Toggle */}
-                  <div className="md:col-span-1 flex justify-end items-center pt-2">
-                    <div className="w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-[#666666] group-hover:border-[#2563EB] group-hover:text-[#2563EB] transition-colors">
-                      {isExpanded ? (
-                        <ChevronUp className="w-4 h-4" />
-                      ) : (
-                        <ChevronDown className="w-4 h-4" />
-                      )}
-                    </div>
+                  <div className="flex flex-wrap items-center gap-3 sm:gap-4 mt-2 text-xs sm:text-sm text-slate-600 font-medium">
+                    <span className="flex items-center gap-1.5 text-slate-800 font-semibold">
+                      <Building2 className="w-4 h-4 text-[#0068FF]" />
+                      <span>{role.company}</span>
+                    </span>
+                    <span>•</span>
+                    <span className="font-mono text-slate-500">{role.period}</span>
+                    <span>•</span>
+                    <span className="flex items-center gap-1 text-slate-500">
+                      <MapPin className="w-3.5 h-3.5" />
+                      <span>{role.location}</span>
+                    </span>
                   </div>
                 </div>
 
-                {/* Expanded Details: Key Scope & Selected Achievements */}
-                {isExpanded && (
-                  <div className="mt-8 pt-6 border-t border-black/5 grid grid-cols-1 lg:grid-cols-12 gap-8 text-sm animate-in fade-in duration-200">
-                    <div className="lg:col-span-3">
-                      <span className="text-xs font-bold uppercase tracking-wider text-[#888888]">
-                        Detailed Impact
-                      </span>
-                    </div>
-
-                    {/* Key Scope */}
-                    <div className="lg:col-span-4 flex flex-col gap-3">
-                      <h4 className="font-semibold text-[#111111] text-xs uppercase tracking-wider text-[#666666]">
-                        Key Scope
-                      </h4>
-                      <ul className="flex flex-col gap-2.5">
-                        {item.scope.map((s, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-[#444444] text-xs sm:text-sm">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] mt-1.5 shrink-0" />
-                            <span>{s}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Selected Achievements */}
-                    <div className="lg:col-span-5 flex flex-col gap-3">
-                      <h4 className="font-semibold text-[#111111] text-xs uppercase tracking-wider text-[#666666] flex items-center gap-1.5">
-                        <Award className="w-3.5 h-3.5 text-[#2563EB]" />
-                        <span>Selected Achievements</span>
-                      </h4>
-                      <ul className="flex flex-col gap-2.5">
-                        {item.achievements.map((ach, aIdx) => (
-                          <li key={aIdx} className="flex items-start gap-2 text-[#222222] font-medium text-xs sm:text-sm bg-blue-50/60 p-2.5 rounded-xl border border-blue-100/60">
-                            <CheckCircle className="w-4 h-4 text-[#2563EB] mt-0.5 shrink-0" />
-                            <span>{ach}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
+                {/* Related Case Study link if available */}
+                {role.relatedCaseId && (
+                  <button
+                    onClick={() => onSelectCase && onSelectCase(role.relatedCaseId!)}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#F0F6FF] hover:bg-[#0068FF] text-[#0068FF] hover:text-white text-xs font-semibold transition-all cursor-pointer shrink-0 self-start border border-[#0068FF]/20"
+                  >
+                    <span>{lang === 'vi' ? 'Xem Case Study liên quan' : 'View Related Case'}</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </button>
                 )}
               </div>
-            );
-          })}
+
+              {/* Context Note if title differs from scope */}
+              {role.actualScopeNote && (
+                <div className="my-4 p-3 sm:p-4 rounded-xl bg-slate-50 border border-slate-200/60 text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
+                  <span className="font-semibold text-slate-900">
+                    {lang === 'vi' ? 'Ghi chú bối cảnh: ' : 'Scope Context: '}
+                  </span>
+                  {role.actualScopeNote[lang]}
+                </div>
+              )}
+
+              {/* Main Content Grid: Scope & Impact */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6">
+                
+                {/* Left (7 cols): Mandate & Scope */}
+                <div className="lg:col-span-7 flex flex-col gap-3">
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                    {lang === 'vi' ? 'Phạm vi nhiệm vụ & Quyền hạn (Scope & Mandate)' : 'Mandate & Scope of Ownership'}
+                  </h4>
+                  <ul className="space-y-3">
+                    {role.mandateScope[lang].map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-700 leading-relaxed">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#0068FF] mt-2 shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Leadership scope badge if verified */}
+                  {role.leadershipScope && (
+                    <div className="mt-2 p-3 rounded-xl bg-blue-50/50 border border-blue-100 text-xs text-slate-800">
+                      <span className="font-semibold text-[#0068FF]">
+                        {lang === 'vi' ? 'Quy mô lãnh đạo / Dẫn dắt: ' : 'Leadership Scope: '}
+                      </span>
+                      {role.leadershipScope[lang]}
+                    </div>
+                  )}
+                </div>
+
+                {/* Right (5 cols): Selected Impact */}
+                <div className="lg:col-span-5 flex flex-col gap-3 bg-[#F8FAFC] p-5 sm:p-6 rounded-2xl border border-slate-200/70">
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                    <span>{lang === 'vi' ? 'Dấu ấn thực tiễn (Selected Impact)' : 'Selected Practical Impact'}</span>
+                  </h4>
+                  <ul className="space-y-2.5">
+                    {role.selectedImpact[lang].map((impact, idx) => (
+                      <li key={idx} className="text-xs sm:text-sm text-slate-600 leading-relaxed flex items-start gap-2">
+                        <span className="text-emerald-600 font-bold shrink-0">✓</span>
+                        <span>{impact}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+              </div>
+
+            </div>
+          ))}
         </div>
+
       </div>
     </section>
   );

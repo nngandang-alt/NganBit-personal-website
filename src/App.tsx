@@ -1,31 +1,58 @@
 import { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { Expertise } from './components/Expertise';
+import { CareerStory } from './components/CareerStory';
+import { Philosophy } from './components/Philosophy';
 import { Experience } from './components/Experience';
 import { Projects } from './components/Projects';
-import { ImpactStats } from './components/ImpactStats';
 import { Approach } from './components/Approach';
-import { Insights } from './components/Insights';
+import { ImpactStats } from './components/ImpactStats';
+import { Credentials } from './components/Credentials';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { ConnectModal } from './components/ConnectModal';
 import { ProjectModal } from './components/ProjectModal';
-import { InsightModal } from './components/InsightModal';
-import { InsightItem, ProjectItem } from './types';
+import { CaseStudy, Language } from './types';
+import { CASE_STUDIES } from './data/portfolioData';
 
 export default function App() {
+  // Persist language preference in localStorage (default: 'vi')
+  const [lang, setLang] = useState<Language>(() => {
+    try {
+      const saved = localStorage.getItem('portfolio_lang');
+      if (saved === 'en' || saved === 'vi') return saved;
+    } catch {
+      // ignore
+    }
+    return 'vi';
+  });
+
   const [activeSection, setActiveSection] = useState<string>('hero');
-  const [connectOpen, setConnectOpen] = useState<boolean>(false);
-  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
-  const [selectedInsight, setSelectedInsight] = useState<InsightItem | null>(null);
+  const [selectedCase, setSelectedCase] = useState<CaseStudy | null>(null);
+
+  const handleToggleLang = (newLang: Language) => {
+    setLang(newLang);
+    try {
+      localStorage.setItem('portfolio_lang', newLang);
+    } catch {
+      // ignore
+    }
+  };
 
   // Scroll spy to update active section in floating navigation
   useEffect(() => {
-    const sectionIds = ['hero', 'about', 'expertise', 'experience', 'projects', 'insights', 'contact'];
+    const sectionIds = [
+      'hero',
+      'story',
+      'philosophy',
+      'experience',
+      'cases',
+      'methodology',
+      'credentials',
+      'connect',
+    ];
+
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 240;
+      const scrollPosition = window.scrollY + 260;
       for (const id of sectionIds) {
         const el = document.getElementById(id);
         if (el) {
@@ -51,80 +78,75 @@ export default function App() {
     }
   };
 
+  const handleSelectCaseById = (caseId: string) => {
+    const found = CASE_STUDIES.find((c) => c.id === caseId);
+    if (found) {
+      setSelectedCase(found);
+    } else {
+      scrollToSection('cases');
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-[#ECECEA] text-[#111111] p-3 sm:p-5 md:p-8 lg:p-10 xl:p-12 transition-colors duration-300">
-      {/* 
-        The entire website sits inside a large centered container with:
-        - white/light neutral outer background
-        - generous margins around the website
-        - large rounded corners
-        - subtle shadow
-        - premium card-like appearance
-      */}
-      <div className="w-full max-w-[1560px] mx-auto bg-white rounded-[28px] sm:rounded-[36px] lg:rounded-[44px] shadow-2xl shadow-black/10 border border-black/5 overflow-hidden flex flex-col relative">
+    <div className="min-h-screen bg-[#F0F2F5] text-slate-900 p-2 sm:p-4 md:p-6 lg:p-8 transition-colors duration-300">
+      {/* Centered Large Editorial Container */}
+      <div className="w-full max-w-[1560px] mx-auto bg-white rounded-[28px] sm:rounded-[36px] lg:rounded-[44px] shadow-2xl shadow-slate-300/40 border border-slate-200/80 overflow-hidden flex flex-col relative">
         
-        {/* Floating Transparent Navigation */}
+        {/* Floating Top Navigation */}
         <Navbar
+          lang={lang}
+          onToggleLang={handleToggleLang}
           activeSection={activeSection}
-          onOpenConnect={() => setConnectOpen(true)}
         />
 
         {/* 1. Hero Section */}
         <Hero
-          onExploreWork={() => scrollToSection('projects')}
-          onAboutClick={() => scrollToSection('about')}
+          lang={lang}
+          onExploreStory={() => scrollToSection('story')}
+          onExploreCases={() => scrollToSection('cases')}
         />
 
-        {/* 2. About Section */}
-        <About />
+        {/* 2. Layer 1: Career Story (5 Chapters Connected Journey) */}
+        <CareerStory lang={lang} />
 
-        {/* 3. Expertise Section ("What I Do") */}
-        <Expertise />
+        {/* 3. Professional Philosophy (The Belief Chain & Experience Lens) */}
+        <Philosophy lang={lang} />
 
-        {/* 4. Experience Section */}
-        <Experience />
+        {/* 4. Layer 2: Experience (Verified Roles, Scopes & Impacts) */}
+        <Experience
+          lang={lang}
+          onSelectCase={handleSelectCaseById}
+        />
 
-        {/* 5. Selected Projects Section */}
-        <Projects onSelectProject={(project) => setSelectedProject(project)} />
+        {/* 5. Layer 3: Evidence (Flagship Case Studies) */}
+        <Projects
+          lang={lang}
+          onSelectCase={(cs) => setSelectedCase(cs)}
+        />
 
-        {/* 6. Impact / Numbers Section */}
-        <ImpactStats />
+        {/* 6. How I Work (7-Step Continuous Flow & AI Amplifier) */}
+        <Approach lang={lang} />
 
-        {/* 7. My Approach (7-step horizontal timeline) */}
-        <Approach />
+        {/* 7. Impact at a Glance (Verified Metrics with Context) */}
+        <ImpactStats lang={lang} />
 
-        {/* 8. Insights Section (3 Editorial magazine cards) */}
-        <Insights onSelectInsight={(insight) => setSelectedInsight(insight)} />
+        {/* 8. Credentials (Education & Curated Certifications) */}
+        <Credentials lang={lang} />
 
-        {/* 9. Contact Section */}
-        <Contact onOpenConnect={() => setConnectOpen(true)} />
+        {/* 9. Connect (Direct LinkedIn, Zalo, Email, CV - No Form) */}
+        <Contact lang={lang} />
 
         {/* 10. Footer */}
-        <Footer />
+        <Footer lang={lang} />
+
       </div>
 
-      {/* Interactive Modals */}
-      <ConnectModal
-        isOpen={connectOpen}
-        onClose={() => setConnectOpen(false)}
-      />
-
+      {/* Flagship Case Study In-Depth Modal */}
       <ProjectModal
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-        onConnect={() => {
-          setSelectedProject(null);
-          setConnectOpen(true);
-        }}
-      />
-
-      <InsightModal
-        insight={selectedInsight}
-        onClose={() => setSelectedInsight(null)}
-        onConnect={() => {
-          setSelectedInsight(null);
-          setConnectOpen(true);
-        }}
+        caseStudy={selectedCase}
+        lang={lang}
+        onClose={() => setSelectedCase(null)}
+        onConnectClick={() => scrollToSection('connect')}
       />
     </div>
   );
