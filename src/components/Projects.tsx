@@ -88,7 +88,7 @@ export const Projects: React.FC<ProjectsProps> = ({ lang, onSelectCase }) => {
 
                 {/* Key Impact preview */}
                 <div className="pt-4 border-t border-slate-200/70 space-y-1.5">
-                  {c.impact.slice(0, 2).map((imp, idx) => (
+                  {c.impact[lang].slice(0, 2).map((imp, idx) => (
                     <div key={idx} className="flex items-start gap-2 text-xs text-slate-700">
                       <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
                       <span className="line-clamp-1">{imp}</span>
