@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import heroBgImage from '../assets/hero-bg.jpg';
 
 interface HeroProps {
   onExploreWork: () => void;
@@ -16,10 +17,9 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork, onAboutClick }) => {
       {/* Immersive Editorial Background Image */}
       <div className="absolute inset-0 w-full h-full">
         <img
-          src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=85&w=2400&auto=format&fit=crop"
+          src={heroBgImage}
           alt="Đặng Vũ Thùy Ngân - Internal Communication & Corporate Culture"
-          className="w-full h-full object-cover object-center transform scale-100 transition-transform duration-1000 ease-out"
-          referrerPolicy="no-referrer"
+          className="w-full h-full object-cover object-[60%_20%] sm:object-[65%_20%] lg:object-[60%_25%] transform scale-100 transition-transform duration-1000 ease-out"
           id="hero-bg-img"
         />
 

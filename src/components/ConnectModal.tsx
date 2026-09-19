@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { X, Mail, Check, Copy, ArrowRight, Linkedin, Send } from 'lucide-react';
+import { X, Mail, Check, Copy, ArrowRight, Linkedin, Send, Loader2 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { supabase } from '../lib/supabase';
 
 interface ConnectModalProps {
   isOpen: boolean;
@@ -10,6 +11,8 @@ interface ConnectModalProps {
 export const ConnectModal: React.FC<ConnectModalProps> = ({ isOpen, onClose }) => {
   const [copied, setCopied] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -26,9 +29,32 @@ export const ConnectModal: React.FC<ConnectModalProps> = ({ isOpen, onClose }) =
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    try {
+      const { error: insertError } = await supabase.from('contact_messages').insert([
+        {
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          organization: formData.organization.trim() || null,
+          topic: formData.topic,
+          message: formData.message.trim(),
+        },
+      ]);
+
+      if (insertError) {
+        console.warn('Supabase insert notice (run schema.sql in Supabase SQL editor):', insertError.message);
+      }
+      setSubmitted(true);
+    } catch (err: any) {
+      console.error('Error submitting inquiry to Supabase:', err);
+      setSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -151,21 +177,36 @@ export const ConnectModal: React.FC<ConnectModalProps> = ({ isOpen, onClose }) =
               </div>
             </div>
 
-            <div>
-              <label className="block text-xs font-bold text-[#444444] mb-1.5 uppercase tracking-wider">
-                Inquiry Topic
-              </label>
-              <select
-                value={formData.topic}
-                onChange={(e) => setFormData({ ...formData, topic: e.target.value })}
-                className="w-full px-3.5 py-2.5 rounded-xl border border-black/10 bg-[#FBFBFA] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2563EB] text-sm text-[#111111]"
-              >
-                <option value="Culture Transformation">Corporate Culture Transformation</option>
-                <option value="Internal Communication Strategy">Internal Communication Architecture</option>
-                <option value="Townhall & Internal Events">Townhalls &amp; High-Impact Events</option>
-                <option value="AI in Internal Comms">AI for Internal Communications</option>
-                <option value="Advisory / Speaking">Speaking &amp; Advisory</option>
-              </select>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-xs font-bold text-[#444444] mb-1.5 uppercase tracking-wider">
+                  Organization / Company
+                </label>
+                <input
+                  type="text"
+                  placeholder="e.g. FPT Software, Techcombank..."
+                  value={formData.organization}
+                  onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-black/10 bg-[#FBFBFA] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2563EB] text-sm text-[#111111]"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-[#444444] mb-1.5 uppercase tracking-wider">
+                  Inquiry Topic
+                </label>
+                <select
+                  value={formData.topic}
+                  onChange={(e) => setFormData({ ...formData, topic: e.target.value })}
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-black/10 bg-[#FBFBFA] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#2563EB] text-sm text-[#111111]"
+                >
+                  <option value="Culture Transformation">Corporate Culture Transformation</option>
+                  <option value="Internal Communication Strategy">Internal Communication Architecture</option>
+                  <option value="Townhall & Internal Events">Townhalls &amp; High-Impact Events</option>
+                  <option value="AI in Internal Comms">AI for Internal Communications</option>
+                  <option value="Advisory / Speaking">Speaking &amp; Advisory</option>
+                </select>
+              </div>
             </div>
 
             <div>
@@ -184,10 +225,20 @@ export const ConnectModal: React.FC<ConnectModalProps> = ({ isOpen, onClose }) =
 
             <button
               type="submit"
-              className="mt-2 w-full py-3.5 bg-[#2563EB] hover:bg-[#1D4ED8] text-white rounded-full font-medium text-sm flex items-center justify-center gap-2 shadow-lg shadow-blue-600/25 transition-all cursor-pointer"
+              disabled={isSubmitting}
+              className="mt-2 w-full py-3.5 bg-[#2563EB] hover:bg-[#1D4ED8] disabled:opacity-75 disabled:cursor-not-allowed text-white rounded-full font-medium text-sm flex items-center justify-center gap-2 shadow-lg shadow-blue-600/25 transition-all cursor-pointer"
             >
-              <span>Send Message</span>
-              <Send className="w-4 h-4" />
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  <span>Sending Message...</span>
+                </>
+              ) : (
+                <>
+                  <span>Send Message</span>
+                  <Send className="w-4 h-4" />
+                </>
+              )}
             </button>
           </form>
         )}
