@@ -21,7 +21,7 @@ export const Projects: React.FC<ProjectsProps> = ({ lang, onSelectCase }) => {
         <div className="flex flex-col gap-3 mb-12 sm:mb-16">
           <div className="flex items-center gap-3">
             <span className="text-xs font-bold tracking-widest text-[#0068FF] uppercase">
-              {lang === 'vi' ? 'Lớp 3: Bằng chứng thực tế' : 'Layer 3: Evidence & Flagship Case Studies'}
+              {lang === 'vi' ? '03 — Dự án Tiêu biểu' : '03 — Selected Work'}
             </span>
             <div className="h-px w-12 bg-[#0068FF]/30" />
           </div>
@@ -29,13 +29,13 @@ export const Projects: React.FC<ProjectsProps> = ({ lang, onSelectCase }) => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
             {lang === 'vi' ? (
               <>
-                Các Case Study Tiêu Biểu:<br />
-                <span className="text-[#0068FF]">Giải quyết bài toán tổ chức &amp; Thiết kế trải nghiệm.</span>
+                Các Dự Án Đã Thúc Đẩy<br />
+                <span className="text-[#0068FF]">Con người &amp; Văn hóa Chuyển Mình.</span>
               </>
             ) : (
               <>
-                Flagship Case Studies:<br />
-                <span className="text-[#0068FF]">Solving Organizational Challenges with Impact.</span>
+                Projects that Moved<br />
+                <span className="text-[#0068FF]">People &amp; Culture Forward.</span>
               </>
             )}
           </h2>

@@ -1,12 +1,12 @@
 import React from 'react';
 import {
+  ABOUT_DATA,
   PHILOSOPHY_CHAIN,
   PHILOSOPHY_QUESTIONS,
   PHILOSOPHY_PILLARS,
-  PERSONAL_INFO,
 } from '../data/portfolioData';
 import { Language } from '../types';
-import { Sparkles, ArrowRight, HeartHandshake, Eye, Activity } from 'lucide-react';
+import { Sparkles, ArrowRight, HeartHandshake, Eye, Activity, Quote } from 'lucide-react';
 
 interface PhilosophyProps {
   lang: Language;
@@ -15,26 +15,68 @@ interface PhilosophyProps {
 export const Philosophy: React.FC<PhilosophyProps> = ({ lang }) => {
   return (
     <section
-      id="philosophy"
+      id="about"
       className="w-full py-20 sm:py-28 md:py-36 px-4 sm:px-8 md:px-12 lg:px-16 bg-white border-b border-slate-200/70 relative"
     >
       <div className="max-w-7xl mx-auto">
         
-        {/* Section Label */}
-        <div className="flex items-center gap-3 mb-8 sm:mb-12">
-          <span className="text-xs font-bold tracking-widest text-[#0068FF] uppercase">
-            {lang === 'vi' ? 'Triết lý nghề nghiệp' : 'Professional Philosophy'}
-          </span>
-          <div className="h-px w-12 bg-[#0068FF]/30" />
+        {/* ============================================================== */}
+        {/* 01 — ABOUT: TWO-COLUMN EDITORIAL SECTION */}
+        {/* ============================================================== */}
+        <div className="mb-20 sm:mb-28">
+          {/* Section Label */}
+          <div className="flex items-center gap-3 mb-8 sm:mb-10">
+            <span className="text-xs font-bold tracking-widest text-[#0068FF] uppercase">
+              {ABOUT_DATA.sectionLabel[lang]}
+            </span>
+            <div className="h-px w-12 bg-[#0068FF]/30" />
+          </div>
+
+          {/* Large Master Headline */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-[1.12] mb-12 sm:mb-16 max-w-4xl whitespace-pre-line">
+            {ABOUT_DATA.heading[lang]}
+          </h2>
+
+          {/* Two-Column Editorial Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 pt-8 border-t border-slate-200/80">
+            {/* Left Column: Core Philosophy Statement */}
+            <div className="lg:col-span-6 space-y-4">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#0068FF] block">
+                {lang === 'vi' ? 'Quan điểm Nghề nghiệp' : 'Core Working Philosophy'}
+              </span>
+              <p className="text-lg sm:text-xl lg:text-2xl text-slate-900 font-medium leading-relaxed">
+                “{ABOUT_DATA.philosophyStatement[lang]}”
+              </p>
+            </div>
+
+            {/* Right Column: Professional Approach & Background */}
+            <div className="lg:col-span-6 space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block">
+                {lang === 'vi' ? 'Tiếp cận & Cam kết' : 'Approach & Commitment'}
+              </span>
+              <p>
+                {ABOUT_DATA.approachIntroduction[lang]}
+              </p>
+              <div className="pt-4 flex flex-wrap gap-4 text-xs font-mono text-slate-500">
+                <span className="px-3 py-1 rounded-md bg-slate-100">Internal Comms</span>
+                <span className="px-3 py-1 rounded-md bg-slate-100">Culture Architecture</span>
+                <span className="px-3 py-1 rounded-md bg-slate-100">Experience Design</span>
+                <span className="px-3 py-1 rounded-md bg-slate-100">Applied AI</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* ============================================================== */}
         {/* PART 1: THE CORE BELIEF CHAIN */}
         {/* COMMUNICATION → UNDERSTANDING → TRUST → CONNECTION → ALIGNMENT → ACTION → CULTURE */}
         {/* ============================================================== */}
-        <div className="mb-16 sm:mb-24">
+        <div className="mb-16 sm:mb-24 pt-12 border-t border-slate-100" id="philosophy">
           <div className="max-w-3xl mb-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#0068FF] block mb-2">
+              {lang === 'vi' ? 'Chuỗi Chuyển Hóa Giá Trị' : 'The Value Transformation Chain'}
+            </span>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
               {lang === 'vi' ? (
                 <>
                   Văn hóa không bắt đầu từ quy định.<br />
@@ -46,7 +88,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ lang }) => {
                   <span className="text-[#0068FF]">It begins with a human chain of transformation.</span>
                 </>
               )}
-            </h2>
+            </h3>
             <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
               {lang === 'vi'
                 ? 'Một niềm tin nghề nghiệp xuyên suốt: Khi truyền thông đủ chân thành và rõ ràng, sự thấu hiểu nảy sinh; từ thấu hiểu tạo ra niềm tin; niềm tin gắn kết con người cùng hướng về mục tiêu chung và chuyển hóa thành thói quen văn hóa sống động.'
@@ -54,14 +96,13 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ lang }) => {
             </p>
           </div>
 
-          {/* Connected Pathway Diagram (Horizontal on desktop, flex on mobile) */}
+          {/* Connected Pathway Diagram */}
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-2.5">
             {PHILOSOPHY_CHAIN.map((item, idx) => (
               <div
                 key={idx}
                 className="relative p-4 sm:p-5 rounded-2xl bg-[#F8FAFC] border border-slate-200/80 hover:border-[#0068FF]/40 transition-all duration-300 group flex flex-col justify-between"
               >
-                {/* Step number badge */}
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-[11px] font-mono font-bold text-[#0068FF] bg-blue-50 px-2 py-0.5 rounded-md">
                     {item.step}
@@ -72,9 +113,9 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ lang }) => {
                 </div>
 
                 <div>
-                  <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0068FF] transition-colors">
+                  <h4 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0068FF] transition-colors">
                     {item.name[lang]}
-                  </h3>
+                  </h4>
                   <p className="text-xs text-slate-500 mt-1 leading-snug">
                     {item.desc[lang]}
                   </p>

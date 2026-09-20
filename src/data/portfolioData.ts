@@ -1,4 +1,6 @@
 import {
+  ExpertiseItem,
+  InsightArticle,
   CareerChapter,
   CaseStudy,
   CertificationItem,
@@ -69,12 +71,12 @@ export const PERSONAL_INFO = {
 };
 
 export const NAV_ITEMS: NavItem[] = [
-  { id: 'story', label: { vi: 'Hành trình', en: 'Career Journey' }, href: '#story' },
-  { id: 'philosophy', label: { vi: 'Triết lý', en: 'Philosophy' }, href: '#philosophy' },
-  { id: 'cases', label: { vi: 'Case Studies', en: 'Case Studies' }, href: '#cases' },
-  { id: 'methodology', label: { vi: 'Phương pháp', en: 'How I Work' }, href: '#methodology' },
-  { id: 'credentials', label: { vi: 'Nền tảng', en: 'Credentials' }, href: '#credentials' },
-  { id: 'connect', label: { vi: 'Kết nối', en: 'Connect' }, href: '#connect' },
+  { id: 'about', label: { vi: 'Về tôi', en: 'About' }, href: '#about' },
+  { id: 'expertise', label: { vi: 'Chuyên môn', en: 'Expertise' }, href: '#expertise' },
+  { id: 'story', label: { vi: 'Hành trình', en: 'Experience' }, href: '#story' },
+  { id: 'cases', label: { vi: 'Dự án', en: 'Projects' }, href: '#cases' },
+  { id: 'insights', label: { vi: 'Góc nhìn', en: 'Insights' }, href: '#insights' },
+  { id: 'methodology', label: { vi: 'Phương pháp', en: 'Approach' }, href: '#methodology' },
 ];
 
 export const FULL_CIRCLE_QUOTE = {
@@ -2025,5 +2027,327 @@ export const CERTIFICATIONS_DATA: CertificationItem[] = [
     domain: 'Culture & Comms',
     status: 'verified',
     verificationUrl: 'https://linkedin.com/in/thuyngandang',
+  },
+];
+
+
+// ==============================================================================
+// 01 — ABOUT EDITORIAL DATA
+// ==============================================================================
+export const ABOUT_DATA = {
+  sectionLabel: {
+    vi: '01 — About',
+    en: '01 — About',
+  },
+  heading: {
+    vi: 'Truyền thông không đơn thuần là truyền tải thông điệp.\nĐó là tạo dựng sự kết nối.',
+    en: 'Communication is not just about delivering messages.\nIt’s about creating connection.',
+  },
+  philosophyStatement: {
+    vi: 'Với tôi, truyền thông nội bộ và văn hóa doanh nghiệp không phải là những khẩu hiệu một chiều dán trên tường. Đó là nghệ thuật lắng nghe, thấu cảm và chuyển hóa chiến lược của tổ chức thành những trải nghiệm chân thực mà mỗi nhân viên đều có thể cảm nhận, thấu hiểu và cùng hành động mỗi ngày.',
+    en: 'To me, internal communication and corporate culture are never about top-down broadcast or posters on office walls. They are the deliberate craft of listening, empathizing, and translating executive strategy into tangible daily experiences that people genuinely feel, understand, and act upon.',
+  },
+  approachIntroduction: {
+    vi: 'Hơn 6 năm gắn bó trong lĩnh vực Internal Communication & Culture Architecture, tôi tiếp cận tổ chức như một hệ sinh thái sống nơi con người là trung tâm. Từ việc chuẩn hóa quy chuẩn hành vi văn hóa, thiết kế các chương trình trải nghiệm quy mô lớn đến việc tiên phong ứng dụng AI để tối ưu hóa vận hành — mục tiêu cao nhất luôn là nuôi dưỡng niềm tin, gắn kết đội ngũ và thúc đẩy hiệu quả tổ chức bền vững.',
+    en: 'With over 6 years dedicated to Internal Communication and Cultural Architecture, I view organizations as living human ecosystems. From codifying observable behavioral standards and designing large-scale engagement experiences to pioneering applied AI for operational efficiency — the ultimate objective is always to cultivate trust, align teams, and drive sustainable growth.',
+  },
+};
+
+// ==============================================================================
+// 10 EXPERTISE DOMAINS (WHAT I DO)
+// ==============================================================================
+export const EXPERTISE_CATEGORIES: ExpertiseItem[] = [
+  {
+    id: 'exp-01',
+    number: '01',
+    title: {
+      vi: 'Truyền thông Nội bộ',
+      en: 'Internal Communication',
+    },
+    category: {
+      vi: 'Chiến lược & Thông điệp',
+      en: 'Strategy & Narrative',
+    },
+    description: {
+      vi: 'Xây dựng kiến trúc thông tin đa kênh và luồng thông tin minh bạch, kết nối chặt chẽ mục tiêu lãnh đạo với nhân viên tuyến đầu.',
+      en: 'Architecting multi-channel communications and transparent information flows that align executive vision with frontline reality.',
+    },
+    keyDeliverables: {
+      vi: ['Chiến lược truyền thông đa kênh', 'Bản tin & Ấn phẩm nội bộ', 'Town Hall & Đối thoại định kỳ'],
+      en: ['Multi-channel comms architecture', 'Internal publications & news', 'Town halls & leadership forums'],
+    },
+  },
+  {
+    id: 'exp-02',
+    number: '02',
+    title: {
+      vi: 'Văn hóa Doanh nghiệp',
+      en: 'Corporate Culture',
+    },
+    category: {
+      vi: 'Định hình & Lan tỏa',
+      en: 'Identity & Values',
+    },
+    description: {
+      vi: 'Chuyển hóa giá trị cốt lõi thành các chuẩn mực hành vi quan sát được và nghi thức văn hóa hằng ngày trong tổ chức.',
+      en: 'Translating core values into observable daily behavioral standards and memorable organizational rituals.',
+    },
+    keyDeliverables: {
+      vi: ['Quy chuẩn hành vi văn hóa', 'Sổ tay văn hóa doanh nghiệp', 'Nghi thức & Truyền thống tổ chức'],
+      en: ['Behavioral code codification', 'Culture playbook & onboarding', 'Organizational rituals & traditions'],
+    },
+  },
+  {
+    id: 'exp-03',
+    number: '03',
+    title: {
+      vi: 'Gắn kết Nhân viên',
+      en: 'Employee Engagement',
+    },
+    category: {
+      vi: 'Động lực & Cảm xúc',
+      en: 'Belonging & Motivation',
+    },
+    description: {
+      vi: 'Thiết kế các chiến dịch và sáng kiến kích hoạt động lực nội tại, gia tăng mức độ gắn bó và tinh thần tự hào của đội ngũ.',
+      en: 'Designing high-resonance initiatives that ignite intrinsic motivation, deepen belonging, and elevate organizational pride.',
+    },
+    keyDeliverables: {
+      vi: ['Khảo sát & Lắng nghe định kỳ', 'Chương trình vinh danh & công nhận', 'Chiến dịch gắn kết tinh thần'],
+      en: ['Pulse surveys & listening loops', 'Recognition & reward programs', 'Morale-boosting engagement campaigns'],
+    },
+  },
+  {
+    id: 'exp-04',
+    number: '04',
+    title: {
+      vi: 'Thương hiệu Nhà tuyển dụng',
+      en: 'Employer Branding',
+    },
+    category: {
+      vi: 'Bản sắc & Thu hút',
+      en: 'EVP & Talent Attraction',
+    },
+    description: {
+      vi: 'Đồng bộ hóa giá trị thực tế bên trong với hình ảnh thương hiệu bên ngoài, biến nhân viên thành đại sứ thương hiệu chân thực.',
+      en: 'Synchronizing authentic internal workplace experience with external talent brand, empowering employees as brand ambassadors.',
+    },
+    keyDeliverables: {
+      vi: ['Định vị giá trị EVP', 'Nội dung Employee Advocacy', 'Ngày hội việc làm & Văn hóa tuyển dụng'],
+      en: ['EVP formulation & alignment', 'Employee advocacy storytelling', 'Talent community & career culture'],
+    },
+  },
+  {
+    id: 'exp-05',
+    number: '05',
+    title: {
+      vi: 'Truyền thông Thay đổi',
+      en: 'Change Communication',
+    },
+    category: {
+      vi: 'Đồng hành Chuyển đổi',
+      en: 'Transformation & Empathy',
+    },
+    description: {
+      vi: 'Giảm thiểu rào cản tâm lý và sự phản kháng trong các giai đoạn tái cấu trúc, sáp nhập hoặc chuyển đổi chiến lược thông qua thông điệp thấu cảm.',
+      en: 'Mitigating friction and anxiety during organizational restructuring or strategic pivots through empathetic, phased narrative design.',
+    },
+    keyDeliverables: {
+      vi: ['Kế hoạch truyền thông thay đổi', 'Bộ tài liệu FAQ & Huấn luyện quản lý', 'Lắng nghe & Giải tỏa lo lắng'],
+      en: ['Change narrative & roadmap', 'Manager enablement toolkits & FAQs', 'Feedback loops & friction relief'],
+    },
+  },
+  {
+    id: 'exp-06',
+    number: '06',
+    title: {
+      vi: 'Chuyển hóa Văn hóa',
+      en: 'Culture Transformation',
+    },
+    category: {
+      vi: 'Hệ thống & Thói quen',
+      en: 'Systemic Evolution',
+    },
+    description: {
+      vi: 'Định hình lại thói quen làm việc và tư duy tổ chức theo hướng linh hoạt, đổi mới sáng tạo và cộng tác hiệu quả.',
+      en: 'Reshaping workplace mindsets and habits toward agility, continuous innovation, and high-trust collaboration.',
+    },
+    keyDeliverables: {
+      vi: ['Đánh giá khoảng cách văn hóa', 'Mô hình thói quen tổ chức', 'Mạng lưới Culture Champions'],
+      en: ['Cultural health assessments', 'Habit-formation frameworks', 'Culture champions network'],
+    },
+  },
+  {
+    id: 'exp-07',
+    number: '07',
+    title: {
+      vi: 'Trải nghiệm Nhân viên',
+      en: 'Employee Experience',
+    },
+    category: {
+      vi: 'Điểm chạm & Hành trình',
+      en: 'Journey & Touchpoints',
+    },
+    description: {
+      vi: 'Tối ưu hóa từng điểm chạm trong vòng đời nhân sự: từ ngày đầu hội nhập, các cột mốc phát triển đến khi kết thúc hành trình.',
+      en: 'Holistically optimizing touchpoints across the employee lifecycle: from onboarding immersion to milestone celebrations.',
+    },
+    keyDeliverables: {
+      vi: ['Bản đồ hành trình trải nghiệm (EX)', 'Cải tiến điểm chạm hội nhập', 'Trải nghiệm làm việc hybrid'],
+      en: ['Employee journey mapping', 'Onboarding immersion redesign', 'Hybrid workplace experience'],
+    },
+  },
+  {
+    id: 'exp-08',
+    number: '08',
+    title: {
+      vi: 'Đào tạo & Phát triển',
+      en: 'Learning & Development',
+    },
+    category: {
+      vi: 'Nâng cao Năng lực',
+      en: 'Growth & Capability',
+    },
+    description: {
+      vi: 'Xây dựng văn hóa học tập suốt đời, tích hợp truyền thông vào các chương trình đào tạo kỹ năng mềm và phát triển lãnh đạo.',
+      en: 'Fostering continuous learning cultures by embedding narrative and social reinforcement into capability building.',
+    },
+    keyDeliverables: {
+      vi: ['Chiến dịch truyền thông đào tạo', 'Chương trình phát triển văn hóa', 'Chia sẻ tri thức nội bộ'],
+      en: ['Learning campaign narratives', 'Leadership culture immersion', 'Internal knowledge sharing'],
+    },
+  },
+  {
+    id: 'exp-09',
+    number: '09',
+    title: {
+      vi: 'Sự kiện Nội bộ',
+      en: 'Internal Events',
+    },
+    category: {
+      vi: 'Trải nghiệm Sân khấu & Cảm xúc',
+      en: 'Experiential & Ceremonial',
+    },
+    description: {
+      vi: 'Đạo diễn và sản xuất các sự kiện trải nghiệm quy mô lớn: từ lễ tôn vinh trang trọng, Year End Party đến các ngày hội gia đình và kỷ niệm.',
+      en: 'Directing and executing flagship experiential ceremonies: award galas, year-end celebrations, and institutional milestones.',
+    },
+    keyDeliverables: {
+      vi: ['Kịch bản nghệ thuật & Thiết kế sân khấu', 'Điều phối sự kiện quy mô 1.000+ người', 'Kỷ vật vinh danh & Điểm chạm cảm xúc'],
+      en: ['Ceremonial narratives & staging', 'Large-scale coordination (1,000+ pax)', 'Bespoke memorabilia & emotional peaks'],
+    },
+  },
+  {
+    id: 'exp-10',
+    number: '10',
+    title: {
+      vi: 'Ứng dụng AI trong Truyền thông',
+      en: 'AI for Internal Communication',
+    },
+    category: {
+      vi: 'Đổi mới & Tối ưu Vận hành',
+      en: 'Augmented Operations',
+    },
+    description: {
+      vi: 'Tiên phong tích hợp công nghệ AI (nhận diện gương mặt, phân tích dữ liệu, tự động hóa luồng thông tin) nhằm nâng cao hiệu suất và trải nghiệm.',
+      en: 'Pioneering applied AI (face-recognition check-ins, sentiment analytics, generative content workflows) to augment efficiency and delight.',
+    },
+    keyDeliverables: {
+      vi: ['Check-in FaceID thông minh', 'Tối ưu hóa quy trình kịch bản & nội dung', 'Phân tích phản hồi thời gian thực'],
+      en: ['Smart facial recognition check-ins', 'Workflow acceleration with AI', 'Real-time attendee sentiment analytics'],
+    },
+  },
+];
+
+// ==============================================================================
+// 04 — INSIGHTS (THOUGHTS ON PEOPLE, CULTURE & COMMUNICATION)
+// ==============================================================================
+export const INSIGHTS_ARTICLES: InsightArticle[] = [
+  {
+    id: 'art-01',
+    number: '01',
+    title: {
+      vi: 'Từ Thông Báo Một Chiều Đến Cảm Giác Thuộc Về: Tái Định Hình Truyền Thông Nội Bộ Thời Đại Mới',
+      en: 'From Broadcast to Belonging: Reimagining Internal Communication in Modern Organizations',
+    },
+    category: {
+      vi: 'Truyền thông Nội bộ',
+      en: 'Internal Communication',
+    },
+    readTime: {
+      vi: '5 phút đọc',
+      en: '5 min read',
+    },
+    date: 'Spring 2026',
+    excerpt: {
+      vi: 'Khi thông tin ngập tràn trên các nền tảng số, vai trò của người làm truyền thông nội bộ không còn là người phát loa, mà là kiến trúc sư kiến tạo nên không gian nơi con người cảm thấy được lắng nghe, thấu hiểu và gắn kết.',
+      en: 'In an era of digital saturation, internal communication is no longer about broadcasting announcements. It is the deliberate architecture of spaces where employees feel heard, respected, and intrinsically connected to a larger mission.',
+    },
+    keyTakeaway: {
+      vi: 'Thông điệp chỉ có giá trị khi nó được chuyển hóa thành cảm xúc thuộc về và hành động đồng hướng.',
+      en: 'Communication only creates lasting value when it transforms from information delivery into a genuine sense of shared belonging.',
+    },
+    topics: {
+      vi: ['Gắn kết nhân sự', 'Trải nghiệm số', 'Lắng nghe chủ động'],
+      en: ['Employee Engagement', 'Digital Workplace', 'Active Listening'],
+    },
+  },
+  {
+    id: 'art-02',
+    number: '02',
+    title: {
+      vi: 'Văn Hóa Quan Sát Được: Nghệ Thuật Chuyển Hóa Giá Trị Cốt Lõi Thành Thói Quen Hằng Ngày',
+      en: 'Observable Culture: Codifying Core Values into Tangible Daily Habits',
+    },
+    category: {
+      vi: 'Văn hóa Doanh nghiệp',
+      en: 'Corporate Culture',
+    },
+    readTime: {
+      vi: '6 phút đọc',
+      en: '6 min read',
+    },
+    date: 'Winter 2025',
+    excerpt: {
+      vi: 'Giá trị cốt lõi trên giấy tờ chỉ là những danh từ vô hình nếu không được diễn dịch thành các hành vi cụ thể trong phòng họp, trong cách phản hồi email và trong cách lãnh đạo đối xử với sai sót của cấp dưới.',
+      en: 'Corporate values remain abstract slogans until they are translated into observable behaviors: how teams communicate in meetings, how feedback is given, and how leaders respond to honest failure.',
+    },
+    keyTakeaway: {
+      vi: 'Văn hóa không phải là điều lãnh đạo tuyên bố, mà là những gì con người lặp lại hằng ngày khi không ai giám sát.',
+      en: 'Culture is not what leaders declare; it is what people routinely do when nobody is watching.',
+    },
+    topics: {
+      vi: ['Quy chuẩn hành vi', 'Nghi thức văn hóa', 'Lãnh đạo làm gương'],
+      en: ['Behavioral Standards', 'Ritual Design', 'Leadership by Example'],
+    },
+  },
+  {
+    id: 'art-03',
+    number: '03',
+    title: {
+      vi: 'Lấy Thấu Hiểu Con Người Làm Trọng Tâm, Khai Phóng Cùng AI: Tương Lai Của Trải Nghiệm Tổ Chức',
+      en: 'Human Insight First, AI Amplified: The Next Evolution of Employee Experience',
+    },
+    category: {
+      vi: 'AI & Trải nghiệm Nhân viên',
+      en: 'AI & Employee Experience',
+    },
+    readTime: {
+      vi: '5 phút đọc',
+      en: '5 min read',
+    },
+    date: 'Fall 2025',
+    excerpt: {
+      vi: 'Công nghệ AI không thay thế sự ấm áp của giao tiếp giữa con người với con người. Ngược lại, khi AI đảm nhiệm các tác vụ vận hành lặp lại, chúng ta có thêm thời gian để đầu tư vào những trải nghiệm chạm đến cảm xúc thật.',
+      en: 'AI will never replace authentic human empathy in organizational life. Instead, by automating operational friction, AI frees us to invest deeply in personal, emotionally resonant employee experiences.',
+    },
+    keyTakeaway: {
+      vi: 'Tận dụng AI để tối ưu hóa tốc độ và độ chuẩn xác; giữ trọn trái tim và sự thấu cảm của con người ở mọi điểm chạm quan trọng.',
+      en: 'Harness AI for operational velocity and precision; keep human empathy and warmth at every defining touchpoint.',
+    },
+    topics: {
+      vi: ['Ứng dụng AI', 'Tối ưu vận hành', 'Trải nghiệm cá nhân hóa'],
+      en: ['Applied AI', 'Operational Agility', 'Personalized Experience'],
+    },
   },
 ];
