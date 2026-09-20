@@ -149,7 +149,7 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({ lang, onNavigateNext
               onClick={onNavigateNext}
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#0068FF] hover:bg-[#0052CC] text-white text-xs font-semibold shadow-sm transition-all cursor-pointer"
             >
-              <span>{lang === 'vi' ? 'TIẾP THEO: SỰ CÔNG NHẬN (RECOGNITION)' : 'NEXT: RECOGNITION / VOICES'}</span>
+              <span>{lang === 'vi' ? 'TIẾP THEO: GHI NHẬN (RECOGNITION)' : 'NEXT: RECOGNITION'}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>

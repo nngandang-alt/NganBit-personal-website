@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { Language } from '../types';
-import { Linkedin, Mail, MessageSquare, FileText, ArrowUpRight, Copy, Check, Sparkles } from 'lucide-react';
+import {
+  Mail,
+  Linkedin,
+  MessageSquare,
+  FileText,
+  Copy,
+  Check,
+  ArrowUpRight,
+  Phone,
+} from 'lucide-react';
 
 interface ContactProps {
   lang: Language;
@@ -9,11 +18,18 @@ interface ContactProps {
 
 export const Contact: React.FC<ContactProps> = ({ lang }) => {
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedPhone, setCopiedPhone] = useState(false);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(PERSONAL_INFO.email);
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2500);
+  };
+
+  const handleCopyPhone = () => {
+    navigator.clipboard.writeText(PERSONAL_INFO.phone);
+    setCopiedPhone(true);
+    setTimeout(() => setCopiedPhone(false), 2500);
   };
 
   return (
@@ -60,15 +76,15 @@ export const Contact: React.FC<ContactProps> = ({ lang }) => {
           </p>
         </div>
 
-        {/* Action & Direct Channels (NO FORM as requested) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pt-8 border-t border-slate-800">
+        {/* Action & Direct Channels (5 Connection Cards) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-5 pt-8 border-t border-slate-800">
           
           {/* 1. LinkedIn Button */}
           <a
             href={PERSONAL_INFO.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-6 rounded-2xl bg-white/5 hover:bg-[#0A66C2] border border-white/10 hover:border-transparent transition-all duration-200 group flex flex-col justify-between"
+            className="p-5 sm:p-6 rounded-2xl bg-white/5 hover:bg-[#0A66C2] border border-white/10 hover:border-transparent transition-all duration-200 group flex flex-col justify-between"
           >
             <div>
               <div className="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
@@ -90,7 +106,7 @@ export const Contact: React.FC<ContactProps> = ({ lang }) => {
             href={PERSONAL_INFO.zalo}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-6 rounded-2xl bg-white/5 hover:bg-[#0068FF] border border-white/10 hover:border-transparent transition-all duration-200 group flex flex-col justify-between"
+            className="p-5 sm:p-6 rounded-2xl bg-white/5 hover:bg-[#0068FF] border border-white/10 hover:border-transparent transition-all duration-200 group flex flex-col justify-between"
           >
             <div>
               <div className="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
@@ -107,8 +123,49 @@ export const Contact: React.FC<ContactProps> = ({ lang }) => {
             </div>
           </a>
 
-          {/* 3. Direct Email */}
-          <div className="p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between">
+          {/* 3. Phone Number / Hotline */}
+          <div className="p-5 sm:p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between group hover:border-emerald-500/40 transition-colors">
+            <div>
+              <div className="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center mb-4">
+                <Phone className="w-5 h-5 text-emerald-400" />
+              </div>
+              <span className="text-xs font-mono uppercase text-slate-400 block mb-1">
+                {lang === 'vi' ? 'HOTLINE / ĐIỆN THOẠI' : 'PHONE NUMBER'}
+              </span>
+              <h3 className="text-base font-bold text-white truncate" title={PERSONAL_INFO.phone}>
+                {PERSONAL_INFO.phoneDisplay}
+              </h3>
+            </div>
+            <div className="pt-4 mt-4 border-t border-white/10 flex items-center justify-between text-xs">
+              <a
+                href={`tel:${PERSONAL_INFO.phone}`}
+                className="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1"
+              >
+                <span>{lang === 'vi' ? 'Gọi ngay' : 'Call Now'}</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
+              <button
+                onClick={handleCopyPhone}
+                className="text-slate-400 hover:text-white transition-colors cursor-pointer flex items-center gap-1"
+                title="Copy phone number"
+              >
+                {copiedPhone ? (
+                  <>
+                    <Check className="w-3.5 h-3.5 text-emerald-400" />
+                    <span className="text-emerald-400 font-medium">Copied</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-3.5 h-3.5" />
+                    <span>Copy</span>
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
+
+          {/* 4. Direct Email */}
+          <div className="p-5 sm:p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center mb-4">
                 <Mail className="w-5 h-5 text-blue-400" />
@@ -148,11 +205,11 @@ export const Contact: React.FC<ContactProps> = ({ lang }) => {
             </div>
           </div>
 
-          {/* 4. Optional CV Download */}
-          <div className="p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between">
+          {/* 5. Optional CV Download */}
+          <div className="p-5 sm:p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center mb-4">
-                <FileText className="w-5 h-5 text-emerald-400" />
+                <FileText className="w-5 h-5 text-purple-400" />
               </div>
               <span className="text-xs font-mono uppercase text-slate-400 block mb-1">
                 Executive Profile

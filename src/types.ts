@@ -204,8 +204,10 @@ export interface RecognitionItem {
   category: { vi: string; en: string };
   source: { vi: string; en: string };
   context: { vi: string; en: string };
+  badge?: { vi: string; en: string };
   quote?: { vi: string; en: string };
   image?: string;
+  secondaryImage?: string;
   highlights?: { vi: string[]; en: string[] };
   year?: string;
   isHighlight?: boolean;

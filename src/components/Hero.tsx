@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, Sparkles, Compass } from 'lucide-react';
+import { ArrowRight, Compass } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { Language } from '../types';
 import heroBgImage from '../assets/hero-bg.jpg';
@@ -139,15 +139,11 @@ export const Hero: React.FC<HeroProps> = ({
       </div>
 
       {/* LEFT CONTENT SAFE ZONE - Protected Portrait Area */}
-      <div className={`relative z-20 w-full lg:w-[58%] xl:w-[54%] max-w-[680px] xl:max-w-[720px] px-6 sm:px-10 md:px-12 lg:px-16 pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-12 sm:pb-16 lg:pb-20 flex flex-col justify-center transition-all duration-1000 delay-100 ${
+      <div className={`relative z-20 w-full lg:w-[58%] xl:w-[54%] max-w-[680px] xl:max-w-[720px] px-6 sm:px-10 md:px-12 lg:px-16 pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 flex flex-col justify-center transition-all duration-1000 delay-100 ${
         isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
       }`}>
         
-        {/* Domains pill */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.08] hover:bg-white/[0.12] backdrop-blur-md border border-white/15 text-xs sm:text-sm font-medium text-white/90 mb-5 sm:mb-6 shadow-xs self-start transition-colors">
-          <Sparkles className="w-3.5 h-3.5 text-blue-300 shrink-0" />
-          <span>{PERSONAL_INFO.domains[lang]}</span>
-        </div>
+        
 
         {/* 01. MAIN HEADLINE - Progression: People -> Meaningful Experiences -> Shared Purpose */}
         <h1

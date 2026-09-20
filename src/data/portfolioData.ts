@@ -1,3 +1,12 @@
+import hiuLogo from '../assets/education/hiu-logo.png';
+import hcmueLogo from '../assets/education/hcmue-logo.png';
+import utorontoLogo from '../assets/education/utoronto-logo.png';
+import googleLogo from '../assets/education/google-logo.png';
+import courseraLogo from '../assets/education/coursera-logo.png';
+import brandcampLogo from '../assets/education/brandcamp-logo.png';
+import udemyLogo from '../assets/education/udemy-logo.png';
+import linkedinLogo from '../assets/education/linkedin-logo.png';
+import f88Logo from '../assets/education/f88-logo.png';
 import {
   CareerChapter,
   CaseStudy,
@@ -19,6 +28,13 @@ import top100HostNganbit from '../assets/top100-host-nganbit.jpg';
 import top100RecognitionWall from '../assets/top100-recognition-wall.jpg';
 import top100AiCheckin from '../assets/top100-ai-checkin.jpg';
 import top100EmailFeedback from '../assets/top100-email-feedback.jpg';
+import recognitionFptIndividual from '../assets/recognition/recognition-fpt-individual-2025.jpg';
+import recognitionConvocationTeam from '../assets/recognition/recognition-convocation-team-2025.jpg';
+import recognitionF88Culture from '../assets/recognition/recognition-f88-culture-feedback.png';
+import recognitionHumanConnection from '../assets/recognition/recognition-human-connection-feedback.png';
+import recognitionF88Storytelling from '../assets/recognition/recognition-f88-storytelling-feedback.png';
+import recognitionProgramExperience from '../assets/recognition/recognition-program-experience-feedback.png';
+import recognitionVuanemThankyouCard from '../assets/recognition/recognition-vuanem-thankyou-card.png';
 
 export const PERSONAL_INFO = {
   fullName: 'ĐẶNG VŨ THÙY NGÂN',
@@ -58,8 +74,10 @@ export const PERSONAL_INFO = {
     en: 'I’m Thùy Ngân, working across Internal Communication and Corporate Culture. My journey has evolved from communication and culture into experience design and building systems that help people connect more meaningfully with their organizations.',
   },
   email: 'n.ngandang@gmail.com',
-  linkedin: 'https://linkedin.com/in/thuyngandang',
-  zalo: 'https://zalo.me/0909000000', // Đang chờ link chính thức từ user trong CONTENT_GAPS.md
+  phone: '0765272752',
+  phoneDisplay: '0765 272 752',
+  linkedin: 'https://www.linkedin.com/in/thuyngandangvu/',
+  zalo: 'https://zalo.me/0765272752',
   location: 'Ho Chi Minh City, Vietnam',
   yearsExperience: '6+',
   availabilityStatus: {
@@ -73,7 +91,7 @@ export const NAV_ITEMS = [
   { id: 'philosophy', label: { vi: 'Triết lý & Phương pháp', en: 'Philosophy & Approach' }, href: '#philosophy' },
   { id: 'cases', label: { vi: 'Case Studies', en: 'Case Studies' }, href: '#cases' },
   { id: 'work', label: { vi: 'Dự án', en: 'Selected Work' }, href: '#work' },
-  { id: 'recognition', label: { vi: 'Sự công nhận', en: 'Recognition' }, href: '#recognition' },
+  { id: 'recognition', label: { vi: 'Ghi nhận', en: 'Recognition' }, href: '#recognition' },
   { id: 'education', label: { vi: 'Học vấn & Phát triển', en: 'Education & Learning' }, href: '#education' },
   { id: 'connect', label: { vi: 'Kết nối', en: 'Connect' }, href: '#connect' },
 ];
@@ -2086,302 +2104,571 @@ export const VERIFIED_STATS: VerifiedStat[] = [
   },
 ];
 
+export const RECOGNITION_DATA: RecognitionItem[] = [
+  // A. GHI NHẬN CHÍNH THỨC / FORMAL RECOGNITION
+  {
+    id: 'rec-formal-01',
+    category: {
+      vi: 'Cá nhân',
+      en: 'Individual',
+    },
+    source: {
+      vi: 'Khối Giáo dục FPT (FPT Education)',
+      en: 'FPT Education',
+    },
+    context: {
+      vi: 'Giấy chứng nhận Cán bộ Xuất sắc (200 Gold)',
+      en: 'Certificate of Commendation: Outstanding Staff (200 Gold)',
+    },
+    image: recognitionFptIndividual,
+    year: '2025',
+    badge: {
+      vi: 'Cá nhân',
+      en: 'Individual',
+    },
+    isHighlight: true,
+  },
+  {
+    id: 'rec-formal-02',
+    category: {
+      vi: 'Tập thể',
+      en: 'Team',
+    },
+    source: {
+      vi: 'Ban tổ chức Convocation Day FPTU HCM',
+      en: 'Convocation Day Organizing Committee — FPTU HCMC',
+    },
+    context: {
+      vi: 'Certificate of Recognition — Tổ chức thành công Convocation Days',
+      en: 'Certificate of Recognition — Successful Delivery of Convocation Days',
+    },
+    image: recognitionConvocationTeam,
+    year: '2025',
+    badge: {
+      vi: 'Tập thể',
+      en: 'Team',
+    },
+    isHighlight: true,
+  },
+
+  // B. TIẾNG NÓI TỪ TRẢI NGHIỆM / VOICES FROM THE EXPERIENCE
+  {
+    id: 'rec-voice-01',
+    category: {
+      vi: 'Trải nghiệm Vinh danh',
+      en: 'Recognition Experience',
+    },
+    source: {
+      vi: 'Lễ Vinh Danh Top 100 Sinh viên Xuất sắc',
+      en: 'Top 100 Student Honors Ceremony',
+    },
+    context: {
+      vi: 'Phản hồi từ người tham dự sau Lễ Vinh danh Top 100 Sinh viên Xuất sắc.',
+      en: 'Feedback from an attendee following the Top 100 Student Honors experience.',
+    },
+    image: top100EmailFeedback,
+    year: '2025–2026',
+    badge: {
+      vi: 'Recognition Experience',
+      en: 'Recognition Experience',
+    },
+    isHighlight: true,
+  },
+  {
+    id: 'rec-voice-02',
+    category: {
+      vi: 'Kết nối Con người',
+      en: 'Human Connection',
+    },
+    source: {
+      vi: 'Kết nối & Đồng hành trong Đội ngũ',
+      en: 'Team Connection & Collaboration',
+    },
+    context: {
+      vi: 'Phản hồi về cách kết nối, đồng hành và đóng góp trong đội ngũ.',
+      en: 'Feedback reflecting human connection, collaboration and contribution within the team.',
+    },
+    image: recognitionHumanConnection,
+    year: 'Team Voice',
+    badge: {
+      vi: 'Kết nối Con người',
+      en: 'Human Connection',
+    },
+    isHighlight: false,
+  },
+  {
+    id: 'rec-voice-03',
+    category: {
+      vi: 'Truyền thông & Kể chuyện',
+      en: 'Communication & Storytelling',
+    },
+    source: {
+      vi: 'Nội dung & Kịch bản “Con người F88”',
+      en: '‘Con người F88’ Storytelling & Scriptcraft',
+    },
+    context: {
+      vi: 'Phản hồi nội bộ về nội dung ‘Con người F88’ và phần kịch bản.',
+      en: 'Internal feedback on the ‘Con người F88’ content and its storytelling.',
+    },
+    image: recognitionF88Storytelling,
+    year: 'F88',
+    badge: {
+      vi: 'Truyền thông & Kể chuyện',
+      en: 'Communication & Storytelling',
+    },
+    isHighlight: false,
+  },
+  {
+    id: 'rec-voice-04',
+    category: {
+      vi: 'Trải nghiệm Chương trình',
+      en: 'Program Experience',
+    },
+    source: {
+      vi: 'Trải nghiệm Chương trình & Vận hành',
+      en: 'Program Experience & Delivery',
+    },
+    context: {
+      vi: 'Phản hồi trực tiếp về trải nghiệm chương trình.',
+      en: 'Direct feedback on the program experience.',
+    },
+    image: recognitionProgramExperience,
+    year: 'Program Feedback',
+    badge: {
+      vi: 'Trải nghiệm Chương trình',
+      en: 'Program Experience',
+    },
+    isHighlight: false,
+  },
+  {
+    id: 'rec-voice-05',
+    category: {
+      vi: 'Văn hóa & Gắn kết',
+      en: 'Culture & Engagement',
+    },
+    source: {
+      vi: 'Gắn kết Văn hóa Nội bộ',
+      en: 'Culture & Engagement Initiatives',
+    },
+    context: {
+      vi: 'Phản hồi tự nhiên từ nhân sự sau các hoạt động văn hóa.',
+      en: 'Organic employee feedback following culture and engagement initiatives.',
+    },
+    image: recognitionF88Culture,
+    year: 'F88',
+    badge: {
+      vi: 'Văn hóa & Gắn kết',
+      en: 'Culture & Engagement',
+    },
+    isHighlight: false,
+  },
+
+  // C. VĂN HÓA TRONG THỰC HÀNH / CULTURE IN PRACTICE
+  {
+    id: 'rec-culture-01',
+    category: {
+      vi: 'Điểm chạm Văn hóa',
+      en: 'Culture Touchpoint',
+    },
+    source: {
+      vi: 'Thank You Card — từ thiết kế đến trải nghiệm thực tế',
+      en: 'Thank You Card — From Culture Design to Real Experience',
+    },
+    context: {
+      vi: 'Một điểm chạm được triển khai trong dự án Phát triển Văn hóa tại Vua Nệm, giúp sự ghi nhận và lời cảm ơn trở nên hữu hình trong trải nghiệm làm việc hằng ngày.',
+      en: 'A tangible touchpoint developed as part of Vua Nệm’s Culture Development project, designed to make recognition and appreciation visible within everyday employee experience.',
+    },
+    image: recognitionVuanemThankyouCard,
+    year: '27/05/2022',
+    badge: {
+      vi: 'Culture Touchpoint',
+      en: 'Culture Touchpoint',
+    },
+    isHighlight: true,
+  },
+];
+
 export const EDUCATION_DATA: EducationItem[] = [
   {
+    id: 'edu-formal-01',
     degree: {
-      vi: 'Cử nhân',
-      en: 'Bachelor Degree',
-    },
-    field: {
-      vi: 'Quan hệ Quốc tế và Nghiên cứu An ninh Quốc gia',
-      en: 'International Relations and National Security Studies',
+      vi: 'Cử nhân Quan hệ Quốc tế & Nghiên cứu An ninh Quốc gia',
+      en: "Bachelor's Degree in International Relations & National Security Studies",
     },
     institution: {
       vi: 'Đại học Quốc tế Hồng Bàng (HIU)',
       en: 'Hong Bang International University (HIU)',
     },
-    period: '2014 — 2018',
-    note: {
-      vi: 'Nền tảng về tư duy ngoại giao, đàm phán, quản trị các bên liên quan và nghiên cứu hành vi cộng đồng.',
-      en: 'Foundation in diplomatic negotiation, multi-stakeholder governance, and community socio-behavioral dynamics.',
-    },
-  },
-];
-
-export const CERTIFICATIONS_DATA: CertificationItem[] = [
-  {
-    title: {
-      vi: 'Chứng chỉ chuyên môn cập nhật trên hồ sơ LinkedIn chính thức',
-      en: 'Professional Certifications Verified on Official LinkedIn Profile',
-    },
-    issuer: 'LinkedIn Verified Profile',
-    year: 'Continuous',
-    domain: 'Culture & Comms',
-    status: 'verified',
-    verificationUrl: 'https://linkedin.com/in/thuyngandang',
-  },
-];
-
-
-// ==============================================================================
-// 06 — RECOGNITION / VOICES (ECHOES & QUALITATIVE EVIDENCE)
-// ==============================================================================
-export const RECOGNITION_DATA: RecognitionItem[] = [
-  {
-    id: 'rec-01',
-    category: {
-      vi: 'Phản hồi từ Phụ huynh & Sinh viên',
-      en: 'Attendee & Family Echoes',
-    },
-    source: {
-      vi: 'Lễ Vinh Danh Top 100 Sinh viên Xuất sắc — FPT University',
-      en: 'Top 100 Student Achievement Awards — FPT University',
-    },
-    context: {
-      vi: 'Email cảm nhận chân thành từ phụ huynh sinh viên sau lễ vinh danh học kỳ',
-      en: 'Heartfelt email reflections from a student parent following the semester ceremony',
-    },
-    quote: {
-      vi: '“Chương trình đã tạo nên một dấu ấn tự hào không thể nào quên cho gia đình tôi. Từng chi tiết từ đón tiếp, kỷ vật đến khoảnh khắc xướng tên trên sân khấu đều đong đầy sự trân trọng và thấu hiểu con trẻ.”',
-      en: '“The ceremony created an indelible mark of pride for our family. Every touchpoint from the warm welcome to the bespoke keepsakes and the naming moment on stage was imbued with genuine care and honor.”',
-    },
-    image: top100EmailFeedback,
-    highlights: {
-      vi: [
-        'Chuyển hóa buổi lễ tổng kết thành trải nghiệm công nhận (Recognition Experience) sâu sắc',
-        'Điểm chạm thấu cảm giữa Nhà trường, Sinh viên và Gia đình',
-      ],
-      en: [
-        'Transformed routine ceremonies into profound, memorable recognition experiences',
-        'Empathic institutional touchpoint uniting University, Honorees, and Families',
-      ],
-    },
-    year: '2025–2026',
-    isHighlight: true,
-  },
-  {
-    id: 'rec-02',
-    category: {
-      vi: 'Bức tường Danh dự & Dấu ấn Khắc tên',
-      en: 'Honoree Wall Echoes',
-    },
-    source: {
-      vi: 'Không gian Vinh danh The Prompt to Lead & Rise Up',
-      en: 'Thematic Recognition Architecture & Honoree Wall',
-    },
-    context: {
-      vi: 'Cảm xúc của người tham gia khi nhìn thấy tên mình được khắc ghi trang trọng',
-      en: 'Participant emotional validation seeing their achievements tangibly etched',
-    },
-    quote: {
-      vi: '“Tìm thấy tên mình trên Bức tường Danh dự — một điểm chạm nhỏ nhưng biến sự ghi nhận thành điều hữu hình, thiêng liêng và đáng tự hào.”',
-      en: '“Finding our names on the Honoree Wall turned validation into something tangible, sacred, and deeply inspiring.”',
-    },
-    image: top100RecognitionWall,
-    highlights: {
-      vi: [
-        'Tạo điểm chạm thị giác giàu tính kết nối và tự hào cá nhân',
-        'Hợp lưu giữa kỷ vật vật lý (Huy hiệu kim loại) và không gian tôn vinh',
-      ],
-      en: [
-        'Curated emotionally resonant visual milestones for peer celebration',
-        'Synthesized physical artifacts (metal pins) with celebratory spatial design',
-      ],
-    },
-    year: '2025–2026',
-    isHighlight: true,
-  },
-  {
-    id: 'rec-03',
-    category: {
-      vi: 'Ghi nhận từ Đội ngũ Đồng nghiệp & Cộng tác viên',
-      en: 'Team & Cross-functional Voices',
-    },
-    source: {
-      vi: 'Mạng lưới Vận hành Sự kiện & Văn hóa Phòng ban',
-      en: 'Operational Delivery & Departmental Culture Collaborators',
-    },
-    context: {
-      vi: 'Phản hồi từ cán bộ phòng ban và cộng tác viên sau các chiến dịch quy mô 1.000+ người',
-      en: 'Direct feedback from staff and student collaborators managing 1,000+ attendee operations',
-    },
-    quote: {
-      vi: '“Quy trình điều phối đa luồng rõ ràng, kịch bản chi tiết và sự phân vai thấu cảm giúp toàn đội ngũ phối hợp nhịp nhàng, dù áp lực chương trình trực tiếp rất lớn.”',
-      en: '“Clear cross-functional workflows, empathetic briefing, and seamless backstage coordination enabled our team to deliver flawlessly under live ceremonial pressure.”',
-    },
-    highlights: {
-      vi: [
-        'Tối ưu hóa thời gian check-in từ 30–45 phút xuống dưới 5 giây/người nhờ AI FaceID',
-        'Xây dựng tinh thần đồng đội vững chắc và sự tự hào của đội ngũ vận hành',
-      ],
-      en: [
-        'Reduced registration check-in time from 45 mins to under 5s per honoree via AI',
-        'Cemented resilient teamwork and operational camaraderie across workstreams',
-      ],
-    },
-    year: '2025–2026',
-    isHighlight: false,
-  },
-];
-
-// ==============================================================================
-// 08 — EDUCATION & CONTINUOUS LEARNING DATA
-// ==============================================================================
-export const EDUCATION_LEARNING_DATA: LearningCategory[] = [
-  {
-    id: 'formal',
-    title: {
-      vi: 'Học vấn Chính quy (Formal Education)',
-      en: 'Formal Education',
+    period: '2014–2018',
+    location: {
+      vi: 'TP. Hồ Chí Minh',
+      en: 'Ho Chi Minh City',
     },
     description: {
-      vi: 'Nền tảng tư duy quản trị, truyền thông tiếp thị và phương pháp luận học thuật chính quy.',
-      en: 'Formal foundation in business administration, marketing communications, and management methodology.',
+      vi: 'Chương trình đào tạo chính quy trang bị tư duy hệ thống, năng lực phân tích đa chiều, hiểu biết sâu sắc về bối cảnh văn hóa - xã hội và kỹ năng đàm phán, đối thoại.',
+      en: 'Formal undergraduate program fostering systemic inquiry, multi-stakeholder analysis, socio-cultural insight, and strategic communication.',
     },
-    items: [
+    highlights: [
       {
-        title: {
-          vi: 'Cử nhân Quản trị Kinh doanh (Chuyên ngành Marketing / Truyền thông)',
-          en: 'Bachelor of Business Administration (Marketing & Communications)',
-        },
-        institution: {
-          vi: 'Đại học FPT (FPT University)',
-          en: 'FPT University',
-        },
-        period: '2014 — 2018',
-        badge: {
-          vi: 'Tốt nghiệp Chính quy',
-          en: 'Bachelor of Science Degree',
-        },
-        description: {
-          vi: 'Trang bị tư duy hệ thống, năng lực lập kế hoạch chiến lược, nghiên cứu hành vi người tiêu dùng/nhân sự và kỹ năng dẫn dắt dự án trong môi trường đa văn hóa.',
-          en: 'Grounded in systems thinking, strategic communication planning, consumer/employee behavior research, and cross-cultural project leadership.',
-        },
-      },
-    ],
-  },
-  {
-    id: 'interdisciplinary',
-    title: {
-      vi: 'Học tập Liên ngành (Interdisciplinary Learning)',
-      en: 'Supplementary & Interdisciplinary Learning',
-    },
-    description: {
-      vi: 'Mở rộng chiều sâu tư duy thông qua tâm lý học tổ chức, khoa học hành vi và thiết kế trải nghiệm.',
-      en: 'Deepening operational impact through organizational psychology, behavioral science, and experience design.',
-    },
-    items: [
-      {
-        title: {
-          vi: 'Tâm lý học Tổ chức & Động lực Con người',
-          en: 'Organizational Psychology & Human Motivation',
-        },
-        institution: {
-          vi: 'Tự nghiên cứu & Ứng dụng Thực hành',
-          en: 'Self-directed Research & Applied Practice',
-        },
-        period: '2020 — Hiện tại',
-        badge: {
-          vi: 'Lĩnh vực Bổ trợ',
-          en: 'Core Specialization',
-        },
-        description: {
-          vi: 'Nghiên cứu cơ chế tạo động lực nội tại (Self-Determination Theory), tâm lý học an toàn (Psychological Safety) và cách con người tiếp nhận sự thay đổi trong doanh nghiệp.',
-          en: 'Investigating intrinsic motivational drivers (Self-Determination Theory), psychological safety, and cognitive acceptance during organizational transitions.',
-        },
+        vi: 'Tư duy phân tích bối cảnh & quan hệ liên cá nhân / tổ chức',
+        en: 'Contextual analysis & interpersonal/organizational dynamics',
       },
       {
-        title: {
-          vi: 'Khoa học Hành vi & Thiết kế Cú hích Văn hóa (Nudge in Culture)',
-          en: 'Behavioral Science & Cultural Nudge Architecture',
-        },
-        institution: {
-          vi: 'Mô hình Ứng dụng Doanh nghiệp',
-          en: 'Organizational Frameworks',
-        },
-        period: '2022 — Hiện tại',
-        badge: {
-          vi: 'Phương pháp luận',
-          en: 'Methodology',
-        },
-        description: {
-          vi: 'Ứng dụng các quy chuẩn vi mô (micro-habits) và thiết kế môi trường làm việc để khuyến khích hành vi văn hóa tích cực nảy sinh tự nhiên thay vì ép buộc.',
-          en: 'Applying micro-habit loops and choice architecture to encourage organic positive behaviors over bureaucratic enforcement.',
-        },
-      },
-      {
-        title: {
-          vi: 'Thiết kế Trải nghiệm Nhân viên (Employee Experience — EX)',
-          en: 'Employee Experience (EX) & Journey Design',
-        },
-        institution: {
-          vi: 'Hệ sinh thái Nhân sự & Văn hóa',
-          en: 'People & Culture Systems',
-        },
-        period: '2023 — Hiện tại',
-        badge: {
-          vi: 'Kiến trúc Hệ thống',
-          en: 'System Architecture',
-        },
-        description: {
-          vi: 'Tiếp cận vòng đời nhân sự như một hành trình trải nghiệm người dùng: tối ưu hóa điểm chạm từ ngày đầu hội nhập đến các cột mốc vinh danh quan trọng.',
-          en: 'Treating the employee lifecycle as a curated user journey: optimizing key defining moments from Day-1 onboarding to career recognition peaks.',
-        },
-      },
-    ],
-  },
-  {
-    id: 'certifications',
-    title: {
-      vi: 'Chứng chỉ Chuyên môn Tuyển chọn (Professional Certifications)',
-      en: 'Curated Professional Certifications',
-    },
-    description: {
-      vi: 'Hồ sơ năng lực thực tế được đối chiếu trực tiếp từ LinkedIn Source of Truth.',
-      en: 'Verified professional competencies anchored directly to official LinkedIn profile.',
-    },
-    items: [
-      {
-        title: {
-          vi: 'Năng lực AI Thực hành & Nâng cao Hiệu suất Làm việc',
-          en: 'Applied AI & Workflow Productivity Capabilities',
-        },
-        institution: {
-          vi: 'LinkedIn Verified Profile',
-          en: 'LinkedIn Verified Profile',
-        },
-        period: 'Cập nhật liên tục',
-        badge: {
-          vi: 'Xác thực LinkedIn',
-          en: 'Verified',
-        },
-        description: {
-          vi: 'Ứng dụng AI trong tự động hóa kịch bản, phân tích dữ liệu phản hồi nhân sự và tích hợp công nghệ nhận diện vào sự kiện văn hóa.',
-          en: 'Applied AI integration in content automation, employee feedback synthesis, and facial recognition for organizational events.',
-        },
-      },
-      {
-        title: {
-          vi: 'Lãnh đạo Gắn kết & Văn hóa Doanh nghiệp Thời đại Mới',
-          en: 'Modern Employee Engagement & Culture Leadership',
-        },
-        institution: {
-          vi: 'Chứng chỉ Chuyên môn Ngành',
-          en: 'Professional Industry Credentials',
-        },
-        period: 'Được công nhận',
-        badge: {
-          vi: 'Năng lực Cốt lõi',
-          en: 'Core Competency',
-        },
-        description: {
-          vi: 'Phương pháp điều phối đối thoại lãnh đạo (Town Hall), xử lý khủng hoảng truyền thông nội bộ và kiến tạo môi trường làm việc cởi mở.',
-          en: 'Town hall leadership facilitation, internal crisis communication, and cultivating transparent organizational dialogues.',
-        },
+        vi: 'Kỹ năng đối thoại, xử lý xung đột và giao tiếp đa văn hóa',
+        en: 'Dialogue facilitation, conflict negotiation & cross-cultural communication',
       },
     ],
   },
 ];
+
+export interface FactualLearningItem {
+  id: string;
+  title: {
+    vi: string;
+    en: string;
+  };
+  institution: {
+    vi: string;
+    en: string;
+  };
+  year: string;
+  category: 'formal' | 'human-understanding' | 'continuous-learning';
+  cluster?: 'communication-culture' | 'customer-experience' | 'ai-digital' | 'leadership';
+  description?: {
+    vi: string;
+    en: string;
+  };
+  logo: string;
+  issuerKey: 'hiu' | 'hcmue' | 'utoronto' | 'google' | 'coursera' | 'brandcamp' | 'udemy' | 'linkedin' | 'f88';
+  isBridge?: boolean;
+}
+
+// LAYER 02 — HUMAN UNDERSTANDING (Hiểu con người)
+export const HUMAN_UNDERSTANDING_DATA: FactualLearningItem[] = [
+  {
+    id: 'learn-psych-01',
+    title: {
+      vi: 'Bồi dưỡng Kiến thức Nền tảng về Tâm lý học',
+      en: 'Foundational Studies in Psychology',
+    },
+    institution: {
+      vi: 'Trường Đại học Sư phạm TP.HCM',
+      en: 'Ho Chi Minh City University of Education',
+    },
+    year: '2026',
+    category: 'human-understanding',
+    issuerKey: 'hcmue',
+    logo: hcmueLogo,
+    description: {
+      vi: 'Bổ sung nền tảng kiến thức tâm lý học, bao gồm nội dung về Tâm lý học Tổ chức, giúp tôi mở rộng góc nhìn về hành vi, động lực và tương tác của con người trong môi trường tổ chức. Những kiến thức này bổ trợ trực tiếp cho cách tôi tiếp cận truyền thông nội bộ, văn hóa và trải nghiệm nhân viên — từ việc hiểu con người đến thiết kế những trải nghiệm và môi trường làm việc phù hợp hơn.',
+      en: 'Building foundational knowledge in psychology, including Organizational Psychology, to deepen my understanding of human behavior, motivation, and interactions within organizational settings. This perspective complements my work in internal communication, culture, and employee experience — connecting a deeper understanding of people with the way workplace experiences are designed.',
+    },
+  },
+  {
+    id: 'learn-human-02',
+    title: {
+      vi: 'The Arts and Science of Relationships: Understanding Human Needs',
+      en: 'The Arts and Science of Relationships: Understanding Human Needs',
+    },
+    institution: {
+      vi: 'University of Toronto',
+      en: 'University of Toronto',
+    },
+    year: '2025',
+    category: 'human-understanding',
+    issuerKey: 'utoronto',
+    logo: utorontoLogo,
+    description: {
+      vi: 'Nghiên cứu về nhu cầu con người, động lực gắn kết và các yếu tố hình thành mối quan hệ hợp tác hiệu quả trong tập thể.',
+      en: 'Inquiry into core human needs, relational dynamics, and building authentic collaboration across diverse teams.',
+    },
+  },
+  {
+    id: 'learn-design-03',
+    title: {
+      vi: 'Design Thinking: From Ideas to Reality',
+      en: 'Design Thinking: From Ideas to Reality',
+    },
+    institution: {
+      vi: 'Udemy Business',
+      en: 'Udemy Business',
+    },
+    year: '2024',
+    category: 'human-understanding',
+    issuerKey: 'udemy',
+    logo: udemyLogo,
+    isBridge: true,
+    description: {
+      vi: 'Điểm cầu nối (Bridge): Chuyển hóa hiểu biết về con người thành phương pháp tư duy thiết kế trải nghiệm thực tế (Human-Centered Design).',
+      en: 'Bridge perspective: Translating human understanding into practical experience design and problem solving.',
+    },
+  },
+];
+
+// LAYER 03 — CONTINUOUS LEARNING (Học tập liên tục)
+export const CONTINUOUS_LEARNING_DATA: FactualLearningItem[] = [
+  // A. Communication & Culture
+  {
+    id: 'cert-comm-01',
+    title: {
+      vi: 'Foundation of PR & Corporate Communication',
+      en: 'Foundation of PR & Corporate Communication',
+    },
+    institution: {
+      vi: 'BrandCamp.Asia',
+      en: 'BrandCamp.Asia',
+    },
+    year: 'Jan 2025',
+    category: 'continuous-learning',
+    cluster: 'communication-culture',
+    issuerKey: 'brandcamp',
+    logo: brandcampLogo,
+  },
+  {
+    id: 'cert-comm-02',
+    title: {
+      vi: 'Demystifying Company Culture',
+      en: 'Demystifying Company Culture',
+    },
+    institution: {
+      vi: 'LinkedIn',
+      en: 'LinkedIn',
+    },
+    year: 'Feb 2023',
+    category: 'continuous-learning',
+    cluster: 'communication-culture',
+    issuerKey: 'linkedin',
+    logo: linkedinLogo,
+  },
+  {
+    id: 'cert-comm-03',
+    title: {
+      vi: 'Organization Communication',
+      en: 'Organization Communication',
+    },
+    institution: {
+      vi: 'LinkedIn',
+      en: 'LinkedIn',
+    },
+    year: 'Feb 2023',
+    category: 'continuous-learning',
+    cluster: 'communication-culture',
+    issuerKey: 'linkedin',
+    logo: linkedinLogo,
+  },
+
+  // B. Experience & Customer Insight
+  {
+    id: 'cert-cx-01',
+    title: {
+      vi: 'Voice of the Customer (VoC): Enhancing Experiences',
+      en: 'Voice of the Customer (VoC): Enhancing Experiences',
+    },
+    institution: {
+      vi: 'Coursera',
+      en: 'Coursera',
+    },
+    year: 'Jan 2026',
+    category: 'continuous-learning',
+    cluster: 'customer-experience',
+    issuerKey: 'coursera',
+    logo: courseraLogo,
+  },
+  {
+    id: 'cert-cx-02',
+    title: {
+      vi: 'Improving Customer Retention',
+      en: 'Improving Customer Retention',
+    },
+    institution: {
+      vi: 'Coursera',
+      en: 'Coursera',
+    },
+    year: 'Jan 2026',
+    category: 'continuous-learning',
+    cluster: 'customer-experience',
+    issuerKey: 'coursera',
+    logo: courseraLogo,
+  },
+
+  // C. AI & Digital
+  {
+    id: 'cert-ai-01',
+    title: {
+      vi: 'Google AI',
+      en: 'Google AI',
+    },
+    institution: {
+      vi: 'Google',
+      en: 'Google',
+    },
+    year: 'Jun 2026',
+    category: 'continuous-learning',
+    cluster: 'ai-digital',
+    issuerKey: 'google',
+    logo: googleLogo,
+  },
+  {
+    id: 'cert-ai-02',
+    title: {
+      vi: 'Gemini Certified Educator',
+      en: 'Gemini Certified Educator',
+    },
+    institution: {
+      vi: 'Google',
+      en: 'Google',
+    },
+    year: 'Dec 2025',
+    category: 'continuous-learning',
+    cluster: 'ai-digital',
+    issuerKey: 'google',
+    logo: googleLogo,
+  },
+  {
+    id: 'cert-ai-03',
+    title: {
+      vi: 'GenerativeAI for Customer Success',
+      en: 'GenerativeAI for Customer Success',
+    },
+    institution: {
+      vi: 'Coursera',
+      en: 'Coursera',
+    },
+    year: 'Jan 2026',
+    category: 'continuous-learning',
+    cluster: 'ai-digital',
+    issuerKey: 'coursera',
+    logo: courseraLogo,
+  },
+
+  // D. Leadership
+  {
+    id: 'cert-lead-01',
+    title: {
+      vi: 'F88 Leadership Competence Certificate (Levels 1, 2, and 3)',
+      en: 'F88 Leadership Competence Certificate (Levels 1, 2, and 3)',
+    },
+    institution: {
+      vi: 'F88',
+      en: 'F88',
+    },
+    year: 'Jul 2021',
+    category: 'continuous-learning',
+    cluster: 'leadership',
+    issuerKey: 'f88',
+    logo: f88Logo,
+  },
+];
+
+// Backward compatibility alias for any existing imports
+export const INTERDISCIPLINARY_LEARNING_DATA = HUMAN_UNDERSTANDING_DATA;
+export const PROFESSIONAL_CERTIFICATIONS_DATA = CONTINUOUS_LEARNING_DATA;
+
+// LAYER 04 — PROFESSIONAL CAPABILITY PILLARS (Năng lực nghề nghiệp)
+export interface CapabilityPillar {
+  id: string;
+  order: string;
+  title: {
+    vi: string;
+    en: string;
+  };
+  summary: {
+    vi: string;
+    en: string;
+  };
+  isCore?: boolean;
+  skills: string[];
+}
+
+export const PROFESSIONAL_CAPABILITIES_DATA: CapabilityPillar[] = [
+  {
+    id: 'cap-comm',
+    order: '01',
+    title: {
+      vi: 'Truyền thông & Kể chuyện',
+      en: 'Communication & Storytelling',
+    },
+    summary: {
+      vi: 'Thiết kế và truyền tải thông điệp giúp con người hiểu, kết nối, đồng thuận và hành động.',
+      en: 'Crafting and delivering strategic communication that helps people understand, connect, align, and act.',
+    },
+    skills: [
+      'Internal Communication Strategy',
+      'Corporate Storytelling',
+      'Editorial & Content Strategy',
+      'Leadership Communication',
+      'Change & Crisis Communication',
+    ],
+  },
+  {
+    id: 'cap-culture',
+    order: '02',
+    title: {
+      vi: 'Văn hóa, Gắn kết & Trải nghiệm',
+      en: 'Culture, Engagement & Experience',
+    },
+    summary: {
+      vi: 'Lĩnh vực chuyên môn trọng tâm — biến giá trị cốt lõi thành trải nghiệm sống động hằng ngày.',
+      en: 'Core professional domain — transforming organizational values into lived daily employee experience.',
+    },
+    isCore: true,
+    skills: [
+      'Corporate Culture Development',
+      'Employee Engagement',
+      'Employee Experience',
+      'Culture Activation',
+      'Recognition Experience Design',
+    ],
+  },
+  {
+    id: 'cap-insight',
+    order: '03',
+    title: {
+      vi: 'Thấu hiểu & Thiết kế Hệ thống',
+      en: 'Insight & System Design',
+    },
+    summary: {
+      vi: 'Lắng nghe tổ chức, phân tích dữ liệu trải nghiệm và kiến tạo các chương trình dựa trên cơ sở thực chứng.',
+      en: 'Active employee listening, experiential insight analysis, and evidence-based program design.',
+    },
+    skills: [
+      'Employee Listening',
+      'Survey & Insight Analysis',
+      'Experience Design',
+      'Program Design',
+      'Measurement & Continuous Improvement',
+    ],
+  },
+  {
+    id: 'cap-leadership',
+    order: '04',
+    title: {
+      vi: 'Lãnh đạo & Kích hoạt',
+      en: 'Leadership & Activation',
+    },
+    summary: {
+      vi: 'Dẫn dắt đội ngũ, quản lý các bên liên quan và điều phối nguồn lực thực thi hiệu quả.',
+      en: 'Leading cross-functional collaboration, stakeholder alignment, facilitation, and program activation.',
+    },
+    skills: [
+      'Team Leadership',
+      'Stakeholder Management',
+      'Cross-functional Collaboration',
+      'Facilitation',
+      'Event & Community Activation',
+    ],
+  },
+];
+
+export const AI_ENABLED_PRACTICE_SKILLS = [
+  'AI Literacy',
+  'Research & Synthesis',
+  'Content Development',
+  'Visual Prototyping',
+  'Feedback / Insight Analysis',
+  'Workflow Optimization',
+];
+
 
 
 export interface OperatingSystemStage {

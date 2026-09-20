@@ -15,29 +15,20 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
   return (
     <footer className="w-full py-10 px-4 sm:px-8 md:px-12 lg:px-16 bg-[#0B0B0B] text-slate-400 border-t border-white/5 text-xs sm:text-sm">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        
-        {/* Left: Monogram & Identity */}
-        <div className="flex items-center gap-3">
-          <div className="w-7 h-7 rounded-full bg-white/10 text-white font-bold flex items-center justify-center text-xs">
-            {PERSONAL_INFO.monogram}
-          </div>
-          <div>
-            <span className="font-semibold text-white">
-              {PERSONAL_INFO.fullName}
-            </span>
-            <span className="text-slate-500 ml-2">
-              © {new Date().getFullYear()}
-            </span>
-          </div>
+        {/* Left: Copyright */}
+        <div className="font-medium text-slate-300">
+          ĐẶNG VŨ THÙY NGÂN © 2026
         </div>
 
-        {/* Center: Domains */}
-        <div className="text-center font-medium text-slate-300 text-xs hidden sm:block">
-          <span>Internal Communication</span>
+        {/* Center: Domains (4 Core Professional Domains) */}
+        <div className="text-center font-medium text-slate-300 text-xs flex flex-wrap items-center justify-center gap-y-1 leading-relaxed">
+          <span className="whitespace-nowrap">Internal Communication</span>
           <span className="mx-2 text-[#0068FF]">·</span>
-          <span>Corporate Culture</span>
+          <span className="whitespace-nowrap">Corporate Culture</span>
           <span className="mx-2 text-[#0068FF]">·</span>
-          <span>Employee Experience</span>
+          <span className="whitespace-nowrap">Employee Engagement</span>
+          <span className="mx-2 text-[#0068FF]">·</span>
+          <span className="whitespace-nowrap">Employee Experience</span>
         </div>
 
         {/* Right: Links & Back to Top */}
@@ -64,7 +55,6 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
             <ArrowUp className="w-3.5 h-3.5 transition-transform group-hover:-translate-y-0.5 text-[#0068FF]" />
           </button>
         </div>
-
       </div>
     </footer>
   );
