@@ -3,8 +3,6 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { CareerStory } from './components/CareerStory';
 import { Philosophy } from './components/Philosophy';
-import { Expertise } from './components/Expertise';
-import { Insights } from './components/Insights';
 import { Projects } from './components/Projects';
 import { Approach } from './components/Approach';
 import { ImpactStats } from './components/ImpactStats';
@@ -43,12 +41,10 @@ export default function App() {
   useEffect(() => {
     const sectionIds = [
       'hero',
-      'about',
-      'expertise',
       'story',
+      'philosophy',
       'cases',
       'methodology',
-      'insights',
       'credentials',
       'connect',
     ];
@@ -108,17 +104,14 @@ export default function App() {
           onExploreCases={() => scrollToSection('cases')}
         />
 
-        {/* 2. About Section & Professional Philosophy (The Belief Chain & Experience Lens) */}
-        <Philosophy lang={lang} />
-
-        {/* 3. What I Do: Core Expertise Grid */}
-        <Expertise lang={lang} />
-
-        {/* 4. Experience: Career Journey (02 — Experience) */}
+        {/* 2. Career Journey (Integrated Story, Verified Roles & Visual Evidence) */}
         <CareerStory
           lang={lang}
           onSelectCase={handleSelectCaseById}
         />
+
+        {/* 3. Professional Philosophy (The Belief Chain & Experience Lens) */}
+        <Philosophy lang={lang} />
 
         {/* 4. Flagship Case Studies (Evidence) */}
         <Projects
@@ -132,10 +125,7 @@ export default function App() {
         {/* 7. Impact at a Glance (Verified Metrics with Context) */}
         <ImpactStats lang={lang} />
 
-        {/* 8. Insights Section (04 — Thoughts on people, culture & communication) */}
-        <Insights lang={lang} />
-
-        {/* 9. Credentials (Education & Curated Certifications) */}
+        {/* 8. Credentials (Education & Curated Certifications) */}
         <Credentials lang={lang} />
 
         {/* 9. Connect (Direct LinkedIn, Zalo, Email, CV - No Form) */}

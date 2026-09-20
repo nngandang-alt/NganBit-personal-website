@@ -198,24 +198,3 @@ export interface SelectedWorkItem {
   highlights?: { vi: string[]; en: string[] };
   image?: PortfolioImage;
 }
-
-export interface ExpertiseItem {
-  id: string;
-  number: string;
-  title: { vi: string; en: string };
-  category: { vi: string; en: string };
-  description: { vi: string; en: string };
-  keyDeliverables: { vi: string[]; en: string[] };
-}
-
-export interface InsightArticle {
-  id: string;
-  number: string;
-  title: { vi: string; en: string };
-  category: { vi: string; en: string };
-  readTime: { vi: string; en: string };
-  date: string;
-  excerpt: { vi: string; en: string };
-  keyTakeaway: { vi: string; en: string };
-  topics: { vi: string[]; en: string[] };
-}

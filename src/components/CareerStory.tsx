@@ -31,7 +31,7 @@ export const CareerStory: React.FC<CareerStoryProps> = ({ lang, onSelectCase }) 
         <div className="flex flex-col gap-3 mb-12 sm:mb-16">
           <div className="flex items-center gap-3">
             <span className="text-xs font-bold tracking-widest text-[#0068FF] uppercase">
-              {lang === 'vi' ? '02 — Hành trình Sự nghiệp' : '02 — Experience'}
+              {lang === 'vi' ? 'Hành trình nghề nghiệp' : 'Career Journey'}
             </span>
             <div className="h-px w-12 bg-[#0068FF]/30" />
           </div>
@@ -39,13 +39,13 @@ export const CareerStory: React.FC<CareerStoryProps> = ({ lang, onSelectCase }) 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
             {lang === 'vi' ? (
               <>
-                Hành trình Sự nghiệp:<br />
-                <span className="text-[#0068FF]">Gắn kết Con người với Mục tiêu &amp; Ý nghĩa Tổ chức.</span>
+                Hành trình nghề nghiệp:<br />
+                <span className="text-[#0068FF]">Từ Truyền thông đến Tư duy Hệ thống &amp; Dẫn dắt.</span>
               </>
             ) : (
               <>
-                Experience that Connects<br />
-                <span className="text-[#0068FF]">People with Purpose.</span>
+                Professional Career Journey:<br />
+                <span className="text-[#0068FF]">From Communication to Systems &amp; Leadership.</span>
               </>
             )}
           </h2>
