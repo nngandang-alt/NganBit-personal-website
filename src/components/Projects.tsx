@@ -13,7 +13,7 @@ import {
   Users,
   Layers,
   CheckCircle2,
-  FolderKanban
+  FolderKanban,
 } from 'lucide-react';
 
 interface ProjectsProps {
@@ -27,7 +27,7 @@ export const Projects: React.FC<ProjectsProps> = ({
   onNavigateNext,
   activeCaseId,
 }) => {
-  // Default to first case study (Top 100 Student Achievement Awards)
+  // Default to first case study or activeCaseId
   const defaultIdx = activeCaseId
     ? Math.max(0, CASE_STUDIES.findIndex((c) => c.id === activeCaseId))
     : 0;
@@ -42,6 +42,15 @@ export const Projects: React.FC<ProjectsProps> = ({
   const handleNextCase = () => {
     if (selectedCaseIndex < CASE_STUDIES.length - 1) setSelectedCaseIndex(selectedCaseIndex + 1);
   };
+
+  // Safe impact extractor
+  const getImpactList = (caseStudy: CaseStudy): string[] => {
+    if (!caseStudy || !caseStudy.impact) return [];
+    if (Array.isArray(caseStudy.impact)) return caseStudy.impact;
+    return (caseStudy.impact as any)[lang] || (caseStudy.impact as any).vi || [];
+  };
+
+  const impactList = getImpactList(activeCase);
 
   return (
     <section
@@ -105,7 +114,7 @@ export const Projects: React.FC<ProjectsProps> = ({
           })}
         </div>
 
-        {/* ACTIVE CASE STUDY FOCUSED VIEW CONTAINER */}
+        {/* ACTIVE CASE STUDY FULL DEEP DIVE CONTAINER */}
         <div className="bg-[#F8FAFC] rounded-3xl sm:rounded-[36px] border border-slate-200/90 shadow-lg shadow-slate-200/30 p-6 sm:p-10 md:p-12 space-y-10">
           
           {/* Header of Active Case */}
@@ -118,6 +127,11 @@ export const Projects: React.FC<ProjectsProps> = ({
                 {activeCase.category[lang]}
               </span>
               <span className="text-xs text-slate-400 font-mono">• {activeCase.year}</span>
+              {activeCase.accentBadge && (
+                <span className="px-2.5 py-0.5 rounded-full bg-slate-200/70 text-slate-700 text-[10px] font-bold">
+                  {activeCase.accentBadge[lang]}
+                </span>
+              )}
             </div>
 
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-900 leading-tight">
@@ -128,108 +142,227 @@ export const Projects: React.FC<ProjectsProps> = ({
             </p>
           </div>
 
+          {/* Reusable Cover Visual if present */}
+          {activeCase.coverImage && (
+            <div className="overflow-hidden rounded-2xl shadow-xs border border-slate-200">
+              <CaseStudyCover
+                image={activeCase.coverImage}
+                projectId={activeCase.id}
+                lang={lang}
+              />
+            </div>
+          )}
+
           {/* Context, Challenge & Insight Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-2xs">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-2">
-                {lang === 'vi' ? 'Bối cảnh Tổ chức' : 'Organizational Context'}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 rounded-2xl bg-white border border-slate-200/80 shadow-2xs">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-1.5">
+                {lang === 'vi' ? 'Bối cảnh khởi phát (Context)' : 'Context'}
               </span>
               <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
                 {activeCase.context[lang]}
               </p>
             </div>
-
-            <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-2xs">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-amber-600 block mb-2">
-                {lang === 'vi' ? 'Thách thức & Điểm nghẽn' : 'The Core Challenge'}
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-rose-600 block mb-1.5">
+                {lang === 'vi' ? 'Thách thức đặt ra (Challenge)' : 'Challenge'}
               </span>
               <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
                 {activeCase.challenge[lang]}
               </p>
             </div>
-
-            <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-2xs">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#0068FF] block mb-2">
-                {lang === 'vi' ? 'Góc nhìn & Thấu cảm (Insight)' : 'Key Insight'}
-              </span>
-              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-                {activeCase.insight[lang]}
-              </p>
-            </div>
           </div>
 
-          {/* Dual Layer Architecture (Event + Operational / Ritual + Systems) */}
-          {activeCase.dualLayers && (
-            <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-4">
-              <div className="flex items-center gap-2 text-[#0068FF]">
-                <Layers className="w-5 h-5" />
-                <h4 className="text-sm sm:text-base font-bold text-slate-900">
-                  {lang === 'vi' ? 'Kiến trúc Hai Tầng Giải Pháp (Dual-Layer Architecture)' : 'Dual-Layer Solution Architecture'}
-                </h4>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/60">
-                  <span className="text-xs font-bold text-[#0068FF] block mb-1">
-                    {activeCase.dualLayers.experiential.label[lang]}
-                  </span>
-                  <p className="text-xs text-slate-700 leading-relaxed">
-                    {activeCase.dualLayers.experiential.details[lang]}
-                  </p>
-                </div>
-                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/60">
-                  <span className="text-xs font-bold text-slate-800 block mb-1">
-                    {activeCase.dualLayers.systemic.label[lang]}
-                  </span>
-                  <p className="text-xs text-slate-700 leading-relaxed">
-                    {activeCase.dualLayers.systemic.details[lang]}
-                  </p>
-                </div>
+          {/* Insight Callout */}
+          {activeCase.insight && (
+            <div className="p-5 sm:p-6 rounded-2xl bg-blue-50/60 border border-[#0068FF]/20 flex items-start gap-4">
+              <Lightbulb className="w-5 h-5 text-[#0068FF] shrink-0 mt-0.5" />
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-[#0068FF] block mb-1">
+                  {lang === 'vi' ? 'Góc nhìn & Thấu cảm (Insight)' : 'Key Insight'}
+                </span>
+                <p className="text-xs sm:text-sm text-slate-800 leading-relaxed font-normal italic">
+                  “{activeCase.insight[lang]}”
+                </p>
               </div>
             </div>
           )}
 
-          {/* AI Operational Enablement Highlight */}
-          {activeCase.aiFeature && (
-            <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-blue-950/90 to-slate-900 text-white shadow-md">
-              <div className="flex items-center gap-2 text-[#0068FF] mb-3">
-                <Sparkles className="w-5 h-5 text-blue-400" />
-                <span className="text-xs font-mono font-bold uppercase tracking-widest text-blue-300">
-                  {lang === 'vi' ? 'Ứng dụng AI Nâng cao Hiệu suất Vận hành' : 'AI Operational Enablement'}
-                </span>
-              </div>
-              <h4 className="text-lg sm:text-xl font-bold mb-2">
-                {activeCase.aiFeature.title[lang]}
-              </h4>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-3xl mb-4">
-                {activeCase.aiFeature.description[lang]}
+          {/* My Role & Stakeholders */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-5 rounded-2xl bg-white border border-slate-200/80">
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5 mb-2">
+                <Compass className="w-4 h-4 text-[#0068FF]" />
+                <span>{lang === 'vi' ? 'Vai trò đảm nhiệm (My Role)' : 'My Ownership & Role'}</span>
+              </span>
+              <p className="text-xs sm:text-sm text-slate-800 font-medium leading-relaxed">
+                {activeCase.myRole[lang]}
               </p>
+            </div>
 
-              {activeCase.aiFeature.image && (
-                <div className="mt-4 rounded-xl overflow-hidden border border-white/10 max-w-xl">
-                  <img
-                    src={activeCase.aiFeature.image}
-                    alt="AI FaceID Facial Recognition Check-in"
-                    className="w-full h-auto object-cover"
-                    loading="lazy"
-                  />
-                  <div className="p-3 bg-black/50 backdrop-blur-md text-[11px] text-slate-300">
-                    {activeCase.aiFeature.caption ? activeCase.aiFeature.caption[lang] : 'Hệ thống AI Facial Recognition Check-in tại cổng đón tiếp Top 100'}
-                  </div>
+            {activeCase.stakeholders && (
+              <div className="p-5 rounded-2xl bg-white border border-slate-200/80">
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5 mb-2">
+                  <Users className="w-4 h-4 text-[#0068FF]" />
+                  <span>{lang === 'vi' ? 'Các bên liên quan (Stakeholders)' : 'Key Stakeholders'}</span>
+                </span>
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                  {activeCase.stakeholders[lang]}
+                </p>
+              </div>
+            )}
+          </div>
+
+          {/* Approach & Framework */}
+          <div className="space-y-4">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900 flex items-center gap-2">
+              <Layers className="w-4 h-4 text-[#0068FF]" />
+              <span>{lang === 'vi' ? 'Cách tiếp cận & Mô hình (Approach & Framework)' : 'Approach & Framework'}</span>
+            </h4>
+            <div className="p-6 rounded-2xl bg-white border border-slate-200/80 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-3 whitespace-pre-line">
+              {activeCase.approachItems && activeCase.approachItems.length > 0 ? (
+                <div className="space-y-3">
+                  {activeCase.approachItems.map((item, idx) => (
+                    <div key={idx} className="space-y-1">
+                      <div className="font-semibold text-slate-900 text-xs sm:text-sm flex items-start gap-2">
+                        <span className="text-[#0068FF]">•</span>
+                        <span>{item.title[lang]}</span>
+                      </div>
+                      {item.desc && (
+                        <p className="text-xs text-slate-600 pl-4 leading-relaxed">
+                          {item.desc[lang]}
+                        </p>
+                      )}
+                    </div>
+                  ))}
                 </div>
+              ) : (
+                <p>{activeCase.approach[lang]}</p>
+              )}
+              {activeCase.systemFramework && (
+                <div className="pt-3 border-t border-slate-200 font-medium text-slate-800">
+                  <span className="text-[#0068FF] font-semibold">Framework: </span>
+                  {activeCase.systemFramework[lang]}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* AI Feature & Operational Optimization (Fully Safe Guarded) */}
+          {activeCase.aiFeature && (
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-indigo-50/70 via-blue-50/40 to-slate-50 border border-indigo-200/70 space-y-4">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-indigo-700 flex items-center gap-1.5 mb-2">
+                  <Sparkles className="w-4 h-4 text-indigo-600" />
+                  <span>{lang === 'vi' ? 'Ứng dụng AI & Tối ưu Vận hành' : 'AI-enabled Operations & Experience Augmentation'}</span>
+                </span>
+                <h5 className="font-bold text-slate-900 text-sm sm:text-base">
+                  {activeCase.aiFeature.title[lang]}
+                </h5>
+                <p className="text-xs sm:text-sm text-slate-700 mt-1 leading-relaxed">
+                  {activeCase.aiFeature.desc ? activeCase.aiFeature.desc[lang] : (activeCase.aiFeature.description ? (activeCase.aiFeature.description as any)[lang] : '')}
+                </p>
+              </div>
+
+              {/* Capabilities */}
+              {activeCase.aiFeature.capabilities && activeCase.aiFeature.capabilities[lang] && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {activeCase.aiFeature.capabilities[lang].map((cap, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-xs text-slate-700 bg-white/80 p-2.5 rounded-xl border border-indigo-100 shadow-2xs">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
+                      <span>{cap}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Dual Layers */}
+              {activeCase.aiFeature.layers && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs pt-2 border-t border-indigo-100/70">
+                  {activeCase.aiFeature.layers.participantExperience && (
+                    <div className="bg-white/70 p-3 rounded-xl border border-indigo-100">
+                      <span className="font-semibold text-indigo-950 block mb-1">
+                        {lang === 'vi' ? 'Trải nghiệm người tham dự:' : 'Participant Experience:'}
+                      </span>
+                      <span className="text-slate-600 leading-relaxed">
+                        {activeCase.aiFeature.layers.participantExperience[lang]}
+                      </span>
+                    </div>
+                  )}
+                  {activeCase.aiFeature.layers.operationalEfficiency && (
+                    <div className="bg-white/70 p-3 rounded-xl border border-indigo-100">
+                      <span className="font-semibold text-indigo-950 block mb-1">
+                        {lang === 'vi' ? 'Hiệu quả vận hành:' : 'Operational Efficiency:'}
+                      </span>
+                      <span className="text-slate-600 leading-relaxed">
+                        {activeCase.aiFeature.layers.operationalEfficiency[lang]}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* AI Evidence Photo */}
+              {activeCase.aiFeature.image && (
+                <figure className="mt-4 overflow-hidden rounded-2xl border border-indigo-200/80 bg-slate-900 shadow-xs flex flex-col">
+                  <div className="relative overflow-hidden aspect-[16/10] sm:aspect-[16/9] bg-slate-950">
+                    <img
+                      src={activeCase.aiFeature.image}
+                      alt={activeCase.aiFeature.title[lang]}
+                      className="w-full h-full object-cover object-center"
+                      loading="lazy"
+                    />
+                  </div>
+                  {activeCase.aiFeature.caption && (
+                    <figcaption className="p-3 text-center italic text-xs text-slate-500 bg-slate-50/90 border-t border-slate-100 leading-relaxed">
+                      {activeCase.aiFeature.caption[lang]}
+                    </figcaption>
+                  )}
+                </figure>
               )}
             </div>
           )}
 
-          {/* Measured Impact & Results */}
-          {activeCase.impact && (
+          {/* Quantitative Stats Grid if present */}
+          {activeCase.quantitativeStats && activeCase.quantitativeStats.length > 0 && (
+            <div className="space-y-4">
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block">
+                {lang === 'vi' ? 'Chỉ số đo lường hiệu quả (Metrics & Evidence)' : 'Key Metrics & Measured Impact'}
+              </span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {activeCase.quantitativeStats.map((stat, idx) => (
+                  <div key={idx} className="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs">
+                    <div className="font-mono font-bold text-2xl sm:text-3xl text-[#0068FF] mb-1">
+                      {stat.value}
+                    </div>
+                    <div className="text-xs font-bold text-slate-900 mb-1">
+                      {stat.label[lang]}
+                    </div>
+                    {stat.subtext && (
+                      <div className="text-[11px] text-slate-500 font-medium mb-2">
+                        {stat.subtext[lang]}
+                      </div>
+                    )}
+                    {stat.notes && (
+                      <div className="text-[11px] text-slate-600 border-t border-slate-100 pt-2 leading-relaxed">
+                        {stat.notes[lang]}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Measured Impact & Outcomes */}
+          {impactList.length > 0 && (
             <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200/90 shadow-2xs">
               <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 mb-4 flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                 <span>{lang === 'vi' ? 'Kết quả & Tác động Được Đo lường' : 'Measured Impact & Outcomes'}</span>
               </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {activeCase.impact[lang].map((imp: string, idx: number) => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {impactList.map((imp: string, idx: number) => (
                   <div key={idx} className="p-4 rounded-xl bg-slate-50 border border-slate-200/60 text-xs text-slate-800 leading-relaxed flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                     <span>{imp}</span>
@@ -247,7 +380,7 @@ export const Projects: React.FC<ProjectsProps> = ({
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {activeCase.visualEvidence.map((img: any, idx: number) => (
-                  <div key={idx} className="rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-2xs">
+                  <div key={idx} className="rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-2xs flex flex-col justify-between">
                     <img
                       src={img.src}
                       alt={img.alt ? img.alt[lang] : 'Event evidence'}
@@ -255,7 +388,7 @@ export const Projects: React.FC<ProjectsProps> = ({
                       loading="lazy"
                     />
                     {img.caption && (
-                      <p className="p-3 text-[11px] text-slate-600 leading-snug border-t border-slate-100">
+                      <p className="p-3 text-[11px] text-slate-600 leading-snug border-t border-slate-100 bg-slate-50/60">
                         {img.caption[lang]}
                       </p>
                     )}
@@ -290,6 +423,38 @@ export const Projects: React.FC<ProjectsProps> = ({
                   Your browser does not support video playback.
                 </video>
               </div>
+            </div>
+          )}
+
+          {/* Qualitative Evidence if present */}
+          {activeCase.qualitativeEvidence && (
+            <div className="p-6 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-3">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#0068FF]">
+                {activeCase.qualitativeEvidence.badge[lang]}
+              </span>
+              <p className="text-xs sm:text-sm text-slate-700 italic">
+                “{activeCase.qualitativeEvidence.caption[lang]}”
+              </p>
+              {activeCase.qualitativeEvidence.image && (
+                <div className="max-w-md rounded-xl overflow-hidden border border-slate-200">
+                  <img
+                    src={activeCase.qualitativeEvidence.image}
+                    alt={activeCase.qualitativeEvidence.caption[lang]}
+                    className="w-full h-auto"
+                    loading="lazy"
+                  />
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Key Learning & Reflection */}
+          {activeCase.learning && (
+            <div className="p-5 sm:p-6 rounded-2xl bg-slate-100/70 border border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed">
+              <span className="font-bold text-slate-900 block mb-1">
+                {lang === 'vi' ? 'Bài học đúc kết (Key Takeaway):' : 'Key Takeaway:'}
+              </span>
+              <p>{activeCase.learning[lang]}</p>
             </div>
           )}
 

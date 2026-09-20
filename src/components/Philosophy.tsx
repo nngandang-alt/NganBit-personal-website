@@ -34,103 +34,83 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ lang, onNavigateNext }) 
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
                 {lang === 'vi' ? (
                   <>
-                    Triết Lý Làm Nghề:<br />
-                    <span className="text-[#0068FF]">Từ Thấu Hiểu Con Người đến Chuyển Hóa Tổ Chức.</span>
+                    Triết Lý Nghề Nghiệp:<br />
+                    <span className="text-[#0068FF]">Từ Thấu Cảm Con Người đến Chuyển Hóa Tổ Chức.</span>
                   </>
                 ) : (
                   <>
                     Professional Philosophy:<br />
-                    <span className="text-[#0068FF]">From Human Insight to Cultural Alignment.</span>
+                    <span className="text-[#0068FF]">From Human Empathy to Organizational Transformation.</span>
                   </>
                 )}
               </h2>
             </div>
             <p className="max-w-md text-xs sm:text-sm text-slate-600 leading-relaxed">
               {lang === 'vi'
-                ? 'Truyền thông nội bộ không đơn thuần là phát đi thông điệp. Đó là quá trình gieo nhận thức, nuôi dưỡng niềm tin và kiến tạo những hành vi văn hóa tự nguyện.'
-                : 'Internal communication is never just message transmission. It is an intentional progression from shared understanding to intrinsic cultural action.'}
+                ? 'Tư duy cốt lõi định hình mọi chiến dịch: Không biến văn hóa thành khẩu hiệu bề nổi, mà kiến tạo trải nghiệm thực chất nơi con người tìm thấy ý nghĩa và sự gắn kết.'
+                : 'Core principles shaping every initiative: Culture is never superficial slogans, but experiential architectures where people discover purpose and genuine belonging.'}
             </p>
           </div>
         </div>
 
-        {/* 1. Belief Chain: 7-step progression */}
-        <div className="mb-14 sm:mb-20">
-          <div className="flex items-center justify-between mb-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
-              {lang === 'vi' ? 'Chuỗi chuyển hóa giá trị (Belief Chain)' : 'The Belief Chain (Value Progression)'}
+        {/* 1. The Core Belief Chain (Chuỗi Chuyển Hóa Giá Trị) */}
+        <div className="mb-14 p-6 sm:p-8 rounded-3xl bg-[#F8FAFC] border border-slate-200/90 shadow-xs">
+          <div className="flex items-center gap-2 mb-6">
+            <HeartHandshake className="w-4 h-4 text-[#0068FF]" />
+            <span className="text-xs font-bold font-mono text-[#0068FF] uppercase tracking-wider">
+              {lang === 'vi' ? 'Chuỗi giá trị chuyển hóa (Core Belief Chain)' : 'Core Belief Chain'}
             </span>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2.5 sm:gap-3">
-            {PHILOSOPHY_CHAIN.map((step, idx) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 relative">
+            {PHILOSOPHY_CHAIN.map((item, idx) => (
               <div
-                key={step.step}
-                className={`p-4 rounded-2xl border transition-all duration-200 flex flex-col justify-between ${
-                  idx === PHILOSOPHY_CHAIN.length - 1
-                    ? 'bg-blue-50/80 border-[#0068FF]/30 text-[#0068FF]'
-                    : 'bg-[#F8FAFC] border-slate-200/80 text-slate-700 hover:bg-white hover:shadow-xs'
-                }`}
+                key={idx}
+                className="p-5 rounded-2xl bg-white border border-slate-200/80 shadow-2xs flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="font-mono text-xs font-bold text-[#0068FF]">
-                      0{step.step}
-                    </span>
-                    {idx < PHILOSOPHY_CHAIN.length - 1 && (
-                      <span className="text-slate-300 text-xs hidden lg:inline">→</span>
-                    )}
+                  <span className="font-mono text-[11px] font-bold text-slate-400 block mb-1">
+                    STEP 0{idx + 1}
+                  </span>
+                  <div className="text-xs font-medium text-slate-500 mb-1">
+                    {item.from ? item.from[lang] : ''}
                   </div>
-                  <h4 className="font-bold text-sm text-slate-900 leading-tight">
-                    {step.title[lang]}
-                  </h4>
                 </div>
-                <p className="text-[11px] text-slate-500 mt-2 leading-relaxed">
-                  {step.description[lang]}
-                </p>
+                <div className="pt-3 border-t border-slate-100 flex items-center gap-1.5 text-[#0068FF] font-semibold text-xs sm:text-sm">
+                  <ArrowRight className="w-3.5 h-3.5 shrink-0" />
+                  <span>{item.to ? item.to[lang] : ''}</span>
+                </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* 2. Experience & Emotion Lens (Inside Philosophy) */}
-        <div className="mb-14 sm:mb-20 p-6 sm:p-10 rounded-3xl bg-[#F8FAFC] border border-slate-200/90">
-          <div className="max-w-3xl mb-8">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#0068FF] block mb-2">
-              {lang === 'vi' ? 'Lăng kính Trải nghiệm & Cảm xúc (Experience & Emotion Lens)' : 'The Experience & Emotion Lens'}
+        {/* 2. The Experience Lens (3 Câu Hỏi Thấu Cảm) */}
+        <div className="mb-14">
+          <div className="flex items-center gap-2 mb-6">
+            <Eye className="w-4 h-4 text-[#0068FF]" />
+            <span className="text-xs font-bold font-mono text-[#0068FF] uppercase tracking-wider">
+              {lang === 'vi' ? 'Lăng kính Trải nghiệm (The Experience Lens)' : 'The Experience Lens'}
             </span>
-            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 leading-snug">
-              {lang === 'vi'
-                ? 'Mỗi chiến dịch hay sự kiện văn hóa đều được soi chiếu qua 3 câu hỏi cốt tử:'
-                : 'Every campaign or ceremonial initiative is tested through 3 defining questions:'}
-            </h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {PHILOSOPHY_QUESTIONS.map((q, idx) => {
-              const icons = [HeartHandshake, Eye, Activity];
-              const IconComponent = icons[idx % icons.length];
-              return (
-                <div
-                  key={idx}
-                  className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-2xs flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0068FF] flex items-center justify-center mb-4">
-                      <IconComponent className="w-5 h-5" />
-                    </div>
-                    <span className="text-[11px] font-mono font-bold text-[#0068FF] uppercase tracking-wider block mb-1">
-                      {q.tag[lang]}
-                    </span>
-                    <h4 className="font-bold text-base text-slate-900 leading-snug mb-2">
-                      “{q.question[lang]}”
-                    </h4>
-                  </div>
-                  <p className="text-xs text-slate-600 leading-relaxed mt-2 pt-3 border-t border-slate-100">
-                    {q.elaboration[lang]}
-                  </p>
-                </div>
-              );
-            })}
+            {PHILOSOPHY_QUESTIONS.map((q, idx) => (
+              <div
+                key={idx}
+                className="p-6 sm:p-7 rounded-3xl bg-white border border-slate-200/90 shadow-2xs hover:border-[#0068FF]/40 transition-colors"
+              >
+                <span className="px-3 py-1 rounded-full bg-blue-50 text-[#0068FF] font-mono text-xs font-bold inline-block mb-3">
+                  {q.tag ? q.tag[lang] : ''}
+                </span>
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-snug mb-3">
+                  “{q.question ? q.question[lang] : ''}”
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  {q.elaboration ? q.elaboration[lang] : ''}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -145,10 +125,10 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ lang, onNavigateNext }) 
                 0{idx + 1}
               </div>
               <h4 className="text-base sm:text-lg font-bold text-slate-900 leading-snug mb-2">
-                {pillar.title[lang]}
+                {pillar.title ? pillar.title[lang] : ''}
               </h4>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                {pillar.description[lang]}
+                {pillar.description ? pillar.description[lang] : ''}
               </p>
             </div>
           ))}

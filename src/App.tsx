@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, Component, ErrorInfo, ReactNode } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { CareerStory } from './components/CareerStory';
@@ -12,7 +12,7 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ProjectModal } from './components/ProjectModal';
 import { CaseStudy, Language } from './types';
-import { CASE_STUDIES } from './data/portfolioData';
+import { RefreshCw } from 'lucide-react';
 
 type MajorView =
   | 'hero'
@@ -24,6 +24,60 @@ type MajorView =
   | 'approach'
   | 'education'
   | 'connect';
+
+interface ErrorBoundaryProps {
+  children: ReactNode;
+  fallbackView: () => void;
+  lang: Language;
+}
+
+interface ErrorBoundaryState {
+  hasError: boolean;
+  error: Error | null;
+}
+
+class SafeViewBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+  constructor(props: ErrorBoundaryProps) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+
+  static getDerivedStateFromError(error: Error): ErrorBoundaryState {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    console.error('View Render Error:', error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="w-full py-24 px-6 text-center bg-white rounded-3xl my-8 border border-red-100 shadow-sm">
+          <div className="max-w-md mx-auto space-y-4">
+            <h3 className="text-xl font-bold text-slate-900">
+              {this.props.lang === 'vi' ? 'Đã xảy ra sự cố khi tải phần này' : 'Unable to render this section'}
+            </h3>
+            <p className="text-xs text-slate-500">
+              {this.state.error?.message || 'Unexpected rendering state'}
+            </p>
+            <button
+              onClick={() => {
+                this.setState({ hasError: false, error: null });
+                this.props.fallbackView();
+              }}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0068FF] text-white text-xs font-semibold cursor-pointer"
+            >
+              <RefreshCw className="w-3.5 h-3.5" />
+              <span>{this.props.lang === 'vi' ? 'Quay lại Trang chủ' : 'Return to Overview'}</span>
+            </button>
+          </div>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
 
 export default function App() {
   // Persist language preference in localStorage (default: 'vi')
@@ -103,6 +157,8 @@ export default function App() {
   const navigateTo = (view: MajorView, subId?: string) => {
     const hash = subId ? `#${view}/${subId}` : `#${view}`;
     window.location.hash = hash;
+    setActiveView(view);
+    if (subId) setActiveCaseId(subId);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -121,68 +177,70 @@ export default function App() {
 
         {/* FOCUSED VIEW ARCHITECTURE (Progressive Disclosure) */}
         <main className="w-full transition-opacity duration-300">
-          {activeView === 'hero' && (
-            <Hero
-              lang={lang}
-              onExploreStory={() => navigateTo('career')}
-              onExploreCases={() => navigateTo('cases')}
-            />
-          )}
+          <SafeViewBoundary fallbackView={() => navigateTo('hero')} lang={lang}>
+            {activeView === 'hero' && (
+              <Hero
+                lang={lang}
+                onExploreStory={() => navigateTo('career')}
+                onExploreCases={() => navigateTo('cases')}
+              />
+            )}
 
-          {activeView === 'career' && (
-            <CareerStory
-              lang={lang}
-              onNavigateNext={() => navigateTo('philosophy')}
-              onSelectCase={(caseId) => navigateTo('cases', caseId)}
-            />
-          )}
+            {activeView === 'career' && (
+              <CareerStory
+                lang={lang}
+                onNavigateNext={() => navigateTo('philosophy')}
+                onSelectCase={(caseId) => navigateTo('cases', caseId)}
+              />
+            )}
 
-          {activeView === 'philosophy' && (
-            <Philosophy
-              lang={lang}
-              onNavigateNext={() => navigateTo('cases')}
-            />
-          )}
+            {activeView === 'philosophy' && (
+              <Philosophy
+                lang={lang}
+                onNavigateNext={() => navigateTo('cases')}
+              />
+            )}
 
-          {activeView === 'cases' && (
-            <Projects
-              lang={lang}
-              activeCaseId={activeCaseId}
-              onNavigateNext={() => navigateTo('work')}
-            />
-          )}
+            {activeView === 'cases' && (
+              <Projects
+                lang={lang}
+                activeCaseId={activeCaseId}
+                onNavigateNext={() => navigateTo('work')}
+              />
+            )}
 
-          {activeView === 'work' && (
-            <SelectedWork
-              lang={lang}
-              onNavigateNext={() => navigateTo('recognition')}
-            />
-          )}
+            {activeView === 'work' && (
+              <SelectedWork
+                lang={lang}
+                onNavigateNext={() => navigateTo('recognition')}
+              />
+            )}
 
-          {activeView === 'recognition' && (
-            <Recognition
-              lang={lang}
-              onNavigateNext={() => navigateTo('approach')}
-            />
-          )}
+            {activeView === 'recognition' && (
+              <Recognition
+                lang={lang}
+                onNavigateNext={() => navigateTo('approach')}
+              />
+            )}
 
-          {activeView === 'approach' && (
-            <Approach
-              lang={lang}
-              onNavigateNext={() => navigateTo('education')}
-            />
-          )}
+            {activeView === 'approach' && (
+              <Approach
+                lang={lang}
+                onNavigateNext={() => navigateTo('education')}
+              />
+            )}
 
-          {activeView === 'education' && (
-            <Credentials
-              lang={lang}
-              onNavigateNext={() => navigateTo('connect')}
-            />
-          )}
+            {activeView === 'education' && (
+              <Credentials
+                lang={lang}
+                onNavigateNext={() => navigateTo('connect')}
+              />
+            )}
 
-          {activeView === 'connect' && (
-            <Contact lang={lang} />
-          )}
+            {activeView === 'connect' && (
+              <Contact lang={lang} />
+            )}
+          </SafeViewBoundary>
         </main>
 
         {/* Minimal Footer */}
