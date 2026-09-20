@@ -267,7 +267,7 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
             'Synchronized core competency rubrics with corporate BPO performance evaluation benchmarks.',
           ],
         },
-        relatedCaseId: 'case-15-60-90',
+        relatedCaseId: 'case-transcosmos-retention',
       },
     ],
   },
@@ -369,8 +369,8 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
       en: 'FROM COMMUNICATION TO CULTURE (Progression: F88 → CMC → Vua Nệm)',
     },
     story: {
-      vi: 'Giai đoạn tiến hóa bản lề với hành trình trải qua 3 môi trường kinh doanh đặc thù (F88 → CMC → Vua Nệm). Tôi chuyển mình rõ rệt từ Truyền thông nội bộ (F88) sang Phát triển văn hóa doanh nghiệp (CMC) và tiến đến Kích hoạt văn hóa, dẫn dắt thay đổi và quản lý (Vua Nệm - Acting Internal Communication Lead). Tại Vua Nệm, tôi hiện thực hóa việc chuyển đổi giá trị thành hành vi hàng ngày thông qua chương trình Happy Journey, Bộ quy tắc ứng xử (Code of Conduct) và Thói quen C7+ kết nối hội sở với hàng trăm cửa hàng bán lẻ toàn quốc.',
-      en: 'A decisive developmental trajectory spanning three distinct business landscapes (F88 → CMC → Vua Nệm). Progressed from foundational Internal Communications (F88) to corporate culture development (CMC), and culminated in culture activation, change leadership, and team management (Vua Nệm - Acting Internal Communication Lead). At Vua Nệm, codified values into observable behaviors through Happy Journey, Code of Conduct, and C7+ Habits uniting HQ with nationwide retail stores.',
+      vi: 'Giai đoạn tiến hóa bản lề với hành trình trải qua 3 môi trường kinh doanh đặc thù (F88 → CMC → Vua Nệm). Tôi chuyển mình rõ rệt từ Truyền thông nội bộ (F88) sang Phát triển văn hóa doanh nghiệp (CMC) và tiến đến Kích hoạt văn hóa, dẫn dắt thay đổi và quản lý (Vua Nệm - Acting Internal Communication Lead). Tại Vua Nệm, tôi hiện thực hóa việc chuyển đổi giá trị thành hành vi hàng ngày thông qua chương trình Happy Journey, chiến lược văn hóa gắn kết Together We Shine và các điểm chạm truyền thông kết nối hội sở với hàng trăm cửa hàng bán lẻ toàn quốc.',
+      en: 'A decisive developmental trajectory spanning three distinct business landscapes (F88 → CMC → Vua Nệm). Progressed from foundational Internal Communications (F88) to corporate culture development (CMC), and culminated in culture activation, change leadership, and team management (Vua Nệm - Acting Internal Communication Lead). At Vua Nệm, activated culture and employee engagement through Happy Journey, Together We Shine EVP alignment, and omnichannel touchpoints uniting HQ with nationwide retail stores.',
     },
     coreShift: {
       from: { vi: 'Sản xuất nội dung truyền thông (Communication)', en: 'Communication output & content creation' },
@@ -380,7 +380,7 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
       vi: 'Truyền thông là công cụ, nhưng Văn hóa mới là đích đến. Để kết nối được nhân sự tuyến đầu phân tán, thông điệp lãnh đạo phải chuyển hóa thành sự tôn vinh chân thành và những thói quen hành vi cụ thể.',
       en: 'Communication is the catalyst, but Culture is the destination. Frontline retail alignment requires translating executive vision into genuine recognition and tangible behavioral habits.',
     },
-    toolkit: ['Culture Activation', 'Values Into Behaviors (C7+)', 'Happy Journey Recognition', 'Retail Frontline Engagement', 'Omnichannel Internal Media'],
+    toolkit: ['Culture Activation', 'EVP Strategy & Cultural Touchpoints', 'Happy Journey Recognition', 'Retail Frontline Engagement', 'Omnichannel Internal Media'],
     contextHighlight: { vi: 'Tiến trình nội bộ: F88 → CMC → Vua Nệm (Acting Internal Communication Lead)', en: 'Internal Progression: F88 → CMC → Vua Nệm (Acting Internal Communication Lead)' },
     verifiedRoles: [
       {
@@ -447,8 +447,8 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
         mandateScope: {
           vi: [
             'Quản trị thương hiệu nội bộ (Internal Branding) và truyền thông văn hóa doanh nghiệp trên quy mô toàn tập đoàn.',
-            'Tham gia phát triển và vận hành nền tảng truyền thông nội bộ Together We Shine kết nối các công ty thành viên.',
-            'Chỉ đạo và hướng dẫn tổ chức các sự kiện văn hóa, phong trào gắn kết cán bộ nhân viên các khối.',
+            'Xây dựng và lan tỏa Bộ thói quen hành vi văn hóa C7+ Habits nhằm đồng bộ hóa chuẩn mực làm việc giữa các công ty thành viên.',
+            'Chỉ đạo và hướng dẫn tổ chức các sự kiện văn hóa, phong trào gắn kết cán bộ nhân viên tập đoàn công nghệ quy mô lớn.',
           ],
           en: [
             'Directing Internal Branding and corporate culture communications across the entire conglomerate ecosystem.',
@@ -466,7 +466,7 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
             'Boosted two-way interactive participation on Together We Shine through multimedia storytelling.',
           ],
         },
-        relatedCaseId: 'case-together-we-shine',
+        relatedCaseId: 'case-cmc-c7',
       },
       {
         id: 'vr-vuanem',
@@ -495,15 +495,15 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
         mandateScope: {
           vi: [
             'Chiến lược Truyền thông nội bộ (IC Strategy) & Kích hoạt văn hóa: Kết nối khối văn phòng với mạng lưới showroom bán lẻ toàn quốc.',
-            'Chuyển hóa giá trị thành hành vi: Triển khai chương trình Happy Journey, Bộ quy tắc ứng xử (Code of Conduct) và Thói quen C7+.',
-            'Truyền thông thay đổi (Change Communication): Đồng hành cùng ban điều hành trong các giai đoạn tái định vị thương hiệu và chuyển đổi vận hành.',
-            'Đào tạo văn hóa & Chiến lược EVP: Thiết kế tài liệu đào tạo văn hóa hội nhập và xây dựng nền tảng thương hiệu tuyển dụng.',
+            'Chương trình Happy Journey & Gắn kết Văn hóa: Thiết kế và vận hành các điểm chạm vinh danh, tôn vinh tinh thần tận tâm của đội ngũ bán lẻ.',
+            'Chiến lược EVP & Chiến dịch Together We Shine: Xây dựng nền tảng giá trị nhân tài, củng cố niềm tự hào tổ chức và định vị thương hiệu tuyển dụng.',
+            'Truyền thông thay đổi (Change Communication): Đồng hành cùng ban điều hành trong các giai đoạn tái định vị thương hiệu và chuyển đổi vận hành chuỗi.',
           ],
           en: [
             'Internal Comms Strategy & Culture Activation: Uniting headquarters with nationwide retail showroom networks.',
-            'Values-into-Behaviors Codification: Spearheading Happy Journey recognition, Code of Conduct, and C7+ Daily Habits.',
-            'Change Communication: Partnering with executives during brand realignment and retail transformation.',
-            'Culture Training & EVP Strategy: Architecting cultural onboarding curriculum and employer value proposition roadmap.',
+            'Happy Journey Culture Recognition: Spearheading recognition touchpoints celebrating retail frontline dedication.',
+            'EVP Strategy & Together We Shine: Architecting employer value proposition and workforce pride campaigns.',
+            'Change Communication: Partnering with leadership during brand realignment and retail operations expansion.',
           ],
         },
         selectedImpact: {
@@ -675,13 +675,62 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
 ];
 
 export const PHILOSOPHY_CHAIN = [
-  { step: '01', name: { vi: 'Communication', en: 'Communication' }, desc: { vi: 'Truyền đạt rõ ràng & cởi mở', en: 'Clear & authentic dialogue' } },
-  { step: '02', name: { vi: 'Understanding', en: 'Understanding' }, desc: { vi: 'Thấu hiểu bối cảnh & lắng nghe', en: 'Contextual empathy & listening' } },
-  { step: '03', name: { vi: 'Trust', en: 'Trust' }, desc: { vi: 'Xây dựng sự an toàn tâm lý', en: 'Psychological safety & integrity' } },
-  { step: '04', name: { vi: 'Connection', en: 'Connection' }, desc: { vi: 'Cảm giác thuộc về tập thể', en: 'Belonging & shared identity' } },
-  { step: '05', name: { vi: 'Alignment', en: 'Alignment' }, desc: { vi: 'Đồng thuận mục tiêu chiến lược', en: 'Strategic clarity & ownership' } },
-  { step: '06', name: { vi: 'Action', en: 'Action' }, desc: { vi: 'Hành động cụ thể mỗi ngày', en: 'Observable daily behavior' } },
-  { step: '07', name: { vi: 'Culture', en: 'Culture' }, desc: { vi: 'Văn hóa sống động & bền vững', en: 'Living, breathing culture' } },
+  {
+    step: '01',
+    from: { vi: 'Truyền thông', en: 'Communication' },
+    to: {
+      vi: 'Khởi đầu từ việc lắng nghe, thấu cảm và truyền đạt thông điệp rõ ràng, chân thực',
+      en: 'Initiated through active listening, empathy, and transparent, authentic messaging',
+    },
+  },
+  {
+    step: '02',
+    from: { vi: 'Thấu hiểu', en: 'Understanding' },
+    to: {
+      vi: 'Chuyển hóa thông tin thành sự đồng cảm sâu sắc về bối cảnh và tâm lý con người',
+      en: 'Transforming information into deep empathy for human context and motivation',
+    },
+  },
+  {
+    step: '03',
+    from: { vi: 'Niềm tin', en: 'Trust' },
+    to: {
+      vi: 'Xây dựng sự an tâm tâm lý và niềm tin vững chắc vào định hướng của tổ chức',
+      en: 'Cultivating psychological safety and enduring institutional belief',
+    },
+  },
+  {
+    step: '04',
+    from: { vi: 'Gắn kết', en: 'Connection' },
+    to: {
+      vi: 'Tạo nên sợi dây liên kết tinh thần bền chặt giữa mỗi cá nhân với tổ chức',
+      en: 'Forging authentic interpersonal and emotional bonds uniting individuals with the organization',
+    },
+  },
+  {
+    step: '05',
+    from: { vi: 'Đồng hướng', en: 'Alignment' },
+    to: {
+      vi: 'Quy tụ mọi nỗ lực và sự thấu hiểu cùng hướng về một mục tiêu, sứ mệnh chung',
+      en: 'Harmonizing diverse talents and energies toward a shared collective purpose',
+    },
+  },
+  {
+    step: '06',
+    from: { vi: 'Hành động', en: 'Action' },
+    to: {
+      vi: 'Biến nhận thức và sự đồng lòng thành hành động thực tế, thói quen tích cực mỗi ngày',
+      en: 'Translating shared conviction into purposeful everyday behaviors and proactive contributions',
+    },
+  },
+  {
+    step: '07',
+    from: { vi: 'Văn hóa', en: 'Culture' },
+    to: {
+      vi: 'Đúc kết thành bản sắc, chuẩn mực hành vi và giá trị trường tồn của tổ chức',
+      en: 'Solidifying into enduring rituals, behavioral standards, and living institutional values',
+    },
+  },
 ];
 
 export const PHILOSOPHY_QUESTIONS = [
@@ -845,7 +894,7 @@ export const EXPERIENCE_ROLES: ExperienceRole[] = [
         'Standardized behavioral benchmarks aligned with organizational competency frameworks and performance evaluations.',
       ],
     },
-    relatedCaseId: 'case-15-60-90',
+    relatedCaseId: 'case-transcosmos-retention',
   },
   {
     id: 'exp-savvycom',
@@ -1420,7 +1469,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
   },
   {
-    id: 'case-15-60-90',
+    id: 'case-transcosmos-retention',
     title: {
       vi: 'Trải nghiệm Nhân viên Dựa trên Dữ liệu — Hành trình 15/60/90 Ngày',
       en: 'Data-driven Employee Experience — 15/60/90-Day Journey',
@@ -1570,7 +1619,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
   },
   {
-    id: 'case-values-behaviors',
+    id: 'case-vuanem-culture',
     title: {
       vi: 'Hệ thống hóa Giá trị thành Hành vi: Happy Journey + C7+ Habits — Vua Nệm',
       en: 'Values Into Behaviors: Happy Journey + C7+ Habits — Vua Nệm',
@@ -1645,7 +1694,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
   },
   {
-    id: 'case-together-we-shine',
+    id: 'case-cmc-c7',
     title: {
       vi: 'Together We Shine — Nền tảng Truyền thông & Thương hiệu Nhà Tuyển dụng',
       en: 'Together We Shine — EVP, Brand & Internal Communication Platform',

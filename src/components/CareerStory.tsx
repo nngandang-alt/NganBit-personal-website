@@ -205,8 +205,8 @@ export const CareerStory: React.FC<CareerStoryProps> = ({
               </div>
               <div className="flex flex-wrap gap-2.5">
                 {[
-                  { id: 'vuanem', name: 'Vua Nệm', period: '2022 — 2023', roleTitle: 'Acting Internal Communication Lead' },
-                  { id: 'cmc', name: 'CMC Corporation', period: '2021 — 2022', roleTitle: 'Corporate Culture Executive' },
+                  { id: 'vuanem', name: 'Vua Nệm', period: '2022 — 2023', roleTitle: 'Acting Internal Communication Lead (Happy Journey & EVP)' },
+                  { id: 'cmc', name: 'CMC Corporation', period: '2021 — 2022', roleTitle: 'Corporate Culture Executive (C7+ Daily Habits)' },
                   { id: 'f88', name: 'F88', period: '2020 — 2021', roleTitle: 'Internal Engagement Executive' },
                   { id: 'all', name: lang === 'vi' ? 'Xem cả 3 giai đoạn' : 'View All 3 Stages', period: '2020 — 2023', roleTitle: 'Full Trajectory' },
                 ].map((co) => {
