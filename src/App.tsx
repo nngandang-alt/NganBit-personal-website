@@ -6,7 +6,6 @@ import { Philosophy } from './components/Philosophy';
 import { Projects } from './components/Projects';
 import { SelectedWork } from './components/SelectedWork';
 import { Recognition } from './components/Recognition';
-import { Approach } from './components/Approach';
 import { Credentials } from './components/Credentials';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
@@ -21,7 +20,6 @@ type MajorView =
   | 'cases'
   | 'work'
   | 'recognition'
-  | 'approach'
   | 'education'
   | 'connect';
 
@@ -121,7 +119,7 @@ export default function App() {
       setActiveView('career');
       return;
     }
-    if (view === 'methodology' || view === 'approach') {
+        if (view === 'methodology' || view === 'approach') {
       setActiveView('philosophy');
       return;
     }
@@ -131,7 +129,7 @@ export default function App() {
     }
 
     if (
-      ['hero', 'career', 'philosophy', 'cases', 'work', 'recognition', 'approach', 'education', 'connect'].includes(view)
+      ['hero', 'career', 'philosophy', 'cases', 'work', 'recognition', 'education', 'connect'].includes(view)
     ) {
       setActiveView(view);
       if (view === 'cases' && parts[1]) {
@@ -176,7 +174,7 @@ export default function App() {
         />
 
         {/* FOCUSED VIEW ARCHITECTURE (Progressive Disclosure) */}
-        <main className="w-full transition-opacity duration-300">
+        <main className="w-full pt-16 sm:pt-20 md:pt-22 transition-opacity duration-300">
           <SafeViewBoundary fallbackView={() => navigateTo('hero')} lang={lang}>
             {activeView === 'hero' && (
               <Hero

@@ -42,7 +42,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full px-3 sm:px-6 md:px-8 py-3 transition-all duration-300 pointer-events-none">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full px-3 sm:px-6 md:px-8 py-3 transition-all duration-300 pointer-events-none">
       <div
         className={`w-full mx-auto flex items-center justify-between pointer-events-auto transition-all duration-300 ${
           isScrolled

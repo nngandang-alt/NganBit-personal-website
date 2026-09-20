@@ -2382,3 +2382,321 @@ export const EDUCATION_LEARNING_DATA: LearningCategory[] = [
     ],
   },
 ];
+
+
+export interface OperatingSystemStage {
+  id: string;
+  step: string;
+  concept: { vi: string; en: string };
+  practice: { vi: string; en: string };
+  belief: { vi: string; en: string };
+  actionFlow: string[];
+  action: { vi: string; en: string };
+  actionPoints: { vi: string[]; en: string[] };
+  output: { vi: string; en: string };
+  signal: { vi: string; en: string };
+}
+
+export const OPERATING_SYSTEM_STAGES: OperatingSystemStage[] = [
+  {
+    id: '01',
+    step: '01',
+    concept: {
+      vi: 'Truyền thông',
+      en: 'Communication',
+    },
+    practice: {
+      vi: 'Lắng nghe & Thấu cảm',
+      en: 'Listen & Empathize',
+    },
+    belief: {
+      vi: 'Truyền thông không bắt đầu từ việc mình muốn nói gì, mà từ việc hiểu người khác đang nghĩ gì, cảm thấy gì và cần gì.',
+      en: 'Communication does not start with what we want to broadcast, but with deeply understanding what people think, feel, and truly need.',
+    },
+    actionFlow: ['LISTEN', 'OBSERVE', 'EMPATHIZE', 'SYNTHESIZE'],
+    action: {
+      vi: 'Lắng nghe chủ động trước khi lên tiếng thông qua: khảo sát, phỏng vấn, trao đổi trực tiếp, quan sát các tương tác thường nhật, phản hồi từ các nhóm đối tượng và dữ liệu trải nghiệm hiện có. Mục tiêu là hiểu con người và bối cảnh trước khi thiết kế thông điệp hoặc giải pháp.',
+      en: 'Active listening before speaking through employee surveys, in-depth 1-on-1 interviews, direct dialogues, workplace interaction observations, cohort feedback, and existing experience metrics. Grounding in human context before designing messages or interventions.',
+    },
+    actionPoints: {
+      vi: [
+        'Khảo sát diện rộng kết hợp phỏng vấn sâu 1:1 với các nhóm nhân sự',
+        'Quan sát trực tiếp các điểm chạm và tương tác thường nhật tại nơi làm việc',
+        'Thu thập phản hồi đa chiều từ tuyến đầu đến cấp quản lý',
+        'Hiểu rõ bối cảnh và tâm lý con người trước khi lên tiếng',
+      ],
+      en: [
+        'Broad sentiment surveys paired with in-depth qualitative 1:1 interviews',
+        'Observing everyday touchpoints and interaction dynamics on the ground',
+        'Multi-cohort feedback collection spanning frontline to executive leadership',
+        'Understanding human context thoroughly before crafting any message',
+      ],
+    },
+    output: {
+      vi: 'Bối cảnh Con người & Cảm nhận Thực tế (Deep Human Context & Sentiment Baseline)',
+      en: 'Deep Human Context & Sentiment Baseline',
+    },
+    signal: {
+      vi: 'Hiểu rõ mong đợi, tâm tư và rào cản tâm lý thực sự của đội ngũ',
+      en: 'Clear clarity on genuine employee expectations and psychological barriers',
+    },
+  },
+  {
+    id: '02',
+    step: '02',
+    concept: {
+      vi: 'Thấu hiểu',
+      en: 'Understanding',
+    },
+    practice: {
+      vi: 'Chẩn đoán',
+      en: 'Diagnose',
+    },
+    belief: {
+      vi: 'Thấu hiểu thực sự đòi hỏi việc nhìn thấu những khoảng cách ngầm giữa kỳ vọng của tổ chức và trải nghiệm thực tế của nhân viên.',
+      en: 'Genuine understanding requires uncovering the latent friction between organizational expectations and actual employee lived experiences.',
+    },
+    actionFlow: ['GATHER', 'COMPARE', 'IDENTIFY', 'PRIORITIZE'],
+    action: {
+      vi: 'Tổng hợp dữ liệu từ khảo sát, phỏng vấn, phản hồi và quan sát thực tế; đối chiếu giữa các nhóm đối tượng, các điểm chạm, điều tổ chức kỳ vọng với điều con người thực sự hiểu, cảm nhận và trải nghiệm để xác định: 1. Vấn đề nằm ở đâu? 2. Ai đang bị ảnh hưởng? 3. Nguyên nhân cốt lõi là gì? 4. Điều gì cần được ưu tiên xử lý?',
+      en: 'Synthesizing data from surveys, interviews, feedback, and observational notes; cross-comparing cohorts, touchpoints, and executive expectations against what people genuinely comprehend and experience to answer: 1. Where does the problem lie? 2. Who is impacted? 3. What is the root cause? 4. What demands priority intervention?',
+    },
+    actionPoints: {
+      vi: [
+        'GATHER: Tổng hợp toàn diện dữ liệu khảo sát, phỏng vấn và quan sát thực tế',
+        'COMPARE: Đối chiếu kỳ vọng của ban lãnh đạo vs trải nghiệm thực tế của nhân sự',
+        'IDENTIFY: Nhận diện chính xác vấn đề trọng yếu và nguyên nhân gốc rễ (Root Causes)',
+        'PRIORITIZE: Xác lập ma trận ưu tiên xử lý để giải phóng điểm nghẽn tổ chức',
+      ],
+      en: [
+        'GATHER: Comprehensive multi-source synthesis across surveys and field notes',
+        'COMPARE: Cross-comparing leadership aspirations against lived workplace reality',
+        'IDENTIFY: Pinpointing exact friction loci and systemic root causes',
+        'PRIORITIZE: Establishing strategic intervention priorities for maximum impact',
+      ],
+    },
+    output: {
+      vi: 'Vấn đề Trọng yếu, Nguyên nhân Cốt lõi & Điểm Ưu tiên (Key Issues, Root Causes & Priority Areas)',
+      en: 'Key Issues, Root Causes & Priority Areas',
+    },
+    signal: {
+      vi: 'Bản đồ điểm nghẽn tổ chức với lộ trình ưu tiên hành động rõ ràng',
+      en: 'Organizational friction map with well-defined intervention priorities',
+    },
+  },
+  {
+    id: '03',
+    step: '03',
+    concept: {
+      vi: 'Niềm tin',
+      en: 'Trust',
+    },
+    practice: {
+      vi: 'Tạo sự đồng thuận',
+      en: 'Align',
+    },
+    belief: {
+      vi: 'Niềm tin được hình thành khi: Điều tổ chức nói ≈ Điều lãnh đạo làm gương ≈ Điều con người thực sự trải nghiệm.',
+      en: 'Trust is built when: What we say ≈ What leaders model ≈ What people experience every day.',
+    },
+    actionFlow: ['ENGAGE', 'ALIGN', 'COMMIT', 'MODEL'],
+    action: {
+      vi: 'Tạo sự thống nhất giữa lãnh đạo và các bên liên quan về: mục tiêu, định hướng, thông điệp, vai trò, cam kết và cách hành động trước khi triển khai rộng. Lãnh đạo cần đi trước trong việc thể hiện cam kết, làm gương và đảm bảo sự nhất quán giữa điều tổ chức nói và điều tổ chức thực sự làm.',
+      en: 'Fostering shared alignment across leadership and cross-functional stakeholders on objectives, strategic direction, core messaging, roles, mutual commitments, and action protocols before company-wide rollout. Leaders model authentic commitment first, ensuring total congruence between organizational narrative and workplace reality.',
+    },
+    actionPoints: {
+      vi: [
+        'Tạo sự thống nhất đa chiều giữa ban điều hành, quản lý trực tiếp và các bộ phận',
+        'Lãnh đạo các cấp chủ động làm gương và cam kết đồng hành từ sớm',
+        'Bảo đảm sự nhất quán tuyệt đối: Nói - Làm gương - Trải nghiệm thực tế',
+        'Phân định rõ ràng vai trò và cơ chế phối hợp trước khi truyền thông rộng',
+      ],
+      en: [
+        'Multi-directional alignment across executive leadership and departmental leads',
+        'Leaders across all levels actively modeling expected behaviors and ownership',
+        'Ensuring complete congruence: What we say - What leaders model - What people live',
+        'Clarifying reciprocal roles, protocols, and accountability before launch',
+      ],
+    },
+    output: {
+      vi: 'Định hướng Đồng thuận, Thông điệp Thống nhất & Cam kết Đồng hành (Shared Direction, Key Messages & Commitments)',
+      en: 'Shared Direction, Key Messages, Roles & Commitments',
+    },
+    signal: {
+      vi: 'Sự đồng thuận vững chắc từ ban lãnh đạo đến cấp quản lý trực tiếp',
+      en: 'Visible leadership sponsorship and multi-tier organizational alignment',
+    },
+  },
+  {
+    id: '04',
+    step: '04',
+    concept: {
+      vi: 'Gắn kết',
+      en: 'Connection',
+    },
+    practice: {
+      vi: 'Thiết kế Trải nghiệm',
+      en: 'Design',
+    },
+    belief: {
+      vi: 'Con người không kết nối với tổ chức chỉ thông qua thông điệp. Họ kết nối thông qua những điểm chạm và trải nghiệm mà họ thực sự đi qua.',
+      en: 'People do not connect with organizations merely through broadcast messages; they connect through the touchpoints and lived journeys they physically navigate.',
+    },
+    actionFlow: ['MAP JOURNEY', 'TOUCHPOINTS', 'MOMENTS', 'TOOLKIT'],
+    action: {
+      vi: 'Thiết kế hành trình trải nghiệm tổng thể (experience journey), các điểm chạm truyền thông, khoảnh khắc tương tác, kiến trúc thông điệp, nghi thức vinh danh, cơ chế tham gia tương tác, và bộ công cụ truyền thông cho quản lý trực tiếp phù hợp với từng phân khúc nhân sự. Mục tiêu là biến truyền thông và văn hóa thành một TRẢI NGHIỆM sống động, không chỉ là một chiến dịch hay thông điệp.',
+      en: 'Architecting holistic employee experience journeys, communication touchpoints, interactive inflection moments, message hierarchy, recognition rituals, two-way participation mechanics, and frontline leader communication toolkits tailored across cohorts. Transforming communication and culture into a living EXPERIENCE rather than just a campaign or broadcast.',
+    },
+    actionPoints: {
+      vi: [
+        'Thiết kế bản đồ hành trình trải nghiệm và kiến trúc thông điệp đa tầng',
+        'Định hình các khoảnh khắc tương tác ý nghĩa và nghi thức vinh danh xứng tầm',
+        'Xây dựng cơ chế tham gia chủ động, khơi gợi cảm hứng gắn kết nội tại',
+        'Trang bị bộ công cụ truyền thông và hướng dẫn cụ thể cho quản lý trực tiếp',
+      ],
+      en: [
+        'Designing end-to-end experience journey maps and tiered message architectures',
+        'Crafting meaningful interaction moments and prestigious recognition ceremonies',
+        'Engineering participatory mechanics that foster authentic intrinsic commitment',
+        'Equipping people managers with pragmatic communication toolkits and rubrics',
+      ],
+    },
+    output: {
+      vi: 'Bản đồ Hành trình Trải nghiệm & Bộ Công cụ Điểm chạm (Experience Journey, Touchpoint Blueprints & Toolkits)',
+      en: 'Experience Journey, Touchpoint Blueprints & Toolkits',
+    },
+    signal: {
+      vi: 'Hệ thống điểm chạm truyền thông chạm đúng cảm xúc và nhu cầu của nhân sự',
+      en: 'Holistic touchpoint ecosystem resonating with emotional and functional needs',
+    },
+  },
+  {
+    id: '05',
+    step: '05',
+    concept: {
+      vi: 'Đồng hướng',
+      en: 'Alignment',
+    },
+    practice: {
+      vi: 'Kích hoạt',
+      en: 'Activate',
+    },
+    belief: {
+      vi: 'Đồng hướng chỉ thành công khi giá trị tổ chức được chuyển hóa thành nhận thức sâu sắc và hướng dẫn hành động cụ thể trong công việc hằng ngày.',
+      en: 'Alignment succeeds only when organizational values translate into intuitive understanding and actionable behavioral guidance in daily work.',
+    },
+    actionFlow: ['COMMUNICATE', 'EXPERIENCE', 'LEARN', 'PRACTICE'],
+    action: {
+      vi: 'Chuyển định hướng và giá trị chung thành: hành vi, nghi thức, câu chuyện, hoạt động, truyền thông, chương trình đào tạo/học tập, và các cơ chế thực hành, giúp con người không chỉ biết tổ chức mong đợi điều gì mà còn hiểu cách áp dụng điều đó vào công việc hằng ngày.',
+      en: 'Operationalizing shared direction and core values into: observable behaviors, living rituals, inspiring narratives, experiential activities, learning programs, and daily practice mechanisms—empowering individuals to not merely understand what is expected, but intuitively apply it in their daily routines.',
+    },
+    actionPoints: {
+      vi: [
+        'Chuyển hóa giá trị cốt lõi thành khung chuẩn hóa hành vi cụ thể (Behaviors)',
+        'Thiết lập các nghi thức làm việc và câu chuyện văn hóa truyền cảm hứng (Rituals & Stories)',
+        'Tích hợp chương trình đào tạo, hội thảo và trải nghiệm học tập thực chiến (Learning)',
+        'Kích hoạt truyền thông đa kênh và cơ chế áp dụng thường nhật trong tổ chức (Practice)',
+      ],
+      en: [
+        'Codifying core corporate values into actionable behavioral competencies (Behaviors)',
+        'Instituting purposeful daily workplace rituals and authentic human stories (Rituals & Stories)',
+        'Integrating experiential workshops and continuous learning curricula (Learning)',
+        'Omnichannel rollout and daily practice integration across business units (Practice)',
+      ],
+    },
+    output: {
+      vi: 'Hành vi Chuẩn hóa, Nghi thức Sống động & Trải nghiệm Đào tạo (Behaviors, Rituals, Stories, Learning & Activation)',
+      en: 'Behaviors, Living Rituals, Stories, Learning & Activation',
+    },
+    signal: {
+      vi: 'Nhân viên ở mọi cấp hiểu rõ và chủ động thực hành giá trị vào công việc thường nhật',
+      en: 'Employees across all tiers actively embody corporate values in daily tasks',
+    },
+  },
+  {
+    id: '06',
+    step: '06',
+    concept: {
+      vi: 'Hành động',
+      en: 'Action',
+    },
+    practice: {
+      vi: 'Đo lường & Học hỏi',
+      en: 'Measure & Learn',
+    },
+    belief: {
+      vi: 'Hành động mới là bằng chứng chân thực nhất của chuyển hóa. Đo lường không phải để báo cáo, mà để lắng nghe, học hỏi và hiệu chỉnh.',
+      en: 'Action is the true proof of transformation. Measurement exists not to build static reports, but to listen, learn, and continuously calibrate.',
+    },
+    actionFlow: ['MEASURE', 'LEARN', 'ADJUST'],
+    action: {
+      vi: 'Không chỉ đo tỷ lệ tham gia hay sự hài lòng bề nổi. Kiểm tra nhận thức có thay đổi, cảm nhận có gắn kết, hành vi và cách phối hợp có cải thiện; nhận diện điều gì đang vận hành hiệu quả và điều gì còn nghẽn thông qua chỉ số định lượng, phản hồi định tính, quan sát thực tế và đánh giá của các bên liên quan.',
+      en: 'Moving far beyond superficial attendance or vanity satisfaction scores. Evaluating substantive shifts in awareness, emotional sentiment, collaborative habits, and tangible behaviors; identifying what flourishes and what remains blocked via quantitative analytics, qualitative employee dialogues, and direct observation.',
+    },
+    actionPoints: {
+      vi: [
+        'Đo lường sự chuyển biến thực chất trong nhận thức, cảm xúc và hành vi phối hợp',
+        'Thu thập dữ liệu định lượng kết hợp phản hồi định tính sâu sắc từ các nhóm đối tượng',
+        'Đánh giá mức độ áp dụng thực tế và chỉ ra những điểm còn nghẽn trong vận hành',
+        'Học hỏi từ dữ liệu thực tế để kịp thời hiệu chỉnh lộ trình và giải pháp',
+      ],
+      en: [
+        'Measuring verifiable shifts in mindset, sentiment, and collaboration behaviors',
+        'Combining empirical quantitative metrics with in-depth qualitative employee dialogue',
+        'Assessing practical workplace adoption and identifying ongoing friction points',
+        'Extracting actionable insights to continuously calibrate strategy and delivery',
+      ],
+    },
+    output: {
+      vi: 'Chỉ số Chuyển hóa Hành vi & Lộ trình Hiệu chỉnh (Behavioral Shifts, Adoption Insights & Adjustments)',
+      en: 'Behavioral Shifts, Adoption Insights & Adjustment Roadmap',
+    },
+    signal: {
+      vi: 'Minh chứng thực tế về sự thay đổi hành vi và cam kết nội tại của đội ngũ',
+      en: 'Empirical evidence of genuine behavioral adoption and intrinsic engagement',
+    },
+  },
+  {
+    id: '07',
+    step: '07',
+    concept: {
+      vi: 'Văn hóa',
+      en: 'Culture',
+    },
+    practice: {
+      vi: 'Tối ưu & Lan tỏa',
+      en: 'Improve & Scale',
+    },
+    belief: {
+      vi: 'Văn hóa không phải kết quả của một chiến dịch đơn lẻ. Văn hóa hình thành khi những hành vi có ý nghĩa được lặp lại, củng cố, chuẩn hóa khi cần, cải tiến, lan tỏa và dần trở thành cách tổ chức vận hành mỗi ngày.',
+      en: 'Culture is never the output of a single campaign. Culture takes shape when meaningful behaviors are consistently repeated, reinforced, standardized where appropriate, refined, scaled, and organically become how the organization operates every day.',
+    },
+    actionFlow: ['REFINE', 'REINFORCE', 'STANDARDIZE', 'SCALE'],
+    action: {
+      vi: 'Dựa trên dữ liệu và bài học từ Stage 06: điều chỉnh những gì chưa hiệu quả, củng cố những hành vi có tác động, chuẩn hóa những practice có thể nhân rộng, tích hợp chúng vào cách tổ chức vận hành, và tiếp tục theo dõi khi bối cảnh thay đổi. Mục tiêu không phải là hoàn thành một project văn hóa, mà là biến những gì hiệu quả thành một phần của cách tổ chức vận hành.',
+      en: 'Drawing on insights and lessons from Stage 06: continuously refining friction points, reinforcing high-impact behaviors, codifying scalable practices into operating mechanisms, and sustaining evolutionary adaptability as business conditions evolve. The goal is not merely concluding a culture project, but embedding what works into the living institutional fabric.',
+    },
+    actionPoints: {
+      vi: [
+        'Kịp thời điều chỉnh những điểm chưa hiệu quả dựa trên bài học thực tế từ Stage 06',
+        'Củng cố và tôn vinh những hành vi mẫu mực mang lại tác động tích cực',
+        'Chuẩn hóa các thực hành hiệu quả vào quy trình và cơ chế vận hành chính thức',
+        'Tiếp tục theo dõi và lan tỏa bản sắc văn hóa bền vững khi bối cảnh tổ chức thay đổi',
+      ],
+      en: [
+        'Rapidly refining underperforming elements grounded in empirical Stage 06 learnings',
+        'Reinforcing and spotlighting high-impact behaviors that inspire collective momentum',
+        'Codifying proven rituals and practices into official governance frameworks',
+        'Sustaining long-term cultural adaptability and organizational resilience',
+      ],
+    },
+    output: {
+      vi: 'Thực hành Chuẩn mực & Bản sắc Vận hành Bền vững (Scaled Practices & Institutional Operating Norms)',
+      en: 'Institutionalized Habits, Scaled Practices & Operating Norms',
+    },
+    signal: {
+      vi: 'Bản sắc và giá trị cốt lõi trở thành phản xạ tự nhiên trong cách tổ chức vận hành',
+      en: 'Core values become the instinctive operating default of the organization',
+    },
+  },
+];
