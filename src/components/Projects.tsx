@@ -42,8 +42,8 @@ export const Projects: React.FC<ProjectsProps> = ({ lang, onSelectCase }) => {
 
           <p className="text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed">
             {lang === 'vi'
-              ? 'Tập hợp 6 case study phản ánh năng lực giải quyết bài toán đa chiều: từ kiến trúc hệ thống quan hệ sinh viên, thiết kế trải nghiệm nhập vai quy mô lớn, chuẩn hóa vòng đời nhân viên 15/60/90 ngày, đến kích hoạt văn hóa và nền tảng truyền thông gắn kết.'
-              : 'Curated 6 flagship case studies demonstrating multidimensional problem-solving: from student relations systems and large-scale experiential boot camps, to 15/60/90-day retention architecture and nationwide frontline culture activation.'}
+              ? 'Tập hợp 6 case study phản ánh năng lực giải quyết bài toán đa chiều: từ thiết kế trải nghiệm vinh danh sinh viên & vận hành ứng dụng AI, trại nhập vai công nghệ quy mô lớn, chuẩn hóa vòng đời nhân viên 15/60/90 ngày, đến kích hoạt văn hóa và nền tảng truyền thông gắn kết.'
+              : 'Curated 6 flagship case studies demonstrating multidimensional problem-solving: from student recognition experience design & AI-enabled operations, large-scale experiential boot camps, to 15/60/90-day retention architecture and nationwide frontline culture activation.'}
           </p>
         </div>
 

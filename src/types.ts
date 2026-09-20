@@ -104,6 +104,7 @@ export interface CaseStudy {
   stakeholders?: { vi: string; en: string };
   approach: { vi: string; en: string };
   systemFramework?: { vi: string; en: string };
+  aiApplication?: { vi: string; en: string };
   execution?: { vi: string[]; en: string[] };
   measurement?: { vi: string[]; en: string[] };
   impact: { vi: string[]; en: string[] };

@@ -150,7 +150,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
               <Layers className="w-4 h-4 text-[#0068FF]" />
               <span>{lang === 'vi' ? 'Cách tiếp cận & Mô hình (Approach & Framework)' : 'Approach & Framework'}</span>
             </h4>
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-3">
+            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-3 whitespace-pre-line">
               <p>{caseStudy.approach[lang]}</p>
               {caseStudy.systemFramework && (
                 <div className="pt-3 border-t border-slate-200 font-medium text-slate-800">
@@ -160,6 +160,19 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
               )}
             </div>
           </div>
+
+          {/* 4b. AI Application / Operations (if present) */}
+          {caseStudy.aiApplication && (
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-indigo-50/70 via-blue-50/40 to-slate-50 border border-indigo-200/70 space-y-2.5">
+              <span className="text-xs font-bold uppercase tracking-wider text-indigo-700 flex items-center gap-1.5">
+                <Sparkles className="w-4 h-4 text-indigo-600" />
+                <span>{lang === 'vi' ? 'Ứng dụng AI & Tối ưu Vận hành' : 'AI-enabled Operations & Experience Augmentation'}</span>
+              </span>
+              <div className="text-xs sm:text-sm text-slate-800 leading-relaxed whitespace-pre-line">
+                {caseStudy.aiApplication[lang]}
+              </div>
+            </div>
+          )}
 
           {/* 5. Measurement & Impact */}
           <div className="p-6 sm:p-8 rounded-2xl bg-[#F0F6FF]/70 border border-[#0068FF]/25 space-y-4">
@@ -176,6 +189,40 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
               ))}
             </div>
           </div>
+
+          {/* Visual Evidence Showcase (if present) */}
+          {caseStudy.visualEvidence && caseStudy.visualEvidence.length > 0 && (
+            <div className="space-y-4 pt-2">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-700">
+                  {lang === 'vi' ? 'Hình ảnh thực tế chương trình & Kỷ vật vinh danh' : 'Real Ceremony Visuals & Recognition Artifacts'}
+                </span>
+                <div className="h-px flex-1 bg-slate-200" />
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {caseStudy.visualEvidence.map((img, idx) => (
+                  <figure
+                    key={idx}
+                    className="group rounded-2xl overflow-hidden border border-slate-200/90 bg-white hover:border-[#0068FF]/50 transition-all duration-300 shadow-xs flex flex-col"
+                  >
+                    <div className="relative overflow-hidden bg-slate-100 aspect-[16/10] sm:aspect-[4/3]">
+                      <img
+                        src={img.src || ''}
+                        alt={img.alt[lang]}
+                        className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
+                        loading="lazy"
+                      />
+                    </div>
+                    {img.caption && (
+                      <figcaption className="p-3 text-[11px] sm:text-xs text-slate-600 leading-snug bg-slate-50/80 border-t border-slate-100">
+                        {img.caption[lang]}
+                      </figcaption>
+                    )}
+                  </figure>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* 6. Key Learning (if present) */}
           {caseStudy.learning && (

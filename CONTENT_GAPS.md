@@ -24,9 +24,11 @@ Tài liệu này ghi nhận toàn bộ các khoảng trống thông tin (facts, 
 > [!IMPORTANT]
 > Toàn bộ các con số giả định (như "100+ initiatives") đã được loại bỏ hoàn toàn. Website hiện chỉ hiển thị các tuyên bố định tính đã được chứng minh. Hãy xác nhận các số liệu sau nếu bạn muốn bổ sung vào website:
 
-- [ ] **FPTU — Building the Student Relations System**:
-  - Số lượng đối tác doanh nghiệp công nghệ liên kết: `...` doanh nghiệp?
-  - Thời gian phản hồi / xử lý yêu cầu sinh viên được tối ưu: `...%` hoặc `... ngày`?
+- [ ] **FPTU — Top 100 Student Achievement Awards**:
+  - Số lượng người tham dự / lượt sinh viên và phụ huynh tham gia qua các kỳ: `...` người/kỳ?
+  - Các use case AI cụ thể đã ứng dụng trong kịch bản, visual hoặc vận hành: `...`?
+  - Mức độ cải thiện hiệu quả vận hành / tiết kiệm thời gian nhờ AI: `...%` hoặc `... giờ`?
+  - Chỉ số đo lường sự hài lòng (CSAT) hoặc phản hồi định lượng từ sinh viên / phụ huynh: `...%`?
 - [ ] **FPTU — Tech XCamp**:
   - Số lượng sinh viên tham gia chính xác: `...` sinh viên?
   - Số lượng doanh nghiệp công nghệ đối tác đồng hành: `...` đối tác?
@@ -49,7 +51,7 @@ Hệ thống **ImagePlaceholder** hiển thị khung hình tinh tế với thôn
 | Vị trí trên Website | Loại hình ảnh | Tỷ lệ khuyến nghị | Mô tả chi tiết ảnh cần bổ sung | Trạng thái |
 | :--- | :--- | :---: | :--- | :---: |
 | **Hero Background** | Chân dung sự kiện | **16:9** | Ảnh Thùy Ngân phát biểu tại sự kiện FPT University với micro. | **Đã có (src/assets/hero-bg.jpg)** |
-| **Case 01: SRO System** | Framework / Activity | **16:9** | Sơ đồ kiến trúc trải nghiệm sinh viên hoặc ảnh điều phối hoạt động phòng ban. | *Chờ ảnh thật* |
+| **Case 01: Top 100 Awards** | Đêm vinh danh & Kỷ vật | **16:9 & 4:3** | 05 ảnh thật: Sân khấu đại lễ ngoài trời, Huy hiệu danh dự kim loại, Backdrop 360°, Sân khấu LED Spring 2026, MC Thùy Ngân. | **Đã có (05 ảnh trong src/assets/)** |
 | **Case 02: Tech XCamp** | Immersion Event | **16:9** | Toàn cảnh sinh viên tham gia Tech XCamp, hoạt động thử thách hoặc sân khấu trao giải. | *Chờ ảnh thật* |
 | **Case 03: 15/60/90 Days** | EX Dashboard / Model | **16:9** | Sơ đồ hành trình vòng đời nhân viên transcosmos hoặc dashboard dữ liệu khảo sát. | *Chờ ảnh thật* |
 | **Case 04: Savvycom Culture** | Hybrid Townhall | **16:9** | Sự kiện All-Hands hybrid, hoạt động văn hóa công nghệ hoặc ấn phẩm EVP. | *Chờ ảnh thật* |

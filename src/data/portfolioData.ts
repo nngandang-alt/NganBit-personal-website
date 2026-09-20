@@ -11,6 +11,11 @@ import {
   VerifiedStat,
 } from '../types';
 import careerEvidenceFptSro from '../assets/career-evidence-fpt-sro.jpg';
+import top100GrandCeremony from '../assets/top100-grand-ceremony.jpg';
+import top100PinBadge from '../assets/top100-pin-badge.jpg';
+import top100BackdropCurved from '../assets/top100-backdrop-curved.jpg';
+import top100StageSpring2026 from '../assets/top100-stage-spring2026.jpg';
+import top100HostNganbit from '../assets/top100-host-nganbit.jpg';
 
 export const PERSONAL_INFO = {
   fullName: 'ĐẶNG VŨ THÙY NGÂN',
@@ -164,7 +169,7 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
             'Standardized student feedback systems and integrated AI-assisted workflows to accelerate operational responsiveness and student satisfaction.',
           ],
         },
-        relatedCaseId: 'case-sro-system',
+        relatedCaseId: 'case-top100-awards',
       },
     ],
     visualEvidence: {
@@ -787,7 +792,7 @@ export const EXPERIENCE_ROLES: ExperienceRole[] = [
         'Accelerated operational responsiveness and engagement quality via AI-augmented administrative workflows.',
       ],
     },
-    relatedCaseId: 'case-sro-system',
+    relatedCaseId: 'case-top100-awards',
   },
   {
     id: 'exp-transcosmos',
@@ -1045,79 +1050,140 @@ export const EXPERIENCE_ROLES: ExperienceRole[] = [
 
 export const CASE_STUDIES: CaseStudy[] = [
   {
-    id: 'case-sro-system',
+    id: 'case-top100-awards',
     title: {
-      vi: 'Xây dựng Hệ thống Quản trị Quan hệ Sinh viên — FPTU',
-      en: 'Building the Student Relations System — FPTU',
+      vi: 'Top 100 Student Achievement Awards — FPT University',
+      en: 'Top 100 Student Achievement Awards — FPT University',
     },
     subtitle: {
-      vi: 'Hệ thống hóa trải nghiệm sinh viên, khung vận hành phòng ban và quản trị đối tác doanh nghiệp dựa trên dữ liệu',
-      en: 'Systematizing student experience architecture, operational governance, and data-informed corporate relations',
+      vi: 'Chương trình vinh danh sinh viên xuất sắc định kỳ: Thiết kế trải nghiệm tôn vinh & vận hành ứng dụng AI',
+      en: 'Recurring Student Recognition Program: Experience Architecture & AI-Augmented Operations',
     },
-    organization: 'FPT University',
-    year: '2025 — Present',
+    organization: 'FPT University HCMC',
+    year: '2025 — Hiện tại (Định kỳ mỗi học kỳ)',
     category: {
-      vi: 'Kiến trúc Hệ thống & Lãnh đạo Trải nghiệm',
-      en: 'System Architecture & Experience Leadership',
+      vi: 'Chương trình Vinh danh · Trải nghiệm Sinh viên · Thiết kế Trải nghiệm · Vận hành Ứng dụng AI',
+      en: 'Recognition Program · Student Experience · Experience Design · AI-enabled Operations',
     },
     accentBadge: {
-      vi: 'Chiến lược & Hệ thống',
-      en: 'Strategy & Systems',
+      vi: 'Vinh danh & Trải nghiệm',
+      en: 'Recognition & Experience',
     },
     coverImage: {
-      src: null,
-      alt: { vi: 'Hệ thống Quản trị Quan hệ Sinh viên FPTU', en: 'FPTU Student Relations System Architecture' },
-      category: 'framework',
+      src: top100GrandCeremony,
+      alt: {
+        vi: 'Đêm vinh danh Top 100 Student Achievement Awards — Vinh Quy Bái Tổ trên sân khấu lớn ngoài trời',
+        en: 'Top 100 Student Achievement Awards Ceremony — The Triumphant Return Grand Outdoor Stage',
+      },
+      category: 'event',
       recommendedRatio: '16:9',
-      placeholderHint: {
-        vi: 'Sơ đồ kiến trúc trải nghiệm sinh viên hoặc hình ảnh điều phối hoạt động phòng ban',
-        en: 'Student experience architecture blueprint or department coordination photo',
+      caption: {
+        vi: 'Nghi lễ vinh danh trang trọng kết hợp hiệu ứng sân khấu và pháo sáng rực rỡ tôn vinh sinh viên cùng giảng viên',
+        en: 'Dignified recognition ceremony blending stage arts and pyrotechnics honoring students alongside university faculty',
       },
     },
     context: {
-      vi: 'Khi quy mô đào tạo ngày càng phát triển, việc hỗ trợ sinh viên không thể dựa trên xử lý sự vụ rời rạc mà đòi hỏi một hệ thống quản trị trải nghiệm toàn diện (Student Experience - SX), đồng bộ giữa hỗ trợ học thuật, hoạt động ngoại khóa và kết nối cơ hội nghề nghiệp với các đối tác doanh nghiệp.',
-      en: 'As student enrollment expands, student support cannot rely on ad-hoc coordination. It demands an institutional Student Experience (SX) system bridging academic pathways, experiential activities, and enterprise industry partnerships.',
+      vi: 'Top 100 Student Achievement Awards là chương trình vinh danh sinh viên xuất sắc được tổ chức định kỳ mỗi học kỳ tại Trường Đại học FPT TP.HCM, thuộc phạm vi công việc hiện tại của tôi tại Phòng Công tác Sinh viên (Student Relations Office - SRO). Không chỉ dừng lại ở một buổi lễ trao giải sự vụ, chương trình được định vị là một cột mốc trải nghiệm mang tính biểu tượng trong hành trình sinh viên: ghi nhận nỗ lực học thuật và hoạt động phong trào, khơi dậy niềm tự hào cá nhân và truyền cảm hứng học tập suốt đời cho toàn thể cộng đồng người học.',
+      en: 'The Top 100 Student Achievement Awards is a flagship student recognition program held every semester at FPT University HCMC, within my current leadership mandate at the Student Relations Office (SRO). Far from an ordinary award event, the program is architected as an iconic experiential milestone in the student journey: celebrating academic excellence and leadership, igniting individual pride, and inspiring lifelong learning across the university community.',
     },
     challenge: {
-      vi: 'Chuyển đổi phương thức làm việc từ sự vụ sang vận hành theo chuẩn mực hệ thống; điều phối nhịp nhàng giữa các phòng ban chức năng và bảo đảm mọi phản hồi của sinh viên đều được ghi nhận, phân tích và phản hồi kịp thời.',
-      en: 'Transforming operational culture from reactive problem-solving to systemic governance; aligning multiple academic faculties and ensuring student sentiment is systematically analyzed and addressed.',
+      vi: 'Việc tổ chức định kỳ theo từng học kỳ đòi hỏi tính chuẩn xác cao trong điều phối đa bên (từ kiểm chứng danh sách sinh viên xuất sắc, thiết kế kỷ vật vinh danh, dàn dựng nghi lễ sân khấu đến điều phối khách mời và gia đình). Thách thức cốt lõi là chuyển hóa một lễ tổng kết thuần túy thành một trải nghiệm công nhận (Recognition Experience) sâu sắc và đáng nhớ đối với từng cá nhân sinh viên và phụ huynh, đồng thời tối ưu hóa khối lượng vận hành đồ sộ của đội ngũ tổ chức.',
+      en: 'Executing a recurring semesterly program demands operational precision across cross-functional workstreams (honoree validation, recognition memorabilia crafting, ceremonial staging, and family/guest logistics). The core challenge is transforming a transactional ceremony into a deeply memorable, emotionally resonant Recognition Experience for every student and family, while sustaining lean operational efficiency for the organizing team.',
     },
     insight: {
-      vi: 'Trải nghiệm của người học cũng như trải nghiệm nhân sự: sự gắn bó và tự hào chỉ xuất hiện khi họ cảm thấy ý kiến của mình được lắng nghe và các điểm chạm dịch vụ diễn ra một cách minh bạch, nhất quán.',
-      en: 'Student Experience mirrors Employee Experience: institutional belonging flourishes when people feel heard and touchpoints are transparent, predictable, and supportive.',
+      vi: 'Sự công nhận (Recognition) chỉ thực sự tạo ra động lực nội tại khi nó được chuyển hóa thành một trải nghiệm cảm xúc trọn vẹn: từ cảm giác tự hào khi cầm trên tay chiếc huy hiệu kim loại danh dự, khoảnh khắc bước lên sân khấu trước thầy cô bạn bè, đến ánh mắt xúc động của phụ huynh khi chứng kiến con em mình được tôn vinh.',
+      en: 'Recognition fosters enduring intrinsic motivation only when engineered as a holistic emotional experience: from the tactile pride of holding a bespoke honor pin, to the shared spotlight before mentors and peers, and parents’ proud tears witnessing their milestone.',
     },
     myRole: {
-      vi: 'Head of Student Relations Office: Thiết kế khung vận hành trải nghiệm sinh viên, phân bổ chỉ tiêu nhiệm vụ cho đội ngũ, chỉ đạo chuẩn hóa quy trình và ứng dụng AI vào phân tích dữ liệu phản hồi.',
-      en: 'Head of Student Relations Office: Designed the experiential governance model, allocated team mandates, standardized operating procedures, and integrated AI tools for feedback analysis.',
+      vi: 'Head of Student Relations Office: Định hướng concept trải nghiệm, chỉ đạo tổ chức và điều phối tổng thể chương trình qua các học kỳ; dẫn dắt đội ngũ SRO và mạng lưới cộng tác viên sinh viên trong khâu vận hành; định hướng và ứng dụng AI nhằm cải thiện trải nghiệm và nâng cao hiệu quả triển khai.',
+      en: 'Head of Student Relations Office: Spearheaded experiential concept direction, overall program governance and semesterly execution; led the SRO core team and student collaborators; guided AI integration to elevate the recognition journey and streamline operational workflows.',
     },
     stakeholders: {
-      vi: 'Ban Giám hiệu FPT University, các Trưởng khoa/Viện chuyên môn, mạng lưới doanh nghiệp đối tác, đội ngũ cán bộ phòng ban và toàn thể cộng đồng sinh viên.',
-      en: 'University Executive Board, Academic Deans, corporate enterprise partners, student relations officers, and student body.',
+      vi: 'Top 100 sinh viên xuất sắc (học thuật, phong trào và CLB xuất sắc), gia đình & phụ huynh sinh viên, Ban Giám hiệu Trường Đại học FPT TP.HCM, các Khoa/Viện chuyên môn, đội ngũ cán bộ Phòng Công tác Sinh viên và mạng lưới cộng tác viên sinh viên.',
+      en: 'Top 100 honored students (Academic Achievers, Extracurricular Leaders & Outstanding Clubs), families and parents, FPT University HCMC Executive Board, Academic Faculties, SRO department staff, and student collaborators.',
     },
     approach: {
-      vi: 'Xây dựng bản đồ hành trình sinh viên (Student Journey Mapping) từ lúc nhập học, giai đoạn trải nghiệm dự án thực tế đến khi tốt nghiệp; thiết lập cơ chế đo lường mức độ hài lòng theo từng kỳ học.',
-      en: 'Constructed an end-to-end Student Journey Map from matriculation to industry practicum and graduation; instituted semester-based sentiment and CSAT measurement mechanisms.',
+      vi: 'Thiết kế trải nghiệm vinh danh đa điểm chạm (Multi-touchpoint Recognition Experience Architecture):\\n• Nghi lễ tôn vinh trang trọng (Ceremony Experience): Thiết kế sân khấu và kịch bản nghệ thuật theo từng chủ đề học kỳ (như Vinh Quy Bái Tổ, The Prompt to Lead, Build Up — Upward — Rise Up) tạo cảm xúc tự hào và truyền cảm hứng.\\n• Kỷ vật danh dự cá nhân hóa (Tangible Artifacts): Thiết kế và trao tặng huy hiệu danh dự kim loại Top 100 Student Achievement Awards — biểu trưng vật lý lưu giữ dấu ấn học tập.\\n• Điểm chạm tương tác & lan tỏa (Social & Community Touchpoints): Dựng bức tường danh dự cong (Curved Honoree Wall) khắc tên từng sinh viên kết hợp hệ thống camera xoay 360° trên thảm đỏ để ghi lại khoảnh khắc vinh quang.\\n• Vận hành & điều phối: Chuẩn hóa quy trình điều phối đa luồng, phân công vai trò rõ ràng giữa cán bộ phòng ban và mạng lưới cộng tác viên.',
+      en: 'Architecting a Multi-touchpoint Recognition Experience:\\n• Ceremony Experience: Thematic stage narratives adapted each semester (such as The Triumphant Return, The Prompt to Lead, Build Up — Upward — Rise Up) evoking deep pride and institutional belonging.\\n• Tangible Artifacts: Designing and bestowing bespoke metallic Top 100 Student Achievement Awards pins — tangible keepsakes cementing lasting achievement.\\n• Social & Community Touchpoints: Curved honoree wall featuring every student name coupled with a 360° rotating video booth on the red carpet to capture celebratory memories with peers and families.\\n• Collaborative Operations: Standardizing cross-functional execution workflows between department staff and student collaborator teams.',
     },
-    systemFramework: {
-      vi: 'Mô hình 3C trong quản trị trải nghiệm sinh viên: Connection (Gắn kết cộng đồng) - Competence (Cọ xát năng lực thực tế) - Continuity (Hành trình xuyên suốt có đo lường).',
-      en: '3C Student Experience Governance Model: Connection (Belonging) - Competence (Real-world immersion) - Continuity (Measurable lifecycle tracking).',
+    aiApplication: {
+      vi: 'Ứng dụng AI trong quá trình triển khai nhằm cải thiện trải nghiệm và hiệu quả vận hành:\\n• [Cần bổ sung chi tiết: Các use case AI cụ thể trong hỗ trợ xây dựng nội dung, kịch bản, visual hoặc xử lý dữ liệu vận hành]\\n• [Cần bổ sung số liệu: Mức độ tiết kiệm thời gian hoặc hiệu quả nâng cao nhờ AI]',
+      en: 'AI application during execution to elevate experience and operational efficiency:\\n• [Data Gap / TODO: Specific AI use cases in content drafting, scripting, visual generation, or operational data processing]\\n• [Data Gap / TODO: Time-saving or operational efficiency metrics enabled by AI]',
     },
     impact: {
       vi: [
-        'Chuẩn hóa thành công quy trình tiếp nhận và xử lý phản hồi sinh viên với thời gian phản hồi được rút ngắn rõ rệt.',
-        'Thiết lập mạng lưới liên kết chặt chẽ với các doanh nghiệp công nghệ, mở rộng cơ hội thực tập và dự án thực chiến.',
-        'Nâng cao sự hài lòng của sinh viên thông qua các chương trình trải nghiệm có định hướng và cấu trúc bài bản.',
+        'Duy trì tổ chức định kỳ và nâng tầm chất lượng trải nghiệm vinh danh cho Top 100 sinh viên xuất sắc nhất mỗi học kỳ tại FPT University HCMC.',
+        'Tạo dấu ấn gắn kết cảm xúc sâu sắc giữa sinh viên, gia đình và nhà trường thông qua các chủ đề sáng tạo và nghi lễ vinh danh chuyên nghiệp.',
+        'Ứng dụng giải pháp công nghệ và AI vào quy trình triển khai nhằm tối ưu thời gian điều phối và nâng cao trải nghiệm người tham gia.',
+        '[Cần bổ sung dữ liệu: Số lượng người tham dự / lượt sinh viên và phụ huynh tham gia qua các kỳ]',
+        '[Cần bổ sung dữ liệu: Chỉ số hài lòng hoặc phản hồi định lượng từ sinh viên / phụ huynh]',
       ],
       en: [
-        'Standardized student feedback workflows, substantially improving turnaround resolution times.',
-        'Established formal enterprise networks, expanding student internships and real-world tech practicums.',
-        'Elevated student satisfaction indices through structured, meaningful experiential initiatives.',
+        'Sustained recurring semesterly recognition, elevating experience quality for the top 100 student achievers at FPT University HCMC.',
+        'Forged profound emotional belonging among students, families, and university faculty through thematic storytelling and ceremonial excellence.',
+        'Integrated tech and AI workflows to streamline coordination time and elevate attendee experience.',
+        '[Data Gap / TODO: Exact attendee counts / participant metrics across semesters]',
+        '[Data Gap / TODO: Satisfaction scores or quantitative feedback indices from honorees/families]',
       ],
     },
     learning: {
-      vi: 'Một hệ thống dịch vụ lấy con người làm trọng tâm phải kết hợp được sự chuẩn xác của quy trình và sự tinh tế, ấm áp của người phục vụ.',
-      en: 'A human-centered system must seamlessly unite operational precision with empathetic, authentic interpersonal care.',
+      vi: 'Tôn vinh không đơn thuần là trao đi một phần thưởng, mà là kiến tạo một khoảnh khắc được công nhận trọn vẹn — nơi nỗ lực của người trẻ được chứng kiến, trân trọng và tiếp thêm động lực cho những chặng đường tương lai.',
+      en: 'True recognition is not merely bestowing an award; it is crafting an indelible moment of validation — where human dedication is witnessed, celebrated, and empowered for the future.',
     },
+    visualEvidence: [
+      {
+        src: top100PinBadge,
+        alt: {
+          vi: 'Huy hiệu kim loại danh dự Top 100 Student Achievement Awards',
+          en: 'Bespoke metallic Top 100 Student Achievement Awards honor pin',
+        },
+        category: 'material',
+        recommendedRatio: '4:3',
+        caption: {
+          vi: 'Huy hiệu kim loại danh dự — Kỷ vật cầm tay biểu trưng cho sự công nhận thành tích học tập và rèn luyện',
+          en: 'Bespoke metallic honor pin — A tangible artifact symbolizing academic and extracurricular dedication',
+        },
+      },
+      {
+        src: top100BackdropCurved,
+        alt: {
+          vi: 'Backdrop cong vinh danh Top 100 và khu vực photobooth 360 độ chủ đề The Prompt to Lead',
+          en: 'Curved Honoree Wall with 360 photo booth themed The Prompt to Lead',
+        },
+        category: 'event',
+        recommendedRatio: '16:9',
+        caption: {
+          vi: 'Bức tường danh dự cong khắc tên sinh viên Top 100 kết hợp photobooth 360° lưu giữ khoảnh khắc vinh quang',
+          en: 'Curved honoree wall featuring all Top 100 names paired with a 360° video booth to capture milestone memories',
+        },
+      },
+      {
+        src: top100StageSpring2026,
+        alt: {
+          vi: 'Sân khấu visual LED chủ đề Build Up — Upward — Rise Up, Top 100 Spring 2026',
+          en: 'LED visual stage themed Build Up — Upward — Rise Up, Top 100 Spring 2026',
+        },
+        category: 'event',
+        recommendedRatio: '16:9',
+        caption: {
+          vi: 'Thiết kế sân khấu và nhận diện thị giác hiện đại truyền tải thông điệp bứt phá qua từng học kỳ',
+          en: 'Modern stage design and dynamic visual identity conveying an empowering theme each semester',
+        },
+      },
+      {
+        src: top100HostNganbit,
+        alt: {
+          vi: 'Thùy Ngân dẫn dắt và điều phối chương trình vinh danh trên sân khấu',
+          en: 'Thùy Ngân hosting and steering the recognition ceremony on stage',
+        },
+        category: 'portrait',
+        recommendedRatio: '4:3',
+        caption: {
+          vi: 'Thùy Ngân trực tiếp điều phối và dẫn dắt các khoảnh khắc nghi lễ trang trọng của chương trình',
+          en: 'Thùy Ngân directly steering and hosting ceremonial highlights on stage',
+        },
+      },
+    ],
   },
   {
     id: 'case-techx',
