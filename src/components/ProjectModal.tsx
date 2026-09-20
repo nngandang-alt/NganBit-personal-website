@@ -1,7 +1,17 @@
 import React, { useEffect } from 'react';
-import { X, CheckCircle2, Lightbulb, Users, Compass, Layers, Award, Sparkles, Film, Play } from 'lucide-react';
 import { CaseStudy, Language } from '../types';
-import { ImagePlaceholder } from './ImagePlaceholder';
+import { CaseStudyCover } from './CaseStudyCover';
+import {
+  X,
+  CheckCircle2,
+  Users,
+  Compass,
+  Layers,
+  Sparkles,
+  Award,
+  Film,
+  Lightbulb,
+} from 'lucide-react';
 
 interface ProjectModalProps {
   caseStudy: CaseStudy | null;
@@ -16,25 +26,32 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
   onClose,
   onConnectClick,
 }) => {
+  // Prevent background scrolling when modal is open
+  useEffect(() => {
+    if (caseStudy) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [caseStudy]);
+
+  // Handle ESC key press
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
     };
-    if (caseStudy) {
-      document.body.style.overflow = 'hidden';
-      window.addEventListener('keydown', handleKeyDown);
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [caseStudy, onClose]);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onClose]);
 
   if (!caseStudy) return null;
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-8 overflow-y-auto bg-black/75 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-8 bg-slate-950/75 backdrop-blur-sm animate-in fade-in duration-200"
       onClick={onClose}
     >
       <div
@@ -70,13 +87,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
           </p>
         </div>
 
-        {/* Cover Visual / Placeholder */}
+        {/* Reusable Cover Visual with Entrance Motion & Project Accent */}
         <div className="mb-10 overflow-hidden rounded-2xl">
-          <ImagePlaceholder
+          <CaseStudyCover
             image={caseStudy.coverImage}
-            category={caseStudy.coverImage.category}
-            recommendedRatio={caseStudy.coverImage.recommendedRatio}
-            hint={caseStudy.coverImage.placeholderHint}
+            projectId={caseStudy.id}
             lang={lang}
           />
         </div>
@@ -84,11 +99,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
         {/* Deep Dive Case Content Sections */}
         <div className="flex flex-col gap-8">
           
-          {/* 1. Context & Challenge */}
+          {/* 1. Context & Challenge (Equal 2-column layout) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 rounded-2xl bg-slate-50 border border-slate-200/80">
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-1.5">
-                {lang === 'vi' ? 'Bối cảnh (Context)' : 'Context'}
+                {lang === 'vi' ? 'Bối cảnh khởi phát (Context)' : 'Context'}
               </span>
               <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
                 {caseStudy.context[lang]}
@@ -110,9 +125,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
               <Lightbulb className="w-5 h-5 text-[#0068FF] shrink-0 mt-0.5" />
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-[#0068FF] block mb-1">
-                  {lang === 'vi' ? 'Góc nhìn & Thấu cảm cốt lõi (Insight)' : 'Key Human Insight'}
+                  {lang === 'vi' ? 'Góc nhìn & Thấu cảm (Insight)' : 'Key Insight'}
                 </span>
-                <p className="text-sm text-slate-800 font-medium leading-relaxed italic">
+                <p className="text-xs sm:text-sm text-slate-800 leading-relaxed font-normal italic">
                   “{caseStudy.insight[lang]}”
                 </p>
               </div>
@@ -120,13 +135,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
           )}
 
           {/* 3. My Role & Stakeholders */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="p-5 rounded-2xl bg-white border border-slate-200/80">
               <span className="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5 mb-2">
                 <Compass className="w-4 h-4 text-[#0068FF]" />
-                <span>{lang === 'vi' ? 'Vai trò & Trách nhiệm (My Role)' : 'My Role & Ownership'}</span>
+                <span>{lang === 'vi' ? 'Vai trò đảm nhiệm (My Role)' : 'My Ownership & Role'}</span>
               </span>
-              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-800 font-medium leading-relaxed">
                 {caseStudy.myRole[lang]}
               </p>
             </div>
@@ -151,7 +166,25 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
               <span>{lang === 'vi' ? 'Cách tiếp cận & Mô hình (Approach & Framework)' : 'Approach & Framework'}</span>
             </h4>
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-3 whitespace-pre-line">
-              <p>{caseStudy.approach[lang]}</p>
+              {caseStudy.approachItems && caseStudy.approachItems.length > 0 ? (
+                <div className="space-y-3">
+                  {caseStudy.approachItems.map((item, idx) => (
+                    <div key={idx} className="space-y-1">
+                      <div className="font-semibold text-slate-900 text-xs sm:text-sm flex items-start gap-2">
+                        <span className="text-[#0068FF]">•</span>
+                        <span>{item.title[lang]}</span>
+                      </div>
+                      {item.desc && (
+                        <p className="text-xs text-slate-600 pl-4 leading-relaxed">
+                          {item.desc[lang]}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p>{caseStudy.approach[lang]}</p>
+              )}
               {caseStudy.systemFramework && (
                 <div className="pt-3 border-t border-slate-200 font-medium text-slate-800">
                   <span className="text-[#0068FF] font-semibold">Framework: </span>
@@ -161,8 +194,70 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
             </div>
           </div>
 
-          {/* 4b. AI Application / Operations (if present) */}
-          {caseStudy.aiApplication && (
+          {/* 4b. AI Feature & Operational Optimization (if present) */}
+          {caseStudy.aiFeature ? (
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-indigo-50/70 via-blue-50/40 to-slate-50 border border-indigo-200/70 space-y-4">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-indigo-700 flex items-center gap-1.5 mb-2">
+                  <Sparkles className="w-4 h-4 text-indigo-600" />
+                  <span>{lang === 'vi' ? 'Ứng dụng AI & Tối ưu Vận hành' : 'AI-enabled Operations & Experience Augmentation'}</span>
+                </span>
+                <h5 className="font-bold text-slate-900 text-sm sm:text-base">
+                  {caseStudy.aiFeature.title[lang]}
+                </h5>
+                <p className="text-xs sm:text-sm text-slate-700 mt-1 leading-relaxed">
+                  {caseStudy.aiFeature.desc[lang]}
+                </p>
+              </div>
+
+              {/* Capabilities */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {caseStudy.aiFeature.capabilities[lang].map((cap, idx) => (
+                  <div key={idx} className="flex items-center gap-2 text-xs text-slate-700 bg-white/80 p-2.5 rounded-xl border border-indigo-100 shadow-2xs">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
+                    <span>{cap}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Dual Layers */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs pt-2 border-t border-indigo-100/70">
+                <div className="bg-white/70 p-3 rounded-xl border border-indigo-100">
+                  <span className="font-semibold text-indigo-950 block mb-1">
+                    {lang === 'vi' ? 'Trải nghiệm người tham dự:' : 'Participant Experience:'}
+                  </span>
+                  <span className="text-slate-600 leading-relaxed">
+                    {caseStudy.aiFeature.layers.participantExperience[lang]}
+                  </span>
+                </div>
+                <div className="bg-white/70 p-3 rounded-xl border border-indigo-100">
+                  <span className="font-semibold text-indigo-950 block mb-1">
+                    {lang === 'vi' ? 'Hiệu quả vận hành:' : 'Operational Efficiency:'}
+                  </span>
+                  <span className="text-slate-600 leading-relaxed">
+                    {caseStudy.aiFeature.layers.operationalEfficiency[lang]}
+                  </span>
+                </div>
+              </div>
+
+              {/* AI Evidence Photo */}
+              {caseStudy.aiFeature.image && (
+                <figure className="mt-4 overflow-hidden rounded-2xl border border-indigo-200/80 bg-slate-900 shadow-xs flex flex-col">
+                  <div className="relative overflow-hidden aspect-[16/10] sm:aspect-[16/9] bg-slate-950">
+                    <img
+                      src={caseStudy.aiFeature.image}
+                      alt={caseStudy.aiFeature.title[lang]}
+                      className="w-full h-full object-cover object-center"
+                      loading="lazy"
+                    />
+                  </div>
+                  <figcaption className="p-3 text-center italic text-xs text-slate-500 bg-slate-50/90 border-t border-slate-100 leading-relaxed">
+                    {caseStudy.aiFeature.caption[lang]}
+                  </figcaption>
+                </figure>
+              )}
+            </div>
+          ) : caseStudy.aiApplication ? (
             <div className="p-6 rounded-2xl bg-gradient-to-br from-indigo-50/70 via-blue-50/40 to-slate-50 border border-indigo-200/70 space-y-2.5">
               <span className="text-xs font-bold uppercase tracking-wider text-indigo-700 flex items-center gap-1.5">
                 <Sparkles className="w-4 h-4 text-indigo-600" />
@@ -171,6 +266,50 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
               <div className="text-xs sm:text-sm text-slate-800 leading-relaxed whitespace-pre-line">
                 {caseStudy.aiApplication[lang]}
               </div>
+            </div>
+          ) : null}
+
+          {/* Quantitative Stats (if present) */}
+          {caseStudy.quantitativeStats && caseStudy.quantitativeStats.length > 0 && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {caseStudy.quantitativeStats.map((stat, idx) => (
+                <div key={idx} className="p-5 rounded-2xl bg-white border border-slate-200/80 shadow-2xs">
+                  <div className="text-2xl sm:text-3xl font-bold font-mono text-[#0068FF] mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs font-bold text-slate-800">
+                    {stat.label[lang]}
+                  </div>
+                  {stat.notes && (
+                    <div className="text-xs text-slate-500 mt-1.5 leading-relaxed">
+                      {stat.notes[lang]}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Qualitative Evidence (if present) */}
+          {caseStudy.qualitativeEvidence && (
+            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-700">
+                  {caseStudy.qualitativeEvidence.badge[lang]}
+                </span>
+                <div className="h-px flex-1 bg-slate-200" />
+              </div>
+              <figure className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xs">
+                <img
+                  src={caseStudy.qualitativeEvidence.image}
+                  alt={caseStudy.qualitativeEvidence.alt[lang]}
+                  className="w-full max-h-[420px] object-contain bg-slate-50 mx-auto"
+                  loading="lazy"
+                />
+                <figcaption className="p-3 text-center italic text-xs text-slate-500 bg-slate-50/90 border-t border-slate-100 leading-relaxed">
+                  {caseStudy.qualitativeEvidence.caption[lang]}
+                </figcaption>
+              </figure>
             </div>
           )}
 
@@ -214,7 +353,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
                       />
                     </div>
                     {img.caption && (
-                      <figcaption className="p-3 text-[11px] sm:text-xs text-slate-600 leading-snug bg-slate-50/80 border-t border-slate-100">
+                      <figcaption className="p-3 text-center italic text-xs text-slate-500 leading-relaxed bg-slate-50/80 border-t border-slate-100">
                         {img.caption[lang]}
                       </figcaption>
                     )}
@@ -248,7 +387,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
                 </video>
               </div>
               {caseStudy.videoEvidence.caption && (
-                <p className="text-xs text-slate-500 italic px-1">
+                <p className="text-center italic text-xs text-slate-500 px-2 pt-1 leading-relaxed">
                   {caseStudy.videoEvidence.caption[lang]}
                 </p>
               )}

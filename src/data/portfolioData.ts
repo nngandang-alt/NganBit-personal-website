@@ -16,35 +16,38 @@ import top100PinBadge from '../assets/top100-pin-badge.jpg';
 import top100BackdropCurved from '../assets/top100-backdrop-curved.jpg';
 import top100StageSpring2026 from '../assets/top100-stage-spring2026.jpg';
 import top100HostNganbit from '../assets/top100-host-nganbit.jpg';
+import top100RecognitionWall from '../assets/top100-recognition-wall.jpg';
+import top100AiCheckin from '../assets/top100-ai-checkin.jpg';
+import top100EmailFeedback from '../assets/top100-email-feedback.jpg';
 
 export const PERSONAL_INFO = {
   fullName: 'ĐẶNG VŨ THÙY NGÂN',
-  identity: 'NGÂN BIT',
+  identity: 'THÙY NGÂN',
   shortName: 'Thùy Ngân',
-  monogram: 'NB',
+  monogram: 'TN',
   domains: {
     vi: 'Internal Communication · Corporate Culture · Employee Engagement · Employee Experience',
     en: 'Internal Communication · Corporate Culture · Employee Engagement · Employee Experience',
   },
   tagline: {
-    vi: 'Thúc đẩy gắn kết. Kiến tạo văn hóa. Khai phóng sức mạnh cùng AI.',
-    en: 'Driving Engagement. Building Culture. Leveraging AI for Impact.',
+    vi: 'Truyền thông · Văn hóa · Gắn kết · Trải nghiệm',
+    en: 'Communication · Culture · Engagement · Experience',
   },
   corePositioning: {
-    vi: 'Tôi kết nối con người với mục tiêu tổ chức thông qua truyền thông, văn hóa và những trải nghiệm ý nghĩa.',
-    en: 'I connect people with organizational goals through communication, culture and meaningful experiences.',
+    vi: 'Với tôi, truyền thông và văn hóa bắt đầu từ cách con người hiểu, cảm nhận và kết nối với nhau.',
+    en: 'To me, communication and culture begin with how people understand, feel and connect with one another.',
   },
   heroHeadline: {
-    vi: ['Kiến tạo văn hóa', 'chạm đến cảm xúc.'],
-    en: ['Building culture', 'that people feel.'],
+    vi: ['Kết nối con người.', 'Nuôi dưỡng những trải nghiệm có ý nghĩa.'],
+    en: ['Connecting people.', 'Creating experiences that matter.'],
   },
   aiPhilosophy: {
     vi: 'Lấy sự thấu hiểu con người làm trọng tâm. Khai phóng hiệu quả cùng AI.',
     en: 'Human Insight First. AI Amplified.',
   },
   bioSummary: {
-    vi: 'Tôi là Thùy Ngân (Ngân Bit) — chuyên gia Internal Communication & Corporate Culture. Tôi định hình trải nghiệm và gắn kết tổ chức ở cấp độ hệ thống: từ chiến lược truyền thông, quy chuẩn hành vi văn hóa đến thiết kế chương trình trải nghiệm quy mô lớn.',
-    en: 'I’m Thùy Ngân (Ngân Bit) — an Internal Communication & Corporate Culture professional bridging executive strategy with human reality through systems thinking, observable behavioral codification, and large-scale experiential design.',
+    vi: 'Tôi là Thùy Ngân, làm việc trong lĩnh vực Internal Communication & Corporate Culture. Hành trình của tôi đi từ truyền thông, văn hóa đến thiết kế trải nghiệm và xây dựng những hệ thống giúp con người kết nối tốt hơn với tổ chức.',
+    en: 'I’m Thùy Ngân, working across Internal Communication and Corporate Culture. My journey has evolved from communication and culture into experience design and building systems that help people connect more meaningfully with their organizations.',
   },
   email: 'n.ngandang@gmail.com',
   linkedin: 'https://linkedin.com/in/thuyngandang',
@@ -69,13 +72,13 @@ export const NAV_ITEMS: NavItem[] = [
 export const FULL_CIRCLE_QUOTE = {
   vi: '“Tôi trở về nơi sự nghiệp bắt đầu — với một bộ công cụ hoàn toàn khác biệt.”',
   en: '“I returned to where my career started — with a completely different toolkit.”',
-  author: 'ĐẶNG VŨ THÙY NGÂN (NGÂN BIT)',
+  author: 'ĐẶNG VŨ THÙY NGÂN',
 };
 
 export const CAREER_CHAPTERS: CareerChapter[] = [
   {
     id: 'ch-01',
-    number: '01',
+    number: '06',
     period: 'Apr 2025 — Present',
     isCurrent: true,
     title: {
@@ -188,7 +191,7 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
   },
   {
     id: 'ch-02',
-    number: '02',
+    number: '05',
     period: 'Jul 2024 — Mar 2025',
     title: {
       vi: 'transcosmos Vietnam: Vượt trên văn hóa — Kiến tạo hệ thống',
@@ -265,7 +268,7 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
   },
   {
     id: 'ch-03',
-    number: '03',
+    number: '04',
     period: '2023 — 2024',
     title: {
       vi: 'Savvycom: Mở rộng sang People & Culture toàn diện',
@@ -349,7 +352,7 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
   },
   {
     id: 'ch-04',
-    number: '04',
+    number: '03',
     period: '2020 — 2023',
     internalProgression: 'F88 → CMC → Vua Nệm',
     title: {
@@ -516,7 +519,7 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
   },
   {
     id: 'ch-05',
-    number: '05',
+    number: '02',
     period: '2019 — 2020',
     title: {
       vi: 'Bellsystem24-Hoasao: Định hình bản sắc trong truyền thông',
@@ -590,7 +593,7 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
   },
   {
     id: 'ch-06',
-    number: '06',
+    number: '01',
     period: '2018 — 2019',
     title: {
       vi: 'FPT University: Nơi mọi thứ bắt đầu',
@@ -1056,8 +1059,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       en: 'Top 100 Student Achievement Awards — FPT University',
     },
     subtitle: {
-      vi: 'Chương trình vinh danh sinh viên xuất sắc định kỳ: Thiết kế trải nghiệm tôn vinh & vận hành ứng dụng AI',
-      en: 'Recurring Student Recognition Program: Experience Architecture & AI-Augmented Operations',
+      vi: 'Chương trình vinh danh sinh viên xuất sắc định kỳ: Thiết kế trải nghiệm ghi nhận đa điểm chạm, giàu cảm xúc và mang tính cá nhân.',
+      en: 'A recurring student recognition program designed as a multi-touchpoint, emotional and personalized recognition experience.',
     },
     organization: 'FPT University HCMC',
     year: '2025 — Hiện tại (Định kỳ mỗi học kỳ)',
@@ -1087,8 +1090,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       en: 'The Top 100 Student Achievement Awards is a flagship student recognition program held every semester at FPT University HCMC, within my current leadership mandate at the Student Relations Office (SRO). Far from an ordinary award event, the program is architected as an iconic experiential milestone in the student journey: celebrating academic excellence and leadership, igniting individual pride, and inspiring lifelong learning across the university community.',
     },
     challenge: {
-      vi: 'Việc tổ chức định kỳ theo từng học kỳ đòi hỏi tính chuẩn xác cao trong điều phối đa bên (từ kiểm chứng danh sách sinh viên xuất sắc, thiết kế kỷ vật vinh danh, dàn dựng nghi lễ sân khấu đến điều phối khách mời và gia đình). Thách thức cốt lõi là chuyển hóa một lễ tổng kết thuần túy thành một trải nghiệm công nhận (Recognition Experience) sâu sắc và đáng nhớ đối với từng cá nhân sinh viên và phụ huynh, đồng thời tối ưu hóa khối lượng vận hành đồ sộ của đội ngũ tổ chức.',
-      en: 'Executing a recurring semesterly program demands operational precision across cross-functional workstreams (honoree validation, recognition memorabilia crafting, ceremonial staging, and family/guest logistics). The core challenge is transforming a transactional ceremony into a deeply memorable, emotionally resonant Recognition Experience for every student and family, while sustaining lean operational efficiency for the organizing team.',
+      vi: 'Việc tổ chức định kỳ theo từng học kỳ đòi hỏi tính chuẩn xác cao trong điều phối đa bên: từ kiểm chứng danh sách sinh viên xuất sắc, thiết kế kỷ vật vinh danh cá nhân hóa từng sinh viên, dàn dựng nghi lễ sân khấu đến điều phối khách mời và gia đình. Thách thức cốt lõi là chuyển hóa một lễ tổng kết thuần túy thành một trải nghiệm công nhận (Recognition Experience) sâu sắc và đáng nhớ đối với từng cá nhân sinh viên và phụ huynh, đồng thời tối ưu hóa khối lượng vận hành đồ sộ của đội ngũ tổ chức.',
+      en: 'Organized every semester, the program requires a high level of precision across multiple stakeholders — from verifying the list of outstanding students and creating personalized recognition keepsakes for each student, to staging the ceremony and coordinating guests and families. The core challenge is to transform what could otherwise be a conventional end-of-semester recognition ceremony into a meaningful and memorable Recognition Experience for each student and their family, while managing the substantial operational workload behind the program.',
     },
     insight: {
       vi: 'Sự công nhận (Recognition) chỉ thực sự tạo ra động lực nội tại khi nó được chuyển hóa thành một trải nghiệm cảm xúc trọn vẹn: từ cảm giác tự hào khi cầm trên tay chiếc huy hiệu kim loại danh dự, khoảnh khắc bước lên sân khấu trước thầy cô bạn bè, đến ánh mắt xúc động của phụ huynh khi chứng kiến con em mình được tôn vinh.',
@@ -1103,33 +1106,57 @@ export const CASE_STUDIES: CaseStudy[] = [
       en: 'Top 100 honored students (Academic Achievers, Extracurricular Leaders & Outstanding Clubs), families and parents, FPT University HCMC Executive Board, Academic Faculties, SRO department staff, and student collaborators.',
     },
     approach: {
-      vi: 'Thiết kế trải nghiệm vinh danh đa điểm chạm (Multi-touchpoint Recognition Experience Architecture):\\n• Nghi lễ tôn vinh trang trọng (Ceremony Experience): Thiết kế sân khấu và kịch bản nghệ thuật theo từng chủ đề học kỳ (như Vinh Quy Bái Tổ, The Prompt to Lead, Build Up — Upward — Rise Up) tạo cảm xúc tự hào và truyền cảm hứng.\\n• Kỷ vật danh dự cá nhân hóa (Tangible Artifacts): Thiết kế và trao tặng huy hiệu danh dự kim loại Top 100 Student Achievement Awards — biểu trưng vật lý lưu giữ dấu ấn học tập.\\n• Điểm chạm tương tác & lan tỏa (Social & Community Touchpoints): Dựng bức tường danh dự cong (Curved Honoree Wall) khắc tên từng sinh viên kết hợp hệ thống camera xoay 360° trên thảm đỏ để ghi lại khoảnh khắc vinh quang.\\n• Vận hành & điều phối: Chuẩn hóa quy trình điều phối đa luồng, phân công vai trò rõ ràng giữa cán bộ phòng ban và mạng lưới cộng tác viên.',
-      en: 'Architecting a Multi-touchpoint Recognition Experience:\\n• Ceremony Experience: Thematic stage narratives adapted each semester (such as The Triumphant Return, The Prompt to Lead, Build Up — Upward — Rise Up) evoking deep pride and institutional belonging.\\n• Tangible Artifacts: Designing and bestowing bespoke metallic Top 100 Student Achievement Awards pins — tangible keepsakes cementing lasting achievement.\\n• Social & Community Touchpoints: Curved honoree wall featuring every student name coupled with a 360° rotating video booth on the red carpet to capture celebratory memories with peers and families.\\n• Collaborative Operations: Standardizing cross-functional execution workflows between department staff and student collaborator teams.',
+      vi: 'Thiết kế trải nghiệm vinh danh đa điểm chạm (Multi-touchpoint Recognition Experience Architecture)',
+      en: 'Multi-touchpoint Recognition Experience Architecture',
     },
-    aiApplication: {
-      vi: 'Ứng dụng AI trong quá trình triển khai nhằm cải thiện trải nghiệm và hiệu quả vận hành:\\n• [Cần bổ sung chi tiết: Các use case AI cụ thể trong hỗ trợ xây dựng nội dung, kịch bản, visual hoặc xử lý dữ liệu vận hành]\\n• [Cần bổ sung số liệu: Mức độ tiết kiệm thời gian hoặc hiệu quả nâng cao nhờ AI]',
-      en: 'AI application during execution to elevate experience and operational efficiency:\\n• [Data Gap / TODO: Specific AI use cases in content drafting, scripting, visual generation, or operational data processing]\\n• [Data Gap / TODO: Time-saving or operational efficiency metrics enabled by AI]',
-    },
-    impact: {
-      vi: [
-        'Duy trì tổ chức định kỳ và nâng tầm chất lượng trải nghiệm vinh danh cho Top 100 sinh viên xuất sắc nhất mỗi học kỳ tại FPT University HCMC.',
-        'Tạo dấu ấn gắn kết cảm xúc sâu sắc giữa sinh viên, gia đình và nhà trường thông qua các chủ đề sáng tạo và nghi lễ vinh danh chuyên nghiệp.',
-        'Ứng dụng giải pháp công nghệ và AI vào quy trình triển khai nhằm tối ưu thời gian điều phối và nâng cao trải nghiệm người tham gia.',
-        '[Cần bổ sung dữ liệu: Số lượng người tham dự / lượt sinh viên và phụ huynh tham gia qua các kỳ]',
-        '[Cần bổ sung dữ liệu: Chỉ số hài lòng hoặc phản hồi định lượng từ sinh viên / phụ huynh]',
-      ],
-      en: [
-        'Sustained recurring semesterly recognition, elevating experience quality for the top 100 student achievers at FPT University HCMC.',
-        'Forged profound emotional belonging among students, families, and university faculty through thematic storytelling and ceremonial excellence.',
-        'Integrated tech and AI workflows to streamline coordination time and elevate attendee experience.',
-        '[Data Gap / TODO: Exact attendee counts / participant metrics across semesters]',
-        '[Data Gap / TODO: Satisfaction scores or quantitative feedback indices from honorees/families]',
-      ],
-    },
-    learning: {
-      vi: 'Tôn vinh không đơn thuần là trao đi một phần thưởng, mà là kiến tạo một khoảnh khắc được công nhận trọn vẹn — nơi nỗ lực của người trẻ được chứng kiến, trân trọng và tiếp thêm động lực cho những chặng đường tương lai.',
-      en: 'True recognition is not merely bestowing an award; it is crafting an indelible moment of validation — where human dedication is witnessed, celebrated, and empowered for the future.',
-    },
+    approachItems: [
+      {
+        title: {
+          vi: 'Thiết kế trải nghiệm vinh danh đa điểm chạm (Multi-touchpoint Recognition Experience Architecture)',
+          en: 'Multi-touchpoint Recognition Experience Architecture',
+        },
+      },
+      {
+        title: {
+          vi: 'Nghi lễ tôn vinh trang trọng (Ceremony Experience):',
+          en: 'Ceremony Experience:',
+        },
+        desc: {
+          vi: 'Thiết kế sân khấu và kịch bản nghệ thuật theo từng chủ đề học kỳ (như Vinh Quy Bái Tổ, The Prompt to Lead, Build Up — Upward — Rise Up) tạo cảm xúc tự hào và truyền cảm hứng.',
+          en: 'Thematic stage narratives adapted each semester (such as The Triumphant Return, The Prompt to Lead, Build Up — Upward — Rise Up) evoking deep pride and institutional belonging.',
+        },
+      },
+      {
+        title: {
+          vi: 'Kỷ vật danh dự cá nhân hóa (Tangible Artifacts):',
+          en: 'Tangible Artifacts:',
+        },
+        desc: {
+          vi: 'Thiết kế và trao tặng huy hiệu danh dự kim loại Top 100 Student Achievement Awards được cá nhân hóa cho từng sinh viên được vinh danh — biểu trưng vật lý lưu giữ dấu ấn học tập bền bỉ.',
+          en: 'Designing and bestowing bespoke metallic Top 100 Student Achievement Awards pins personalized for each honored student — tangible keepsakes cementing lasting achievement.',
+        },
+      },
+      {
+        title: {
+          vi: 'Điểm chạm tương tác & lan tỏa (Social & Community Touchpoints):',
+          en: 'Social & Community Touchpoints:',
+        },
+        desc: {
+          vi: 'Dựng bức tường vinh danh (Recognition Wall) khắc tên từng sinh viên kết hợp backdrop cong và hệ thống photobooth xoay 360° trên thảm đỏ để sinh viên tìm thấy tên mình và lưu giữ khoảnh khắc tự hào cùng bạn bè, người thân.',
+          en: 'Constructing a dedicated Recognition Wall featuring every student name alongside curved backdrops and a 360° rotating video booth on the red carpet, enabling students to find their names and celebrate with peers and families.',
+        },
+      },
+      {
+        title: {
+          vi: 'Vận hành & điều phối:',
+          en: 'Operations & Coordination:',
+        },
+        desc: {
+          vi: 'Chuẩn hóa quy trình điều phối đa luồng, phân công vai trò rõ ràng giữa cán bộ phòng ban và mạng lưới cộng tác viên sinh viên.',
+          en: 'Standardizing cross-functional execution workflows between department staff and student collaborator teams.',
+        },
+      },
+    ],
     visualEvidence: [
       {
         src: top100PinBadge,
@@ -1140,8 +1167,21 @@ export const CASE_STUDIES: CaseStudy[] = [
         category: 'material',
         recommendedRatio: '4:3',
         caption: {
-          vi: 'Huy hiệu kim loại danh dự — Kỷ vật cầm tay biểu trưng cho sự công nhận thành tích học tập và rèn luyện',
-          en: 'Bespoke metallic honor pin — A tangible artifact symbolizing academic and extracurricular dedication',
+          vi: 'Huy hiệu kim loại danh dự — Kỷ vật cầm tay được cá nhân hóa biểu trưng cho sự công nhận thành tích học tập và rèn luyện.',
+          en: 'Bespoke metallic honor pin — A personalized artifact symbolizing academic and extracurricular dedication.',
+        },
+      },
+      {
+        src: top100RecognitionWall,
+        alt: {
+          vi: 'Sinh viên tìm thấy tên mình trên Recognition Wall',
+          en: 'Students finding their names on the Recognition Wall',
+        },
+        category: 'event',
+        recommendedRatio: '4:3',
+        caption: {
+          vi: 'Khoảnh khắc tìm thấy tên mình trên bức tường vinh danh — một điểm chạm nhỏ nhưng khiến sự ghi nhận trở nên hữu hình và mang tính cá nhân hơn.',
+          en: 'Finding their names on the Recognition Wall — a small touchpoint that makes recognition feel more tangible and personal.',
         },
       },
       {
@@ -1153,8 +1193,8 @@ export const CASE_STUDIES: CaseStudy[] = [
         category: 'event',
         recommendedRatio: '16:9',
         caption: {
-          vi: 'Bức tường danh dự cong khắc tên sinh viên Top 100 kết hợp photobooth 360° lưu giữ khoảnh khắc vinh quang',
-          en: 'Curved honoree wall featuring all Top 100 names paired with a 360° video booth to capture milestone memories',
+          vi: 'Bức tường danh dự cong khắc tên sinh viên Top 100 kết hợp photobooth 360° lưu giữ khoảnh khắc vinh quang.',
+          en: 'Curved honoree wall featuring all Top 100 names paired with a 360° video booth to capture milestone memories.',
         },
       },
       {
@@ -1166,21 +1206,21 @@ export const CASE_STUDIES: CaseStudy[] = [
         category: 'event',
         recommendedRatio: '16:9',
         caption: {
-          vi: 'Thiết kế sân khấu và nhận diện thị giác hiện đại truyền tải thông điệp bứt phá qua từng học kỳ',
-          en: 'Modern stage design and dynamic visual identity conveying an empowering theme each semester',
+          vi: 'Thiết kế sân khấu và nhận diện thị giác hiện đại truyền tải thông điệp bứt phá qua từng học kỳ.',
+          en: 'Modern stage design and dynamic visual identity conveying an empowering theme each semester.',
         },
       },
       {
         src: top100HostNganbit,
         alt: {
-          vi: 'Thùy Ngân dẫn dắt và điều phối chương trình vinh danh trên sân khấu',
-          en: 'Thùy Ngân hosting and steering the recognition ceremony on stage',
+          vi: 'Thùy Ngân kết nối từ sân khấu trong chương trình vinh danh',
+          en: 'Thùy Ngân connecting directly from stage during ceremony',
         },
         category: 'portrait',
         recommendedRatio: '4:3',
         caption: {
-          vi: 'Thùy Ngân trực tiếp điều phối và dẫn dắt các khoảnh khắc nghi lễ trang trọng của chương trình',
-          en: 'Thùy Ngân directly steering and hosting ceremonial highlights on stage',
+          vi: 'Một góc khác của trải nghiệm: trực tiếp kết nối với người tham gia từ sân khấu.',
+          en: 'Another side of the experience: connecting directly with participants from the stage.',
         },
       },
     ],
@@ -1188,13 +1228,115 @@ export const CASE_STUDIES: CaseStudy[] = [
       url: '/videos/top100-ceremony-recap.mp4',
       poster: '/videos/top100-video-poster.jpg',
       title: {
-        vi: 'Video Recap: Khoảnh khắc Tôn vinh & Cảm xúc của Sinh viên cùng Gia đình',
-        en: 'Ceremony Recap Video: Moments of Recognition & Emotion with Families',
+        vi: 'Experience & Emotion',
+        en: 'Experience & Emotion',
       },
       caption: {
-        vi: 'Thước phim ghi lại trọn vẹn không khí trang trọng, niềm tự hào của sinh viên Top 100 và phụ huynh trên sân khấu',
-        en: 'Documentary footage capturing the dignified atmosphere and proud emotions of Top 100 honorees and families on stage',
+        vi: 'Cảm xúc của người được vinh danh là một phần cốt lõi của Recognition Experience — từ khoảnh khắc bước lên sân khấu, nhận sự ghi nhận đến việc chia sẻ niềm tự hào cùng gia đình và những người quan trọng với họ.',
+        en: 'The emotions of those being recognized are a core part of the Recognition Experience — from stepping onto the stage and receiving recognition to sharing that sense of pride with family and the people who matter to them.',
       },
+    },
+    aiFeature: {
+      title: {
+        vi: 'AI Facial Recognition Check-in',
+        en: 'AI Facial Recognition Check-in',
+      },
+      desc: {
+        vi: 'Tại điểm đón tiếp, hệ thống camera và màn hình nhận diện gương mặt hỗ trợ sinh viên, phụ huynh và người tham dự:',
+        en: 'At the welcoming reception, the smart facial recognition camera and display system support students, parents, and attendees:',
+      },
+      capabilities: {
+        vi: [
+          'Nhận diện người tham dự',
+          'Xác nhận check-in/có mặt',
+          'Hiển thị check-in thành công',
+          'Hiển thị vị trí chỗ ngồi',
+        ],
+        en: [
+          'Attendee facial identification',
+          'Attendance confirmation',
+          'On-screen check-in success verification',
+          'Assigned seating display',
+        ],
+      },
+      layers: {
+        participantExperience: {
+          vi: 'Giúp quá trình check-in và tìm vị trí chỗ ngồi thuận tiện, liền mạch hơn.',
+          en: 'Streamlines the check-in and seating navigation, delivering a smooth, welcoming arrival experience.',
+        },
+        operationalEfficiency: {
+          vi: 'Giảm thao tác tra cứu/check-in thủ công và hỗ trợ đội ngũ điều phối người tham dự hiệu quả hơn.',
+          en: 'Minimizes manual rosters and lines, empowering coordinators to manage guest flows smoothly.',
+        },
+      },
+      image: top100AiCheckin,
+      caption: {
+        vi: 'Facial Recognition Check-in hỗ trợ xác nhận người tham dự và hiển thị vị trí chỗ ngồi, giúp trải nghiệm đón tiếp nhanh và thuận tiện hơn.',
+        en: 'Facial Recognition Check-in supports attendee verification and seat guidance, creating a faster and more seamless arrival experience.',
+      },
+    },
+    quantitativeStats: [
+      {
+        value: '350–500',
+        label: {
+          vi: 'Người tham dự trung bình mỗi kỳ',
+          en: 'Average Attendees per Semester',
+        },
+        subtext: {
+          vi: 'Quy mô tổng thể sự kiện',
+          en: 'Overall ceremony scale',
+        },
+        notes: {
+          vi: 'Tổng quy mô người tham dự trung bình mỗi kỳ, bao gồm: sinh viên Top 100 được vinh danh, các câu lạc bộ/đội nhóm được vinh danh, sinh viên hoạt động phong trào tiêu biểu, phụ huynh/người thân và bạn bè của sinh viên.',
+          en: 'Average total attendance per semester, comprising: Top 100 student honorees, recognized clubs/teams, extracurricular leaders, parents/relatives, and peer supporters.',
+        },
+      },
+      {
+        value: '4.9/5',
+        label: {
+          vi: 'Mức độ hài lòng của người tham dự',
+          en: 'Attendee Satisfaction Score',
+        },
+        subtext: {
+          vi: 'Chỉ số đo lường trải nghiệm',
+          en: 'Experience measurement index',
+        },
+        notes: {
+          vi: 'Mức độ hài lòng chung từ người tham dự qua các kỳ tổ chức chương trình.',
+          en: 'Overall satisfaction recorded across semesters from participating honorees and families.',
+        },
+      },
+    ],
+    qualitativeEvidence: {
+      badge: {
+        vi: 'Student feedback · Qualitative evidence',
+        en: 'Student feedback · Qualitative evidence',
+      },
+      caption: {
+        vi: 'Thư cảm ơn từ một sinh viên sau lần thứ 4 tham dự Top 100 Student Achievement Awards.',
+        en: 'Thank you letter from a graduating senior attending their 4th Top 100 Student Achievement Awards.',
+      },
+      image: top100EmailFeedback,
+      alt: {
+        vi: 'Thư cảm ơn từ sinh viên sau lần thứ 4 tham dự Top 100 Student Achievement Awards',
+        en: 'Thank you letter from student attending 4th Top 100 ceremony',
+      },
+    },
+    impact: {
+      vi: [
+        'Duy trì tổ chức định kỳ và nâng tầm chất lượng trải nghiệm vinh danh cho Top 100 sinh viên xuất sắc nhất mỗi học kỳ tại FPT University HCMC.',
+        'Tạo dấu ấn gắn kết cảm xúc sâu sắc giữa sinh viên, gia đình và nhà trường thông qua các chủ đề sáng tạo và nghi lễ vinh danh chuyên nghiệp.',
+        'Ứng dụng giải pháp công nghệ AI Facial Recognition vào điểm đón tiếp nhằm tối ưu thời gian điều phối và nâng cao trải nghiệm người tham gia.',
+      ],
+      en: [
+        'Sustained recurring semesterly recognition, elevating experience quality for the top 100 student achievers at FPT University HCMC.',
+        'Forged profound emotional belonging among students, families, and university faculty through thematic storytelling and ceremonial excellence.',
+        'Applied AI Facial Recognition solution at reception touchpoints to streamline coordination time and elevate attendee experience.',
+      ],
+    },
+    learning: {
+      vi: 'Tôn vinh không đơn thuần là trao đi một phần thưởng, mà là kiến tạo một khoảnh khắc được công nhận trọn vẹn — nơi nỗ lực của người trẻ được chứng kiến, trân trọng và tiếp thêm động lực cho những chặng đường tương lai.',
+      en: 'True recognition is not merely bestowing an award; it is crafting an indelible moment of validation — where human dedication is witnessed, celebrated, and empowered for the future.',
     },
   },
   {

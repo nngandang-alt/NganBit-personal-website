@@ -86,6 +86,37 @@ export interface ExperienceRole {
   relatedCaseId?: string;
 }
 
+export interface ApproachItem {
+  title: { vi: string; en: string };
+  desc?: { vi: string; en: string };
+}
+
+export interface AiFeatureHighlight {
+  title: { vi: string; en: string };
+  desc: { vi: string; en: string };
+  capabilities: { vi: string[]; en: string[] };
+  layers: {
+    participantExperience: { vi: string; en: string };
+    operationalEfficiency: { vi: string; en: string };
+  };
+  image: string;
+  caption: { vi: string; en: string };
+}
+
+export interface QualitativeEvidence {
+  badge: { vi: string; en: string };
+  caption: { vi: string; en: string };
+  image: string;
+  alt: { vi: string; en: string };
+}
+
+export interface QuantitativeStat {
+  value: string;
+  label: { vi: string; en: string };
+  subtext?: { vi: string; en: string };
+  notes?: { vi: string; en: string };
+}
+
 export interface CaseStudy {
   id: string;
   title: { vi: string; en: string };
@@ -103,11 +134,15 @@ export interface CaseStudy {
   myRole: { vi: string; en: string };
   stakeholders?: { vi: string; en: string };
   approach: { vi: string; en: string };
+  approachItems?: ApproachItem[];
   systemFramework?: { vi: string; en: string };
   aiApplication?: { vi: string; en: string };
+  aiFeature?: AiFeatureHighlight;
   execution?: { vi: string[]; en: string[] };
   measurement?: { vi: string[]; en: string[] };
   impact: { vi: string[]; en: string[] };
+  quantitativeStats?: QuantitativeStat[];
+  qualitativeEvidence?: QualitativeEvidence;
   learning?: { vi: string; en: string };
   visualEvidence?: PortfolioImage[];
   videoEvidence?: {

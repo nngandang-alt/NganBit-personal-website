@@ -23,7 +23,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
           </div>
           <div>
             <span className="font-semibold text-white">
-              {PERSONAL_INFO.fullName} ({PERSONAL_INFO.identity})
+              {PERSONAL_INFO.fullName}
             </span>
             <span className="text-slate-500 ml-2">
               © {new Date().getFullYear()}

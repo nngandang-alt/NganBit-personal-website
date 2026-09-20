@@ -325,7 +325,7 @@ export const CareerStory: React.FC<CareerStoryProps> = ({ lang, onSelectCase }) 
               </button>
 
               <div className="px-3 py-1.5 rounded-lg bg-slate-100 font-mono text-xs font-bold text-slate-700">
-                {activeChapterIndex + 1} / {CAREER_CHAPTERS.length}
+                {activeChapter.number} / 06
               </div>
 
               <button
