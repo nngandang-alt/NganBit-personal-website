@@ -3,7 +3,6 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { CareerStory } from './components/CareerStory';
 import { Philosophy } from './components/Philosophy';
-import { Experience } from './components/Experience';
 import { Projects } from './components/Projects';
 import { Approach } from './components/Approach';
 import { ImpactStats } from './components/ImpactStats';
@@ -44,7 +43,6 @@ export default function App() {
       'hero',
       'story',
       'philosophy',
-      'experience',
       'cases',
       'methodology',
       'credentials',
@@ -106,19 +104,16 @@ export default function App() {
           onExploreCases={() => scrollToSection('cases')}
         />
 
-        {/* 2. Layer 1: Career Story (5 Chapters Connected Journey) */}
-        <CareerStory lang={lang} />
-
-        {/* 3. Professional Philosophy (The Belief Chain & Experience Lens) */}
-        <Philosophy lang={lang} />
-
-        {/* 4. Layer 2: Experience (Verified Roles, Scopes & Impacts) */}
-        <Experience
+        {/* 2. Career Journey (Integrated Story, Verified Roles & Visual Evidence) */}
+        <CareerStory
           lang={lang}
           onSelectCase={handleSelectCaseById}
         />
 
-        {/* 5. Layer 3: Evidence (Flagship Case Studies) */}
+        {/* 3. Professional Philosophy (The Belief Chain & Experience Lens) */}
+        <Philosophy lang={lang} />
+
+        {/* 4. Flagship Case Studies (Evidence) */}
         <Projects
           lang={lang}
           onSelectCase={(cs) => setSelectedCase(cs)}

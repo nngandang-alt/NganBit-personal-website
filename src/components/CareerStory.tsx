@@ -3,12 +3,14 @@ import { CAREER_CHAPTERS, FULL_CIRCLE_QUOTE } from '../data/portfolioData';
 import { Language } from '../types';
 import { Compass, ArrowRight, ArrowLeft, Lightbulb, ArrowUpRight, CheckCircle2, Sparkles, RefreshCw } from 'lucide-react';
 import { CareerVisualEvidence } from './CareerVisualEvidence';
+import { VerifiedRoleCard } from './VerifiedRoleCard';
 
 interface CareerStoryProps {
   lang: Language;
+  onSelectCase?: (caseId: string) => void;
 }
 
-export const CareerStory: React.FC<CareerStoryProps> = ({ lang }) => {
+export const CareerStory: React.FC<CareerStoryProps> = ({ lang, onSelectCase }) => {
   const [activeChapterIndex, setActiveChapterIndex] = useState(0);
   const activeChapter = CAREER_CHAPTERS[activeChapterIndex];
 
@@ -29,7 +31,7 @@ export const CareerStory: React.FC<CareerStoryProps> = ({ lang }) => {
         <div className="flex flex-col gap-3 mb-12 sm:mb-16">
           <div className="flex items-center gap-3">
             <span className="text-xs font-bold tracking-widest text-[#0068FF] uppercase">
-              {lang === 'vi' ? 'Lớp 1: Câu chuyện nghề nghiệp' : 'Layer 1: Career Story'}
+              {lang === 'vi' ? 'Hành trình nghề nghiệp' : 'Career Journey'}
             </span>
             <div className="h-px w-12 bg-[#0068FF]/30" />
           </div>
@@ -37,12 +39,12 @@ export const CareerStory: React.FC<CareerStoryProps> = ({ lang }) => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
             {lang === 'vi' ? (
               <>
-                Hành trình tiến hóa nghề nghiệp:<br />
+                Hành trình nghề nghiệp:<br />
                 <span className="text-[#0068FF]">Từ Truyền thông đến Tư duy Hệ thống &amp; Dẫn dắt.</span>
               </>
             ) : (
               <>
-                Professional Evolution:<br />
+                Professional Career Journey:<br />
                 <span className="text-[#0068FF]">From Communication to Systems &amp; Leadership.</span>
               </>
             )}
@@ -50,8 +52,8 @@ export const CareerStory: React.FC<CareerStoryProps> = ({ lang }) => {
 
           <p className="text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed mt-1">
             {lang === 'vi'
-              ? 'Không kể sự nghiệp bằng danh sách công ty rời rạc. Đây là hành trình của những bước chuyển hóa: cách tôi học hỏi, mở rộng bộ công cụ và phát triển năng lực qua 5 chương then chốt.'
-              : 'Beyond a conventional list of job titles, this is a continuous professional progression: how curiosity, systems thinking, and leadership expanded across five key chapters.'}
+              ? 'Tích hợp toàn diện giữa câu chuyện tiến hóa năng lực (Career Story), chức danh & phạm vi quản trị thực tế (Verified Scope & Impact), cùng các bằng chứng hình ảnh chân thực qua 6 chương then chốt.'
+              : 'Synthesizing professional capability evolution, verified ownership scopes, and authentic impact evidence across six milestone chapters.'}
           </p>
         </div>
 
@@ -253,10 +255,46 @@ export const CareerStory: React.FC<CareerStoryProps> = ({ lang }) => {
                   ))}
                 </div>
               </div>
-
             </div>
 
           </div>
+
+          {/* ============================================================== */}
+          {/* VERIFIED EXPERIENCE SECTION (Full usable content width) */}
+          {/* ============================================================== */}
+          {activeChapter.verifiedRoles && activeChapter.verifiedRoles.length > 0 && (
+            <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-slate-100">
+              {/* Section Sub-heading */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
+                <div className="flex items-center gap-2.5">
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#0068FF]">
+                    {lang === 'vi' ? 'Trách nhiệm & Dấu ấn thực tế' : 'Verified Scope & Practical Evidence'}
+                  </span>
+                  <div className="h-px w-10 sm:w-16 bg-[#0068FF]/30" />
+                </div>
+
+                {activeChapter.internalProgression && (
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-mono font-semibold text-slate-700 self-start sm:self-auto">
+                    <span className="text-[#0068FF]">Evolution:</span>
+                    <span>{activeChapter.internalProgression}</span>
+                  </div>
+                )}
+              </div>
+
+              {/* Roles Container */}
+              <div className="flex flex-col gap-5 sm:gap-6">
+                {activeChapter.verifiedRoles.map((role) => (
+                  <VerifiedRoleCard
+                    key={role.id}
+                    role={role}
+                    lang={lang}
+                    onSelectCase={onSelectCase}
+                    isSubBlock={activeChapter.verifiedRoles!.length > 1}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* ============================================================== */}
           {/* VISUAL EVIDENCE SECTION (Full usable content width) */}

@@ -24,6 +24,32 @@ export interface CareerVisualEvidenceData {
   aspectRatioClass?: string;
 }
 
+export interface ProgressionStep {
+  title: { vi: string; en: string };
+  period: string;
+  isCurrent?: boolean;
+}
+
+export interface VerifiedRoleItem {
+  id: string;
+  subNumber?: string;
+  officialTitle: { vi: string; en: string };
+  company: string;
+  period: string;
+  location?: string;
+  workType?: string;
+  reportingTo?: { vi: string; en: string };
+  teamSize?: string;
+  milestoneTag?: { vi: string; en: string };
+  progressionSteps?: ProgressionStep[];
+  scopeDistinction?: { vi: string; en: string };
+  actualScopeNote?: { vi: string; en: string };
+  leadershipScope?: { vi: string; en: string };
+  mandateScope: { vi: string[]; en: string[] };
+  selectedImpact: { vi: string[]; en: string[] };
+  relatedCaseId?: string;
+}
+
 export interface CareerChapter {
   id: string;
   number: string;
@@ -41,6 +67,7 @@ export interface CareerChapter {
   internalProgression?: string;
   isCurrent?: boolean;
   visualEvidence?: CareerVisualEvidenceData;
+  verifiedRoles?: VerifiedRoleItem[];
 }
 
 export interface ExperienceRole {

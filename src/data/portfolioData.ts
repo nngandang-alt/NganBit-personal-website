@@ -53,9 +53,8 @@ export const PERSONAL_INFO = {
 };
 
 export const NAV_ITEMS: NavItem[] = [
-  { id: 'story', label: { vi: 'Hành trình', en: 'Career Story' }, href: '#story' },
+  { id: 'story', label: { vi: 'Hành trình', en: 'Career Journey' }, href: '#story' },
   { id: 'philosophy', label: { vi: 'Triết lý', en: 'Philosophy' }, href: '#philosophy' },
-  { id: 'experience', label: { vi: 'Kinh nghiệm', en: 'Experience' }, href: '#experience' },
   { id: 'cases', label: { vi: 'Case Studies', en: 'Case Studies' }, href: '#cases' },
   { id: 'methodology', label: { vi: 'Phương pháp', en: 'How I Work' }, href: '#methodology' },
   { id: 'credentials', label: { vi: 'Nền tảng', en: 'Credentials' }, href: '#credentials' },
@@ -102,7 +101,72 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
       'Data-informed Operations',
       'AI-Amplified Workflows',
     ],
-    contextHighlight: { vi: 'Chức danh: Head of Student Relations Office (Apr 2025 — Present)', en: 'Official Title: Head of Student Relations Office (Apr 2025 — Present)' },
+    contextHighlight: { vi: 'Chức danh: Head of Student Relations Office (Jan 2026 — Present)', en: 'Official Title: Head of Student Relations Office (Jan 2026 — Present)' },
+    verifiedRoles: [
+      {
+        id: 'vr-fpt-01',
+        officialTitle: {
+          vi: 'Head of Student Relations Office',
+          en: 'Head of Student Relations Office',
+        },
+        company: 'Trường Đại học FPT TP.HCM',
+        period: 'Apr 2025 — Present',
+        location: 'TP. Hồ Chí Minh',
+        workType: 'Full-time',
+        progressionSteps: [
+          {
+            title: { vi: 'Student Relations Officer', en: 'Student Relations Officer' },
+            period: 'Apr 2025 — Dec 2025',
+          },
+          {
+            title: { vi: 'Head of Student Relations Office', en: 'Head of Student Relations Office' },
+            period: 'Jan 2026 — Present',
+            isCurrent: true,
+          },
+        ],
+        scopeDistinction: {
+          vi: 'Lĩnh vực Trải nghiệm Sinh viên (Student Experience - SX) quy mô lớn, tách biệt rõ rệt với Trải nghiệm Nhân viên doanh nghiệp (EX). Không kiêm nhiệm quan hệ doanh nghiệp bên ngoài.',
+          en: 'Student Experience (SX) ecosystem at scale, clearly distinct from corporate Employee Experience (EX). SRO does not manage strategic external corporate partnerships.',
+        },
+        actualScopeNote: {
+          vi: 'Thăng tiến từ Cán bộ Công tác Sinh viên (Student Relations Officer) lên Trưởng phòng Công tác Sinh viên (Head of SRO): mở rộng từ trực tiếp điều phối hoạt động sang lãnh đạo chiến lược danh mục trải nghiệm, phát triển sinh viên và quản trị vận hành tổ chức.',
+          en: 'Promoted from Student Relations Officer to Head of Student Relations Office: transition from direct program execution to strategic leadership of student experience portfolio, student development, and organizational governance.',
+        },
+        leadershipScope: {
+          vi: 'Lãnh đạo toàn diện đội ngũ Phòng Công tác Sinh viên (SRO), mạng lưới Cộng tác viên phòng ban và chỉ đạo các ban tổ chức chương trình quy mô toàn trường.',
+          en: 'Direct leadership of Student Relations Office (SRO) team, student collaborators network, and presiding over university-wide program committees.',
+        },
+        mandateScope: {
+          vi: [
+            'Hệ sinh thái CLB Học thuật & Phát triển Năng lực: Quản lý và định hướng hơn 20 câu lạc bộ học thuật với khoảng 700 thành viên; tạo bệ phóng rèn luyện năng lực chuyên môn, chuẩn bị cho các cuộc thi học thuật trong nước/quốc tế, thúc đẩy nghiên cứu khoa học sinh viên và hướng tới công bố bài báo quốc tế.',
+            'Vinh danh & Khen thưởng — Kỷ luật Sinh viên: Chỉ đạo chương trình vinh danh định kỳ Top 100 Sinh viên tiêu biểu (Top 100 Student Achievement Awards) mỗi học kỳ; quản lý công tác khen thưởng, kỷ luật và hỗ trợ tâm lý/đời sống sinh viên.',
+            'Trải nghiệm Sinh viên & Danh mục Chương trình Trọng điểm: Thiết kế và chỉ đạo danh mục các sự kiện trải nghiệm sinh viên quy mô lớn (trong đó TechX Camp là một flagship project tiêu biểu trong danh mục).',
+            'Gắn kết Cộng đồng & Hoạt động Tân sinh viên: Tổ chức các chương trình định hướng (Orientation), tư vấn học tập, chăm sóc sinh viên và nuôi dưỡng môi trường văn hóa năng động, hòa nhập.',
+            'Tối ưu Hóa Vận Hành, Dữ Liệu & AI: Ứng dụng công nghệ, phân tích dữ liệu khảo sát và các workflow hỗ trợ bởi AI để nâng cao hiệu suất xử lý thông tin, chuẩn hóa dịch vụ và tối ưu trải nghiệm sinh viên.',
+          ],
+          en: [
+            'Academic Club Ecosystem & Student Development: Mentoring and governing 20+ academic clubs (~700 members) into a structured platform for specialized capability building, national/international competitions, student research, and international academic publications.',
+            'Recognition & Student Conduct: Directing the recurring semesterly Top 100 Student Achievement Awards; managing formal commendations, student conduct governance, and student advisory support.',
+            'Student Experience & Flagship Programs: Architecting university-wide experiential initiatives (with TechX Camp serving as one flagship project within a diverse program portfolio).',
+            'Community Engagement & Orientation: Orchestrating freshman Orientation, academic advisory, student welfare touchpoints, and vibrant inclusive student community culture.',
+            'Operations, Data & AI-Enabled Workflows: Integrating data analytics, student sentiment tracking, and AI-augmented operational workflows to elevate service speed and student satisfaction.',
+          ],
+        },
+        selectedImpact: {
+          vi: [
+            'Nâng tầm và vận hành bền vững hệ sinh thái 20+ CLB học thuật (~700 sinh viên), tạo nền tảng cho các đội thi đạt giải quốc tế và tham gia nghiên cứu học thuật.',
+            'Chỉ đạo thành công chương trình vinh danh Top 100 Student Achievement Awards định kỳ và các chương trình trải nghiệm quy mô lớn như TechX Camp.',
+            'Chuẩn hóa hệ thống dữ liệu phản hồi sinh viên và tích hợp AI vào quy trình tổng hợp, nâng cao tốc độ phản hồi và chỉ số hài lòng sinh viên.',
+          ],
+          en: [
+            'Elevated and sustained 20+ academic clubs (~700 students), fostering national/international competition winners and active undergraduate research.',
+            'Successfully directed semesterly Top 100 Student Achievement Awards ceremonies and flagship experiential events including TechX Camp.',
+            'Standardized student feedback systems and integrated AI-assisted workflows to accelerate operational responsiveness and student satisfaction.',
+          ],
+        },
+        relatedCaseId: 'case-sro-system',
+      },
+    ],
     visualEvidence: {
       number: '01',
       src: careerEvidenceFptSro,
@@ -143,6 +207,56 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
     },
     toolkit: ['Organizational Development', 'Employee Lifecycle Architecture', '15/60/90-Day Retention Journey', 'Role/SOW Standardization', 'Competency & Performance Systems'],
     contextHighlight: { vi: 'Official Title: Senior Specialist, Organizational Development', en: 'Official Title: Senior Specialist, Organizational Development' },
+    verifiedRoles: [
+      {
+        id: 'vr-transcosmos',
+        officialTitle: {
+          vi: 'Senior Specialist, Organizational Development',
+          en: 'Senior Specialist, Organizational Development',
+        },
+        company: 'transcosmos Vietnam',
+        period: 'Jul 2024 — Mar 2025',
+        location: 'TP. Hồ Chí Minh',
+        workType: 'Full-time',
+        milestoneTag: {
+          vi: 'BEYOND CULTURE: BUILDING THE SYSTEM',
+          en: 'BEYOND CULTURE: BUILDING THE SYSTEM',
+        },
+        actualScopeNote: {
+          vi: 'Đảm nhiệm vai trò Chuyên viên cao cấp Phát triển Tổ chức trong môi trường BPO/Contact Center quy mô lớn: bước chuyển then chốt từ truyền thông văn hóa sang kiến trúc hệ thống tổ chức nền tảng.',
+          en: 'Served as Senior Specialist, Organizational Development in a large-scale Contact Center/BPO environment: pivotal evolution from comms to systemic organizational architecture.',
+        },
+        mandateScope: {
+          vi: [
+            'Kiến trúc Vòng đời Nhân viên: Chuẩn hóa toàn diện các điểm chạm từ tuyển dụng, hội nhập (Onboarding), gắn kết (Engagement) đến giữ chân nhân sự (Retention).',
+            'Hành trình Giữ chân 15/60/90 Ngày: Thiết lập quy trình đánh giá và hỗ trợ tân nhân viên thích nghi văn hóa, giảm tỷ lệ thôi việc sớm.',
+            'Dữ liệu Thấu hiểu Nhân viên (Employee Insight): Xây dựng hệ thống khảo sát định kỳ, pulse checks, và phân tích nguyên nhân thôi việc (exit interviews).',
+            'Chuẩn hóa Vai trò & Phạm vi Công việc (Role/SOW Standardization): Xây dựng hệ thống SOW chuẩn hóa đầu tiên cho khối Sales & Vận hành.',
+            'Khung Năng lực & Quản trị Hiệu suất: Đồng bộ hóa ma trận năng lực chuyên môn và tiêu chuẩn đánh giá hiệu suất định kỳ.',
+          ],
+          en: [
+            'Employee Lifecycle Architecture: Designing and standardizing touchpoints across Onboarding, Engagement, and Retention in high-volume operations.',
+            '15/60/90-Day Retention Journey: Structuring formal check-ins and cultural onboarding milestones to accelerate assimilation and curb early turnover.',
+            'Employee Insight Systems: Architecting recurring sentiment surveys, pulse checks, and structured exit interview data analytics.',
+            'Role & SOW Standardization: Engineering the first standardized Scope of Work (SOW) matrix for Sales and Operational functions.',
+            'Competency Rubrics & Performance Frameworks: Synchronizing behavioral competencies with performance review criteria.',
+          ],
+        },
+        selectedImpact: {
+          vi: [
+            'Gia tăng tỷ lệ hài lòng trong hành trình hội nhập 90 ngày (90-day onboarding satisfaction) từ ~60% lên ~80%.',
+            'Xây dựng và bàn giao thành công hệ thống SOW chuẩn hóa đầu tiên cho khối Sales, xóa bỏ sự mơ hồ về vai trò và trách nhiệm.',
+            'Đồng bộ hóa khung năng lực và tiêu chí đo lường hiệu suất với mục tiêu vận hành của tổ chức BPO.',
+          ],
+          en: [
+            'Elevated 90-day onboarding satisfaction from ~60% to ~80% across operational cohorts.',
+            'Pioneered the first standardized SOW framework for Sales, eliminating role ambiguity and improving operational handoffs.',
+            'Synchronized core competency rubrics with corporate BPO performance evaluation benchmarks.',
+          ],
+        },
+        relatedCaseId: 'case-15-60-90',
+      },
+    ],
   },
   {
     id: 'ch-03',
@@ -170,6 +284,63 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
     },
     toolkit: ['People & Culture Leadership', 'Internal Communications (IC)', 'Employer Branding & EVP', 'L&D & CSR Programs', 'Change & Crisis Management'],
     contextHighlight: { vi: 'Official Title: People & Culture Lead', en: 'Official Title: People & Culture Lead' },
+    verifiedRoles: [
+      {
+        id: 'vr-savvycom',
+        officialTitle: {
+          vi: 'People & Culture Lead',
+          en: 'People & Culture Lead',
+        },
+        company: 'Savvycom',
+        period: '2023 — 2024',
+        location: 'Hà Nội / TP.HCM / Hybrid',
+        workType: 'Full-time',
+        reportingTo: {
+          vi: 'Chief People Officer (CPO)',
+          en: 'Chief People Officer (CPO)',
+        },
+        teamSize: '4 nhân sự / 4 members',
+        milestoneTag: {
+          vi: 'EXPANDING INTO PEOPLE & CULTURE + FORMAL LEADERSHIP',
+          en: 'EXPANDING INTO PEOPLE & CULTURE + FORMAL LEADERSHIP',
+        },
+        leadershipScope: {
+          vi: 'Báo cáo trực tiếp cho Chief People Officer (CPO); trực tiếp quản lý và phát triển đội ngũ 4 nhân sự; đồng hành cùng CEO và Ban Giám Đốc trong các chiến lược văn hóa và truyền thông thay đổi.',
+          en: 'Reporting to Chief People Officer (CPO); directly leading and developing a 4-person team; partnering closely with CEO and Senior Leadership on culture and change communications.',
+        },
+        mandateScope: {
+          vi: [
+            'Truyền thông Nội bộ & Văn hóa Doanh nghiệp: Hoạch định và triển khai chiến lược truyền thông đa kênh, củng cố tính minh bạch và gắn kết trong mô hình làm việc linh hoạt (hybrid work).',
+            'Chiến lược Gắn kết Nhân sự (Employee Engagement): Thiết kế các chương trình trải nghiệm, đối thoại lãnh đạo (townhalls) và hoạt động nâng cao tinh thần đội ngũ kỹ thuật.',
+            'Truyền thông Thay đổi & Khủng hoảng (Change & Crisis Communication): Xử lý trực tiếp các thông điệp tái cấu trúc và định hướng chiến lược từ ban điều hành.',
+            'Thương hiệu Nhà tuyển dụng (EVP & Employer Branding): Định vị giá trị Savvycom trên thị trường nhân tài công nghệ, gia tăng độ nhận diện thương hiệu.',
+            'Đào tạo & CSR: Điều phối các chương trình Học tập & Phát triển (L&D) cùng các sáng kiến trách nhiệm xã hội hướng đến cộng đồng.',
+          ],
+          en: [
+            'Internal Comms & Culture Strategy: Formulating omnichannel communication rhythms to foster radical transparency and belonging across hybrid tech teams.',
+            'Employee Engagement Architecture: Directing experiential engagement campaigns, executive townhalls, and engineering pride initiatives.',
+            'Change & Crisis Communication: Crafting executive messaging for organizational realignment and change navigation.',
+            'Employer Branding & EVP: Codifying the Employer Value Proposition to attract and retain premier IT talent.',
+            'L&D & CSR Initiatives: Coordinating capability development roadmaps and community social impact projects.',
+          ],
+        },
+        selectedImpact: {
+          vi: [
+            'Nâng chỉ số gắn kết nhân viên (Employee Engagement) từ 70% lên 88%, tỷ lệ hài lòng chung đạt trên 90%+.',
+            'Tăng trưởng +120% độ tiếp cận tự nhiên (Organic Reach) của Thương hiệu Nhà tuyển dụng trên các kênh truyền thông xã hội.',
+            'Dẫn dắt các dự án CSR tiếp cận và hỗ trợ thiết thực cho hơn 800+ đối tượng hưởng lợi trong cộng đồng.',
+            'Hoàn thành xuất sắc 100% KPI phòng ban và cá nhân trong giai đoạn chuyển đổi tổ chức.',
+          ],
+          en: [
+            'Elevated employee engagement rate from 70% to 88%, achieving 90%+ overall workplace satisfaction.',
+            'Achieved +120% organic reach growth for Employer Branding across professional social channels.',
+            'Delivered high-impact CSR initiatives positively supporting over 800+ community beneficiaries.',
+            'Delivered 100% of departmental and individual performance KPIs during strategic transitions.',
+          ],
+        },
+        relatedCaseId: 'case-savvycom',
+      },
+    ],
   },
   {
     id: 'ch-04',
@@ -198,6 +369,145 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
     },
     toolkit: ['Culture Activation', 'Values Into Behaviors (C7+)', 'Happy Journey Recognition', 'Retail Frontline Engagement', 'Omnichannel Internal Media'],
     contextHighlight: { vi: 'Tiến trình nội bộ: F88 → CMC → Vua Nệm (Acting Internal Communication Lead)', en: 'Internal Progression: F88 → CMC → Vua Nệm (Acting Internal Communication Lead)' },
+    verifiedRoles: [
+      {
+        id: 'vr-f88',
+        subNumber: '04.1',
+        officialTitle: {
+          vi: 'Senior Specialist, Corporate Culture Development',
+          en: 'Senior Specialist, Corporate Culture Development',
+        },
+        company: 'F88',
+        period: 'Mar 2020 — Sep 2021',
+        location: 'Hà Nội / Toàn quốc',
+        workType: 'Full-time',
+        milestoneTag: {
+          vi: 'FIRST STEP INTO CULTURE',
+          en: 'FIRST STEP INTO CULTURE',
+        },
+        actualScopeNote: {
+          vi: 'Bắt đầu bước chuyển dịch then chốt từ Truyền thông nội bộ sang Phát triển Văn hóa doanh nghiệp.',
+          en: 'Initial decisive transition from Internal Communications into Corporate Culture development.',
+        },
+        mandateScope: {
+          vi: [
+            'Xây dựng và phát triển các kênh truyền thông văn hóa kết nối hội sở với hệ thống hàng trăm phòng giao dịch trên toàn quốc.',
+            'Triển khai nền tảng giao tiếp và gắn kết nội bộ GapoWork cho toàn thể cán bộ nhân viên.',
+            'Sản xuất các ấn phẩm văn hóa, phóng sự tôn vinh nhân viên tuyến đầu và lan tỏa giá trị cốt lõi.',
+          ],
+          en: [
+            'Built cultural communication channels connecting headquarters with hundreds of retail branches nationwide.',
+            'Rolled out corporate internal platform GapoWork across the entire workforce.',
+            'Produced culture publications, human-interest frontline spotlights, and core values storytelling.',
+          ],
+        },
+        selectedImpact: {
+          vi: [
+            'Đạt 100% tỷ lệ kích hoạt và tương tác của cán bộ nhân viên trên nền tảng GapoWork trong vòng 2 tháng.',
+            'Sản xuất 20+ số bản tin nội bộ và chuỗi video văn hóa củng cố tinh thần đồng đội thời điểm mở rộng quy mô nhanh.',
+          ],
+          en: [
+            'Attained 100% employee engagement and activation on GapoWork within 2 months of rollout.',
+            'Produced 20+ issues of internal culture newsletters and video series strengthening camaraderie during hyper-growth.',
+          ],
+        },
+      },
+      {
+        id: 'vr-cmc',
+        subNumber: '04.2',
+        officialTitle: {
+          vi: 'Senior Specialist, Corporate Culture Development',
+          en: 'Senior Specialist, Corporate Culture Development',
+        },
+        company: 'CMC Corporation',
+        period: 'Oct 2021 — Apr 2022',
+        location: 'Hà Nội / Toàn tập đoàn',
+        workType: 'Full-time',
+        milestoneTag: {
+          vi: 'PROFESSIONALIZING CULTURE AT SCALE',
+          en: 'PROFESSIONALIZING CULTURE AT SCALE',
+        },
+        actualScopeNote: {
+          vi: 'Làm văn hóa trong môi trường tập đoàn công nghệ quy mô lớn theo hướng chuyên nghiệp hóa và có hệ thống hơn.',
+          en: 'Advancing corporate culture development in a large-scale IT conglomerate with systemic professional rigor.',
+        },
+        mandateScope: {
+          vi: [
+            'Quản trị thương hiệu nội bộ (Internal Branding) và truyền thông văn hóa doanh nghiệp trên quy mô toàn tập đoàn.',
+            'Tham gia phát triển và vận hành nền tảng truyền thông nội bộ Together We Shine kết nối các công ty thành viên.',
+            'Chỉ đạo và hướng dẫn tổ chức các sự kiện văn hóa, phong trào gắn kết cán bộ nhân viên các khối.',
+          ],
+          en: [
+            'Directing Internal Branding and corporate culture communications across the entire conglomerate ecosystem.',
+            'Co-developed and managed Together We Shine internal communications platform uniting business units.',
+            'Guided corporate culture events and engagement initiatives across distributed subsidiaries.',
+          ],
+        },
+        selectedImpact: {
+          vi: [
+            'Triển khai thành công các chiến dịch truyền thông văn hóa cốt lõi, nâng cao chỉ số gắn kết nhân sự toàn tập đoàn.',
+            'Thúc đẩy tỷ lệ tương tác hai chiều trên nền tảng Together We Shine qua các ấn phẩm truyền thông sáng tạo.',
+          ],
+          en: [
+            'Successfully rolled out group-wide culture campaigns, elevating workforce cohesion.',
+            'Boosted two-way interactive participation on Together We Shine through multimedia storytelling.',
+          ],
+        },
+        relatedCaseId: 'case-together-we-shine',
+      },
+      {
+        id: 'vr-vuanem',
+        subNumber: '04.3',
+        officialTitle: {
+          vi: 'Acting Internal Communication Lead',
+          en: 'Acting Internal Communication Lead',
+        },
+        company: 'Vua Nệm',
+        period: 'May 2022 — Feb 2023',
+        location: 'TP. Hồ Chí Minh',
+        workType: 'Full-time',
+        reportingTo: {
+          vi: 'HR Director',
+          en: 'HR Director',
+        },
+        teamSize: '5 nhân sự / 5 members',
+        milestoneTag: {
+          vi: 'FIRST STEP INTO LEADERSHIP',
+          en: 'FIRST STEP INTO LEADERSHIP',
+        },
+        leadershipScope: {
+          vi: 'Báo cáo trực tiếp cho HR Director; lần đầu tiên đảm nhiệm vai trò Leader xây dựng và vận hành đội ngũ 5 thành viên phụ trách Truyền thông nội bộ & Văn hóa toàn quốc.',
+          en: 'Reported to HR Director; first formal leadership milestone establishing and directing a 5-member national Internal Comms & Culture team.',
+        },
+        mandateScope: {
+          vi: [
+            'Chiến lược Truyền thông nội bộ (IC Strategy) & Kích hoạt văn hóa: Kết nối khối văn phòng với mạng lưới showroom bán lẻ toàn quốc.',
+            'Chuyển hóa giá trị thành hành vi: Triển khai chương trình Happy Journey, Bộ quy tắc ứng xử (Code of Conduct) và Thói quen C7+.',
+            'Truyền thông thay đổi (Change Communication): Đồng hành cùng ban điều hành trong các giai đoạn tái định vị thương hiệu và chuyển đổi vận hành.',
+            'Đào tạo văn hóa & Chiến lược EVP: Thiết kế tài liệu đào tạo văn hóa hội nhập và xây dựng nền tảng thương hiệu tuyển dụng.',
+          ],
+          en: [
+            'Internal Comms Strategy & Culture Activation: Uniting headquarters with nationwide retail showroom networks.',
+            'Values-into-Behaviors Codification: Spearheading Happy Journey recognition, Code of Conduct, and C7+ Daily Habits.',
+            'Change Communication: Partnering with executives during brand realignment and retail transformation.',
+            'Culture Training & EVP Strategy: Architecting cultural onboarding curriculum and employer value proposition roadmap.',
+          ],
+        },
+        selectedImpact: {
+          vi: [
+            '91% cán bộ nhân viên toàn hệ thống thấu hiểu và chủ động ứng dụng Bộ giá trị cốt lõi vào công việc hàng ngày.',
+            'Đạt 90% tỷ lệ tham gia của khối bán lẻ tuyến đầu vào các sự kiện văn hóa nội bộ toàn quốc.',
+            'Thiết lập thành công chiến lược EVP và hoàn thành xuất sắc 96% chỉ tiêu KPI cá nhân và hiệu suất đội ngũ.',
+          ],
+          en: [
+            '91% of total workforce demonstrated deep comprehension and daily application of core organizational values.',
+            'Achieved 90% voluntary participation from retail frontline teams across national internal campaigns.',
+            'Established comprehensive EVP roadmap and achieved 96% individual and team KPI delivery.',
+          ],
+        },
+        relatedCaseId: 'case-values-behaviors',
+      },
+    ],
   },
   {
     id: 'ch-05',
@@ -225,6 +535,53 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
     },
     toolkit: ['Internal Storytelling', 'Video & Audio Radio Production', 'Branch Communication Networks', 'Large-Scale Engagement Events'],
     contextHighlight: { vi: 'Official Title: Internal Communication Specialist', en: 'Official Title: Internal Communication Specialist' },
+    verifiedRoles: [
+      {
+        id: 'vr-bellsystem',
+        officialTitle: {
+          vi: 'Internal Communication Executive',
+          en: 'Internal Communication Executive',
+        },
+        company: 'Bellsystem24-Hoasao',
+        period: 'Apr 2019 — Jan 2020',
+        location: 'Hà Nội / Toàn quốc',
+        workType: 'Full-time',
+        milestoneTag: {
+          vi: 'DISCOVERING INTERNAL COMMUNICATION',
+          en: 'DISCOVERING INTERNAL COMMUNICATION',
+        },
+        actualScopeNote: {
+          vi: 'Trải nghiệm nghề nghiệp đầu tiên với Truyền thông nội bộ chuyên nghiệp sau khi rời FPT University: từ nền tảng con người/cộng đồng bước vào môi trường contact center 24/7 quy mô hàng nghìn nhân sự.',
+          en: 'First professional Internal Communication role after FPT University: translating human/community foundations into high-volume 24/7 contact center operations.',
+        },
+        mandateScope: {
+          vi: [
+            'Tổ chức các sự kiện văn hóa nội bộ, ngày hội gia đình và hoạt động vinh danh nhân sự làm việc theo ca kíp.',
+            'Sản xuất nội dung truyền thông đa phương tiện: làm MC, điều phối kênh phát thanh nội bộ (Internal Radio) và video văn hóa.',
+            'Xây dựng và duy trì mạng lưới cộng tác viên truyền thông nội bộ kết nối các chi nhánh toàn quốc.',
+            'Thiết kế các sáng kiến gắn kết tinh thần cho đội ngũ điện thoại viên trong môi trường áp lực cao.',
+          ],
+          en: [
+            'Organized corporate culture festivals, family days, and shift-based employee recognition programs.',
+            'Produced multimedia storytelling: internal radio host, video documentaries, and monthly newsletters.',
+            'Formed and mentored a nationwide branch communication contributor network across regional offices.',
+            'Engineered engagement touchpoints sustaining high morale across 24/7 customer care frontline staff.',
+          ],
+        },
+        selectedImpact: {
+          vi: [
+            'Tăng trưởng +40% tỷ lệ nhân viên tham gia các sự kiện văn hóa và hoạt động gắn kết nội bộ toàn quốc.',
+            'Xây dựng mạng lưới hơn 15+ cộng tác viên truyền thông chi nhánh, duy trì luồng thông tin hai chiều thông suốt.',
+            'Sản xuất chuỗi bản tin phát thanh và video văn hóa trở thành điểm chạm tinh thần thân thuộc của hàng nghìn nhân sự ca kíp.',
+          ],
+          en: [
+            'Boosted employee participation in internal events and engagement campaigns by +40% nationwide.',
+            'Established and mobilized a 15+ member regional comms contributor network across branch hubs.',
+            'Produced internal radio broadcasts and video series embraced as beloved cultural rituals by shift workers.',
+          ],
+        },
+      },
+    ],
   },
   {
     id: 'ch-06',
@@ -252,6 +609,55 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
     },
     toolkit: ['Community Nurturing', 'Youth & Student Engagement', 'Club Mentorship', 'Interpersonal Empathy'],
     contextHighlight: { vi: 'Khởi đầu sự nghiệp trong môi trường giáo dục', en: 'Foundational career launchpad in higher education' },
+    verifiedRoles: [
+      {
+        id: 'vr-fpt-2018',
+        officialTitle: {
+          vi: 'Personal Development Specialist',
+          en: 'Personal Development Specialist',
+        },
+        company: 'Trường Đại học FPT TP.HCM',
+        period: 'Mar 2018 — Mar 2019',
+        location: 'TP. Hồ Chí Minh',
+        workType: 'Full-time',
+        milestoneTag: {
+          vi: 'WHERE IT ALL STARTED — THE FOUNDATION',
+          en: 'WHERE IT ALL STARTED — THE FOUNDATION',
+        },
+        actualScopeNote: {
+          vi: 'Khởi đầu sự nghiệp với trọng tâm sâu sắc vào sự phát triển cá nhân, lắng nghe con người và nuôi dưỡng cộng đồng sinh viên.',
+          en: 'Foundational career launchpad focusing on human development, active listening, and vibrant community nurturing.',
+        },
+        mandateScope: {
+          vi: [
+            'Cố vấn và hỗ trợ hoạt động của các câu lạc bộ sinh viên trường; định hướng phát triển kỹ năng mềm và kỹ năng lãnh đạo thanh niên.',
+            'Tổ chức các sự kiện trải nghiệm, hội thảo kỹ năng và hoạt động ngoại khóa quy mô lớn trong năm học.',
+            'Điều phối chương trình Tuần lễ định hướng (Orientation Week) cho sinh viên mới nhập học.',
+            'Đồng hành, lắng nghe tâm tư và hỗ trợ sinh viên hòa nhập với môi trường đại học.',
+          ],
+          en: [
+            'Mentored student clubs, guiding youth leadership competencies and interpersonal skills development.',
+            'Organized large-scale student development workshops, cultural festivals, and extracurricular experiences.',
+            'Coordinated comprehensive Orientation Week immersion programs for incoming university freshmen.',
+            'Provided empathetic student advisory support, facilitating seamless academic and social transitions.',
+          ],
+        },
+        selectedImpact: {
+          vi: [
+            'Cố vấn trực tiếp và đồng hành cùng 19 câu lạc bộ sinh viên, duy trì tỷ lệ hoạt động ổn định và bền vững trên 80%.',
+            'Tổ chức thành công hơn 20+ sự kiện, workshop và ngày hội sinh viên thường niên.',
+            'Đạt 90% tỷ lệ tham gia và phản hồi tích cực của tân sinh viên trong các kỳ Orientation Week.',
+            'Tạo dựng nền tảng phương pháp luận thấu cảm con người làm bệ phóng cho toàn bộ hành trình sự nghiệp sau này.',
+          ],
+          en: [
+            'Mentored 19 student clubs directly, maintaining an active operational sustainability rate above 80%.',
+            'Successfully orchestrated 20+ annual student development workshops and major engagement festivals.',
+            'Achieved 90% active participation and positive sentiment during freshman Orientation Weeks.',
+            'Established foundational human-centered methodology underpinning all subsequent leadership chapters.',
+          ],
+        },
+      },
+    ],
   },
 ];
 
