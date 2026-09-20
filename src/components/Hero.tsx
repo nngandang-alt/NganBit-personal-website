@@ -22,13 +22,13 @@ export const Hero: React.FC<HeroProps> = ({
     >
       {/* ========================================================================= */}
       {/* 1. SEAMLESS PHOTOGRAPHIC BACKGROUND (Unified Canvas across the Hero)      */}
-      {/* Focal point centered at ~65-72% horizontal, with generous headroom at top */}
+      {/* Scaled down proportionally to keep head & hair completely uncropped       */}
       {/* ========================================================================= */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none">
         <img
           src={heroBgImage}
           alt="Đặng Vũ Thùy Ngân (Ngân Bit) - Internal Communication & Corporate Culture"
-          className="w-full h-full object-cover object-[52%_4%] sm:object-[54%_6%] lg:object-[50%_4%] transform scale-[1.08] translate-x-[4%] sm:translate-x-[8%] lg:translate-x-[15%] xl:translate-x-[18%] translate-y-[2%] sm:translate-y-[2.5%] lg:translate-y-[3.5%]"
+          className="w-full h-full object-cover object-[52%_top] sm:object-[54%_top] lg:object-[50%_top] transform scale-[0.88] sm:scale-[0.85] lg:scale-[0.82] xl:scale-[0.80] translate-x-[4%] sm:translate-x-[8%] lg:translate-x-[14%] xl:translate-x-[16%] translate-y-[5%] sm:translate-y-[6%] lg:translate-y-[7%] origin-bottom-right transition-transform duration-700 ease-out"
           id="hero-bg-img"
         />
 
@@ -40,17 +40,17 @@ export const Hero: React.FC<HeroProps> = ({
 
         {/* Mobile/Tablet Vertical Fade: Keeps face clear at top, darkens below for text */}
         <div
-          className="lg:hidden absolute inset-0 bg-gradient-to-b from-[#070B14]/35 via-[#070B14]/75 via-42% to-[#070B14] to-75% pointer-events-none z-[1]"
+          className="lg:hidden absolute inset-0 bg-gradient-to-b from-[#070B14]/30 via-[#070B14]/75 via-42% to-[#070B14] to-75% pointer-events-none z-[1]"
           aria-hidden="true"
         />
 
         {/* Soft atmospheric top-to-bottom vignette */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-[#070B14]/50 via-transparent via-20% to-[#070B14]/75 pointer-events-none z-[1]"
+          className="absolute inset-0 bg-gradient-to-b from-[#070B14]/60 via-transparent via-20% to-[#070B14]/80 pointer-events-none z-[1]"
           aria-hidden="true"
         />
 
-        {/* Top-left subtle dotted matrix grid (as seen in reference mockup) */}
+        {/* Top-left subtle dotted matrix grid */}
         <div
           className="absolute top-0 left-0 w-3/5 h-3/5 opacity-[0.05] pointer-events-none bg-[radial-gradient(#ffffff_1.2px,transparent_1.2px)] [background-size:22px_22px] [mask-image:radial-gradient(ellipse_at_top_left,white_25%,transparent_75%)] z-[1]"
           aria-hidden="true"
@@ -58,53 +58,7 @@ export const Hero: React.FC<HeroProps> = ({
       </div>
 
       {/* ========================================================================= */}
-      {/* 2. RIGHT SIDE EDITORIAL ACCENTS (Exact Match to Reference Mockup)         */}
-      {/* "People Culture Impact 💙", subtle blue vector curves, & bottom quote    */}
-      {/* ========================================================================= */}
-      <div className="hidden xl:flex flex-col items-start absolute right-8 2xl:right-14 top-28 2xl:top-32 text-left z-10 pointer-events-none select-none">
-        <span className="font-serif italic text-base lg:text-lg text-blue-200/80 tracking-wide leading-snug">
-          People
-        </span>
-        <span className="font-serif italic text-base lg:text-lg text-blue-200/80 tracking-wide leading-snug">
-          Culture
-        </span>
-        <span className="font-serif italic text-base lg:text-lg text-blue-300 font-medium tracking-wide leading-snug flex items-center gap-1.5">
-          Impact <span className="text-blue-400 not-italic text-sm">💙</span>
-        </span>
-      </div>
-
-      <svg
-        className="hidden xl:block absolute right-0 top-1/4 w-[340px] 2xl:w-[420px] h-[500px] pointer-events-none z-[5] opacity-35 stroke-blue-400/40"
-        viewBox="0 0 400 500"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path
-          d="M 400,20 C 260,60 180,180 200,280 C 220,380 340,420 400,480"
-          strokeWidth="1.2"
-        />
-        <path
-          d="M 400,100 C 290,140 230,230 250,320 C 270,410 360,450 400,490"
-          strokeWidth="0.8"
-          strokeDasharray="4 4"
-        />
-      </svg>
-
-      <div className="hidden xl:flex flex-col items-start absolute right-8 2xl:right-14 bottom-20 2xl:bottom-24 text-left z-10 pointer-events-none select-none">
-        <span className="text-xs 2xl:text-sm text-blue-200/75 font-normal tracking-wide leading-relaxed">
-          Turning
-        </span>
-        <span className="text-xs 2xl:text-sm text-blue-200/75 font-normal tracking-wide leading-relaxed">
-          People into
-        </span>
-        <span className="text-xs 2xl:text-sm text-blue-200/90 font-medium tracking-wide leading-relaxed">
-          Possibilities
-        </span>
-        <div className="w-6 h-[1.5px] bg-blue-400/50 mt-2" />
-      </div>
-
-      {/* ========================================================================= */}
-      {/* 3. LEFT CONTENT SAFE ZONE (Desktop: ~48-52% width / Strictly zero overlap) */}
+      {/* 2. LEFT CONTENT SAFE ZONE (Desktop: ~48-52% width / Strictly zero overlap) */}
       {/* ========================================================================= */}
       <div className="relative z-20 w-full lg:w-[50%] xl:w-[48%] max-w-[640px] px-6 sm:px-10 md:px-12 lg:px-16 pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-12 sm:pb-16 lg:pb-20 flex flex-col justify-center">
         
