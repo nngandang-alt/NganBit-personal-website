@@ -1,6 +1,6 @@
 import React from 'react';
 import { VerifiedRoleItem, Language } from '../types';
-import { ShieldCheck, Building2, MapPin, CheckCircle2, ArrowUpRight, Users, UserCheck, ArrowRight } from 'lucide-react';
+import { ShieldCheck, Building2, MapPin, CheckCircle2, ArrowUpRight, Users, UserCheck, ArrowRight, Compass } from 'lucide-react';
 
 interface VerifiedRoleCardProps {
   role: VerifiedRoleItem;
@@ -136,13 +136,13 @@ export const VerifiedRoleCard: React.FC<VerifiedRoleCardProps> = ({
         </div>
       )}
 
-      {/* Scope Distinction Callout (e.g. SX vs EX, No Corporate Relations) */}
+      {/* Role / Mission Callout */}
       {role.scopeDistinction && (
         <div className="my-3.5 p-3 sm:p-3.5 rounded-xl bg-blue-50/60 border border-blue-200/70 text-xs sm:text-[13px] text-blue-950 leading-relaxed flex items-start gap-2.5">
-          <span className="text-[#0068FF] font-bold shrink-0 mt-0.5">ℹ</span>
+          <Compass className="w-4 h-4 text-[#0068FF] shrink-0 mt-0.5" />
           <div>
             <span className="font-bold text-[#0068FF]">
-              {lang === 'vi' ? 'Phân định phạm vi: ' : 'Scope Distinction: '}
+              {lang === 'vi' ? 'Vai trò: ' : "SRO's Role: "}
             </span>
             <span>{role.scopeDistinction[lang]}</span>
           </div>

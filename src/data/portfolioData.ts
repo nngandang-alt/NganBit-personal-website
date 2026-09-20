@@ -125,8 +125,8 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
           },
         ],
         scopeDistinction: {
-          vi: 'Lĩnh vực Trải nghiệm Sinh viên (Student Experience - SX) quy mô lớn, tách biệt rõ rệt với Trải nghiệm Nhân viên doanh nghiệp (EX). Không kiêm nhiệm quan hệ doanh nghiệp bên ngoài.',
-          en: 'Student Experience (SX) ecosystem at scale, clearly distinct from corporate Employee Experience (EX). SRO does not manage strategic external corporate partnerships.',
+          vi: 'Kiến tạo hệ sinh thái hỗ trợ sự phát triển và trải nghiệm của sinh viên, tập trung vào ba trọng tâm: Hỗ trợ Phát triển – Truyền Cảm hứng – Kết nối Cộng đồng, qua đó phát triển năng lực, nuôi dưỡng tinh thần học tập suốt đời và xây dựng cộng đồng sinh viên năng động, gắn kết.',
+          en: 'Building an ecosystem that supports student development and experience through three core pillars: Development Support – Inspiration – Community Connection, helping students strengthen their capabilities, cultivate lifelong learning, and thrive in an active, connected community.',
         },
         actualScopeNote: {
           vi: 'Thăng tiến từ Cán bộ Công tác Sinh viên (Student Relations Officer) lên Trưởng phòng Công tác Sinh viên (Head of SRO): mở rộng từ trực tiếp điều phối hoạt động sang lãnh đạo chiến lược danh mục trải nghiệm, phát triển sinh viên và quản trị vận hành tổ chức.',
@@ -750,8 +750,8 @@ export const EXPERIENCE_ROLES: ExperienceRole[] = [
     workType: 'Full-time',
     tier: 'flagship',
     scopeDistinction: {
-      vi: 'Lĩnh vực Trải nghiệm Sinh viên (Student Experience - SX) quy mô lớn, tách biệt rõ rệt với Trải nghiệm Nhân viên doanh nghiệp (EX).',
-      en: 'Student Experience (SX) ecosystem at scale, clearly distinct from corporate Employee Experience (EX).',
+      vi: 'Kiến tạo hệ sinh thái hỗ trợ sự phát triển và trải nghiệm của sinh viên, tập trung vào ba trọng tâm: Hỗ trợ Phát triển – Truyền Cảm hứng – Kết nối Cộng đồng, qua đó phát triển năng lực, nuôi dưỡng tinh thần học tập suốt đời và xây dựng cộng đồng sinh viên năng động, gắn kết.',
+      en: 'Building an ecosystem that supports student development and experience through three core pillars: Development Support – Inspiration – Community Connection, helping students strengthen their capabilities, cultivate lifelong learning, and thrive in an active, connected community.',
     },
     mandateScope: {
       vi: [
