@@ -22,7 +22,7 @@ export const Recognition: React.FC<RecognitionProps> = ({ lang, onNavigateNext }
         <div className="flex flex-col gap-3 mb-10 sm:mb-12">
           <div className="flex items-center gap-3">
             <span className="text-xs font-bold tracking-widest text-[#0068FF] uppercase">
-              {lang === 'vi' ? '06 — Sự Công Nhận & Tiếng Nói Người Tham Dự' : '06 — Recognition / Voices'}
+              {lang === 'vi' ? 'Sự Công Nhận & Tiếng Nói Người Tham Dự' : 'Recognition / Voices'}
             </span>
             <div className="h-px w-12 bg-[#0068FF]/30" />
           </div>

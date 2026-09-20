@@ -32,7 +32,7 @@ export const Contact: React.FC<ContactProps> = ({ lang }) => {
         {/* Section Tag */}
         <div className="flex items-center gap-3 mb-8">
           <span className="text-xs font-bold tracking-widest text-[#0068FF] uppercase">
-            {lang === 'vi' ? '09 — Kết nối & Đối thoại' : '09 — Connect'}
+            {lang === 'vi' ? 'Kết nối & Đối thoại' : 'Connect'}
           </span>
           <div className="h-px w-12 bg-[#0068FF]/40" />
         </div>

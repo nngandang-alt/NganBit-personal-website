@@ -54,7 +54,7 @@ export const Projects: React.FC<ProjectsProps> = ({
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-3">
             <span className="text-xs font-bold tracking-widest text-[#0068FF] uppercase font-mono">
-              {lang === 'vi' ? '04 — Case Studies Tiêu Biểu' : '04 — Flagship Case Studies'}
+              {lang === 'vi' ? 'Case Studies Tiêu Biểu' : 'Flagship Case Studies'}
             </span>
             <div className="h-px w-12 bg-[#0068FF]/30" />
           </div>

@@ -24,7 +24,7 @@ export const Credentials: React.FC<CredentialsProps> = ({ lang, onNavigateNext }
         <div className="flex flex-col gap-3 mb-10 sm:mb-12">
           <div className="flex items-center gap-3">
             <span className="text-xs font-bold tracking-widest text-[#0068FF] uppercase">
-              {lang === 'vi' ? '08 — Học Vấn & Phát Triển Liên Tục' : '08 — Education & Continuous Learning'}
+              {lang === 'vi' ? 'Học Vấn & Phát Triển Liên Tục' : 'Education & Continuous Learning'}
             </span>
             <div className="h-px w-12 bg-[#0068FF]/30" />
           </div>

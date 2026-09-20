@@ -42,7 +42,7 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({ lang, onNavigateNext
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-3">
             <span className="text-xs font-bold tracking-widest text-[#0068FF] uppercase font-mono">
-              {lang === 'vi' ? '05 — Dự án & Sản phẩm Thực thi' : '05 — Selected Work'}
+              {lang === 'vi' ? 'Dự án & Sản phẩm Thực thi' : 'Selected Work'}
             </span>
             <div className="h-px w-12 bg-[#0068FF]/30" />
           </div>

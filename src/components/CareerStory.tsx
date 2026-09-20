@@ -73,7 +73,7 @@ export const CareerStory: React.FC<CareerStoryProps> = ({
         <div className="flex flex-col gap-3 mb-10 sm:mb-12">
           <div className="flex items-center gap-3">
             <span className="text-xs font-bold tracking-widest text-[#0068FF] uppercase">
-              {lang === 'vi' ? '02 — Hành trình & Kinh nghiệm' : '02 — Career & Experience'}
+              {lang === 'vi' ? 'Hành trình & Kinh nghiệm' : 'Career & Experience'}
             </span>
             <div className="h-px w-12 bg-[#0068FF]/30" />
           </div>
