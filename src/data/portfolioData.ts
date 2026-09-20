@@ -735,67 +735,115 @@ export const PHILOSOPHY_CHAIN = [
 
 export const PHILOSOPHY_QUESTIONS = [
   {
+    id: '01',
+    tag: { vi: 'CÂU HỎI 01', en: 'QUESTION 01' },
     q: {
       vi: '“Con người thực sự trải nghiệm điều gì tại đây?”',
-      en: '“What did people genuinely experience?”',
+      en: '“What did people genuinely experience here?”',
+    },
+    question: {
+      vi: '“Con người thực sự trải nghiệm điều gì tại đây?”',
+      en: '“What did people genuinely experience here?”',
     },
     detail: {
       vi: 'Không chỉ dừng lại ở danh sách nhiệm vụ bàn giao, mà là chất lượng của từng điểm chạm tương tác và sự thấu cảm trong tổ chức.',
-      en: 'Beyond task deliverables, examining the experiential quality and human empathy across organizational touchpoints.',
+      en: 'Beyond a checklist of task deliverables, it is the experiential quality of every human touchpoint and organizational empathy.',
+    },
+    elaboration: {
+      vi: 'Không chỉ dừng lại ở danh sách nhiệm vụ bàn giao, mà là chất lượng của từng điểm chạm tương tác và sự thấu cảm trong tổ chức.',
+      en: 'Beyond a checklist of task deliverables, it is the experiential quality of every human touchpoint and organizational empathy.',
     },
   },
   {
+    id: '02',
+    tag: { vi: 'CÂU HỎI 02', en: 'QUESTION 02' },
     q: {
       vi: '“Họ cảm thấy thế nào trong khoảnh khắc đó?”',
-      en: '“How did they honestly feel?”',
+      en: '“How did they honestly feel in that moment?”',
+    },
+    question: {
+      vi: '“Họ cảm thấy thế nào trong khoảnh khắc đó?”',
+      en: '“How did they honestly feel in that moment?”',
     },
     detail: {
       vi: 'Cảm xúc quyết định sự gắn kết. Khi con người cảm thấy được nhìn nhận, được tôn trọng và an toàn, sự cam kết trở thành nội tại.',
-      en: 'Emotion governs commitment. When individuals feel seen, respected, and safe, dedication becomes intrinsic.',
+      en: 'Emotion governs genuine commitment. When individuals feel recognized, respected, and psychologically safe, dedication becomes intrinsic.',
+    },
+    elaboration: {
+      vi: 'Cảm xúc quyết định sự gắn kết. Khi con người cảm thấy được nhìn nhận, được tôn trọng và an toàn, sự cam kết trở thành nội tại.',
+      en: 'Emotion governs genuine commitment. When individuals feel recognized, respected, and psychologically safe, dedication becomes intrinsic.',
     },
   },
   {
+    id: '03',
+    tag: { vi: 'CÂU HỎI 03', en: 'QUESTION 03' },
     q: {
       vi: '“Điều gì đã thực sự chuyển hóa sau đó?”',
-      en: '“What measurably changed afterwards?”',
+      en: '“What measurably transformed afterwards?”',
+    },
+    question: {
+      vi: '“Điều gì đã thực sự chuyển hóa sau đó?”',
+      en: '“What measurably transformed afterwards?”',
     },
     detail: {
       vi: 'Một chương trình thành công không dừng lại ở tiếng vỗ tay khi sự kiện kết thúc, mà ở sự chuyển biến tích cực trong thói quen và sự cộng tác bền lâu.',
-      en: 'Success is not applause when curtains close; it is the lasting shift in collaborative habits, morale, and organizational resilience.',
+      en: 'A successful initiative does not end when applause fades, but in the lasting positive shifts in everyday habits and enduring collaboration.',
+    },
+    elaboration: {
+      vi: 'Một chương trình thành công không dừng lại ở tiếng vỗ tay khi sự kiện kết thúc, mà ở sự chuyển biến tích cực trong thói quen và sự cộng tác bền lâu.',
+      en: 'A successful initiative does not end when applause fades, but in the lasting positive shifts in everyday habits and enduring collaboration.',
     },
   },
 ];
 
 export const PHILOSOPHY_PILLARS: PhilosophyPillar[] = [
   {
+    id: '01',
     title: {
       vi: 'Truyền thông dựa trên sự thấu cảm',
       en: 'Empathy-First Communication',
     },
     desc: {
       vi: 'Chuyển hóa chiến lược trừu tượng của ban điều hành thành những câu chuyện sống động, gần gũi và khơi gợi cảm hứng hành động.',
-      en: 'Translating executive strategy into human narratives that resonate with frontline and leadership teams alike.',
+      en: 'Translating abstract executive strategy into vivid, relatable human stories that inspire authentic action.',
     },
+    description: {
+      vi: 'Chuyển hóa chiến lược trừu tượng của ban điều hành thành những câu chuyện sống động, gần gũi và khơi gợi cảm hứng hành động.',
+      en: 'Translating abstract executive strategy into vivid, relatable human stories that inspire authentic action.',
+    },
+    icon: 'HeartHandshake',
   },
   {
+    id: '02',
     title: {
       vi: 'Văn hóa được bảo chứng bằng hệ thống',
       en: 'Culture Backed by Systems',
     },
     desc: {
       vi: 'Đưa giá trị cốt lõi vào nghi thức làm việc, khung chuẩn hóa hành vi và cơ chế quản trị thay vì chỉ là khẩu hiệu trên giấy.',
-      en: 'Grounding core values in concrete daily rituals, behavioral rubrics, and governance systems.',
+      en: 'Grounding core values in workplace rituals, behavioral competency rubrics, and governance mechanisms rather than slogans on paper.',
     },
+    description: {
+      vi: 'Đưa giá trị cốt lõi vào nghi thức làm việc, khung chuẩn hóa hành vi và cơ chế quản trị thay vì chỉ là khẩu hiệu trên giấy.',
+      en: 'Grounding core values in workplace rituals, behavioral competency rubrics, and governance mechanisms rather than slogans on paper.',
+    },
+    icon: 'ShieldCheck',
   },
   {
+    id: '03',
     title: {
       vi: 'AI mở rộng năng lực, con người giữ bản sắc',
-      en: 'Human Insight First, AI Amplified',
+      en: 'AI Amplifies Capability, Humans Retain Identity',
     },
     desc: {
       vi: 'Ứng dụng AI như trợ thủ đắc lực trong phân tích xu hướng, tổng hợp dữ liệu và tối ưu vận hành; trong khi sự thấu hiểu con người luôn dẫn dắt mọi quyết định.',
-      en: 'Harnessing AI to eliminate operational friction and synthesize insights, while human empathy guides every strategic intent.',
+      en: 'Leveraging AI as a powerful force multiplier in trend analysis, data synthesis, and workflow agility; while deep human empathy guides every strategic decision.',
     },
+    description: {
+      vi: 'Ứng dụng AI như trợ thủ đắc lực trong phân tích xu hướng, tổng hợp dữ liệu và tối ưu vận hành; trong khi sự thấu hiểu con người luôn dẫn dắt mọi quyết định.',
+      en: 'Leveraging AI as a powerful force multiplier in trend analysis, data synthesis, and workflow agility; while deep human empathy guides every strategic decision.',
+    },
+    icon: 'Sparkles',
   },
 ];
 

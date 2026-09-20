@@ -121,8 +121,8 @@ export default function App() {
       setActiveView('career');
       return;
     }
-    if (view === 'methodology') {
-      setActiveView('approach');
+    if (view === 'methodology' || view === 'approach') {
+      setActiveView('philosophy');
       return;
     }
     if (view === 'credentials') {
@@ -219,7 +219,7 @@ export default function App() {
             {activeView === 'recognition' && (
               <Recognition
                 lang={lang}
-                onNavigateNext={() => navigateTo('approach')}
+                onNavigateNext={() => navigateTo('education')}
               />
             )}
 
