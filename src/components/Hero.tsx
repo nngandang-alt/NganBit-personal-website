@@ -77,9 +77,9 @@ export const Hero: React.FC<HeroProps> = ({
           id="hero-bg-img"
         />
 
-        {/* Desktop Horizontal Gradient Fade (reveals smoothly) */}
+        {/* Desktop Horizontal Gradient Fade (smooth dark safe area for text, reveals portrait seamlessly) */}
         <div
-          className={`hidden lg:block absolute inset-0 bg-gradient-to-r from-[#070B14] via-[#070B14]/90 via-42% to-transparent to-75% pointer-events-none z-[1] transition-opacity duration-1000 delay-150 ${
+          className={`hidden lg:block absolute inset-0 bg-gradient-to-r from-[#070B14] via-[#070B14] via-30% via-[#070B14]/90 via-48% via-[#070B14]/40 via-62% to-transparent to-76% pointer-events-none z-[1] transition-opacity duration-1000 delay-150 ${
             isLoaded ? 'opacity-100' : 'opacity-0'
           }`}
           aria-hidden="true"
@@ -87,7 +87,7 @@ export const Hero: React.FC<HeroProps> = ({
 
         {/* Mobile/Tablet Vertical Fade */}
         <div
-          className={`lg:hidden absolute inset-0 bg-gradient-to-b from-[#070B14]/30 via-[#070B14]/75 via-42% to-[#070B14] to-75% pointer-events-none z-[1] transition-opacity duration-1000 ${
+          className={`lg:hidden absolute inset-0 bg-gradient-to-b from-[#070B14]/40 via-[#070B14]/80 via-35% via-[#070B14] via-60% to-[#070B14] to-100% pointer-events-none z-[1] transition-opacity duration-1000 ${
             isLoaded ? 'opacity-100' : 'opacity-0'
           }`}
           aria-hidden="true"
@@ -106,8 +106,8 @@ export const Hero: React.FC<HeroProps> = ({
         />
       </div>
 
-      {/* LEFT CONTENT SAFE ZONE */}
-      <div className={`relative z-20 w-full lg:w-[54%] xl:w-[52%] max-w-[680px] px-6 sm:px-10 md:px-12 lg:px-16 pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-12 sm:pb-16 lg:pb-20 flex flex-col justify-center transition-all duration-1000 delay-100 ${
+      {/* LEFT CONTENT SAFE ZONE - Protected Portrait Area */}
+      <div className={`relative z-20 w-full lg:w-[54%] xl:w-[50%] max-w-[620px] px-6 sm:px-10 md:px-12 lg:px-16 pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-12 sm:pb-16 lg:pb-20 flex flex-col justify-center transition-all duration-1000 delay-100 ${
         isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
       }`}>
         
@@ -117,20 +117,24 @@ export const Hero: React.FC<HeroProps> = ({
           <span>{PERSONAL_INFO.domains[lang]}</span>
         </div>
 
-        {/* Main Headline - 2 large lines, line 2 in solid blue emphasis */}
+        {/* Main Headline - 3 connected ideas with clear rhythm & protected portrait boundary */}
         <h1
-          className="font-bold tracking-tight text-white leading-[1.08] text-[clamp(2.15rem,3.85vw,3.75rem)] text-left"
+          className="font-bold tracking-tight text-white text-left max-w-[540px] xl:max-w-[580px]"
           id="hero-main-heading"
         >
-          <span>{PERSONAL_INFO.heroHeadline[lang][0]}</span>
-          <br />
-          <span className="text-[#0068FF] whitespace-normal sm:whitespace-nowrap block mt-1">
+          <span className="block text-white text-[clamp(1.75rem,2.9vw,2.85rem)] leading-[1.12]">
+            {PERSONAL_INFO.heroHeadline[lang][0]}
+          </span>
+          <span className="block text-[#0068FF] text-[clamp(1.85rem,3.15vw,3.1rem)] leading-[1.12] mt-1.5 sm:mt-2">
             {PERSONAL_INFO.heroHeadline[lang][1]}
+          </span>
+          <span className="block text-white/95 text-[clamp(1.75rem,2.9vw,2.85rem)] leading-[1.12] mt-1.5 sm:mt-2">
+            {PERSONAL_INFO.heroHeadline[lang][2]}
           </span>
         </h1>
 
-        {/* Supporting Quote */}
-        <p className="mt-4 sm:mt-5 text-base sm:text-lg lg:text-xl text-white/90 font-normal leading-relaxed max-w-xl">
+        {/* Supporting Philosophy Statement */}
+        <p className="mt-5 sm:mt-6 text-sm sm:text-base lg:text-[17px] text-white/85 font-normal leading-relaxed max-w-xl">
           “{PERSONAL_INFO.corePositioning[lang]}”
         </p>
 

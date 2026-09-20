@@ -34,12 +34,20 @@ export const PERSONAL_INFO = {
     en: 'Communication · Culture · Engagement · Experience',
   },
   corePositioning: {
-    vi: 'Với tôi, truyền thông và văn hóa bắt đầu từ cách con người hiểu, cảm nhận và kết nối với nhau.',
-    en: 'To me, communication and culture begin with how people understand, feel and connect with one another.',
+    vi: 'Với tôi, truyền thông và văn hóa bắt đầu từ cách con người hiểu, cảm nhận và kết nối với nhau — để tạo nên sự gắn kết, đồng hướng và chuyển hóa thành hành động',
+    en: 'To me, communication and culture begin with how people understand, feel and connect with one another — building connection, alignment and turning shared understanding into action',
   },
   heroHeadline: {
-    vi: ['Kết nối con người.', 'Nuôi dưỡng những trải nghiệm có ý nghĩa.'],
-    en: ['Connecting people.', 'Creating experiences that matter.'],
+    vi: [
+      'Kết nối con người',
+      'Nuôi dưỡng những trải nghiệm có ý nghĩa',
+      'Cùng hướng về một mục tiêu',
+    ],
+    en: [
+      'Connecting people',
+      'Nurturing meaningful experiences',
+      'Aligning toward a shared purpose',
+    ],
   },
   aiPhilosophy: {
     vi: 'Lấy sự thấu hiểu con người làm trọng tâm. Khai phóng hiệu quả cùng AI.',
