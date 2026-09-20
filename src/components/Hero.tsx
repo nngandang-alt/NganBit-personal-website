@@ -28,7 +28,7 @@ export const Hero: React.FC<HeroProps> = ({
         <img
           src={heroBgImage}
           alt="Đặng Vũ Thùy Ngân (Ngân Bit) - Internal Communication & Corporate Culture"
-          className="w-full h-full object-cover object-[52%_top] sm:object-[54%_top] lg:object-[50%_top] transform scale-[0.88] sm:scale-[0.85] lg:scale-[0.82] xl:scale-[0.80] translate-x-[4%] sm:translate-x-[8%] lg:translate-x-[14%] xl:translate-x-[16%] translate-y-[5%] sm:translate-y-[6%] lg:translate-y-[7%] origin-bottom-right transition-transform duration-700 ease-out"
+          className="w-full h-full object-cover object-[52%_top] sm:object-[54%_top] lg:object-[50%_top] transform scale-[0.88] sm:scale-[0.86] lg:scale-[0.85] xl:scale-[0.84] translate-x-[4%] sm:translate-x-[8%] lg:translate-x-[14%] xl:translate-x-[16%] translate-y-[0%] sm:translate-y-[-0.5%] lg:translate-y-[-1%] origin-bottom-right transition-transform duration-700 ease-out"
           id="hero-bg-img"
         />
 
@@ -60,7 +60,7 @@ export const Hero: React.FC<HeroProps> = ({
       {/* ========================================================================= */}
       {/* 2. LEFT CONTENT SAFE ZONE (Desktop: ~48-52% width / Strictly zero overlap) */}
       {/* ========================================================================= */}
-      <div className="relative z-20 w-full lg:w-[50%] xl:w-[48%] max-w-[640px] px-6 sm:px-10 md:px-12 lg:px-16 pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-12 sm:pb-16 lg:pb-20 flex flex-col justify-center">
+      <div className="relative z-20 w-full lg:w-[54%] xl:w-[52%] max-w-[680px] px-6 sm:px-10 md:px-12 lg:px-16 pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-12 sm:pb-16 lg:pb-20 flex flex-col justify-center">
         
         {/* Positioning Pill - Translucent glass treatment */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.08] hover:bg-white/[0.12] backdrop-blur-md border border-white/15 text-xs sm:text-sm font-medium text-white/90 mb-5 sm:mb-6 shadow-xs self-start transition-colors">
@@ -68,14 +68,14 @@ export const Hero: React.FC<HeroProps> = ({
           <span>{PERSONAL_INFO.domains[lang]}</span>
         </div>
 
-        {/* Main Headline - Exactly 2 lines on desktop with subtle icy-blue gradient on line 2 */}
+        {/* Main Headline - Line 1: White, Line 2: 100% Solid Blue on 1 single line */}
         <h1
-          className="font-bold tracking-tight text-white leading-[1.06] text-[clamp(2.35rem,4.3vw,3.95rem)] text-left"
+          className="font-bold tracking-tight text-white leading-[1.08] text-[clamp(2.15rem,3.85vw,3.75rem)] text-left"
           id="hero-main-heading"
         >
           <span>{PERSONAL_INFO.heroHeadline[lang][0]}</span>
           <br />
-          <span className="bg-gradient-to-r from-white via-[#CBE0FE] to-[#88B8FD] bg-clip-text text-transparent">
+          <span className="text-[#0068FF] whitespace-nowrap block">
             {PERSONAL_INFO.heroHeadline[lang][1]}
           </span>
         </h1>
