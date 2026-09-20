@@ -69,8 +69,8 @@ export const FULL_CIRCLE_QUOTE = {
 
 export const CAREER_CHAPTERS: CareerChapter[] = [
   {
-    id: 'ch-01',
-    number: '01',
+    id: 'ch-06',
+    number: '06',
     period: 'Apr 2025 — Present',
     isCurrent: true,
     title: {
@@ -104,8 +104,8 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
     contextHighlight: { vi: 'Chức danh: Head of Student Relations Office (Apr 2025 — Present)', en: 'Official Title: Head of Student Relations Office (Apr 2025 — Present)' },
   },
   {
-    id: 'ch-02',
-    number: '02',
+    id: 'ch-05',
+    number: '05',
     period: 'Jul 2024 — Mar 2025',
     title: {
       vi: 'transcosmos Vietnam: Vượt trên văn hóa — Kiến tạo hệ thống',
@@ -131,8 +131,8 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
     contextHighlight: { vi: 'Official Title: Senior Specialist, Organizational Development', en: 'Official Title: Senior Specialist, Organizational Development' },
   },
   {
-    id: 'ch-03',
-    number: '03',
+    id: 'ch-04',
+    number: '04',
     period: '2023 — 2024',
     title: {
       vi: 'Savvycom: Mở rộng sang People & Culture toàn diện',
@@ -158,8 +158,8 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
     contextHighlight: { vi: 'Official Title: People & Culture Lead', en: 'Official Title: People & Culture Lead' },
   },
   {
-    id: 'ch-04',
-    number: '04',
+    id: 'ch-03',
+    number: '03',
     period: '2020 — 2023',
     internalProgression: 'F88 → CMC → Vua Nệm',
     title: {
@@ -186,8 +186,8 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
     contextHighlight: { vi: 'Tiến trình nội bộ: F88 → CMC → Vua Nệm (Acting Internal Communication Lead)', en: 'Internal Progression: F88 → CMC → Vua Nệm (Acting Internal Communication Lead)' },
   },
   {
-    id: 'ch-05',
-    number: '05',
+    id: 'ch-02',
+    number: '02',
     period: '2019 — 2020',
     title: {
       vi: 'Bellsystem24-Hoasao: Định hình bản sắc trong truyền thông',
@@ -213,8 +213,8 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
     contextHighlight: { vi: 'Official Title: Internal Communication Specialist', en: 'Official Title: Internal Communication Specialist' },
   },
   {
-    id: 'ch-06',
-    number: '06',
+    id: 'ch-01',
+    number: '01',
     period: '2018 — 2019',
     title: {
       vi: 'FPT University: Nơi mọi thứ bắt đầu',
