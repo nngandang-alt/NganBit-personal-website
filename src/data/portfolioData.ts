@@ -69,19 +69,16 @@ export const PERSONAL_INFO = {
 };
 
 export const NAV_ITEMS: NavItem[] = [
-  { id: 'story', label: { vi: 'Hành trình', en: 'Career Journey' }, href: '#story' },
+  { id: 'career', label: { vi: 'Hành trình & Kinh nghiệm', en: 'Career & Experience' }, href: '#career' },
   { id: 'philosophy', label: { vi: 'Triết lý', en: 'Philosophy' }, href: '#philosophy' },
   { id: 'cases', label: { vi: 'Case Studies', en: 'Case Studies' }, href: '#cases' },
-  { id: 'methodology', label: { vi: 'Phương pháp', en: 'How I Work' }, href: '#methodology' },
-  { id: 'credentials', label: { vi: 'Nền tảng', en: 'Credentials' }, href: '#credentials' },
-  { id: 'connect', label: { vi: 'Kết nối', en: 'Connect' }, href: '#connect' },
+  { id: 'work', label: { vi: 'Dự án', en: 'Selected Work' }, href: '#work' },
+  { id: 'recognition', label: { vi: 'Sự công nhận', en: 'Recognition' }, href: '#recognition' },
+  { id: 'approach', label: { vi: 'Phương pháp', en: 'How I Work' }, href: '#approach' },
+  { id: 'education', label: { vi: 'Học vấn & Phát triển', en: 'Education & Learning' }, href: '#education' },
 ];
 
-export const FULL_CIRCLE_QUOTE = {
-  vi: '“Tôi trở về nơi sự nghiệp bắt đầu — với một bộ công cụ hoàn toàn khác biệt.”',
-  en: '“I returned to where my career started — with a completely different toolkit.”',
-  author: 'ĐẶNG VŨ THÙY NGÂN',
-};
+// Full-Circle Journey narrative removed per IA specifications
 
 export const CAREER_CHAPTERS: CareerChapter[] = [
   {
@@ -2025,5 +2022,266 @@ export const CERTIFICATIONS_DATA: CertificationItem[] = [
     domain: 'Culture & Comms',
     status: 'verified',
     verificationUrl: 'https://linkedin.com/in/thuyngandang',
+  },
+];
+
+
+// ==============================================================================
+// 06 — RECOGNITION / VOICES (ECHOES & QUALITATIVE EVIDENCE)
+// ==============================================================================
+export const RECOGNITION_DATA: RecognitionItem[] = [
+  {
+    id: 'rec-01',
+    category: {
+      vi: 'Phản hồi từ Phụ huynh & Sinh viên',
+      en: 'Attendee & Family Echoes',
+    },
+    source: {
+      vi: 'Lễ Vinh Danh Top 100 Sinh viên Xuất sắc — FPT University',
+      en: 'Top 100 Student Achievement Awards — FPT University',
+    },
+    context: {
+      vi: 'Email cảm nhận chân thành từ phụ huynh sinh viên sau lễ vinh danh học kỳ',
+      en: 'Heartfelt email reflections from a student parent following the semester ceremony',
+    },
+    quote: {
+      vi: '“Chương trình đã tạo nên một dấu ấn tự hào không thể nào quên cho gia đình tôi. Từng chi tiết từ đón tiếp, kỷ vật đến khoảnh khắc xướng tên trên sân khấu đều đong đầy sự trân trọng và thấu hiểu con trẻ.”',
+      en: '“The ceremony created an indelible mark of pride for our family. Every touchpoint from the warm welcome to the bespoke keepsakes and the naming moment on stage was imbued with genuine care and honor.”',
+    },
+    image: top100EmailFeedback,
+    highlights: {
+      vi: [
+        'Chuyển hóa buổi lễ tổng kết thành trải nghiệm công nhận (Recognition Experience) sâu sắc',
+        'Điểm chạm thấu cảm giữa Nhà trường, Sinh viên và Gia đình',
+      ],
+      en: [
+        'Transformed routine ceremonies into profound, memorable recognition experiences',
+        'Empathic institutional touchpoint uniting University, Honorees, and Families',
+      ],
+    },
+    year: '2025–2026',
+    isHighlight: true,
+  },
+  {
+    id: 'rec-02',
+    category: {
+      vi: 'Bức tường Danh dự & Dấu ấn Khắc tên',
+      en: 'Honoree Wall Echoes',
+    },
+    source: {
+      vi: 'Không gian Vinh danh The Prompt to Lead & Rise Up',
+      en: 'Thematic Recognition Architecture & Honoree Wall',
+    },
+    context: {
+      vi: 'Cảm xúc của người tham gia khi nhìn thấy tên mình được khắc ghi trang trọng',
+      en: 'Participant emotional validation seeing their achievements tangibly etched',
+    },
+    quote: {
+      vi: '“Tìm thấy tên mình trên Bức tường Danh dự — một điểm chạm nhỏ nhưng biến sự ghi nhận thành điều hữu hình, thiêng liêng và đáng tự hào.”',
+      en: '“Finding our names on the Honoree Wall turned validation into something tangible, sacred, and deeply inspiring.”',
+    },
+    image: top100RecognitionWall,
+    highlights: {
+      vi: [
+        'Tạo điểm chạm thị giác giàu tính kết nối và tự hào cá nhân',
+        'Hợp lưu giữa kỷ vật vật lý (Huy hiệu kim loại) và không gian tôn vinh',
+      ],
+      en: [
+        'Curated emotionally resonant visual milestones for peer celebration',
+        'Synthesized physical artifacts (metal pins) with celebratory spatial design',
+      ],
+    },
+    year: '2025–2026',
+    isHighlight: true,
+  },
+  {
+    id: 'rec-03',
+    category: {
+      vi: 'Ghi nhận từ Đội ngũ Đồng nghiệp & Cộng tác viên',
+      en: 'Team & Cross-functional Voices',
+    },
+    source: {
+      vi: 'Mạng lưới Vận hành Sự kiện & Văn hóa Phòng ban',
+      en: 'Operational Delivery & Departmental Culture Collaborators',
+    },
+    context: {
+      vi: 'Phản hồi từ cán bộ phòng ban và cộng tác viên sau các chiến dịch quy mô 1.000+ người',
+      en: 'Direct feedback from staff and student collaborators managing 1,000+ attendee operations',
+    },
+    quote: {
+      vi: '“Quy trình điều phối đa luồng rõ ràng, kịch bản chi tiết và sự phân vai thấu cảm giúp toàn đội ngũ phối hợp nhịp nhàng, dù áp lực chương trình trực tiếp rất lớn.”',
+      en: '“Clear cross-functional workflows, empathetic briefing, and seamless backstage coordination enabled our team to deliver flawlessly under live ceremonial pressure.”',
+    },
+    highlights: {
+      vi: [
+        'Tối ưu hóa thời gian check-in từ 30–45 phút xuống dưới 5 giây/người nhờ AI FaceID',
+        'Xây dựng tinh thần đồng đội vững chắc và sự tự hào của đội ngũ vận hành',
+      ],
+      en: [
+        'Reduced registration check-in time from 45 mins to under 5s per honoree via AI',
+        'Cemented resilient teamwork and operational camaraderie across workstreams',
+      ],
+    },
+    year: '2025–2026',
+    isHighlight: false,
+  },
+];
+
+// ==============================================================================
+// 08 — EDUCATION & CONTINUOUS LEARNING DATA
+// ==============================================================================
+export const EDUCATION_LEARNING_DATA: LearningCategory[] = [
+  {
+    id: 'formal',
+    title: {
+      vi: 'Học vấn Chính quy (Formal Education)',
+      en: 'Formal Education',
+    },
+    description: {
+      vi: 'Nền tảng tư duy quản trị, truyền thông tiếp thị và phương pháp luận học thuật chính quy.',
+      en: 'Formal foundation in business administration, marketing communications, and management methodology.',
+    },
+    items: [
+      {
+        title: {
+          vi: 'Cử nhân Quản trị Kinh doanh (Chuyên ngành Marketing / Truyền thông)',
+          en: 'Bachelor of Business Administration (Marketing & Communications)',
+        },
+        institution: {
+          vi: 'Đại học FPT (FPT University)',
+          en: 'FPT University',
+        },
+        period: '2014 — 2018',
+        badge: {
+          vi: 'Tốt nghiệp Chính quy',
+          en: 'Bachelor of Science Degree',
+        },
+        description: {
+          vi: 'Trang bị tư duy hệ thống, năng lực lập kế hoạch chiến lược, nghiên cứu hành vi người tiêu dùng/nhân sự và kỹ năng dẫn dắt dự án trong môi trường đa văn hóa.',
+          en: 'Grounded in systems thinking, strategic communication planning, consumer/employee behavior research, and cross-cultural project leadership.',
+        },
+      },
+    ],
+  },
+  {
+    id: 'interdisciplinary',
+    title: {
+      vi: 'Học tập Liên ngành (Interdisciplinary Learning)',
+      en: 'Supplementary & Interdisciplinary Learning',
+    },
+    description: {
+      vi: 'Mở rộng chiều sâu tư duy thông qua tâm lý học tổ chức, khoa học hành vi và thiết kế trải nghiệm.',
+      en: 'Deepening operational impact through organizational psychology, behavioral science, and experience design.',
+    },
+    items: [
+      {
+        title: {
+          vi: 'Tâm lý học Tổ chức & Động lực Con người',
+          en: 'Organizational Psychology & Human Motivation',
+        },
+        institution: {
+          vi: 'Tự nghiên cứu & Ứng dụng Thực hành',
+          en: 'Self-directed Research & Applied Practice',
+        },
+        period: '2020 — Hiện tại',
+        badge: {
+          vi: 'Lĩnh vực Bổ trợ',
+          en: 'Core Specialization',
+        },
+        description: {
+          vi: 'Nghiên cứu cơ chế tạo động lực nội tại (Self-Determination Theory), tâm lý học an toàn (Psychological Safety) và cách con người tiếp nhận sự thay đổi trong doanh nghiệp.',
+          en: 'Investigating intrinsic motivational drivers (Self-Determination Theory), psychological safety, and cognitive acceptance during organizational transitions.',
+        },
+      },
+      {
+        title: {
+          vi: 'Khoa học Hành vi & Thiết kế Cú hích Văn hóa (Nudge in Culture)',
+          en: 'Behavioral Science & Cultural Nudge Architecture',
+        },
+        institution: {
+          vi: 'Mô hình Ứng dụng Doanh nghiệp',
+          en: 'Organizational Frameworks',
+        },
+        period: '2022 — Hiện tại',
+        badge: {
+          vi: 'Phương pháp luận',
+          en: 'Methodology',
+        },
+        description: {
+          vi: 'Ứng dụng các quy chuẩn vi mô (micro-habits) và thiết kế môi trường làm việc để khuyến khích hành vi văn hóa tích cực nảy sinh tự nhiên thay vì ép buộc.',
+          en: 'Applying micro-habit loops and choice architecture to encourage organic positive behaviors over bureaucratic enforcement.',
+        },
+      },
+      {
+        title: {
+          vi: 'Thiết kế Trải nghiệm Nhân viên (Employee Experience — EX)',
+          en: 'Employee Experience (EX) & Journey Design',
+        },
+        institution: {
+          vi: 'Hệ sinh thái Nhân sự & Văn hóa',
+          en: 'People & Culture Systems',
+        },
+        period: '2023 — Hiện tại',
+        badge: {
+          vi: 'Kiến trúc Hệ thống',
+          en: 'System Architecture',
+        },
+        description: {
+          vi: 'Tiếp cận vòng đời nhân sự như một hành trình trải nghiệm người dùng: tối ưu hóa điểm chạm từ ngày đầu hội nhập đến các cột mốc vinh danh quan trọng.',
+          en: 'Treating the employee lifecycle as a curated user journey: optimizing key defining moments from Day-1 onboarding to career recognition peaks.',
+        },
+      },
+    ],
+  },
+  {
+    id: 'certifications',
+    title: {
+      vi: 'Chứng chỉ Chuyên môn Tuyển chọn (Professional Certifications)',
+      en: 'Curated Professional Certifications',
+    },
+    description: {
+      vi: 'Hồ sơ năng lực thực tế được đối chiếu trực tiếp từ LinkedIn Source of Truth.',
+      en: 'Verified professional competencies anchored directly to official LinkedIn profile.',
+    },
+    items: [
+      {
+        title: {
+          vi: 'Năng lực AI Thực hành & Nâng cao Hiệu suất Làm việc',
+          en: 'Applied AI & Workflow Productivity Capabilities',
+        },
+        institution: {
+          vi: 'LinkedIn Verified Profile',
+          en: 'LinkedIn Verified Profile',
+        },
+        period: 'Cập nhật liên tục',
+        badge: {
+          vi: 'Xác thực LinkedIn',
+          en: 'Verified',
+        },
+        description: {
+          vi: 'Ứng dụng AI trong tự động hóa kịch bản, phân tích dữ liệu phản hồi nhân sự và tích hợp công nghệ nhận diện vào sự kiện văn hóa.',
+          en: 'Applied AI integration in content automation, employee feedback synthesis, and facial recognition for organizational events.',
+        },
+      },
+      {
+        title: {
+          vi: 'Lãnh đạo Gắn kết & Văn hóa Doanh nghiệp Thời đại Mới',
+          en: 'Modern Employee Engagement & Culture Leadership',
+        },
+        institution: {
+          vi: 'Chứng chỉ Chuyên môn Ngành',
+          en: 'Professional Industry Credentials',
+        },
+        period: 'Được công nhận',
+        badge: {
+          vi: 'Năng lực Cốt lõi',
+          en: 'Core Competency',
+        },
+        description: {
+          vi: 'Phương pháp điều phối đối thoại lãnh đạo (Town Hall), xử lý khủng hoảng truyền thông nội bộ và kiến tạo môi trường làm việc cởi mở.',
+          en: 'Town hall leadership facilitation, internal crisis communication, and cultivating transparent organizational dialogues.',
+        },
+      },
+    ],
   },
 ];

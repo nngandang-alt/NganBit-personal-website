@@ -198,3 +198,39 @@ export interface SelectedWorkItem {
   highlights?: { vi: string[]; en: string[] };
   image?: PortfolioImage;
 }
+
+export interface RecognitionItem {
+  id: string;
+  category: { vi: string; en: string };
+  source: { vi: string; en: string };
+  context: { vi: string; en: string };
+  quote?: { vi: string; en: string };
+  image?: string;
+  highlights?: { vi: string[]; en: string[] };
+  year?: string;
+  isHighlight?: boolean;
+}
+
+export interface LearningItem {
+  title: { vi: string; en: string };
+  institution?: { vi: string; en: string };
+  period?: string;
+  badge?: { vi: string; en: string };
+  description?: { vi: string; en: string };
+}
+
+export interface LearningCategory {
+  id: string;
+  title: { vi: string; en: string };
+  description: { vi: string; en: string };
+  items: LearningItem[];
+}
+
+export interface SelectedWorkItem {
+  id: string;
+  category: { vi: string; en: string };
+  context: { vi: string; en: string };
+  title: { vi: string; en: string };
+  description: { vi: string; en: string };
+  highlights: { vi: string[]; en: string[] };
+}

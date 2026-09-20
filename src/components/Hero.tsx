@@ -111,7 +111,7 @@ export const Hero: React.FC<HeroProps> = ({
 
         {/* Desktop Horizontal Gradient Fade (smooth dark safe area for text, reveals portrait seamlessly) */}
         <div
-          className={`hidden lg:block absolute inset-0 bg-gradient-to-r from-[#070B14] via-[#070B14] via-35% via-[#070B14]/90 via-50% via-[#070B14]/40 via-65% to-transparent to-78% pointer-events-none z-[1] transition-opacity duration-1000 delay-150 ${
+          className={`hidden lg:block absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 via-40% via-black/25 via-62% to-transparent to-85% pointer-events-none z-[1] transition-opacity duration-1000 delay-150 ${
             isLoaded ? 'opacity-100' : 'opacity-0'
           }`}
           aria-hidden="true"
@@ -119,7 +119,7 @@ export const Hero: React.FC<HeroProps> = ({
 
         {/* Mobile/Tablet Vertical Fade */}
         <div
-          className={`lg:hidden absolute inset-0 bg-gradient-to-b from-[#070B14]/40 via-[#070B14]/80 via-35% via-[#070B14] via-60% to-[#070B14] to-100% pointer-events-none z-[1] transition-opacity duration-1000 ${
+          className={`lg:hidden absolute inset-0 bg-gradient-to-b from-black/30 via-black/70 via-35% via-black/90 via-60% to-black to-100% pointer-events-none z-[1] transition-opacity duration-1000 ${
             isLoaded ? 'opacity-100' : 'opacity-0'
           }`}
           aria-hidden="true"

@@ -4,14 +4,26 @@ import { Hero } from './components/Hero';
 import { CareerStory } from './components/CareerStory';
 import { Philosophy } from './components/Philosophy';
 import { Projects } from './components/Projects';
+import { SelectedWork } from './components/SelectedWork';
+import { Recognition } from './components/Recognition';
 import { Approach } from './components/Approach';
-import { ImpactStats } from './components/ImpactStats';
 import { Credentials } from './components/Credentials';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ProjectModal } from './components/ProjectModal';
 import { CaseStudy, Language } from './types';
 import { CASE_STUDIES } from './data/portfolioData';
+
+type MajorView =
+  | 'hero'
+  | 'career'
+  | 'philosophy'
+  | 'cases'
+  | 'work'
+  | 'recognition'
+  | 'approach'
+  | 'education'
+  | 'connect';
 
 export default function App() {
   // Persist language preference in localStorage (default: 'vi')
@@ -25,8 +37,10 @@ export default function App() {
     return 'vi';
   });
 
-  const [activeSection, setActiveSection] = useState<string>('hero');
-  const [selectedCase, setSelectedCase] = useState<CaseStudy | null>(null);
+  // Active Focused View state based on URL hash
+  const [activeView, setActiveView] = useState<MajorView>('hero');
+  const [activeCaseId, setActiveCaseId] = useState<string | null>(null);
+  const [selectedCaseModal, setSelectedCaseModal] = useState<CaseStudy | null>(null);
 
   const handleToggleLang = (newLang: Language) => {
     setLang(newLang);
@@ -37,52 +51,59 @@ export default function App() {
     }
   };
 
-  // Scroll spy to update active section in floating navigation
-  useEffect(() => {
-    const sectionIds = [
-      'hero',
-      'story',
-      'philosophy',
-      'cases',
-      'methodology',
-      'credentials',
-      'connect',
-    ];
+  // Parse current hash into view state
+  const parseHash = () => {
+    const hash = window.location.hash.replace('#', '').trim();
+    if (!hash || hash === 'hero') {
+      setActiveView('hero');
+      return;
+    }
 
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 260;
-      for (const id of sectionIds) {
-        const el = document.getElementById(id);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(id);
-            break;
-          }
-        }
+    const parts = hash.split('/');
+    const view = parts[0] as MajorView;
+
+    // Map legacy or alias hashes
+    if (view === 'story') {
+      setActiveView('career');
+      return;
+    }
+    if (view === 'methodology') {
+      setActiveView('approach');
+      return;
+    }
+    if (view === 'credentials') {
+      setActiveView('education');
+      return;
+    }
+
+    if (
+      ['hero', 'career', 'philosophy', 'cases', 'work', 'recognition', 'approach', 'education', 'connect'].includes(view)
+    ) {
+      setActiveView(view);
+      if (view === 'cases' && parts[1]) {
+        setActiveCaseId(parts[1]);
       }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      setActiveView('hero');
     }
   };
 
-  const handleSelectCaseById = (caseId: string) => {
-    const found = CASE_STUDIES.find((c) => c.id === caseId);
-    if (found) {
-      setSelectedCase(found);
-    } else {
-      scrollToSection('cases');
-    }
+  // Listen to hash change for browser Back / Forward support
+  useEffect(() => {
+    parseHash();
+    const onHashChange = () => {
+      parseHash();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
+  // View navigation helper
+  const navigateTo = (view: MajorView, subId?: string) => {
+    const hash = subId ? `#${view}/${subId}` : `#${view}`;
+    window.location.hash = hash;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -90,58 +111,91 @@ export default function App() {
       {/* Centered Large Editorial Container */}
       <div className="w-full max-w-[1560px] mx-auto bg-white rounded-[28px] sm:rounded-[36px] lg:rounded-[44px] shadow-2xl shadow-slate-300/40 border border-slate-200/80 overflow-hidden flex flex-col relative">
         
-        {/* Floating Top Navigation */}
+        {/* Floating Top Navigation (View Selector) */}
         <Navbar
           lang={lang}
           onToggleLang={handleToggleLang}
-          activeSection={activeSection}
+          activeSection={activeView}
+          onSelectView={(v) => navigateTo(v as MajorView)}
         />
 
-        {/* 1. Hero Section */}
-        <Hero
-          lang={lang}
-          onExploreStory={() => scrollToSection('story')}
-          onExploreCases={() => scrollToSection('cases')}
-        />
+        {/* FOCUSED VIEW ARCHITECTURE (Progressive Disclosure) */}
+        <main className="w-full transition-opacity duration-300">
+          {activeView === 'hero' && (
+            <Hero
+              lang={lang}
+              onExploreStory={() => navigateTo('career')}
+              onExploreCases={() => navigateTo('cases')}
+            />
+          )}
 
-        {/* 2. Career Journey (Integrated Story, Verified Roles & Visual Evidence) */}
-        <CareerStory
-          lang={lang}
-          onSelectCase={handleSelectCaseById}
-        />
+          {activeView === 'career' && (
+            <CareerStory
+              lang={lang}
+              onNavigateNext={() => navigateTo('philosophy')}
+              onSelectCase={(caseId) => navigateTo('cases', caseId)}
+            />
+          )}
 
-        {/* 3. Professional Philosophy (The Belief Chain & Experience Lens) */}
-        <Philosophy lang={lang} />
+          {activeView === 'philosophy' && (
+            <Philosophy
+              lang={lang}
+              onNavigateNext={() => navigateTo('cases')}
+            />
+          )}
 
-        {/* 4. Flagship Case Studies (Evidence) */}
-        <Projects
-          lang={lang}
-          onSelectCase={(cs) => setSelectedCase(cs)}
-        />
+          {activeView === 'cases' && (
+            <Projects
+              lang={lang}
+              activeCaseId={activeCaseId}
+              onNavigateNext={() => navigateTo('work')}
+            />
+          )}
 
-        {/* 6. How I Work (7-Step Continuous Flow & AI Amplifier) */}
-        <Approach lang={lang} />
+          {activeView === 'work' && (
+            <SelectedWork
+              lang={lang}
+              onNavigateNext={() => navigateTo('recognition')}
+            />
+          )}
 
-        {/* 7. Impact at a Glance (Verified Metrics with Context) */}
-        <ImpactStats lang={lang} />
+          {activeView === 'recognition' && (
+            <Recognition
+              lang={lang}
+              onNavigateNext={() => navigateTo('approach')}
+            />
+          )}
 
-        {/* 8. Credentials (Education & Curated Certifications) */}
-        <Credentials lang={lang} />
+          {activeView === 'approach' && (
+            <Approach
+              lang={lang}
+              onNavigateNext={() => navigateTo('education')}
+            />
+          )}
 
-        {/* 9. Connect (Direct LinkedIn, Zalo, Email, CV - No Form) */}
-        <Contact lang={lang} />
+          {activeView === 'education' && (
+            <Credentials
+              lang={lang}
+              onNavigateNext={() => navigateTo('connect')}
+            />
+          )}
 
-        {/* 10. Footer */}
+          {activeView === 'connect' && (
+            <Contact lang={lang} />
+          )}
+        </main>
+
+        {/* Minimal Footer */}
         <Footer lang={lang} />
 
       </div>
 
-      {/* Flagship Case Study In-Depth Modal */}
+      {/* Case Study In-Depth Modal if triggered */}
       <ProjectModal
-        caseStudy={selectedCase}
+        caseStudy={selectedCaseModal}
         lang={lang}
-        onClose={() => setSelectedCase(null)}
-        onConnectClick={() => scrollToSection('connect')}
+        onClose={() => setSelectedCaseModal(null)}
+        onConnectClick={() => navigateTo('connect')}
       />
     </div>
   );

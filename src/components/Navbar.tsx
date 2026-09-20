@@ -1,45 +1,48 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, Globe } from 'lucide-react';
 import { NAV_ITEMS, PERSONAL_INFO } from '../data/portfolioData';
 import { Language } from '../types';
+import { Globe, ArrowUpRight, Menu, X } from 'lucide-react';
 
 interface NavbarProps {
   lang: Language;
   onToggleLang: (lang: Language) => void;
   activeSection: string;
+  onSelectView?: (viewId: string) => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   lang,
   onToggleLang,
   activeSection,
+  onSelectView,
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
+      setIsScrolled(window.scrollY > 30);
     };
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
+    targetId: string
   ) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-    const targetId = href.replace('#', '');
-    const element = document.getElementById(targetId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const viewId = targetId.replace('#', '');
+    if (onSelectView) {
+      onSelectView(viewId);
+    } else {
+      window.location.hash = targetId;
     }
   };
 
   return (
-    <header className="fixed top-3 md:top-6 left-0 right-0 z-50 transition-all duration-300 px-3 sm:px-6 max-w-7xl mx-auto pointer-events-none">
+    <header className="sticky top-0 z-50 w-full px-3 sm:px-6 md:px-8 py-3 transition-all duration-300 pointer-events-none">
       <div
         className={`w-full mx-auto flex items-center justify-between pointer-events-auto transition-all duration-300 ${
           isScrolled
@@ -74,7 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
         </a>
 
-        {/* Center: Desktop Navigation Bar */}
+        {/* Center: Desktop Navigation Bar (View Selector) */}
         <nav
           className={`hidden lg:flex items-center gap-0.5 px-1.5 py-1 rounded-full text-xs font-medium transition-colors ${
             isScrolled
@@ -90,7 +93,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 key={item.id}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className={`px-3 py-1.5 rounded-full transition-all duration-200 ${
+                className={`px-3 py-1.5 rounded-full transition-all duration-200 cursor-pointer ${
                   isActive
                     ? isScrolled
                       ? 'bg-white text-[#0068FF] font-semibold shadow-xs'
@@ -144,62 +147,35 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
           </div>
 
-          {/* Quick Connect link */}
+          {/* Quick Connect CTA Button */}
           <a
             href="#connect"
             onClick={(e) => handleNavClick(e, '#connect')}
-            className="hidden sm:inline-flex items-center gap-1.5 bg-[#0068FF] hover:bg-[#0052CC] active:scale-95 text-white text-xs font-semibold px-4 py-2 rounded-full shadow-sm shadow-blue-500/20 transition-all duration-200 cursor-pointer"
-            id="nav-connect-btn"
+            className="hidden sm:inline-flex items-center gap-1.5 bg-[#0068FF] hover:bg-[#0052CC] text-white text-xs font-medium px-4 py-2 rounded-full shadow-xs hover:shadow-md transition-all duration-200 cursor-pointer"
+            id="nav-cta-connect"
           >
             <span>{lang === 'vi' ? 'Kết nối' : 'Connect'}</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
 
-          {/* Mobile Menu Trigger */}
+          {/* Mobile Hamburger Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`lg:hidden w-8 h-8 rounded-full flex items-center justify-center transition-colors cursor-pointer ${
+            className={`lg:hidden p-2 rounded-full transition-colors cursor-pointer ${
               isScrolled
-                ? 'bg-slate-100 text-slate-800 hover:bg-slate-200'
-                : 'bg-white/20 text-white hover:bg-white/30 border border-white/20'
+                ? 'hover:bg-slate-100 text-slate-800'
+                : 'hover:bg-white/10 text-white'
             }`}
-            aria-label="Toggle Navigation Menu"
-            id="mobile-menu-trigger"
+            aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden pointer-events-auto mt-2 bg-white/95 backdrop-blur-xl border border-slate-200 rounded-3xl p-5 shadow-2xl text-slate-800 animate-in fade-in slide-in-from-top-3 duration-200">
-          {/* Top Lang row inside mobile menu */}
-          <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
-            <span className="text-xs font-medium text-slate-500 flex items-center gap-1.5">
-              <Globe className="w-3.5 h-3.5 text-[#0068FF]" />
-              <span>{lang === 'vi' ? 'Ngôn ngữ' : 'Language'}</span>
-            </span>
-            <div className="flex items-center gap-1 bg-slate-100 p-0.5 rounded-full text-xs font-semibold">
-              <button
-                onClick={() => onToggleLang('vi')}
-                className={`px-3 py-1 rounded-full ${
-                  lang === 'vi' ? 'bg-[#0068FF] text-white' : 'text-slate-600'
-                }`}
-              >
-                Tiếng Việt
-              </button>
-              <button
-                onClick={() => onToggleLang('en')}
-                className={`px-3 py-1 rounded-full ${
-                  lang === 'en' ? 'bg-[#0068FF] text-white' : 'text-slate-600'
-                }`}
-              >
-                English
-              </button>
-            </div>
-          </div>
-
+        <div className="lg:hidden mt-2 p-5 bg-white/98 backdrop-blur-xl rounded-3xl border border-slate-200 shadow-xl pointer-events-auto text-slate-800">
           <div className="flex flex-col gap-1 mb-4">
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.id;

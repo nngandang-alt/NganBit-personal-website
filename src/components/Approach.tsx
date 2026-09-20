@@ -5,12 +5,13 @@ import { Sparkles, ArrowRight, Bot, Cpu, CheckCircle } from 'lucide-react';
 
 interface ApproachProps {
   lang: Language;
+  onNavigateNext?: () => void;
 }
 
-export const Approach: React.FC<ApproachProps> = ({ lang }) => {
+export const Approach: React.FC<ApproachProps> = ({ lang, onNavigateNext }) => {
   return (
     <section
-      id="methodology"
+      id="approach"
       className="w-full py-20 sm:py-28 md:py-36 px-4 sm:px-8 md:px-12 lg:px-16 bg-[#F8FAFC] border-b border-slate-200/70 relative"
     >
       <div className="max-w-7xl mx-auto">
@@ -19,7 +20,7 @@ export const Approach: React.FC<ApproachProps> = ({ lang }) => {
         <div className="flex flex-col gap-3 mb-12 sm:mb-16">
           <div className="flex items-center gap-3">
             <span className="text-xs font-bold tracking-widest text-[#0068FF] uppercase">
-              {lang === 'vi' ? 'Phương pháp làm việc' : 'Methodology & Framework'}
+              {lang === 'vi' ? '07 — Phương pháp Làm việc' : '07 — How I Work'}
             </span>
             <div className="h-px w-12 bg-[#0068FF]/30" />
           </div>
@@ -168,6 +169,19 @@ export const Approach: React.FC<ApproachProps> = ({ lang }) => {
 
         </div>
 
+
+        {/* Guided Journey Next Section CTA */}
+        {onNavigateNext && (
+          <div className="mt-12 pt-6 border-t border-slate-200 flex justify-end">
+            <button
+              onClick={onNavigateNext}
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#0068FF] hover:bg-[#0052CC] text-white text-xs font-semibold shadow-sm transition-all cursor-pointer"
+            >
+              <span>{lang === 'vi' ? 'TIẾP THEO: HỌC VẤN & PHÁT TRIỂN' : 'NEXT: EDUCATION & CONTINUOUS LEARNING'}</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
