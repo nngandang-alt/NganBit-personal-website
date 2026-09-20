@@ -68,14 +68,14 @@ export const PERSONAL_INFO = {
   },
 };
 
-export const NAV_ITEMS: NavItem[] = [
+export const NAV_ITEMS = [
   { id: 'career', label: { vi: 'Hành trình & Kinh nghiệm', en: 'Career & Experience' }, href: '#career' },
-  { id: 'philosophy', label: { vi: 'Triết lý', en: 'Philosophy' }, href: '#philosophy' },
+  { id: 'philosophy', label: { vi: 'Triết lý & Phương pháp', en: 'Philosophy & Approach' }, href: '#philosophy' },
   { id: 'cases', label: { vi: 'Case Studies', en: 'Case Studies' }, href: '#cases' },
   { id: 'work', label: { vi: 'Dự án', en: 'Selected Work' }, href: '#work' },
   { id: 'recognition', label: { vi: 'Sự công nhận', en: 'Recognition' }, href: '#recognition' },
-  { id: 'approach', label: { vi: 'Phương pháp', en: 'How I Work' }, href: '#approach' },
   { id: 'education', label: { vi: 'Học vấn & Phát triển', en: 'Education & Learning' }, href: '#education' },
+  { id: 'connect', label: { vi: 'Kết nối', en: 'Connect' }, href: '#connect' },
 ];
 
 // Full-Circle Journey narrative removed per IA specifications

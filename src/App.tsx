@@ -114,13 +114,14 @@ export default function App() {
     const parts = hash.split('/');
     const view = parts[0] as MajorView;
 
-    // Map legacy or alias hashes
+        // Map legacy or alias hashes to active views
     if (view === 'story') {
       setActiveView('career');
       return;
     }
-        if (view === 'methodology' || view === 'approach') {
+    if (view === 'methodology' || view === 'approach') {
       setActiveView('philosophy');
+      window.location.hash = '#philosophy';
       return;
     }
     if (view === 'credentials') {
@@ -152,7 +153,10 @@ export default function App() {
   }, []);
 
   // View navigation helper
-  const navigateTo = (view: MajorView, subId?: string) => {
+  const navigateTo = (view: MajorView | 'approach' | 'methodology', subId?: string) => {
+    if ((view as string) === 'approach' || (view as string) === 'methodology') {
+      view = 'philosophy';
+    }
     const hash = subId ? `#${view}/${subId}` : `#${view}`;
     window.location.hash = hash;
     setActiveView(view);

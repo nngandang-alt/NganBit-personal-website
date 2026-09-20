@@ -33,7 +33,11 @@ export const Navbar: React.FC<NavbarProps> = ({
   ) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-    const viewId = targetId.replace('#', '');
+    let viewId = targetId.replace('#', '');
+    if (viewId === 'approach' || viewId === 'methodology') {
+      viewId = 'philosophy';
+      targetId = '#philosophy';
+    }
     if (onSelectView) {
       onSelectView(viewId);
     } else {
@@ -87,7 +91,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           id="desktop-nav"
         >
           {NAV_ITEMS.map((item) => {
-            const isActive = activeSection === item.id;
+            const isActive = activeSection === item.id || (item.id === 'philosophy' && (activeSection === 'approach' || activeSection === 'methodology'));
             return (
               <a
                 key={item.id}
@@ -178,7 +182,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="lg:hidden mt-2 p-5 bg-white/98 backdrop-blur-xl rounded-3xl border border-slate-200 shadow-xl pointer-events-auto text-slate-800">
           <div className="flex flex-col gap-1 mb-4">
             {NAV_ITEMS.map((item) => {
-              const isActive = activeSection === item.id;
+              const isActive = activeSection === item.id || (item.id === 'philosophy' && (activeSection === 'approach' || activeSection === 'methodology'));
               return (
                 <a
                   key={item.id}
