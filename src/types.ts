@@ -15,6 +15,15 @@ export interface PortfolioImage {
   placeholderHint: { vi: string; en: string };
 }
 
+export interface CareerVisualEvidenceData {
+  number: string;
+  src: string;
+  alt: { vi: string; en: string };
+  caption: { vi: string; en: string };
+  objectPosition?: string;
+  aspectRatioClass?: string;
+}
+
 export interface CareerChapter {
   id: string;
   number: string;
@@ -31,6 +40,7 @@ export interface CareerChapter {
   contextHighlight?: { vi: string; en: string };
   internalProgression?: string;
   isCurrent?: boolean;
+  visualEvidence?: CareerVisualEvidenceData;
 }
 
 export interface ExperienceRole {
