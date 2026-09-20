@@ -85,54 +85,35 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ lang, onNavigateNext }) 
         {/* ============================================================== */}
         <div id="operating-system" className="space-y-8 scroll-mt-24">
           
-          {/* Section Subtitle & Controls */}
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-2 border-b border-slate-200/80">
-            <div>
-              <div className="flex items-center gap-2 text-[#0068FF] mb-1.5">
-                <Layers className="w-4 h-4 text-[#0068FF]" />
-                <span className="text-xs font-bold font-mono uppercase tracking-wider">
-                  {lang === 'vi' ? 'Hệ điều hành Chuyên môn (Professional Operating System)' : 'Professional Operating System'}
-                </span>
-              </div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-                {lang === 'vi'
-                  ? '7 Giai đoạn Tích hợp: Từ Niềm tin Cốt lõi đến Phương pháp Thực thi'
-                  : '7 Integrated Stages: From Core Belief to Operational Practice'}
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-500 mt-1 max-w-2xl">
-                {lang === 'vi'
-                  ? 'Hai tầng của cùng một hệ thống: Tôi tin vào điều gì (Belief) → Tôi biến niềm tin đó thành hành động cụ thể như thế nào (Practice).'
-                  : 'Two layers of one integrated system: What I Believe → How I make that belief happen in concrete practice.'}
-              </p>
-            </div>
-
-            {/* View Mode Toggle */}
-            <div className="flex items-center bg-slate-100 p-1 rounded-xl shrink-0 self-start sm:self-auto text-xs font-medium">
-              <button
-                onClick={() => setViewMode('focused')}
-                className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
-                  viewMode === 'focused'
-                    ? 'bg-white text-[#0068FF] font-semibold shadow-xs'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
-              >
-                {lang === 'vi' ? 'Tập trung từng bước' : 'Focused View'}
-              </button>
-              <button
-                onClick={() => setViewMode('all')}
-                className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
-                  viewMode === 'all'
-                    ? 'bg-white text-[#0068FF] font-semibold shadow-xs'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
-              >
-                {lang === 'vi' ? 'Xem toàn bộ 7 bước' : 'All 7 Stages'}
-              </button>
-            </div>
-          </div>
-
           {/* 7-STAGE HORIZONTAL PROGRESS STEPPER (Always visible as navigator) */}
-          <div className="p-2 sm:p-2.5 rounded-2xl bg-[#F8FAFC] border border-slate-200/90">
+          <div className="p-2.5 sm:p-3 rounded-2xl bg-[#F8FAFC] border border-slate-200/90 space-y-2.5">
+            <div className="flex items-center justify-between px-1">
+              <span className="text-[11px] font-mono font-bold text-[#0068FF] uppercase tracking-wider">
+                01 → 07 TRANSFORMATION FLOW
+              </span>
+              <div className="flex items-center bg-white border border-slate-200/80 p-0.5 rounded-xl text-xs font-medium shadow-2xs">
+                <button
+                  onClick={() => setViewMode('focused')}
+                  className={`px-3 py-1 rounded-lg transition-all cursor-pointer ${
+                    viewMode === 'focused'
+                      ? 'bg-blue-50 text-[#0068FF] font-semibold'
+                      : 'text-slate-600 hover:text-slate-900'
+                  }`}
+                >
+                  {lang === 'vi' ? 'Tập trung từng bước' : 'Focused View'}
+                </button>
+                <button
+                  onClick={() => setViewMode('all')}
+                  className={`px-3 py-1 rounded-lg transition-all cursor-pointer ${
+                    viewMode === 'all'
+                      ? 'bg-blue-50 text-[#0068FF] font-semibold'
+                      : 'text-slate-600 hover:text-slate-900'
+                  }`}
+                >
+                  {lang === 'vi' ? 'Xem toàn bộ 7 bước' : 'All 7 Stages'}
+                </button>
+              </div>
+            </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-1.5 sm:gap-2">
               {OPERATING_SYSTEM_STAGES.map((st, idx) => {
                 const isSelected = activeStageIndex === idx;
