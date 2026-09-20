@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, CheckCircle2, Lightbulb, Users, Compass, Layers, Award, Sparkles } from 'lucide-react';
+import { X, CheckCircle2, Lightbulb, Users, Compass, Layers, Award, Sparkles, Film, Play } from 'lucide-react';
 import { CaseStudy, Language } from '../types';
 import { ImagePlaceholder } from './ImagePlaceholder';
 
@@ -221,6 +221,37 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
                   </figure>
                 ))}
               </div>
+            </div>
+          )}
+
+          {/* Video Evidence (if present) */}
+          {caseStudy.videoEvidence && (
+            <div className="space-y-3 pt-2">
+              <div className="flex items-center gap-2">
+                <Film className="w-4 h-4 text-[#0068FF]" />
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-700">
+                  {caseStudy.videoEvidence.title[lang]}
+                </span>
+                <div className="h-px flex-1 bg-slate-200" />
+              </div>
+              <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-black shadow-md">
+                <video
+                  src={caseStudy.videoEvidence.url}
+                  poster={caseStudy.videoEvidence.poster}
+                  controls
+                  preload="metadata"
+                  playsInline
+                  className="w-full aspect-video object-contain bg-black"
+                >
+                  <source src={caseStudy.videoEvidence.url} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              {caseStudy.videoEvidence.caption && (
+                <p className="text-xs text-slate-500 italic px-1">
+                  {caseStudy.videoEvidence.caption[lang]}
+                </p>
+              )}
             </div>
           )}
 

@@ -1184,6 +1184,18 @@ export const CASE_STUDIES: CaseStudy[] = [
         },
       },
     ],
+    videoEvidence: {
+      url: '/videos/top100-ceremony-recap.mp4',
+      poster: '/videos/top100-video-poster.jpg',
+      title: {
+        vi: 'Video Recap: Khoảnh khắc Tôn vinh & Cảm xúc của Sinh viên cùng Gia đình',
+        en: 'Ceremony Recap Video: Moments of Recognition & Emotion with Families',
+      },
+      caption: {
+        vi: 'Thước phim ghi lại trọn vẹn không khí trang trọng, niềm tự hào của sinh viên Top 100 và phụ huynh trên sân khấu',
+        en: 'Documentary footage capturing the dignified atmosphere and proud emotions of Top 100 honorees and families on stage',
+      },
+    },
   },
   {
     id: 'case-techx',

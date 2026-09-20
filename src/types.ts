@@ -110,6 +110,12 @@ export interface CaseStudy {
   impact: { vi: string[]; en: string[] };
   learning?: { vi: string; en: string };
   visualEvidence?: PortfolioImage[];
+  videoEvidence?: {
+    url: string;
+    poster?: string;
+    title: { vi: string; en: string };
+    caption?: { vi: string; en: string };
+  };
 }
 
 export interface PhilosophyPillar {
