@@ -82,18 +82,25 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
       en: 'NOW: LEADING EXPERIENCE AT SCALE (Student Relations Officer → Head of Student Relations Office)',
     },
     story: {
-      vi: 'Đảm nhiệm vai trò Trưởng phòng Quan hệ Doanh nghiệp & Sinh viên (Head of Student Relations Office), thăng tiến từ vị trí Cán bộ (Student Relations Officer). Tôi dẫn dắt hệ sinh thái trải nghiệm sinh viên quy mô lớn, danh mục chương trình trọng điểm (tiêu biểu như TechX Camp), quản trị mối quan hệ đa bên phức tạp giữa Nhà trường - Sinh viên - Doanh nghiệp công nghệ, và thiết lập cơ chế vận hành hệ thống dựa trên dữ liệu & đòn bẩy AI.',
-      en: 'Serving as Head of Student Relations Office, advancing from Student Relations Officer. Directing large-scale student experience ecosystems, a multifaceted program portfolio (flagship TechX Camp), multi-stakeholder governance across Academia, Students, and Industry Partners, and instituting data-informed operations amplified by AI workflows.',
+      vi: 'Hiện tôi đảm nhiệm vai trò Trưởng phòng Công tác Sinh viên (Head of Student Relations Office), sau khi thăng tiến từ vị trí Cán bộ Công tác Sinh viên. Tôi dẫn dắt các hoạt động và chương trình hướng đến trải nghiệm, sự phát triển và gắn kết của sinh viên, xoay quanh ba trọng tâm: Hỗ trợ Phát triển – Truyền Cảm hứng – Kết nối Cộng đồng. Ở vai trò hiện tại, tôi tập trung xây dựng cách vận hành có hệ thống cho danh mục chương trình, cộng đồng sinh viên và các sáng kiến trải nghiệm, đồng thời ứng dụng dữ liệu và AI để nâng cao hiệu quả triển khai.',
+      en: 'Currently serving as Head of Student Relations Office, advancing from Student Relations Officer. I lead programs and initiatives dedicated to student experience, personal development, and engagement around three core pillars: Developmental Support – Inspiration – Community Connection. In my current role, I focus on building systematic operations for the program portfolio, student communities, and experiential initiatives, while leveraging data and AI to scale operational effectiveness.',
     },
     coreShift: {
-      from: { vi: 'Thực thi hoạt động đơn lẻ', en: 'Isolated program coordination' },
-      to: { vi: 'Lãnh đạo hệ thống trải nghiệm, danh mục chương trình & đòn bẩy AI', en: 'Ecosystem leadership, program portfolio & AI scale' },
+      from: { vi: 'Thực thi hoạt động đơn lẻ', en: 'Isolated program execution' },
+      to: { vi: 'Lãnh đạo hệ thống trải nghiệm & danh mục chương trình sinh viên', en: 'Leading student experience systems & program portfolio' },
     },
     keyRealization: {
-      vi: 'Lãnh đạo trải nghiệm ở quy mô lớn đòi hỏi tư duy hệ thống: chuẩn hóa quy trình, thiết lập sự an toàn tâm lý cho đội ngũ và kết nối mục tiêu giáo dục với giá trị thực tế của đối tác doanh nghiệp.',
-      en: 'Leading experience at scale demands systems thinking: process standardisation, team empowerment, and aligning institutional goals with industry ecosystem value.',
+      vi: 'Lãnh đạo trải nghiệm ở quy mô lớn không chỉ là tổ chức nhiều hoạt động, mà là xây dựng một hệ thống giúp mỗi chương trình cùng hướng đến mục tiêu phát triển, truyền cảm hứng và kết nối sinh viên.',
+      en: 'Leading experience at scale is not merely organizing numerous activities, but engineering a system where every program purposefully advances student development, inspiration, and community connection.',
     },
-    toolkit: ['Program Leadership', 'Experience Architecture', 'Multi-Stakeholder Governance', 'Data-informed Operations', 'AI-Amplified Workflows'],
+    toolkit: [
+      'Program Leadership',
+      'Student Experience Design',
+      'Community Engagement',
+      'Portfolio Management',
+      'Data-informed Operations',
+      'AI-Amplified Workflows',
+    ],
     contextHighlight: { vi: 'Chức danh: Head of Student Relations Office (Apr 2025 — Present)', en: 'Official Title: Head of Student Relations Office (Apr 2025 — Present)' },
   },
   {
