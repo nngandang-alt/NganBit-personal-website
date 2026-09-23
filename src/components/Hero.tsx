@@ -279,15 +279,49 @@ export const Hero: React.FC<HeroProps> = ({
             minHeight: '658px',
           }}
         >
-          {/* Soft ellipse glow behind ID Card */}
+          {/* ========================================================
+              SECTION 2 ATMOSPHERIC BLUE GLOW SYSTEM
+              Exact color recipe from Homepage Hero (Hero.tsx lines 40-64)
+              Centered behind the ID-card/lanyard visual, softly extending
+              below and bleeding gently toward the section center.
+              ======================================================== */}
+          {/* Primary Atmospheric Glow: Wide soft ellipse surrounding the card */}
           <div
             className="absolute pointer-events-none"
             style={{
-              left: '520px',
-              top: '60px',
-              width: '500px',
-              height: '500px',
-              background: 'radial-gradient(ellipse at center, rgba(190, 226, 255, 0.6) 0%, rgba(220, 240, 255, 0.3) 50%, rgba(248, 251, 255, 0) 75%)',
+              left: '460px',
+              top: '40px',
+              width: '640px',
+              height: '580px',
+              background: 'radial-gradient(ellipse at center, rgba(175, 215, 255, 0.55) 0%, rgba(248, 251, 255, 0) 72%)',
+              zIndex: 0,
+            }}
+            aria-hidden="true"
+          />
+
+          {/* Secondary Atmospheric Glow: Deeper ambient circle behind card core */}
+          <div
+            className="absolute pointer-events-none"
+            style={{
+              left: '550px',
+              top: '120px',
+              width: '480px',
+              height: '480px',
+              background: 'radial-gradient(circle at center, rgba(185, 225, 255, 0.45) 0%, rgba(248, 251, 255, 0) 65%)',
+              zIndex: 0,
+            }}
+            aria-hidden="true"
+          />
+
+          {/* Soft Center Bleed: Subtle bridge between narrative text and visual */}
+          <div
+            className="absolute pointer-events-none"
+            style={{
+              left: '360px',
+              top: '180px',
+              width: '420px',
+              height: '380px',
+              background: 'radial-gradient(ellipse at center, rgba(185, 225, 255, 0.28) 0%, rgba(248, 251, 255, 0) 70%)',
               zIndex: 0,
             }}
             aria-hidden="true"
@@ -338,7 +372,7 @@ export const Hero: React.FC<HeroProps> = ({
             </h2>
 
             <p
-              className="text-[16px] text-[#516992] leading-[23.5px] mt-[36px] max-w-[425px] font-normal"
+              className="text-[16px] text-[#516992] leading-[23.5px] mt-[36px] max-w-[425px] font-normal italic"
             >
               {lang === 'vi'
                 ? '“Với tôi, truyền thông nội bộ và văn hóa bắt đầu từ cách con người hiểu, cảm nhận và kết nối với nhau. Từ đó tạo nên sự gắn kết, đồng hướng và chuyển hóa sự thấu hiểu chung thành hành động.”'

@@ -7,7 +7,14 @@ interface LanyardAssemblyProps {
 
 export const LanyardAssembly: React.FC<LanyardAssemblyProps> = ({ className = '' }) => {
   return (
-    <div className={`relative ${className}`} style={{ width: '360px', height: '600px' }}>
+    <div
+      className={`relative ${className} lanyard-hanging-assembly`}
+      style={{
+        width: '360px',
+        height: '600px',
+        transformOrigin: '171.4px 0px',
+      }}
+    >
       {/* 
         NATURAL HANGING LANYARD ASSEMBLY (SECTION 2 CONTEXT):
         1. Two blue fabric straps (18px wide) enter naturally from the top boundary of Section 2 (y: 0).

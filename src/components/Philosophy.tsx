@@ -5,6 +5,7 @@ import {
   PHILOSOPHY_PILLARS,
 } from '../data/portfolioData';
 import { Language } from '../types';
+import { PageHeroVisual } from './PageHeroVisual';
 import {
   ArrowRight,
   HeartHandshake,
@@ -105,36 +106,39 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ lang, onNavigateNext }) 
         {/* ============================================================== */}
         {/* OPENING: PROFESSIONAL PHILOSOPHY                               */}
         {/* ============================================================== */}
-        <div className="space-y-6">
-          <div className="flex items-center gap-3">
-            <span className="text-xs font-bold tracking-widest text-[#0068FF] uppercase font-mono">
-              {lang === 'vi' ? 'Triết lý Nghề nghiệp & Phương pháp' : 'Professional Philosophy & Approach'}
-            </span>
-            <div className="h-px w-12 bg-[#0068FF]/30" />
-          </div>
-
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-            <div className="max-w-3xl">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
-                {lang === 'vi' ? (
-                  <>
-                    Văn hóa không bắt đầu từ quy định.<br />
-                    <span className="text-[#0068FF]">Văn hóa bắt đầu từ một chuỗi chuyển hóa.</span>
-                  </>
-                ) : (
-                  <>
-                    Culture doesn't start with rules.<br />
-                    <span className="text-[#0068FF]">Culture begins with a chain of transformation.</span>
-                  </>
-                )}
-              </h2>
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 pb-4">
+          {/* Left: Eyebrow + Headline + Supporting Paragraph */}
+          <div className="max-w-2xl space-y-4">
+            <div className="flex items-center gap-3">
+              <span className="text-xs font-bold tracking-widest text-[#0060FF] uppercase font-mono">
+                {lang === 'vi' ? 'Triết lý Nghề nghiệp & Phương pháp' : 'Professional Philosophy & Approach'}
+              </span>
+              <div className="h-px w-12 bg-[#0060FF]/30" />
             </div>
-            <p className="max-w-md text-xs sm:text-sm text-slate-600 leading-relaxed">
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-[1.15]">
+              {lang === 'vi' ? (
+                <>
+                  Văn hóa không bắt đầu từ quy định<br />
+                  <span className="text-[#0060FF]">Văn hóa bắt đầu từ một chuỗi chuyển hóa</span>
+                </>
+              ) : (
+                <>
+                  Culture doesn’t start with rules<br />
+                  <span className="text-[#0060FF]">Culture begins with a chain of transformation</span>
+                </>
+              )}
+            </h1>
+
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl">
               {lang === 'vi'
                 ? 'Một tổ chức không thể ép buộc con người phải gắn kết. Sự đồng lòng và bản sắc chỉ hình thành khi mỗi điểm chạm truyền thông nuôi dưỡng sự thấu cảm, tạo dựng niềm tin và chuyển hóa tự nhiên thành hành động.'
                 : 'Engagement cannot be mandated. Organizational identity flourishes only when communication touchpoints nurture empathy, build psychological trust, and organically transform conviction into everyday action.'}
             </p>
           </div>
+
+          {/* Right: Semantic Line-art Element embedded in atmospheric glow */}
+          <PageHeroVisual variant="philosophy" />
         </div>
 
         {/* ============================================================== */}

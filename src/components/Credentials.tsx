@@ -5,6 +5,7 @@ import {
   PROFESSIONAL_CAPABILITIES_DATA,
 } from '../data/portfolioData';
 import { Language } from '../types';
+import { PageHeroVisual } from './PageHeroVisual';
 import {
   GraduationCap,
   ChevronRight,
@@ -247,35 +248,39 @@ export const Credentials: React.FC<CredentialsProps> = ({ lang, onNavigateNext }
         {/* HERO SECTION */}
         {/* ========================================================================= */}
         <div className="space-y-6">
-          {/* Eyebrow */}
-          <div className="flex items-center gap-3">
-            <span className="text-xs font-bold tracking-widest text-[#0068FF] uppercase">
-              {lang === 'vi' ? 'HỌC VẤN & PHÁT TRIỂN' : 'EDUCATION & DEVELOPMENT'}
-            </span>
-            <div className="h-px w-16 bg-[#0068FF]/30" />
-          </div>
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 pb-4">
+            {/* Left: Eyebrow + Headline + Supporting Paragraph */}
+            <div className="max-w-2xl space-y-4">
+              <div className="flex items-center gap-3">
+                <span className="text-xs font-bold tracking-widest text-[#0060FF] uppercase font-mono">
+                  {lang === 'vi' ? 'HỌC VẤN & PHÁT TRIỂN' : 'EDUCATION & DEVELOPMENT'}
+                </span>
+                <div className="h-px w-16 bg-[#0060FF]/30" />
+              </div>
 
-          {/* Heading & Supporting Paragraph */}
-          <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-[1.15] max-w-xl">
-              {lang === 'vi' ? (
-                <>
-                  Học để hiểu sâu hơn. <br />
-                  <span className="text-[#0068FF]">Phát triển để làm nghề tốt hơn.</span>
-                </>
-              ) : (
-                <>
-                  Learning to understand more deeply. <br />
-                  <span className="text-[#0068FF]">Growing to practice better.</span>
-                </>
-              )}
-            </h1>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-[1.15]">
+                {lang === 'vi' ? (
+                  <>
+                    Học để hiểu sâu hơn<br />
+                    <span className="text-[#0060FF]">Phát triển để làm nghề tốt hơn</span>
+                  </>
+                ) : (
+                  <>
+                    Learning to understand more deeply<br />
+                    <span className="text-[#0060FF]">Growing to practice better</span>
+                  </>
+                )}
+              </h1>
 
-            <p className="max-w-md text-xs sm:text-sm text-slate-600 leading-relaxed lg:pt-2">
-              {lang === 'vi'
-                ? 'Từ nền tảng học thuật, kiến thức về con người đến việc liên tục cập nhật chuyên môn và công nghệ, mỗi lớp học tập đều góp phần định hình cách tôi làm nghề.'
-                : 'From academic foundations and human understanding to continuous professional and digital learning, each layer shapes how I approach my work.'}
-            </p>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl">
+                {lang === 'vi'
+                  ? 'Từ nền tảng học thuật, kiến thức về con người đến việc liên tục cập nhật chuyên môn và công nghệ, mỗi lớp học tập đều góp phần định hình cách tôi làm nghề.'
+                  : 'From academic foundations and human understanding to continuous professional and digital learning, each layer shapes how I approach my work.'}
+              </p>
+            </div>
+
+            {/* Right: Semantic Line-art Element embedded in atmospheric glow */}
+            <PageHeroVisual variant="education" />
           </div>
 
           {/* Navigation Pills (2 compact items) */}
@@ -289,7 +294,7 @@ export const Credentials: React.FC<CredentialsProps> = ({ lang, onNavigateNext }
                   onClick={() => scrollToSection(tab.id as 'learning-journey' | 'skills-tools')}
                   className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
                     isActive
-                      ? 'bg-[#0068FF] text-white shadow-xs'
+                      ? 'bg-[#0060FF] text-white shadow-xs'
                       : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50'
                   }`}
                 >

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { RECOGNITION_DATA } from '../data/portfolioData';
 import { Language, RecognitionItem } from '../types';
+import { PageHeroVisual } from './PageHeroVisual';
 import { ArrowRight, Maximize2, X, Award, MessageSquareHeart, Sparkles } from 'lucide-react';
 
 interface RecognitionProps {
@@ -132,37 +133,39 @@ export const Recognition: React.FC<RecognitionProps> = ({ lang, onNavigateNext }
 
       <div className="max-w-6xl mx-auto relative z-10">
         
-        {/* Section Header */}
-        <div className="flex flex-col gap-3 mb-14 sm:mb-16">
-          <div className="flex items-center gap-3">
-            <span className="text-xs font-bold tracking-widest text-[#0068FF] uppercase">
-              {lang === 'vi' ? 'Ghi nhận' : 'Recognition'}
-            </span>
-            <div className="h-px w-12 bg-[#0068FF]/30" />
-          </div>
-
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-            <div className="max-w-3xl">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
-                {lang === 'vi' ? (
-                  <>
-                    Ghi nhận:<br />
-                    <span className="text-[#0068FF]">Khi công việc để lại dấu ấn trong trải nghiệm của con người.</span>
-                  </>
-                ) : (
-                  <>
-                    Recognition:<br />
-                    <span className="text-[#0068FF]">When the work leaves a meaningful mark on people’s experience.</span>
-                  </>
-                )}
-              </h2>
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 pb-4 mb-14 sm:mb-16">
+          {/* Left: Eyebrow + Headline + Supporting Paragraph */}
+          <div className="max-w-2xl space-y-4">
+            <div className="flex items-center gap-3">
+              <span className="text-xs font-bold tracking-widest text-[#0060FF] uppercase font-mono">
+                {lang === 'vi' ? 'Ghi nhận' : 'Recognition'}
+              </span>
+              <div className="h-px w-12 bg-[#0060FF]/30" />
             </div>
-            <p className="max-w-md text-xs sm:text-sm text-slate-600 leading-relaxed">
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-[1.15]">
+              {lang === 'vi' ? (
+                <>
+                  Ghi nhận:<br />
+                  <span className="text-[#0060FF]">Khi công việc để lại dấu ấn trong trải nghiệm của con người</span>
+                </>
+              ) : (
+                <>
+                  Recognition:<br />
+                  <span className="text-[#0060FF]">When the work leaves a meaningful mark on people’s experience</span>
+                </>
+              )}
+            </h1>
+
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl">
               {lang === 'vi'
                 ? 'Từ sự ghi nhận của tổ chức, những phản hồi chân thật từ người trực tiếp trải nghiệm, đến các điểm chạm văn hóa đã thực sự đi vào đời sống — đây là bằng chứng sống động cho giá trị của công việc.'
                 : 'From formal institutional commendations and heartfelt reflections of participants, to culture touchpoints lived and embraced — this is the authentic human evidence of the work.'}
             </p>
           </div>
+
+          {/* Right: Semantic Line-art Element embedded in atmospheric glow */}
+          <PageHeroVisual variant="recognition" />
         </div>
 
         {/* ========================================================================= */}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CASE_STUDIES, SELECTED_WORK_DATA } from '../data/portfolioData';
 import { CaseStudy, Language, SelectedWorkItem } from '../types';
+import { PageHeroVisual } from './PageHeroVisual';
 import { ProjectModal } from './ProjectModal';
 import {
   ArrowRight,
@@ -615,29 +616,22 @@ export const CareerStory: React.FC<CareerStoryProps> = ({
                 <>
                   Hành trình &amp; Trải nghiệm:<br />
                   <span className="text-[#0060FF]">
-                    Gắn kết Con người bằng<br />Sứ mệnh.
+                    Gắn kết Con người bằng<br />Sứ mệnh
                   </span>
                 </>
               ) : (
                 <>
                   Career &amp; Experience:<br />
                   <span className="text-[#0060FF]">
-                    Connecting People with<br />Purpose.
+                    Connecting People with<br />Purpose
                   </span>
                 </>
               )}
             </h1>
           </div>
 
-          {/* Right: Soft Blue Atmospheric Glow with Freely Floating Handwritten Statement (NO Portrait, NO Borders/Circles) */}
-          <div className="relative shrink-0 flex items-center justify-center p-6 sm:p-10 select-none min-w-[260px] min-h-[180px]">
-            {/* Handwritten statement floating naturally without container borders */}
-            <div className="relative z-10 font-handwriting text-[#0060FF] text-2xl sm:text-3xl leading-snug text-center -rotate-6 font-medium tracking-wide">
-              People<br />
-              Culture<br />
-              <span className="text-xl sm:text-2xl">A Better Tomorrow</span>
-            </div>
-          </div>
+          {/* Right: Semantic Line-art Element embedded in atmospheric glow */}
+          <PageHeroVisual variant="career" />
         </div>
 
         {/* ============================================================== */}

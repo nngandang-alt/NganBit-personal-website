@@ -55,3 +55,36 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #9A9A94;
 }
+
+/* Natural subtle pendulum sway for the hanging lanyard + ID card */
+@keyframes lanyardSway {
+  0% {
+    transform: rotate(-1.4deg) translateY(0px);
+  }
+  25% {
+    transform: rotate(0deg) translateY(2px);
+  }
+  50% {
+    transform: rotate(1.4deg) translateY(0px);
+  }
+  75% {
+    transform: rotate(0deg) translateY(2px);
+  }
+  100% {
+    transform: rotate(-1.4deg) translateY(0px);
+  }
+}
+
+.lanyard-hanging-assembly {
+  transform-origin: 171.4px 0px;
+  animation: lanyardSway 6.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lanyard-hanging-assembly {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
