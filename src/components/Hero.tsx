@@ -1,254 +1,396 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, Compass } from 'lucide-react';
-import { PERSONAL_INFO } from '../data/portfolioData';
+import React from 'react';
+import { PortraitSlot } from './PortraitSlot';
+import { LanyardAssembly } from './LanyardAssembly';
+import { Users, Lightbulb, Building2, Zap, ArrowRight } from 'lucide-react';
 import { Language } from '../types';
-import heroBgImage from '../assets/hero-bg.jpg';
 
 interface HeroProps {
   lang: Language;
-  onExploreStory: () => void;
-  onExploreCases: () => void;
+  onExplore?: () => void;
+  onViewCaseStudies?: () => void;
 }
-
-const PROFESSIONAL_SNAPSHOT = [
-  {
-    value: '7+',
-    label: {
-      vi: 'Năm trong Truyền thông, Văn hóa & Gắn kết',
-      en: 'Years across Communication, Culture & Engagement',
-    },
-  },
-  {
-    value: '4',
-    label: {
-      vi: 'Lĩnh vực chuyên môn cốt lõi',
-      en: 'Core Areas of Expertise',
-    },
-  },
-  {
-    value: '6',
-    label: {
-      vi: 'Môi trường & Quy mô tổ chức thực chiến',
-      en: 'Organizational Environments & Scales',
-    },
-  },
-  {
-    value: 'AI',
-    label: {
-      vi: 'Khai phóng năng lực & Tối ưu quy trình',
-      en: 'Amplifying Capabilities & Optimizing Workflows',
-    },
-    isAccent: true,
-  },
-];
 
 export const Hero: React.FC<HeroProps> = ({
   lang,
-  onExploreStory,
-  onExploreCases,
+  onExplore,
+  onViewCaseStudies,
 }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [parallax, setParallax] = useState({ x: 0, y: 0 });
-  const heroRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsLoaded(true), 60);
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Subtle pointer micro-parallax (desktop only, reduced motion respected)
-  const handlePointerMove = (e: React.PointerEvent<HTMLElement>) => {
-    if (typeof window === 'undefined') return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    if (!window.matchMedia('(hover: hover) and (min-width: 1024px)').matches) return;
-    if (!heroRef.current) return;
-
-    const rect = heroRef.current.getBoundingClientRect();
-    const nx = (e.clientX - rect.left) / rect.width - 0.5;
-    const ny = (e.clientY - rect.top) / rect.height - 0.5;
-    // max 4-8px soft movement
-    setParallax({
-      x: Math.max(-6, Math.min(6, nx * 12)),
-      y: Math.max(-6, Math.min(6, ny * 12)),
-    });
-  };
-
-  const handlePointerLeave = () => {
-    setParallax({ x: 0, y: 0 });
-  };
-
   return (
-    <section
-      ref={heroRef}
-      id="hero"
-      onPointerMove={handlePointerMove}
-      onPointerLeave={handlePointerLeave}
-      className="relative w-full min-h-[88vh] lg:min-h-[92vh] flex flex-col justify-center overflow-hidden rounded-[28px] sm:rounded-[36px] lg:rounded-[44px] text-white select-none border border-black/10 shadow-2xl bg-[#070B14]"
-    >
-      {/* Ambient background soft light glow */}
-      <div
-        className="absolute top-1/4 right-[12%] w-[500px] h-[500px] rounded-full opacity-20 pointer-events-none blur-3xl transition-opacity duration-1000"
+    <>
+      {/* ========================================================
+          SECTION 1: HERO VIEW
+          Clean visual closing element is the white Stats panel at y: 782px.
+          Zero leakage from Section 2; no lanyard in the first view.
+          ======================================================== */}
+      <section
+        className="relative w-full overflow-hidden bg-[#f8fbff]"
+        id="hero"
         style={{
-          background: 'radial-gradient(circle, rgba(0, 104, 255, 0.35) 0%, transparent 70%)',
+          minHeight: 'max(782px, 100vh)',
         }}
-        aria-hidden="true"
-      />
-
-      {/* Photographic Canvas with subtle entrance scale & micro-parallax */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none">
-        <img
-          src={heroBgImage}
-          alt="Đặng Vũ Thùy Ngân - Internal Communication & Corporate Culture"
-          className={`w-full h-full object-cover object-[52%_top] sm:object-[54%_top] lg:object-[50%_top] transform scale-[0.88] sm:scale-[0.86] lg:scale-[0.85] xl:scale-[0.84] translate-x-[4%] sm:translate-x-[8%] lg:translate-x-[14%] xl:translate-x-[16%] translate-y-[0%] sm:translate-y-[-0.5%] lg:translate-y-[-1%] origin-bottom-right transition-all duration-1200 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transform-none ${
-            isLoaded ? 'opacity-100 scale-[0.88] sm:scale-[0.86] lg:scale-[0.85] xl:scale-[0.84]' : 'opacity-0 scale-[0.91]'
-          }`}
+      >
+        <div
+          className="relative mx-auto h-full"
           style={{
-            transform: `translate3d(${parallax.x}px, ${parallax.y}px, 0)`,
-            transition: 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.2s ease-out',
+            width: '1024px',
+            minHeight: '782px',
           }}
-          id="hero-bg-img"
-        />
-
-        {/* Desktop Horizontal Gradient Fade (smooth dark safe area for text, reveals portrait seamlessly) */}
-        <div
-          className={`hidden lg:block absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 via-40% via-black/25 via-62% to-transparent to-85% pointer-events-none z-[1] transition-opacity duration-1000 delay-150 ${
-            isLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
-          aria-hidden="true"
-        />
-
-        {/* Mobile/Tablet Vertical Fade */}
-        <div
-          className={`lg:hidden absolute inset-0 bg-gradient-to-b from-black/30 via-black/70 via-35% via-black/90 via-60% to-black to-100% pointer-events-none z-[1] transition-opacity duration-1000 ${
-            isLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
-          aria-hidden="true"
-        />
-
-        {/* Soft atmospheric top-to-bottom vignette */}
-        <div
-          className="absolute inset-0 bg-gradient-to-b from-[#070B14]/60 via-transparent via-20% to-[#070B14]/80 pointer-events-none z-[1]"
-          aria-hidden="true"
-        />
-
-        {/* Top-left subtle dotted matrix grid */}
-        <div
-          className="absolute top-0 left-0 w-3/5 h-3/5 opacity-[0.05] pointer-events-none bg-[radial-gradient(#ffffff_1.2px,transparent_1.2px)] [background-size:22px_22px] [mask-image:radial-gradient(ellipse_at_top_left,white_25%,transparent_75%)] z-[1]"
-          aria-hidden="true"
-        />
-      </div>
-
-      {/* LEFT CONTENT SAFE ZONE - Protected Portrait Area */}
-      <div className={`relative z-20 w-full lg:w-[58%] xl:w-[54%] max-w-[680px] xl:max-w-[720px] px-6 sm:px-10 md:px-12 lg:px-16 pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 flex flex-col justify-center transition-all duration-1000 delay-100 ${
-        isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-      }`}>
-        
-        
-
-        {/* 01. MAIN HEADLINE - Progression: People -> Meaningful Experiences -> Shared Purpose */}
-        <h1
-          className="font-bold tracking-tight text-white text-left max-w-2xl"
-          id="hero-main-heading"
         >
-          {lang === 'vi' ? (
-            <>
-              {/* Line 1: People */}
-              <span className="block text-white text-[clamp(1.6rem,2.35vw,2.4rem)] leading-[1.18]">
-                Kết nối con người
-              </span>
+          {/* LAYER 0: BACKGROUND RADIAL GLOWS */}
+          <div
+            className="absolute pointer-events-none"
+            style={{
+              left: '380px',
+              top: '40px',
+              width: '600px',
+              height: '450px',
+              background: 'radial-gradient(ellipse at center, rgba(175, 215, 255, 0.55) 0%, rgba(248, 251, 255, 0) 70%)',
+              zIndex: 0,
+            }}
+            aria-hidden="true"
+          />
+          
+          <div
+            className="absolute pointer-events-none"
+            style={{
+              left: '650px',
+              top: '200px',
+              width: '450px',
+              height: '450px',
+              background: 'radial-gradient(circle at center, rgba(185, 225, 255, 0.45) 0%, rgba(248, 251, 255, 0) 65%)',
+              zIndex: 0,
+            }}
+            aria-hidden="true"
+          />
 
-              {/* Line 2: Meaningful Experiences (Priority 1 line on desktop; semantic wrap if needed) */}
-              <span className="block text-[#0068FF] text-[clamp(1.72rem,2.55vw,2.65rem)] leading-[1.18] mt-1.5 sm:mt-2">
-                <span className="inline-block whitespace-normal lg:whitespace-nowrap">
-                  <span className="inline-block">Nuôi dưỡng những trải nghiệm</span>{' '}
-                  <span className="inline-block whitespace-nowrap">có ý nghĩa</span>
-                </span>
-              </span>
+          {/* LAYER 1: HERO BLUE CURVE */}
+          <svg
+            className="absolute pointer-events-none overflow-visible"
+            style={{ left: 0, top: 0, width: '1024px', height: '667px', zIndex: 1 }}
+            viewBox="0 0 1024 667"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M 1024 122 C 968 268 876 405 767 521"
+              stroke="#0060ff"
+              strokeWidth="1.2"
+              strokeLinecap="round"
+              fill="none"
+            />
+          </svg>
 
-              {/* Line 3: Shared Purpose */}
-              <span className="block text-white/95 text-[clamp(1.6rem,2.35vw,2.4rem)] leading-[1.18] mt-1.5 sm:mt-2">
-                <span className="inline-block whitespace-normal lg:whitespace-nowrap">
-                  <span className="inline-block">Cùng hướng về một</span>{' '}
-                  <span className="inline-block whitespace-nowrap">mục tiêu</span>
-                </span>
-              </span>
-            </>
-          ) : (
-            <>
-              {/* Line 1: People */}
-              <span className="block text-white text-[clamp(1.6rem,2.35vw,2.4rem)] leading-[1.18]">
-                Connecting people
-              </span>
+          {/* LAYER 2: REAL HERO PORTRAIT (TRANSPARENT PNG)
+              - Lower forearm rests firmly on the Stats panel top edge (y: 591px).
+              - Bottom edge terminates at y: 593px (2px concealed behind Stats panel at zIndex: 10).
+              - Original aspect ratio (853:1024) preserved with object-contain.
+              - x: 312px, y: 98px, w: 412px, h: 494px, zIndex: 4.
+          */}
+          <div
+            className="absolute"
+            style={{
+              left: '312px',
+              top: '138px',
+              width: '412px',
+              height: '494px',
+              zIndex: 4,
+            }}
+          >
+            <PortraitSlot
+              variant="hero"
+              mode="photo"
+              src="/hero-portrait.png"
+              objectPosition="center bottom"
+            />
+          </div>
 
-              {/* Line 2: Meaningful Experiences (Strictly 1 line on desktop) */}
-              <span className="block text-[#0068FF] text-[clamp(1.72rem,2.55vw,2.65rem)] leading-[1.18] mt-1.5 sm:mt-2">
-                <span className="inline-block whitespace-normal lg:whitespace-nowrap">
-                  Nurturing meaningful experiences
-                </span>
-              </span>
-
-              {/* Line 3: Shared Purpose (Strictly 1 line on desktop) */}
-              <span className="block text-white/95 text-[clamp(1.6rem,2.35vw,2.4rem)] leading-[1.18] mt-1.5 sm:mt-2">
-                <span className="inline-block whitespace-normal lg:whitespace-nowrap">
-                  Aligning toward a shared purpose
-                </span>
-              </span>
-            </>
-          )}
-        </h1>
-
-        {/* 02. SUPPORTING PHILOSOPHY STATEMENT */}
-        <p className="mt-4 sm:mt-5 text-sm sm:text-base lg:text-[16px] text-white/80 font-normal leading-relaxed max-w-xl">
-          “{PERSONAL_INFO.corePositioning[lang]}”
-        </p>
-
-        {/* 03. PROFESSIONAL SNAPSHOT (At-a-Glance Profile: 7+ | 4 | 6 | AI) */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 my-6 sm:my-7 max-w-xl">
-          {PROFESSIONAL_SNAPSHOT.map((item, idx) => (
-            <div
-              key={idx}
-              className={`p-3 sm:p-3.5 rounded-2xl border backdrop-blur-md transition-all duration-200 ${
-                item.isAccent
-                  ? 'bg-blue-950/40 border-[#0068FF]/50 text-white shadow-xs'
-                  : 'bg-white/[0.05] border-white/10 hover:bg-white/[0.08]'
-              }`}
+          {/* LAYER 3: HERO HEADING H1 (DANG VU THUY NGAN)
+              Line 1: DANG VU at x: 53, y: 260 (navy, 90px bold, tracking -4px)
+              Line 2: THUY at x: 54, y: 342 (blue #0060ff, 92px bold)
+              Line 3: NGAN at x: 149, y: 414 (104px bold, shifted right ~95px,
+                      intentional overlap over the portrait blazer at zIndex: 5)
+          */}
+          <h1
+            className="absolute select-none font-black tracking-[-4px] leading-[0.88]"
+            style={{
+              left: '53px',
+              top: '260px',
+              zIndex: 5,
+            }}
+            aria-label="Dang Vu Thuy Ngan"
+          >
+            <span
+              className="block text-[#05051f]"
+              style={{ fontSize: '90px', letterSpacing: '-4px' }}
             >
-              <div
-                className={`font-mono text-xl sm:text-2xl font-bold tracking-tight mb-1 ${
-                  item.isAccent ? 'text-[#0068FF]' : 'text-white'
-                }`}
-              >
-                {item.value}
+              DANG VU
+            </span>
+            
+            <span
+              className="block text-[#0060ff]"
+              style={{ fontSize: '92px', letterSpacing: '-4px', marginTop: '2px' }}
+            >
+              THUY
+            </span>
+            
+            <span
+              className="block bg-gradient-to-b from-[#0060ff] via-[#0060ff]/80 to-[#7db4ff]/35 bg-clip-text text-transparent"
+              style={{
+                fontSize: '104px',
+                letterSpacing: '-4px',
+                marginLeft: '95px',
+                marginTop: '4px',
+              }}
+            >
+              NGAN
+            </span>
+          </h1>
+
+          {/* LAYER 4: CORE AREAS & DASH
+              x: 741, y: 285, w: 230
+          */}
+          <div
+            className="absolute"
+            style={{
+              left: '741px',
+              top: '285px',
+              width: '230px',
+              zIndex: 6,
+            }}
+          >
+            <div className="w-[41px] h-[2.5px] bg-[#05051f] mb-[28px]" />
+
+            <div className="flex flex-col space-y-[0px] text-[20px] font-normal text-[#0060ff] leading-[30px]">
+              <span>Internal Communication</span>
+              <span>Corporate Culture</span>
+              <span>Employee Engagement</span>
+              <span>Employee Experience</span>
+            </div>
+          </div>
+
+          {/* LAYER 10: STATS OVERLAP PANEL
+              Clean visual closing baseline of the Hero view.
+              x: 31, y: 591, w: 962, h: 191, radius: 20px
+          */}
+          <div
+            className="absolute bg-white rounded-[20px] border border-slate-100 flex items-center"
+            style={{
+              left: '31px',
+              top: '591px',
+              width: '962px',
+              height: '191px',
+              zIndex: 10,
+              boxShadow: '0 12px 36px rgba(0, 96, 255, 0.07), 0 2px 8px rgba(0, 0, 0, 0.03)',
+            }}
+          >
+            {/* Cell 1: 7+ (Năm kinh nghiệm / Years of Experience) */}
+            <div className="flex-1 h-full flex flex-col justify-center px-[38px]">
+              <div className="w-[40px] h-[40px] rounded-full bg-[#e4efff] flex items-center justify-center mb-3">
+                <Users className="w-5 h-5 text-[#0060ff]" />
               </div>
-              <div className="text-[11px] sm:text-xs text-white/75 leading-snug font-normal">
-                {item.label[lang]}
+              <div className="text-[42px] font-extrabold text-[#05051f] leading-[44px] tracking-tight">
+                7+
+              </div>
+              <div className="text-[14px] text-[#516992] leading-[19px] mt-1 font-medium">
+                {lang === 'vi' ? 'Năm kinh nghiệm' : 'Years of Experience'}
               </div>
             </div>
-          ))}
+
+            <div className="w-[1px] h-[120px] bg-slate-200/80" />
+
+            {/* Cell 2: 4 */}
+            <div className="flex-1 h-full flex flex-col justify-center px-[38px]">
+              <div className="w-[40px] h-[40px] rounded-full bg-[#e4efff] flex items-center justify-center mb-3">
+                <Lightbulb className="w-5 h-5 text-[#0060ff]" />
+              </div>
+              <div className="text-[42px] font-extrabold text-[#05051f] leading-[44px] tracking-tight">
+                4
+              </div>
+              <div className="text-[14px] text-[#516992] leading-[19px] mt-1 font-medium">
+                {lang === 'vi' ? (
+                  <>Lĩnh vực chuyên môn<br />cốt lõi</>
+                ) : (
+                  <>Core Areas of<br />Expertise</>
+                )}
+              </div>
+            </div>
+
+            <div className="w-[1px] h-[120px] bg-slate-200/80" />
+
+            {/* Cell 3: 6 */}
+            <div className="flex-1 h-full flex flex-col justify-center px-[38px]">
+              <div className="w-[40px] h-[40px] rounded-full bg-[#e4efff] flex items-center justify-center mb-3">
+                <Building2 className="w-5 h-5 text-[#0060ff]" />
+              </div>
+              <div className="text-[42px] font-extrabold text-[#05051f] leading-[44px] tracking-tight">
+                6
+              </div>
+              <div className="text-[14px] text-[#516992] leading-[19px] mt-1 font-medium">
+                {lang === 'vi' ? (
+                  <>Môi trường &amp; Quy mô<br />tổ chức thực chiến</>
+                ) : (
+                  <>Organizational<br />Environments &amp; Scales</>
+                )}
+              </div>
+            </div>
+
+            <div className="w-[1px] h-[120px] bg-slate-200/80" />
+
+            {/* Cell 4: AI */}
+            <div className="flex-1 h-full flex flex-col justify-center px-[38px]">
+              <div className="w-[40px] h-[40px] rounded-full bg-[#e4efff] flex items-center justify-center mb-3">
+                <Zap className="w-5 h-5 text-[#0060ff]" />
+              </div>
+              <div className="text-[42px] font-extrabold text-[#0060ff] leading-[44px] tracking-tight">
+                AI
+              </div>
+              <div className="text-[14px] text-[#516992] leading-[19px] mt-1 font-medium">
+                {lang === 'vi' ? (
+                  <>Khai phóng năng lực<br />&amp; Tối ưu quy trình</>
+                ) : (
+                  <>Amplifying Capabilities<br />&amp; Optimizing Workflows</>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
 
-        {/* 04. CTA ACTION BUTTONS */}
-        <div className="flex flex-wrap items-center gap-3.5 sm:gap-4">
-          <button
-            onClick={onExploreStory}
-            className="group inline-flex items-center gap-2 bg-[#0068FF] hover:bg-[#0052CC] active:scale-95 text-white font-medium text-sm sm:text-base px-6 sm:px-7 py-3 sm:py-3.5 rounded-full shadow-[0_4px_24px_rgba(0,104,255,0.45)] hover:shadow-[0_6px_30px_rgba(0,104,255,0.6)] transition-all duration-200 cursor-pointer"
-            id="hero-cta-story"
-          >
-            <Compass className="w-4 h-4 transition-transform group-hover:rotate-45" />
-            <span>{lang === 'vi' ? 'Hành trình sự nghiệp' : 'Explore Career Story'}</span>
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </button>
+      {/* ========================================================
+          SECTION 2: NARRATIVE & ID CARD
+          Owns its own positioning context and containment.
+          The lanyard begins here and is clipped at the top boundary,
+          ensuring zero leakage into Hero / Section 1.
+          ======================================================== */}
+      <section
+        className="relative w-full overflow-hidden bg-[#f8fbff]"
+        id="philosophy"
+        style={{
+          minHeight: '658px',
+        }}
+      >
+        <div
+          className="relative mx-auto h-full"
+          style={{
+            width: '1024px',
+            minHeight: '658px',
+          }}
+        >
+          {/* Soft ellipse glow behind ID Card */}
+          <div
+            className="absolute pointer-events-none"
+            style={{
+              left: '520px',
+              top: '60px',
+              width: '500px',
+              height: '500px',
+              background: 'radial-gradient(ellipse at center, rgba(190, 226, 255, 0.6) 0%, rgba(220, 240, 255, 0.3) 50%, rgba(248, 251, 255, 0) 75%)',
+              zIndex: 0,
+            }}
+            aria-hidden="true"
+          />
 
-          <button
-            onClick={onExploreCases}
-            className="inline-flex items-center justify-center bg-white/[0.06] hover:bg-white/[0.12] active:scale-95 text-white font-medium text-sm sm:text-base px-6 sm:px-7 py-3 sm:py-3.5 rounded-full border border-white/20 hover:border-white/40 transition-all duration-200 backdrop-blur-sm cursor-pointer shadow-xs"
-            id="hero-cta-cases"
+          {/* Left Column: Statement & CTAs */}
+          <div
+            className="absolute"
+            style={{
+              left: '73px',
+              top: '67px',
+              width: '430px',
+              zIndex: 5,
+            }}
           >
-            <span>{lang === 'vi' ? 'Xem Case Studies' : 'View Case Studies'}</span>
-          </button>
+            <h2 className="select-none">
+              <span className="block text-[40px] font-black text-[#05051f] leading-[44px] tracking-tight">
+                {lang === 'vi' ? 'Kết nối con người' : 'Connecting people'}
+              </span>
+              <span className="block text-[56px] font-black text-[#0060ff] leading-[54px] tracking-tight mt-1">
+                {lang === 'vi' ? (
+                  <>
+                    Nuôi dưỡng<br />
+                    những trải nghiệm<br />
+                    có ý nghĩa
+                  </>
+                ) : (
+                  <>
+                    Nurturing<br />
+                    meaningful<br />
+                    experiences
+                  </>
+                )}
+              </span>
+              <span className="block text-[40px] font-black text-[#05051f] leading-[43px] tracking-tight mt-2">
+                {lang === 'vi' ? (
+                  <>
+                    Cùng hướng về một<br />
+                    mục tiêu
+                  </>
+                ) : (
+                  <>
+                    Aligning toward a<br />
+                    shared purpose
+                  </>
+                )}
+              </span>
+            </h2>
+
+            <p
+              className="text-[16px] text-[#516992] leading-[23.5px] mt-[36px] max-w-[425px] font-normal"
+            >
+              {lang === 'vi'
+                ? '“Với tôi, truyền thông nội bộ và văn hóa bắt đầu từ cách con người hiểu, cảm nhận và kết nối với nhau. Từ đó tạo nên sự gắn kết, đồng hướng và chuyển hóa sự thấu hiểu chung thành hành động.”'
+                : '“To me, internal communication and culture begin with how people understand, feel and connect with one another. This creates connection, alignment and turns shared understanding into action.”'}
+            </p>
+
+            <div className="mt-[35px] flex items-center gap-[16px]">
+              <a
+                href="#career"
+                onClick={(e) => {
+                  if (onExplore) {
+                    e.preventDefault();
+                    onExplore();
+                  }
+                }}
+                className="inline-flex items-center justify-center gap-2 h-[51px] px-[28px] rounded-full bg-[#0060ff] text-white text-[14px] font-semibold tracking-wide shadow-md shadow-blue-500/20 hover:bg-[#0050df] transition-all cursor-pointer"
+                style={{ minWidth: '220px' }}
+              >
+                <span>{lang === 'vi' ? 'Khám phá hành trình' : 'Explore Career Story'}</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+
+              <a
+                href="#cases"
+                onClick={(e) => {
+                  if (onViewCaseStudies) {
+                    e.preventDefault();
+                    onViewCaseStudies();
+                  }
+                }}
+                className="inline-flex items-center justify-center h-[51px] px-[24px] rounded-full bg-white text-[#0060ff] border border-[#0060ff] text-[14px] font-semibold tracking-wide hover:bg-blue-50/50 transition-all cursor-pointer"
+                style={{ minWidth: '175px' }}
+              >
+                <span>{lang === 'vi' ? 'Xem các Case Study' : 'View Case Studies'}</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Right Column: Lanyard Assembly & Suspended ID Card
+              Structurally anchored to Section 2 (top: 0px, left: 600px).
+              Strap begins at the top boundary of Section 2, cleanly contained.
+          */}
+          <div
+            className="absolute"
+            style={{
+              left: '600px',
+              top: '0px',
+              zIndex: 15,
+            }}
+          >
+            <LanyardAssembly />
+          </div>
         </div>
-
-      </div>
-    </section>
+      </section>
+    </>
   );
 };

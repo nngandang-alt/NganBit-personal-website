@@ -1,59 +1,75 @@
 import React from 'react';
 import { PERSONAL_INFO } from '../data/portfolioData';
-import { Language } from '../types';
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, Linkedin, Mail } from 'lucide-react';
 
-interface FooterProps {
-  lang: Language;
-}
-
-export const Footer: React.FC<FooterProps> = ({ lang }) => {
+export const Footer: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <footer className="w-full py-10 px-4 sm:px-8 md:px-12 lg:px-16 bg-[#0B0B0B] text-slate-400 border-t border-white/5 text-xs sm:text-sm">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        {/* Left: Copyright */}
-        <div className="font-medium text-slate-300">
-          ĐẶNG VŨ THÙY NGÂN © 2026
-        </div>
+    <footer className="w-full bg-[#f8fbff] text-[#516992] pt-6 pb-12">
+      {/* 
+        Wide Desktop Footer Container:
+        Matches the same consistent max-w-[1440px] with 40-60px intentional side margins.
+        Spreads footer groups horizontally across the full desktop grid.
+      */}
+      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+        {/* Full-width Divider */}
+        <div className="w-full h-[1px] bg-[#dce6f4] mb-[24px]" />
 
-        {/* Center: Domains (4 Core Professional Domains) */}
-        <div className="text-center font-medium text-slate-300 text-xs flex flex-wrap items-center justify-center gap-y-1 leading-relaxed">
-          <span className="whitespace-nowrap">Internal Communication</span>
-          <span className="mx-2 text-[#0068FF]">·</span>
-          <span className="whitespace-nowrap">Corporate Culture</span>
-          <span className="mx-2 text-[#0068FF]">·</span>
-          <span className="whitespace-nowrap">Employee Engagement</span>
-          <span className="mx-2 text-[#0068FF]">·</span>
-          <span className="whitespace-nowrap">Employee Experience</span>
-        </div>
+        {/* Content Row: Evenly distributed across desktop width */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-[11px] xl:text-[11.5px]">
+          {/* Left: NĐ logo + NGÂN ĐẶNG + © 2026 */}
+          <div className="flex items-center gap-[10px] shrink-0">
+            <div className="w-[32px] h-[32px] rounded-full bg-[#0060ff] text-white text-[11px] font-extrabold flex items-center justify-center shadow-xs">
+              NĐ
+            </div>
+            <span className="font-extrabold text-[12.5px] text-[#05051f] tracking-tight">
+              NGÂN ĐẶNG
+            </span>
+            <span className="text-slate-300">|</span>
+            <span className="text-[#516992] font-medium">© 2026</span>
+          </div>
 
-        {/* Right: Links & Back to Top */}
-        <div className="flex items-center gap-6">
-          <a
-            href={PERSONAL_INFO.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition-colors"
-          >
-            LinkedIn
-          </a>
-          <a
-            href={`mailto:${PERSONAL_INFO.email}`}
-            className="hover:text-white transition-colors"
-          >
-            Email
-          </a>
-          <button
-            onClick={scrollToTop}
-            className="inline-flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors cursor-pointer group"
-          >
-            <span>{lang === 'vi' ? 'Về đầu trang' : 'Back to top'}</span>
-            <ArrowUp className="w-3.5 h-3.5 transition-transform group-hover:-translate-y-0.5 text-[#0068FF]" />
-          </button>
+          {/* Center: 4 Core Domains */}
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[#516992] font-medium">
+            <span>Internal Communication</span>
+            <span className="text-slate-300">·</span>
+            <span>Corporate Culture</span>
+            <span className="text-slate-300">·</span>
+            <span>Employee Engagement</span>
+            <span className="text-slate-300">·</span>
+            <span>Employee Experience</span>
+          </div>
+
+          {/* Right: LinkedIn, Email, Back to top */}
+          <div className="flex items-center gap-6 text-[#516992] font-medium shrink-0">
+            <a
+              href={PERSONAL_INFO.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-[#0060ff] transition-colors"
+            >
+              <Linkedin className="w-3.5 h-3.5 text-[#0060ff]" />
+              <span>LinkedIn</span>
+            </a>
+            <a
+              href={`mailto:${PERSONAL_INFO.email}`}
+              className="inline-flex items-center gap-1.5 hover:text-[#0060ff] transition-colors"
+            >
+              <Mail className="w-3.5 h-3.5 text-[#0060ff]" />
+              <span>Email</span>
+            </a>
+            <span className="text-slate-300">|</span>
+            <button
+              onClick={scrollToTop}
+              className="inline-flex items-center gap-1 hover:text-[#0060ff] transition-colors cursor-pointer"
+            >
+              <span>Back to top</span>
+              <ArrowUp className="w-3.5 h-3.5 text-[#0060ff]" />
+            </button>
+          </div>
         </div>
       </div>
     </footer>

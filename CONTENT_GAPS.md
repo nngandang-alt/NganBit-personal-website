@@ -70,3 +70,25 @@ Hệ thống **ImagePlaceholder** hiển thị khung hình tinh tế với thôn
 - [ ] **Kênh liên hệ trực tiếp**:
   - **Zalo**: Cung cấp link Zalo chính thức (VD: `https://zalo.me/09xxxxxxxx`) để cập nhật vào nút kết nối.
   - **CV Executive**: Cung cấp file PDF CV chính thức nếu muốn người xem có thể tải về trực tiếp từ nút "Curriculum Vitae".
+
+---
+
+## 5. Danh mục Logo Công cụ (Tools I Work With Logo Checklist)
+
+Hệ thống đã triển khai giao diện hoàn chỉnh với các huy hiệu placeholder trang nhã cho các công cụ chưa có file logo cục bộ trong `src/assets/`. Các file logo chính thức cần bổ sung:
+
+| Tên công cụ | Nhóm | File hiện tại | Trạng thái |
+| :--- | :--- | :--- | :---: |
+| **Google AI Studio** | AI Tools | `src/assets/education/google-logo.png` | **Đã có logo** |
+| **Google Workspace** | Work & Productivity | `src/assets/education/google-logo.png` | **Đã có logo** |
+| **ChatGPT** | AI Tools | Placeholder "GPT" | *Chờ bổ sung file logo SVG/PNG* |
+| **Claude** | AI Tools | Placeholder "CLD" | *Chờ bổ sung file logo SVG/PNG* |
+| **Gemini** | AI Tools | Placeholder "GEM" | *Chờ bổ sung file logo SVG/PNG* |
+| **NotebookLM** | AI Tools | Placeholder "NLM" | *Chờ bổ sung file logo SVG/PNG* |
+| **Antigravity** | AI Tools | Placeholder "AGY" | *Chờ bổ sung file logo SVG/PNG* |
+| **Microsoft 365** | Work & Productivity | Placeholder "M36" | *Chờ bổ sung file logo SVG/PNG* |
+| **Canva** | Design & Content | Placeholder "CAN" | *Chờ bổ sung file logo SVG/PNG* |
+| **CapCut** | Design & Content | Placeholder "CAP" | *Chờ bổ sung file logo SVG/PNG* |
+| **Viva** | Internal Platforms | Placeholder "VIV" | *Chờ bổ sung file logo SVG/PNG* |
+| **GapoWork** | Internal Platforms | Placeholder "GAP" | *Chờ bổ sung file logo SVG/PNG* |
+

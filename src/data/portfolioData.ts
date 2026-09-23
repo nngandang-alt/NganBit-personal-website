@@ -38,9 +38,9 @@ import recognitionVuanemThankyouCard from '../assets/recognition/recognition-vua
 
 export const PERSONAL_INFO = {
   fullName: 'ĐẶNG VŨ THÙY NGÂN',
-  identity: 'THÙY NGÂN',
+  identity: 'NGÂN ĐẶNG',
   shortName: 'Thùy Ngân',
-  monogram: 'TN',
+  monogram: 'NĐ',
   domains: {
     vi: 'Internal Communication · Corporate Culture · Employee Engagement · Employee Experience',
     en: 'Internal Communication · Corporate Culture · Employee Engagement · Employee Experience',
@@ -50,8 +50,8 @@ export const PERSONAL_INFO = {
     en: 'Communication · Culture · Engagement · Experience',
   },
   corePositioning: {
-    vi: 'Với tôi, truyền thông và văn hóa bắt đầu từ cách con người hiểu, cảm nhận và kết nối với nhau — để tạo nên sự gắn kết, đồng hướng và chuyển hóa thành hành động',
-    en: 'To me, communication and culture begin with how people understand, feel and connect with one another — building connection, alignment and turning shared understanding into action',
+    vi: 'Với tôi, truyền thông nội bộ và văn hóa bắt đầu từ cách con người hiểu, cảm nhận và kết nối với nhau. Từ đó tạo nên sự gắn kết, đồng hướng và chuyển hóa sự thấu hiểu chung thành hành động.',
+    en: 'To me, internal communication and culture begin with how people understand, feel and connect with one another. This creates connection, alignment and turns shared understanding into action.',
   },
   heroHeadline: {
     vi: [
@@ -89,10 +89,9 @@ export const PERSONAL_INFO = {
 export const NAV_ITEMS = [
   { id: 'career', label: { vi: 'Hành trình & Kinh nghiệm', en: 'Career & Experience' }, href: '#career' },
   { id: 'philosophy', label: { vi: 'Triết lý & Phương pháp', en: 'Philosophy & Approach' }, href: '#philosophy' },
-  { id: 'cases', label: { vi: 'Case Studies', en: 'Case Studies' }, href: '#cases' },
-  { id: 'work', label: { vi: 'Dự án', en: 'Selected Work' }, href: '#work' },
+  { id: 'work', label: { vi: 'Dự án & Dấu ấn', en: 'Work & Impact' }, href: '#work' },
   { id: 'recognition', label: { vi: 'Ghi nhận', en: 'Recognition' }, href: '#recognition' },
-  { id: 'education', label: { vi: 'Học vấn & Phát triển', en: 'Education & Learning' }, href: '#education' },
+  { id: 'education', label: { vi: 'Học vấn & Phát triển', en: 'Education & Development' }, href: '#education' },
   { id: 'connect', label: { vi: 'Kết nối', en: 'Connect' }, href: '#connect' },
 ];
 
@@ -2292,8 +2291,8 @@ export const EDUCATION_DATA: EducationItem[] = [
   {
     id: 'edu-formal-01',
     degree: {
-      vi: 'Cử nhân Quan hệ Quốc tế & Nghiên cứu An ninh Quốc gia',
-      en: "Bachelor's Degree in International Relations & National Security Studies",
+      vi: 'Cử nhân Quan hệ Quốc tế',
+      en: "Bachelor's Degree in International Relations",
     },
     institution: {
       vi: 'Đại học Quốc tế Hồng Bàng (HIU)',
@@ -2360,8 +2359,8 @@ export const HUMAN_UNDERSTANDING_DATA: FactualLearningItem[] = [
     issuerKey: 'hcmue',
     logo: hcmueLogo,
     description: {
-      vi: 'Bổ sung nền tảng kiến thức tâm lý học, bao gồm nội dung về Tâm lý học Tổ chức, giúp tôi mở rộng góc nhìn về hành vi, động lực và tương tác của con người trong môi trường tổ chức. Những kiến thức này bổ trợ trực tiếp cho cách tôi tiếp cận truyền thông nội bộ, văn hóa và trải nghiệm nhân viên — từ việc hiểu con người đến thiết kế những trải nghiệm và môi trường làm việc phù hợp hơn.',
-      en: 'Building foundational knowledge in psychology, including Organizational Psychology, to deepen my understanding of human behavior, motivation, and interactions within organizational settings. This perspective complements my work in internal communication, culture, and employee experience — connecting a deeper understanding of people with the way workplace experiences are designed.',
+      vi: 'Bổ sung nền tảng kiến thức tâm lý học, bao gồm nội dung về Tâm lý học Tổ chức, giúp tôi mở rộng góc nhìn về hành vi, động lực và tương tác của con người trong môi trường tổ chức. Những kiến thức này bổ trợ trực tiếp cho cách tôi tiếp cận truyền thông nội bộ, văn hóa và trải nghiệm nhân viên, từ việc hiểu con người đến thiết kế những trải nghiệm và môi trường làm việc phù hợp hơn.',
+      en: 'Building foundational knowledge in psychology, including Organizational Psychology, to deepen my understanding of human behavior, motivation, and interactions within organizational settings. This perspective complements my work in internal communication, culture, and employee experience, connecting a deeper understanding of people with the way workplace experiences are designed.',
     },
   },
   {
@@ -2399,7 +2398,7 @@ export const HUMAN_UNDERSTANDING_DATA: FactualLearningItem[] = [
     logo: udemyLogo,
     isBridge: true,
     description: {
-      vi: 'Điểm cầu nối (Bridge): Chuyển hóa hiểu biết về con người thành phương pháp tư duy thiết kế trải nghiệm thực tế (Human-Centered Design).',
+      vi: 'Điểm cầu nối: Chuyển hóa hiểu biết về con người thành phương pháp tư duy thiết kế trải nghiệm thực tế (Human-Centered Design).',
       en: 'Bridge perspective: Translating human understanding into practical experience design and problem solving.',
     },
   },
@@ -2564,36 +2563,61 @@ export const CONTINUOUS_LEARNING_DATA: FactualLearningItem[] = [
 export const INTERDISCIPLINARY_LEARNING_DATA = HUMAN_UNDERSTANDING_DATA;
 export const PROFESSIONAL_CERTIFICATIONS_DATA = CONTINUOUS_LEARNING_DATA;
 
-// LAYER 04 — PROFESSIONAL CAPABILITY PILLARS (Năng lực nghề nghiệp)
+// PROFESSIONAL CAPABILITIES (Năng lực nghề nghiệp — 4 nhóm x 6 năng lực)
 export interface CapabilityPillar {
   id: string;
   order: string;
+  accent: 'blue' | 'pink' | 'green' | 'amber';
   title: {
     vi: string;
     en: string;
   };
-  summary: {
+  summary?: {
     vi: string;
     en: string;
   };
   isCore?: boolean;
-  skills: string[];
+  capabilities: {
+    vi: string[];
+    en: string[];
+  };
+  skills?: string[];
 }
 
 export const PROFESSIONAL_CAPABILITIES_DATA: CapabilityPillar[] = [
   {
     id: 'cap-comm',
     order: '01',
+    accent: 'blue',
     title: {
-      vi: 'Truyền thông & Kể chuyện',
-      en: 'Communication & Storytelling',
+      vi: 'TRUYỀN THÔNG & KỂ CHUYỆN',
+      en: 'COMMUNICATION & STORYTELLING',
     },
     summary: {
-      vi: 'Thiết kế và truyền tải thông điệp giúp con người hiểu, kết nối, đồng thuận và hành động.',
-      en: 'Crafting and delivering strategic communication that helps people understand, connect, align, and act.',
+      vi: 'Chiến lược truyền thông, thông điệp lãnh đạo và kể chuyện doanh nghiệp.',
+      en: 'Strategic communication, executive messaging, and corporate storytelling.',
+    },
+    capabilities: {
+      vi: [
+        'Chiến lược truyền thông nội bộ',
+        'Viết nội dung cho lãnh đạo',
+        'Kể chuyện doanh nghiệp',
+        'Chiến lược biên tập & nội dung',
+        'Truyền thông lãnh đạo',
+        'Truyền thông thay đổi & khủng hoảng',
+      ],
+      en: [
+        'Internal Communication Strategy',
+        'Executive Writing',
+        'Corporate Storytelling',
+        'Editorial & Content Strategy',
+        'Leadership Communication',
+        'Change & Crisis Communication',
+      ],
     },
     skills: [
       'Internal Communication Strategy',
+      'Executive Writing',
       'Corporate Storytelling',
       'Editorial & Content Strategy',
       'Leadership Communication',
@@ -2603,58 +2627,118 @@ export const PROFESSIONAL_CAPABILITIES_DATA: CapabilityPillar[] = [
   {
     id: 'cap-culture',
     order: '02',
+    accent: 'pink',
     title: {
-      vi: 'Văn hóa, Gắn kết & Trải nghiệm',
-      en: 'Culture, Engagement & Experience',
-    },
-    summary: {
-      vi: 'Lĩnh vực chuyên môn trọng tâm — biến giá trị cốt lõi thành trải nghiệm sống động hằng ngày.',
-      en: 'Core professional domain — transforming organizational values into lived daily employee experience.',
+      vi: 'VĂN HÓA, GẮN KẾT & TRẢI NGHIỆM',
+      en: 'CULTURE, ENGAGEMENT & EXPERIENCE',
     },
     isCore: true,
+    summary: {
+      vi: 'Phát triển văn hóa doanh nghiệp, trải nghiệm nhân viên và kích hoạt gắn kết.',
+      en: 'Corporate culture development, employee experience, and engagement activation.',
+    },
+    capabilities: {
+      vi: [
+        'Phát triển văn hóa doanh nghiệp',
+        'Gắn kết nhân viên',
+        'Trải nghiệm nhân viên',
+        'Kích hoạt văn hóa',
+        'Thiết kế trải nghiệm ghi nhận',
+        'Thương hiệu nhà tuyển dụng',
+      ],
+      en: [
+        'Corporate Culture Development',
+        'Employee Engagement',
+        'Employee Experience',
+        'Culture Activation',
+        'Recognition Experience Design',
+        'Employer Branding',
+      ],
+    },
     skills: [
       'Corporate Culture Development',
       'Employee Engagement',
       'Employee Experience',
       'Culture Activation',
       'Recognition Experience Design',
+      'Employer Branding',
     ],
   },
   {
     id: 'cap-insight',
     order: '03',
+    accent: 'green',
     title: {
-      vi: 'Thấu hiểu & Thiết kế Hệ thống',
-      en: 'Insight & System Design',
+      vi: 'THẤU HIỂU & THIẾT KẾ HỆ THỐNG',
+      en: 'INSIGHT & SYSTEM DESIGN',
     },
     summary: {
-      vi: 'Lắng nghe tổ chức, phân tích dữ liệu trải nghiệm và kiến tạo các chương trình dựa trên cơ sở thực chứng.',
-      en: 'Active employee listening, experiential insight analysis, and evidence-based program design.',
+      vi: 'Lắng nghe nhân viên, phân tích dữ liệu và thiết kế chương trình trải nghiệm.',
+      en: 'Employee listening, insight analysis, and experiential program design.',
+    },
+    capabilities: {
+      vi: [
+        'Lắng nghe nhân viên',
+        'Khảo sát & phân tích insight',
+        'Thiết kế trải nghiệm',
+        'Thiết kế chương trình',
+        'Đo lường & báo cáo',
+        'Truyền thông dựa trên dữ liệu',
+      ],
+      en: [
+        'Employee Listening',
+        'Survey & Insight Analysis',
+        'Experience Design',
+        'Program Design',
+        'Measurement & Reporting',
+        'Data-driven Communication',
+      ],
     },
     skills: [
       'Employee Listening',
       'Survey & Insight Analysis',
       'Experience Design',
       'Program Design',
-      'Measurement & Continuous Improvement',
+      'Measurement & Reporting',
+      'Data-driven Communication',
     ],
   },
   {
     id: 'cap-leadership',
     order: '04',
+    accent: 'amber',
     title: {
-      vi: 'Lãnh đạo & Kích hoạt',
-      en: 'Leadership & Activation',
+      vi: 'QUẢN TRỊ DỰ ÁN & PHÁT TRIỂN CON NGƯỜI',
+      en: 'PROJECT MANAGEMENT & PEOPLE DEVELOPMENT',
     },
     summary: {
-      vi: 'Dẫn dắt đội ngũ, quản lý các bên liên quan và điều phối nguồn lực thực thi hiệu quả.',
-      en: 'Leading cross-functional collaboration, stakeholder alignment, facilitation, and program activation.',
+      vi: 'Quản trị các bên liên quan, quản trị dự án, dẫn dắt đội ngũ và kích hoạt cộng đồng.',
+      en: 'Stakeholder management, project coordination, coaching, and community activation.',
+    },
+    capabilities: {
+      vi: [
+        'Quản trị các bên liên quan',
+        'Quản trị dự án',
+        'Phối hợp liên phòng ban',
+        'Coaching & Mentoring',
+        'Lãnh đạo đội nhóm',
+        'Tổ chức sự kiện & kích hoạt cộng đồng',
+      ],
+      en: [
+        'Stakeholder Management',
+        'Project Management',
+        'Cross-functional Collaboration',
+        'Coaching & Mentoring',
+        'Team Leadership',
+        'Event & Community Activation',
+      ],
     },
     skills: [
-      'Team Leadership',
       'Stakeholder Management',
+      'Project Management',
       'Cross-functional Collaboration',
-      'Facilitation',
+      'Coaching & Mentoring',
+      'Team Leadership',
       'Event & Community Activation',
     ],
   },

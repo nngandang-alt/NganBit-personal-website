@@ -1,26 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   EDUCATION_DATA,
   HUMAN_UNDERSTANDING_DATA,
-  CONTINUOUS_LEARNING_DATA,
   PROFESSIONAL_CAPABILITIES_DATA,
-  AI_ENABLED_PRACTICE_SKILLS,
 } from '../data/portfolioData';
-import hiuLogo from '../assets/education/hiu-logo.png';
 import { Language } from '../types';
 import {
   GraduationCap,
-  HeartHandshake,
-  BookOpen,
-  Sparkles,
-  ArrowRight,
-  Cpu,
-  Users,
-  MessageSquare,
-  Award,
   ChevronRight,
-  CheckCircle2,
-  Layers,
+  Megaphone,
+  Users,
+  BarChart3,
+  Sprout,
+  Sparkles,
+  Laptop,
+  Palette,
+  Share2,
+  Wrench,
+  FolderKanban,
 } from 'lucide-react';
 
 interface CredentialsProps {
@@ -28,591 +25,609 @@ interface CredentialsProps {
   onNavigateNext?: () => void;
 }
 
-// Reusable Circular Issuer / Institution Logo Component
-interface InstitutionLogoProps {
-  logo?: string;
-  name: string;
-  size?: 'sm' | 'md' | 'lg';
-  customPadding?: string;
-}
-
-const InstitutionLogo: React.FC<InstitutionLogoProps> = ({
-  logo,
-  name,
-  size = 'md',
-  customPadding,
-}) => {
-  const [imgError, setImgError] = useState(false);
-
-  // Responsive diameter dimensions
-  const sizeClasses = {
-    sm: 'w-10 h-10 min-w-10 min-h-10 sm:w-11 sm:h-11 sm:min-w-11 sm:min-h-11',
-    md: 'w-12 h-12 min-w-12 min-h-12 sm:w-13 sm:h-13 sm:min-w-13 sm:min-h-13',
-    lg: 'w-14 h-14 min-w-14 min-h-14 sm:w-16 sm:h-16 sm:min-w-16 sm:min-h-16',
-  }[size];
-
-  // Specific internal padding to preserve logo bounds without touching edge
-  const pad = customPadding || (size === 'lg' ? 'p-2 sm:p-2.5' : size === 'md' ? 'p-2' : 'p-1.5');
-
-  if (logo && !imgError) {
-    return (
-      <div
-        className={`${sizeClasses} rounded-full bg-white border border-slate-200/90 shadow-2xs flex items-center justify-center ${pad} overflow-hidden shrink-0 transition-transform duration-200 hover:scale-105 select-none`}
-        title={name}
-      >
-        <img
-          src={logo}
-          alt={name}
-          onError={() => setImgError(true)}
-          className="w-full h-full object-contain rounded-full"
-          loading="lazy"
-        />
-      </div>
-    );
-  }
-
-  // Fallback if image fails
-  return (
-    <div
-      className={`${sizeClasses} rounded-full bg-slate-100 border border-slate-200 shadow-2xs flex items-center justify-center shrink-0 font-mono text-xs font-bold text-slate-700`}
-      title={name}
-    >
-      {name.slice(0, 3).toUpperCase()}
-    </div>
-  );
+// 12 Recognizable Tool SVGs matching the approved mockup & user assets
+const ToolIcons = {
+  chatgpt: () => (
+    <img src="/logos/chatgpt.png" alt="ChatGPT" className="w-7 h-7 object-contain" />
+  ),
+  claude: () => (
+    <img src="/logos/claude.png" alt="Claude" className="w-7 h-7 object-contain" />
+  ),
+  gemini: () => (
+    <img src="/logos/gemini.png" alt="Gemini" className="w-7 h-7 object-contain" />
+  ),
+  gemininotebook: () => (
+    <img src="/logos/gemininotebook.png" alt="Gemini Notebook" className="w-7 h-7 object-contain" />
+  ),
+  notebooklm: () => (
+    <img src="/logos/gemininotebook.png" alt="Gemini Notebook" className="w-7 h-7 object-contain" />
+  ),
+  googleaistudio: () => (
+    <img src="/logos/googleaistudio.png" alt="Google AI Studio" className="w-7 h-7 object-contain" />
+  ),
+  antigravity: () => (
+    <img src="/logos/antigravity.png" alt="Antigravity" className="w-7 h-7 object-contain" />
+  ),
+  m365: () => (
+    <img src="/logos/m365.png" alt="Microsoft 365" className="w-7 h-7 object-contain" />
+  ),
+  googleworkspace: () => (
+    <svg viewBox="0 0 24 24" className="w-7 h-7">
+      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
+    </svg>
+  ),
+  canva: () => (
+    <img src="/logos/canva.png" alt="Canva" className="w-7 h-7 object-contain" />
+  ),
+  capcut: () => (
+    <img src="/logos/capcut.png" alt="CapCut" className="w-7 h-7 object-contain" />
+  ),
+  vivaengage: () => (
+    <img src="/logos/vivaengage.png" alt="Viva Engage" className="w-7 h-7 object-contain" />
+  ),
+  viva: () => (
+    <img src="/logos/vivaengage.png" alt="Viva Engage" className="w-7 h-7 object-contain" />
+  ),
+  gapowork: () => (
+    <img src="/logos/gapowork.png" alt="GapoWork" className="w-7 h-7 object-contain" />
+  ),
+  notion: () => (
+    <img src="/logos/notion.png" alt="Notion" className="w-7 h-7 object-contain" />
+  ),
+  trello: () => (
+    <img src="/logos/trello.png" alt="Trello" className="w-7 h-7 object-contain" />
+  ),
+  asana: () => (
+    <img src="/logos/asana.png" alt="Asana" className="w-7 h-7 object-contain" />
+  ),
+  adobelightroom: () => (
+    <img src="/logos/adobelightroom.png" alt="Adobe Lightroom" className="w-7 h-7 object-contain" />
+  ),
 };
 
-export const Credentials: React.FC<CredentialsProps> = ({ lang, onNavigateNext }) => {
+export const Credentials: React.FC<CredentialsProps> = ({ lang }) => {
   const formalDegree = EDUCATION_DATA[0];
   const humanItems = HUMAN_UNDERSTANDING_DATA;
-  const continuousItems = CONTINUOUS_LEARNING_DATA;
-  const capabilities = PROFESSIONAL_CAPABILITIES_DATA;
+  const capabilityGroups = PROFESSIONAL_CAPABILITIES_DATA;
 
-  // 4 Internal Layer Navigation State
-  const [activeLayer, setActiveLayer] = useState<'all' | '01' | '02' | '03' | '04'>('all');
+  // Navigation state for the 2 major content groups
+  const [activeTab, setActiveTab] = useState<'learning-journey' | 'skills-tools'>('learning-journey');
 
-  // Internal Navigation Items
-  const internalNavItems = [
+  // Exactly 2 major content groups: Learning Journey and Skills & Tools
+  const navTabs = [
     {
-      id: 'all',
-      order: '',
-      label: { vi: 'Toàn bộ Hành trình', en: 'Complete Journey' },
-    },
-    {
-      id: '01',
-      order: '01',
-      label: { vi: 'Nền tảng', en: 'Foundation' },
+      id: 'learning-journey',
+      label: { vi: 'Hành trình học tập', en: 'Learning Journey' },
       icon: GraduationCap,
     },
     {
-      id: '02',
-      order: '02',
-      label: { vi: 'Hiểu Con người', en: 'Human Understanding' },
-      icon: HeartHandshake,
-    },
-    {
-      id: '03',
-      order: '03',
-      label: { vi: 'Học tập Liên tục', en: 'Continuous Learning' },
-      icon: BookOpen,
-    },
-    {
-      id: '04',
-      order: '04',
-      label: { vi: 'Năng lực', en: 'Capabilities' },
-      icon: Layers,
+      id: 'skills-tools',
+      label: { vi: 'Kỹ năng & Công cụ', en: 'Skills & Tools' },
+      icon: Wrench,
     },
   ];
 
-  // Cluster taxonomy for Continuous Learning
-  const continuousClusters = [
+  const scrollToSection = (id: 'learning-journey' | 'skills-tools') => {
+    setActiveTab(id);
+    const element = document.getElementById(id);
+    if (element) {
+      const navOffset = 90;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: elementPosition - navOffset,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const skillsEl = document.getElementById('skills-tools');
+      if (skillsEl) {
+        const rect = skillsEl.getBoundingClientRect();
+        if (rect.top <= 200) {
+          setActiveTab('skills-tools');
+        } else {
+          setActiveTab('learning-journey');
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // 9 Continuous Learning Certificates in reversed order (newest first)
+  const continuousCertificates = [
+    { title: 'Generative AI for Customer Experience (Coursera)', dot: 'bg-purple-600' },
+    { title: 'Gemini Certified Educator (Google)', dot: 'bg-rose-600' },
+    { title: 'F88 Leadership Competency (F88)', dot: 'bg-orange-600' },
+    { title: 'Google AI (Google)', dot: 'bg-amber-600' },
+    { title: 'Improving Customer Retention (Coursera)', dot: 'bg-lime-600' },
+    { title: 'Voice of the Customer (Coursera)', dot: 'bg-cyan-600' },
+    { title: 'Organization Communication (LinkedIn)', dot: 'bg-emerald-600' },
+    { title: 'Demystifying Company Culture (LinkedIn)', dot: 'bg-teal-600' },
+    { title: 'Foundation of PR & Corporate Communication (BrandCamp.Asia)', dot: 'bg-blue-600' },
+  ];
+
+  // 4 Capability Cards Configs matching mockup
+  const capabilityConfigs = [
     {
-      id: 'communication-culture',
-      label: { vi: 'Truyền thông & Văn hóa', en: 'Communication & Culture' },
-      icon: MessageSquare,
-      items: continuousItems.filter(i => i.cluster === 'communication-culture'),
+      id: 'cap-comm',
+      accent: 'blue',
+      cardBg: 'bg-[#f0f7ff] border-[#dbeafe]',
+      dotColor: 'bg-blue-600',
+      icon: Megaphone,
+      iconColor: 'text-blue-600',
     },
     {
-      id: 'customer-experience',
-      label: { vi: 'Trải nghiệm & Khách hàng', en: 'Experience & Customer Insight' },
+      id: 'cap-culture',
+      accent: 'pink',
+      cardBg: 'bg-[#fff1f2] border-[#fecdd3]',
+      dotColor: 'bg-rose-500',
       icon: Users,
-      items: continuousItems.filter(i => i.cluster === 'customer-experience'),
+      iconColor: 'text-rose-500',
     },
     {
-      id: 'ai-digital',
-      label: { vi: 'AI & Kỹ thuật số', en: 'AI & Digital' },
-      icon: Cpu,
-      items: continuousItems.filter(i => i.cluster === 'ai-digital'),
+      id: 'cap-insight',
+      accent: 'green',
+      cardBg: 'bg-[#f0fdf4] border-[#bbf7d0]',
+      dotColor: 'bg-emerald-600',
+      icon: BarChart3,
+      iconColor: 'text-emerald-600',
     },
     {
-      id: 'leadership',
-      label: { vi: 'Năng lực Lãnh đạo', en: 'Leadership' },
-      icon: Award,
-      items: continuousItems.filter(i => i.cluster === 'leadership'),
+      id: 'cap-leadership',
+      accent: 'yellow',
+      cardBg: 'bg-[#fefce8] border-[#fef08a]',
+      dotColor: 'bg-amber-600',
+      icon: Sprout,
+      iconColor: 'text-amber-600',
     },
   ];
 
   return (
     <section
       id="education"
-      className="w-full py-16 sm:py-24 md:py-28 px-4 sm:px-8 md:px-12 lg:px-16 bg-white border-b border-slate-200/70"
+      className="w-full py-10 sm:py-14 md:py-16 px-4 sm:px-8 md:px-12 lg:px-16 bg-white"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto space-y-14 sm:space-y-18">
         {/* ========================================================================= */}
-        {/* SECTION HERO / POSITIONING (4-LAYER PROFESSIONAL DEVELOPMENT JOURNEY) */}
+        {/* HERO SECTION */}
         {/* ========================================================================= */}
-        <div className="flex flex-col gap-4 mb-12 sm:mb-16">
+        <div className="space-y-6">
+          {/* Eyebrow */}
           <div className="flex items-center gap-3">
             <span className="text-xs font-bold tracking-widest text-[#0068FF] uppercase">
-              {lang === 'vi' ? 'Học vấn & Phát triển' : 'Education & Development'}
+              {lang === 'vi' ? 'HỌC VẤN & PHÁT TRIỂN' : 'EDUCATION & DEVELOPMENT'}
             </span>
-            <div className="h-px w-12 bg-[#0068FF]/30" />
+            <div className="h-px w-16 bg-[#0068FF]/30" />
           </div>
 
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-            <div className="max-w-3xl">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
-                {lang === 'vi' ? (
-                  <>
-                    Học để hiểu sâu hơn. <br />
-                    <span className="text-[#0068FF]">Phát triển để làm nghề tốt hơn.</span>
-                  </>
-                ) : (
-                  <>
-                    Learning to understand more deeply. <br />
-                    <span className="text-[#0068FF]">Growing to practice better.</span>
-                  </>
-                )}
-              </h2>
-            </div>
-            <p className="max-w-md text-xs sm:text-sm text-slate-600 leading-relaxed">
+          {/* Heading & Supporting Paragraph */}
+          <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-[1.15] max-w-xl">
+              {lang === 'vi' ? (
+                <>
+                  Học để hiểu sâu hơn. <br />
+                  <span className="text-[#0068FF]">Phát triển để làm nghề tốt hơn.</span>
+                </>
+              ) : (
+                <>
+                  Learning to understand more deeply. <br />
+                  <span className="text-[#0068FF]">Growing to practice better.</span>
+                </>
+              )}
+            </h1>
+
+            <p className="max-w-md text-xs sm:text-sm text-slate-600 leading-relaxed lg:pt-2">
               {lang === 'vi'
-                ? 'Từ nền tảng học thuật, kiến thức về con người đến việc liên tục cập nhật chuyên môn và công nghệ — mỗi lớp học tập đều góp phần định hình cách tôi làm nghề.'
+                ? 'Từ nền tảng học thuật, kiến thức về con người đến việc liên tục cập nhật chuyên môn và công nghệ, mỗi lớp học tập đều góp phần định hình cách tôi làm nghề.'
                 : 'From academic foundations and human understanding to continuous professional and digital learning, each layer shapes how I approach my work.'}
             </p>
           </div>
-        </div>
 
-        {/* ========================================================================= */}
-        {/* INTERNAL 4-LAYER SEGMENTED NAVIGATION (RECRUITER SCANABILITY) */}
-        {/* ========================================================================= */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 mb-14 sm:mb-16 no-scrollbar border-b border-slate-200/80">
-          {internalNavItems.map((nav) => {
-            const IconComp = nav.icon;
-            const isActive = activeLayer === nav.id;
-            return (
-              <button
-                key={nav.id}
-                onClick={() => setActiveLayer(nav.id as any)}
-                className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all cursor-pointer mb-2 ${
-                  isActive
-                    ? 'bg-[#0068FF] text-white shadow-xs'
-                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200/80 hover:text-slate-900'
-                }`}
-              >
-                {IconComp && <IconComp className="w-3.5 h-3.5" />}
-                <span>
-                  {nav.order && <span className="font-mono opacity-80 mr-1">{nav.order} —</span>}
-                  {nav.label[lang]}
-                </span>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* ========================================================================= */}
-        {/* LAYER 01 — NỀN TẢNG / FOUNDATION */}
-        {/* ========================================================================= */}
-        {(activeLayer === 'all' || activeLayer === '01') && (
-          <div className="mb-20">
-            <div className="flex items-center gap-2.5 mb-6 pb-3 border-b border-slate-200">
-              <GraduationCap className="w-5 h-5 text-[#0068FF]" />
-              <h3 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight">
-                {lang === 'vi' ? '01 — Nền tảng' : '01 — Foundation'}
-              </h3>
-            </div>
-
-            {formalDegree && (
-              <div className="bg-[#F8FAFC] border border-slate-200/90 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xs hover:shadow-md transition-all">
-                <div className="flex flex-col sm:flex-row sm:items-start gap-5 lg:gap-7">
-                  {/* Circular Logo for HIU */}
-                  <InstitutionLogo
-                    logo={hiuLogo}
-                    name={formalDegree.institution[lang]}
-                    size="lg"
-                    customPadding="p-1.5 sm:p-2"
-                  />
-
-                  <div className="flex-1 space-y-4">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                      <div>
-                        <span className="inline-flex px-3 py-1 rounded-full bg-blue-50 text-[#0068FF] text-xs font-bold font-mono tracking-wide uppercase mb-2">
-                          {lang === 'vi' ? 'Bằng Cử nhân Chính quy' : "Bachelor's Degree"}
-                        </span>
-                        <h4 className="text-xl sm:text-2xl font-bold text-slate-900 leading-snug">
-                          {formalDegree.degree[lang]}
-                        </h4>
-                      </div>
-                      <div className="sm:text-right shrink-0">
-                        <span className="inline-block px-3 py-1 rounded-full bg-slate-200/70 text-slate-700 text-xs font-semibold font-mono">
-                          {formalDegree.period}
-                        </span>
-                        <p className="text-xs text-slate-500 mt-1">{formalDegree.location[lang]}</p>
-                      </div>
-                    </div>
-
-                    <p className="text-sm font-semibold text-slate-800">
-                      {formalDegree.institution[lang]}
-                    </p>
-
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-3xl">
-                      {formalDegree.description[lang]}
-                    </p>
-
-                    {formalDegree.highlights && (
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
-                        {formalDegree.highlights.map((h, idx) => (
-                          <div
-                            key={idx}
-                            className="flex items-start gap-2.5 p-3 rounded-xl bg-white border border-slate-200/70 text-xs text-slate-700"
-                          >
-                            <ChevronRight className="w-4 h-4 text-[#0068FF] shrink-0 mt-0.5" />
-                            <span>{h[lang]}</span>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* ========================================================================= */}
-        {/* LAYER 02 — HIỂU CON NGƯỜI / HUMAN UNDERSTANDING */}
-        {/* ========================================================================= */}
-        {(activeLayer === 'all' || activeLayer === '02') && (
-          <div className="mb-20">
-            <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-6 pb-3 border-b border-slate-200">
-              <div className="flex items-center gap-2.5">
-                <HeartHandshake className="w-5 h-5 text-[#0068FF]" />
-                <h3 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight">
-                  {lang === 'vi' ? '02 — Hiểu Con người' : '02 — Human Understanding'}
-                </h3>
-              </div>
-              <p className="text-xs sm:text-sm text-slate-500 italic">
-                {lang === 'vi'
-                  ? 'Chủ động bổ sung kiến thức về hành vi, động lực và nhu cầu con người để làm nghề sâu sắc hơn.'
-                  : 'Proactively deepening perspectives on human behavior, motivation, and relational needs.'}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-              {/* 5A: Psychology Foundation 2026 (HCMUE) */}
-              {humanItems[0] && (
-                <div className="lg:col-span-12 bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-8 shadow-2xs hover:shadow-md transition-all">
-                  <div className="flex flex-col sm:flex-row sm:items-start gap-5 lg:gap-6">
-                    <InstitutionLogo
-                      logo={humanItems[0].logo}
-                      name={humanItems[0].institution[lang]}
-                      size="lg"
-                      customPadding="p-1.5 sm:p-2"
-                    />
-
-                    <div className="flex-1 space-y-3">
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                        <div className="flex items-center gap-2">
-                          <span className="px-3 py-1 rounded-full bg-blue-50 text-[#0068FF] text-xs font-bold font-mono">
-                            Psychology Foundation
-                          </span>
-                          <span className="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 text-xs font-mono font-semibold">
-                            {humanItems[0].year}
-                          </span>
-                        </div>
-                        <p className="text-xs font-semibold text-slate-500">
-                          {humanItems[0].institution[lang]}
-                        </p>
-                      </div>
-
-                      <h4 className="text-xl sm:text-2xl font-bold text-slate-900">
-                        {humanItems[0].title[lang]}
-                      </h4>
-
-                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                        {humanItems[0].description?.[lang]}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* 5B: Human Needs (University of Toronto) */}
-              {humanItems[1] && (
-                <div className="lg:col-span-6 bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between">
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-4">
-                      <InstitutionLogo
-                        logo={humanItems[1].logo}
-                        name={humanItems[1].institution[lang]}
-                        size="md"
-                        customPadding="p-1"
-                      />
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between gap-2 mb-1">
-                          <span className="px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 text-xs font-mono font-bold">
-                            Human Needs
-                          </span>
-                          <span className="text-xs font-mono text-slate-500 font-semibold">
-                            {humanItems[1].year}
-                          </span>
-                        </div>
-                        <p className="text-xs font-medium text-slate-500">
-                          {humanItems[1].institution[lang]}
-                        </p>
-                      </div>
-                    </div>
-
-                    <h4 className="text-base sm:text-lg font-bold text-slate-900 leading-snug">
-                      {humanItems[1].title[lang]}
-                    </h4>
-
-                    <p className="text-xs text-slate-600 leading-relaxed">
-                      {humanItems[1].description?.[lang]}
-                    </p>
-                  </div>
-                </div>
-              )}
-
-              {/* 5C: Design Thinking — Bridge (Udemy Business) */}
-              {humanItems[2] && (
-                <div className="lg:col-span-6 bg-white border border-purple-200/80 rounded-3xl p-6 sm:p-7 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-28 h-28 bg-purple-50 rounded-full blur-2xl -mr-10 -mt-10 pointer-events-none" />
-                  <div className="space-y-4 relative z-10">
-                    <div className="flex items-start gap-4">
-                      <InstitutionLogo
-                        logo={humanItems[2].logo}
-                        name={humanItems[2].institution[lang]}
-                        size="md"
-                      />
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between gap-2 mb-1">
-                          <span className="px-2.5 py-0.5 rounded-full bg-purple-50 text-purple-700 text-xs font-mono font-bold">
-                            Bridge: Experience Design
-                          </span>
-                          <span className="text-xs font-mono text-slate-500 font-semibold">
-                            {humanItems[2].year}
-                          </span>
-                        </div>
-                        <p className="text-xs font-medium text-slate-500">
-                          {humanItems[2].institution[lang]}
-                        </p>
-                      </div>
-                    </div>
-
-                    <h4 className="text-base sm:text-lg font-bold text-slate-900 leading-snug">
-                      {humanItems[2].title[lang]}
-                    </h4>
-
-                    <p className="text-xs text-slate-600 leading-relaxed">
-                      {humanItems[2].description?.[lang]}
-                    </p>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* ========================================================================= */}
-        {/* LAYER 03 — HỌC TẬP LIÊN TỤC / CONTINUOUS LEARNING */}
-        {/* ========================================================================= */}
-        {(activeLayer === 'all' || activeLayer === '03') && (
-          <div className="mb-20">
-            <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-8 pb-3 border-b border-slate-200">
-              <div className="flex items-center gap-2.5">
-                <BookOpen className="w-5 h-5 text-[#0068FF]" />
-                <h3 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight">
-                  {lang === 'vi' ? '03 — Học tập Liên tục' : '03 — Continuous Learning'}
-                </h3>
-              </div>
-              <p className="text-xs sm:text-sm text-slate-500 italic">
-                {lang === 'vi'
-                  ? 'Cập nhật liên tục các phương pháp, công cụ và công nghệ để nâng cao chất lượng thực hành.'
-                  : 'Continuous professional learning across communication, experience, AI, and leadership.'}
-              </p>
-            </div>
-
-            {/* Clustered Cards by Domain */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-              {continuousClusters.map((cluster) => {
-                const ClusterIcon = cluster.icon;
-                return (
-                  <div
-                    key={cluster.id}
-                    className="bg-[#FAFAFA] border border-slate-200/90 rounded-3xl p-6 sm:p-7 space-y-4 shadow-2xs hover:shadow-sm transition-all"
-                  >
-                    <div className="flex items-center gap-2 pb-2 border-b border-slate-200">
-                      <ClusterIcon className="w-4 h-4 text-[#0068FF]" />
-                      <h4 className="text-sm font-bold text-slate-800 tracking-tight">
-                        {cluster.label[lang]}
-                      </h4>
-                    </div>
-
-                    <div className="space-y-3">
-                      {cluster.items.map((cert) => (
-                        <div
-                          key={cert.id}
-                          className="bg-white border border-slate-200/80 rounded-2xl p-4 shadow-2xs flex items-center justify-between gap-3 hover:border-slate-300 transition-all"
-                        >
-                          <div className="flex items-center gap-3 min-w-0">
-                            <InstitutionLogo
-                              logo={cert.logo}
-                              name={cert.institution[lang]}
-                              size="sm"
-                            />
-                            <div className="min-w-0">
-                              <h5 className="text-xs sm:text-sm font-bold text-slate-900 leading-snug truncate">
-                                {cert.title[lang]}
-                              </h5>
-                              <p className="text-[11px] text-slate-500 mt-0.5">
-                                {cert.institution[lang]}
-                              </p>
-                            </div>
-                          </div>
-                          <span className="text-[11px] font-mono text-slate-500 shrink-0 font-medium">
-                            {cert.year}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        )}
-
-        {/* ========================================================================= */}
-        {/* LAYER 04 — NĂNG LỰC / CAPABILITIES */}
-        {/* ========================================================================= */}
-        {(activeLayer === 'all' || activeLayer === '04') && (
-          <div className="mb-14">
-            <div className="flex items-center gap-2.5 mb-4 pb-3 border-b border-slate-200">
-              <Layers className="w-5 h-5 text-[#0068FF]" />
-              <h3 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight">
-                {lang === 'vi' ? '04 — Năng lực Nghề nghiệp' : '04 — Professional Capabilities'}
-              </h3>
-            </div>
-
-            {/* Transition Statement */}
-            <div className="p-4 sm:p-5 rounded-2xl bg-blue-50/60 border border-blue-100 mb-8 max-w-4xl">
-              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-                {lang === 'vi'
-                  ? '“Kiến thức chỉ thực sự có giá trị khi được chuyển hóa thành năng lực thực hành. Những năng lực dưới đây được hình thành qua quá trình học tập liên tục và trải nghiệm thực tế trong truyền thông, văn hóa và thiết kế trải nghiệm.”'
-                  : '“Knowledge creates value when it translates into practice. These capabilities have been developed through continuous learning and hands-on experience across communication, culture and experience design.”'}
-              </p>
-            </div>
-
-            {/* 4 Professional Capability Pillars (No %, No stars, No ratings) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              {capabilities.map((pillar) => (
-                <div
-                  key={pillar.id}
-                  className={`rounded-3xl p-6 sm:p-7 border shadow-2xs hover:shadow-md transition-all flex flex-col justify-between ${
-                    pillar.isCore
-                      ? 'bg-gradient-to-br from-white to-blue-50/30 border-blue-200'
-                      : 'bg-white border-slate-200/90'
+          {/* Navigation Pills (2 compact items) */}
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar pt-2">
+            {navTabs.map((tab) => {
+              const IconComp = tab.icon;
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => scrollToSection(tab.id as 'learning-journey' | 'skills-tools')}
+                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
+                    isActive
+                      ? 'bg-[#0068FF] text-white shadow-xs'
+                      : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50'
                   }`}
                 >
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="font-mono text-xs font-bold text-[#0068FF]">
-                        PILLAR {pillar.order}
-                      </span>
-                      {pillar.isCore && (
-                        <span className="px-2.5 py-0.5 rounded-full bg-blue-100 text-[#0068FF] text-[11px] font-bold font-mono uppercase">
-                          Core Domain
-                        </span>
-                      )}
-                    </div>
+                  <IconComp className="w-3.5 h-3.5" />
+                  <span>{tab.label[lang]}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
 
-                    <h4 className="text-lg sm:text-xl font-bold text-slate-900">
-                      {pillar.title[lang]}
-                    </h4>
+        {/* ========================================================================= */}
+        {/* ROW 1: LEARNING JOURNEY OVERVIEW (3 CARDS IN ONE ROW) */}
+        {/* ========================================================================= */}
+        <div id="learning-journey" className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch scroll-mt-24">
+          {/* CARD 01 — FORMAL EDUCATION (Soft Blue) */}
+          {formalDegree && (
+            <div className="bg-[#f0f6ff] border border-[#dbeafe] rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-2xs hover:shadow-xs transition-shadow">
+              <div className="space-y-4">
+                <span className="inline-block px-3 py-1 rounded-full bg-white text-slate-800 text-xs font-bold font-mono shadow-2xs">
+                  01
+                </span>
 
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                      {pillar.summary[lang]}
-                    </p>
+                <h3 className="text-xl font-bold text-slate-900 tracking-tight">
+                  {lang === 'vi' ? 'Nền tảng học thuật' : 'Formal Education'}
+                </h3>
 
-                    <div className="pt-3 border-t border-slate-100">
-                      <div className="flex flex-wrap gap-2">
-                        {pillar.skills.map((skill, idx) => (
-                          <span
-                            key={idx}
-                            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-800 text-xs font-medium"
-                          >
-                            <CheckCircle2 className="w-3 h-3 text-[#0068FF]" />
-                            <span>{skill}</span>
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* AI-Enabled Practice — Cross-Cutting Enabling Horizontal Layer */}
-            <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-6 sm:p-8 text-white shadow-md border border-slate-700">
-              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-                <div className="space-y-2 max-w-xl">
-                  <div className="flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-sky-400" />
-                    <span className="text-xs font-mono font-bold tracking-wider uppercase text-sky-400">
-                      Cross-Cutting Enabling Layer
-                    </span>
-                  </div>
-                  <h4 className="text-lg sm:text-xl font-bold tracking-tight">
-                    AI-Enabled Practice
+                <div className="space-y-1 pt-1">
+                  <h4 className="text-sm font-bold text-slate-900 leading-snug">
+                    {formalDegree.degree[lang]}
                   </h4>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                    {lang === 'vi'
-                      ? 'Năng lực công nghệ bổ trợ xuyên suốt thực hành nghề nghiệp — giúp gia tăng tốc độ nghiên cứu, trực quan hóa ý tưởng và tối ưu hóa quy trình vận hành.'
-                      : 'A cross-cutting enabling capability across professional practice — accelerating research, insight synthesis, visual prototyping, and workflow optimization.'}
+                  <p className="text-xs text-slate-600">
+                    {formalDegree.institution[lang]}
+                  </p>
+                  <p className="text-xs text-slate-500 font-mono">
+                    {formalDegree.period}
+                  </p>
+                  <p className="text-xs text-slate-500">
+                    {formalDegree.location[lang]}
                   </p>
                 </div>
 
-                {/* Skills Strip */}
-                <div className="flex flex-wrap gap-2 lg:max-w-md">
-                  {AI_ENABLED_PRACTICE_SKILLS.map((skill, idx) => (
-                    <span
-                      key={idx}
-                      className="px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/15 border border-white/15 text-slate-200 text-xs font-medium tracking-wide transition-colors"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+                <p className="text-xs text-slate-600 leading-relaxed pt-2">
+                  {lang === 'vi'
+                    ? 'Trang bị tư duy hệ thống, năng lực phân tích đa chiều, hiểu biết sâu sắc về bối cảnh văn hóa – xã hội và kỹ năng giao tiếp, đối thoại.'
+                    : formalDegree.description[lang]}
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* CARD 02 — HUMAN UNDERSTANDING (Soft Pink) */}
+          <div className="bg-[#fff1f2] border border-[#fecdd3] rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-2xs hover:shadow-xs transition-shadow">
+            <div className="space-y-4">
+              <span className="inline-block px-3 py-1 rounded-full bg-white text-slate-800 text-xs font-bold font-mono shadow-2xs">
+                02
+              </span>
+
+              <div>
+                <h3 className="text-xl font-bold text-slate-900 tracking-tight">
+                  {lang === 'vi' ? 'Hiểu Con người' : 'Human Understanding'}
+                </h3>
+                <p className="text-[10px] font-bold tracking-wider uppercase text-slate-500 mt-1">
+                  {lang === 'vi' ? 'CÁC KHÓA HỌC NGẮN HẠN' : 'SHORT COURSES'}
+                </p>
+              </div>
+
+              {/* Item 1 */}
+              <div className="space-y-0.5 pt-1">
+                <h4 className="text-sm font-bold text-slate-900 leading-snug">
+                  {lang === 'vi' ? 'Nền tảng Tâm lý học' : 'Psychology Foundation'}
+                </h4>
+                <p className="text-xs text-slate-600">
+                  {lang === 'vi' ? 'Trường Đại học Sư phạm TP.HCM' : 'Ho Chi Minh City University of Education'}
+                </p>
+                <p className="text-xs text-slate-500 font-mono">
+                  2026
+                </p>
+              </div>
+
+              {/* Item 2 */}
+              <div className="space-y-0.5 pt-1">
+                <h4 className="text-sm font-bold text-slate-900 leading-snug">
+                  The Arts and Science of Relationships: Understanding Human Needs
+                </h4>
+                <p className="text-xs text-slate-600">
+                  University of Toronto
+                </p>
+                <p className="text-xs text-slate-500 font-mono">
+                  2025
+                </p>
+              </div>
+
+              <p className="text-xs text-slate-600 leading-relaxed pt-2">
+                {lang === 'vi'
+                  ? 'Bổ sung kiến thức về hành vi, động lực và nhu cầu con người để làm nghề sâu sắc hơn.'
+                  : 'Deepening insights into human behavior, motivation, and relational needs.'}
+              </p>
+            </div>
+          </div>
+
+          {/* CARD 03 — CONTINUOUS LEARNING (Soft Blue/Cool Neutral) */}
+          <div className="bg-[#f0f9ff] border border-slate-200/90 rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-2xs hover:shadow-xs transition-shadow">
+            <div className="space-y-3.5">
+              <span className="inline-block px-3 py-1 rounded-full bg-white text-slate-800 text-xs font-bold font-mono shadow-2xs">
+                03
+              </span>
+
+              <h3 className="text-xl font-bold text-slate-900 tracking-tight">
+                {lang === 'vi' ? 'Học tập Liên tục' : 'Continuous Learning'}
+              </h3>
+
+              {/* Compact Certificate List with colored dots, full titles without truncation */}
+              <div className="space-y-2 pt-1 text-xs text-slate-700">
+                {continuousCertificates.map((cert, idx) => (
+                  <div key={idx} className="flex items-start gap-2 leading-snug">
+                    <span className={`w-1.5 h-1.5 rounded-full ${cert.dot} shrink-0 mt-1.5`} />
+                    <span className="break-words">{cert.title}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ========================================================================= */}
+        {/* ROW 2: PROFESSIONAL CAPABILITIES (4 CARDS IN ONE ROW) */}
+        {/* ========================================================================= */}
+        <div id="skills-tools" className="space-y-6 scroll-mt-24">
+          {/* Eyebrow */}
+          <div className="flex items-center gap-3">
+            <span className="text-xs font-bold tracking-widest text-[#0068FF] uppercase">
+              {lang === 'vi' ? 'NĂNG LỰC NGHỀ NGHIỆP' : 'PROFESSIONAL CAPABILITIES'}
+            </span>
+            <div className="h-px w-16 bg-[#0068FF]/30" />
+          </div>
+
+          {/* Heading & Supporting Paragraph */}
+          <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 tracking-tight leading-tight max-w-xl">
+              {lang === 'vi'
+                ? 'Từ kiến thức đến năng lực thực hành.'
+                : 'From knowledge to professional practice.'}
+            </h2>
+
+            <p className="max-w-md text-xs sm:text-sm text-slate-600 leading-relaxed">
+              {lang === 'vi'
+                ? 'Kiến thức chỉ thực sự có giá trị khi được chuyển hóa thành năng lực thực hành. Những năng lực dưới đây được hình thành qua quá trình học tập liên tục và trải nghiệm thực tế trong truyền thông, văn hóa và thiết kế trải nghiệm.'
+                : 'Knowledge creates true value when translated into practice. These capabilities have been developed through continuous learning and hands-on experience across communication, culture, and experience design.'}
+            </p>
+          </div>
+
+          {/* 4 Pastel Cards in ONE horizontal row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+            {capabilityConfigs.map((config, index) => {
+              const group = capabilityGroups[index];
+              if (!group) return null;
+              const IconComp = config.icon;
+              const capabilitiesList = group.capabilities?.[lang] || [];
+
+              return (
+                <div
+                  key={config.id}
+                  className={`${config.cardBg} border rounded-2xl p-5 sm:p-6 flex flex-col justify-between shadow-2xs hover:shadow-xs transition-shadow`}
+                >
+                  <div className="space-y-4">
+                    {/* Icon */}
+                    <div className={config.iconColor}>
+                      <IconComp className="w-6 h-6 stroke-[1.75]" />
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-sm sm:text-base font-bold text-slate-900 leading-snug">
+                      {group.title[lang]}
+                    </h3>
+
+                    {/* Bullets with matching colored dots */}
+                    <ul className="space-y-2 text-xs text-slate-700 pt-1">
+                      {capabilitiesList.map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-2 leading-snug">
+                          <span
+                            className={`w-1.5 h-1.5 rounded-full ${config.dotColor} shrink-0 mt-1.5`}
+                          />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* ========================================================================= */}
+        {/* ROW 3: TOOLS I WORK WITH (4 COMPACT GROUPS IN ONE ROW) */}
+        {/* ========================================================================= */}
+        <div className="space-y-6">
+          {/* Eyebrow */}
+          <div className="flex items-center gap-3">
+            <span className="text-xs font-bold tracking-widest text-[#0068FF] uppercase">
+              {lang === 'vi' ? 'BỘ CÔNG CỤ LÀM VIỆC' : 'WORKING TOOLKIT'}
+            </span>
+            <div className="h-px w-16 bg-[#0068FF]/30" />
+          </div>
+
+          {/* Heading & Supporting Paragraph */}
+          <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 tracking-tight leading-tight">
+              Tools I Work With
+            </h2>
+
+            <p className="max-w-md text-xs sm:text-sm text-slate-600 leading-relaxed">
+              {lang === 'vi'
+                ? 'Những công cụ quen thuộc giúp tôi làm việc hiệu quả hơn, sáng tạo hơn và tạo ra giá trị lớn hơn.'
+                : 'Familiar tools that augment my productivity, creativity, and daily operational value.'}
+            </p>
+          </div>
+
+          {/* 5 Groups in TWO rows (Row 1: 4 category cards | Row 2: 1 full-width AI card) */}
+          <div className="space-y-5">
+            {/* ROW 1: 4 categories (Work & Productivity | Project & Performance | Design & Content | Internal Platforms) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+              {/* GROUP 1: WORK & PRODUCTIVITY */}
+              <div className="bg-white border border-slate-200/90 rounded-2xl p-5 shadow-2xs flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 text-slate-900 font-bold text-xs">
+                    <Laptop className="w-3.5 h-3.5 text-[#0068FF]" />
+                    <span>Work & Productivity</span>
+                  </div>
+                  <p className="text-[10px] text-slate-400 mt-0.5">
+                    {lang === 'vi'
+                      ? 'Tạo lập · Cộng tác · Tổ chức công việc'
+                      : 'Creation · Collaboration · Organization'}
+                  </p>
+                </div>
+
+                {/* 2 tools side-by-side */}
+                <div className="grid grid-cols-2 gap-4 pt-4 text-center">
+                  <div className="flex flex-col items-center gap-2">
+                    <ToolIcons.m365 />
+                    <span className="text-[11px] font-medium text-slate-700 leading-tight">Microsoft 365</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <ToolIcons.googleworkspace />
+                    <span className="text-[11px] font-medium text-slate-700 leading-tight">Google Workspace</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* GROUP 2: PROJECT & PERFORMANCE */}
+              <div className="bg-white border border-slate-200/90 rounded-2xl p-5 shadow-2xs flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 text-slate-900 font-bold text-xs">
+                    <FolderKanban className="w-3.5 h-3.5 text-[#0068FF]" />
+                    <span>{lang === 'vi' ? 'Quản trị Dự án & Hiệu suất' : 'Project & Performance'}</span>
+                  </div>
+                  <p className="text-[10px] text-slate-400 mt-0.5">
+                    {lang === 'vi'
+                      ? 'Lập kế hoạch · Quy trình · Theo dõi · Thực thi'
+                      : 'Planning · Workflow · Tracking · Execution'}
+                  </p>
+                </div>
+
+                {/* 3 tools */}
+                <div className="grid grid-cols-3 gap-2 pt-4 text-center">
+                  <div className="flex flex-col items-center gap-2">
+                    <ToolIcons.notion />
+                    <span className="text-[11px] font-medium text-slate-700 leading-tight">Notion</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <ToolIcons.trello />
+                    <span className="text-[11px] font-medium text-slate-700 leading-tight">Trello</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <ToolIcons.asana />
+                    <span className="text-[11px] font-medium text-slate-700 leading-tight">Asana</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* GROUP 3: DESIGN & CONTENT */}
+              <div className="bg-white border border-slate-200/90 rounded-2xl p-5 shadow-2xs flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 text-slate-900 font-bold text-xs">
+                    <Palette className="w-3.5 h-3.5 text-[#0068FF]" />
+                    <span>Design & Content</span>
+                  </div>
+                  <p className="text-[10px] text-slate-400 mt-0.5">
+                    {lang === 'vi'
+                      ? 'Thiết kế · Video · Sáng tạo'
+                      : 'Design · Video · Creative'}
+                  </p>
+                </div>
+
+                {/* 3 tools side-by-side */}
+                <div className="grid grid-cols-3 gap-2 pt-4 text-center">
+                  <div className="flex flex-col items-center gap-2">
+                    <ToolIcons.canva />
+                    <span className="text-[11px] font-medium text-slate-700 leading-tight">Canva</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <ToolIcons.capcut />
+                    <span className="text-[11px] font-medium text-slate-700 leading-tight">CapCut</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <ToolIcons.adobelightroom />
+                    <span className="text-[11px] font-medium text-slate-700 leading-tight">Adobe Lightroom</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* GROUP 4: INTERNAL PLATFORMS */}
+              <div className="bg-white border border-slate-200/90 rounded-2xl p-5 shadow-2xs flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 text-slate-900 font-bold text-xs">
+                    <Share2 className="w-3.5 h-3.5 text-[#0068FF]" />
+                    <span>Internal Platforms</span>
+                  </div>
+                  <p className="text-[10px] text-slate-400 mt-0.5">
+                    {lang === 'vi'
+                      ? 'Kết nối · Tương tác · Truyền thông nội bộ'
+                      : 'Connection · Engagement · Internal Comms'}
+                  </p>
+                </div>
+
+                {/* 2 tools side-by-side */}
+                <div className="grid grid-cols-2 gap-4 pt-4 text-center">
+                  <div className="flex flex-col items-center gap-2">
+                    <ToolIcons.vivaengage />
+                    <span className="text-[11px] font-medium text-slate-700 leading-tight">Viva Engage</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <ToolIcons.gapowork />
+                    <span className="text-[11px] font-medium text-slate-700 leading-tight">GapoWork</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* ROW 2: 1 full-width AI card */}
+            <div className="bg-white border border-slate-200/90 rounded-2xl p-5 shadow-2xs">
+              <div className="space-y-4">
+                <div>
+                  <div className="flex items-center gap-2 text-slate-900 font-bold text-xs">
+                    <Sparkles className="w-3.5 h-3.5 text-[#0068FF]" />
+                    <span>AI Tools</span>
+                  </div>
+                  <p className="text-[10px] text-slate-400 mt-0.5">
+                    {lang === 'vi'
+                      ? 'Nghiên cứu · Tổng hợp tài liệu · Phân tích · Sáng tạo'
+                      : 'Research · Document synthesis · Analysis · Creation'}
+                  </p>
+                </div>
+
+                {/* 6 AI Tools in ONE HORIZONTAL ROW on desktop */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 pt-1 text-center items-center">
+                  <div className="flex flex-col items-center gap-1.5">
+                    <ToolIcons.chatgpt />
+                    <span className="text-[11px] font-medium text-slate-700">ChatGPT</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-1.5">
+                    <ToolIcons.claude />
+                    <span className="text-[11px] font-medium text-slate-700">Claude</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-1.5">
+                    <ToolIcons.gemini />
+                    <span className="text-[11px] font-medium text-slate-700">Gemini</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-1.5">
+                    <ToolIcons.gemininotebook />
+                    <span className="text-[11px] font-medium text-slate-700">Gemini Notebook</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-1.5">
+                    <ToolIcons.googleaistudio />
+                    <span className="text-[11px] font-medium text-slate-700">Google AI Studio</span>
+                  </div>
+                  <div className="flex flex-col items-center gap-1.5">
+                    <ToolIcons.antigravity />
+                    <span className="text-[11px] font-medium text-slate-700">Antigravity</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        )}
-
-        {/* Guided Journey Next Section CTA */}
-        {onNavigateNext && (
-          <div className="pt-8 border-t border-slate-200 flex justify-end">
-            <button
-              onClick={onNavigateNext}
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#0068FF] hover:bg-[#0052CC] text-white text-xs font-semibold shadow-sm transition-all cursor-pointer"
-            >
-              <span>
-                {lang === 'vi' ? 'TIẾP THEO: KẾT NỐI & ĐỐI THOẠI' : 'NEXT: CONNECT & CONVERSATION'}
-              </span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-        )}
+        </div>
       </div>
     </section>
   );
