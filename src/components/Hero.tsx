@@ -688,7 +688,7 @@ export const Hero: React.FC<HeroProps> = ({
             TABLET (768px – 1279px) & MOBILE (< 768px):
             INTELLIGENT RESPONSIVE REFLOW
             -------------------------------------------------------- */}
-        <div className="xl:hidden w-full relative max-w-4xl mx-auto px-4 sm:px-6 md:px-8 pt-8 sm:pt-10 pb-16 sm:pb-20">
+        <div className="xl:hidden w-full relative max-w-4xl mx-auto px-4 sm:px-6 md:px-8 pt-8 sm:pt-10 pb-8 sm:pb-10 md:pb-12">
           <div className="flex flex-col relative z-10">
             {/* 1. Headline */}
             <h2 className="select-none text-left">
@@ -726,8 +726,8 @@ export const Hero: React.FC<HeroProps> = ({
                 : '“To me, internal communication and culture begin with how people understand, feel and connect with one another. This creates connection, alignment and turns shared understanding into action.”'}
             </p>
 
-            {/* 3. CTAs */}
-            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-4 w-full sm:w-auto">
+            {/* 3. CTAs: Single centered CTA group on tablet, centered stack on mobile */}
+            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto mx-auto relative z-20">
               <a
                 href="#career"
                 onClick={(e) => {
@@ -736,7 +736,7 @@ export const Hero: React.FC<HeroProps> = ({
                     onExplore();
                   }
                 }}
-                className="inline-flex items-center justify-center gap-2 h-[48px] px-6 rounded-full bg-[#0060ff] text-white text-[14px] font-semibold tracking-wide shadow-md shadow-blue-500/20 hover:bg-[#0050df] transition-all cursor-pointer w-full sm:w-auto"
+                className="inline-flex items-center justify-center gap-2 h-[48px] px-6 rounded-full bg-[#0060ff] text-white text-[14px] font-semibold tracking-wide shadow-md shadow-blue-500/20 hover:bg-[#0050df] transition-all cursor-pointer w-full max-w-[280px] xs:max-w-[320px] sm:max-w-none sm:w-auto"
               >
                 <span>{lang === 'vi' ? 'Khám phá hành trình' : 'Explore Career Story'}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -750,14 +750,14 @@ export const Hero: React.FC<HeroProps> = ({
                     onViewCaseStudies();
                   }
                 }}
-                className="inline-flex items-center justify-center h-[48px] px-6 rounded-full bg-white text-[#0060ff] border border-[#0060ff] text-[14px] font-semibold tracking-wide hover:bg-blue-50/50 transition-all cursor-pointer w-full sm:w-auto"
+                className="inline-flex items-center justify-center h-[48px] px-6 rounded-full bg-white text-[#0060ff] border border-[#0060ff] text-[14px] font-semibold tracking-wide hover:bg-blue-50/50 transition-all cursor-pointer w-full max-w-[280px] xs:max-w-[320px] sm:max-w-none sm:w-auto"
               >
                 <span>{lang === 'vi' ? 'Xem các Case Study' : 'View Case Studies'}</span>
               </a>
             </div>
 
-            {/* 4. ID Card visual in its own clean visual zone BELOW the CTA group */}
-            <div className="relative mt-20 sm:mt-24 md:mt-28 flex flex-col items-center">
+            {/* 4. ID Card visual physically anchored to CTA group with no floating gap */}
+            <div className="relative mt-[38px] sm:mt-[44px] md:mt-[48px] flex flex-col items-center z-10">
 
               {/* Atmospheric Glow behind ID card */}
               <div
@@ -774,12 +774,11 @@ export const Hero: React.FC<HeroProps> = ({
                 aria-hidden="true"
               />
 
-              {/* Lanyard assembly container scaled proportionally so it fits completely in 375px+ screens */}
+              {/* Lanyard assembly container sized to content flow to remove empty void below card */}
               <div
-                className="relative z-10 flex justify-center overflow-visible"
+                className="relative z-10 flex justify-center overflow-visible h-[450px] sm:h-[510px] md:h-[550px]"
                 style={{
                   width: '320px',
-                  height: '520px',
                 }}
               >
                 <div className="origin-top scale-[0.78] sm:scale-[0.88] md:scale-95 transition-transform">
