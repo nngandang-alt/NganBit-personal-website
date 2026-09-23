@@ -21,20 +21,20 @@ export const LanyardAssembly: React.FC<LanyardAssemblyProps> = ({ className = ''
       */}
       <svg
         className="absolute pointer-events-none overflow-visible z-20"
-        style={{ left: '0px', top: '0px', width: '360px', height: '160px' }}
-        viewBox="0 0 360 160"
+        style={{ left: '0px', top: '-60px', width: '360px', height: '220px' }}
+        viewBox="0 -60 360 220"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
       >
         <defs>
-          <linearGradient id="lanyardStrapLeft" x1="120" y1="0" x2="171" y2="110" gradientUnits="userSpaceOnUse">
+          <linearGradient id="lanyardStrapLeft" x1="98" y1="-60" x2="171" y2="110" gradientUnits="userSpaceOnUse">
             <stop offset="0%" stopColor="#0047b8" />
             <stop offset="50%" stopColor="#005cdf" />
             <stop offset="100%" stopColor="#003e9f" />
           </linearGradient>
           
-          <linearGradient id="lanyardStrapRight" x1="220" y1="0" x2="171" y2="110" gradientUnits="userSpaceOnUse">
+          <linearGradient id="lanyardStrapRight" x1="243" y1="-60" x2="171" y2="110" gradientUnits="userSpaceOnUse">
             <stop offset="0%" stopColor="#0060ff" />
             <stop offset="45%" stopColor="#0054db" />
             <stop offset="85%" stopColor="#0044b3" />
@@ -68,18 +68,18 @@ export const LanyardAssembly: React.FC<LanyardAssemblyProps> = ({ className = ''
 
         {/* ========================================================
             LAYER 1: REAR STRAPS & REAR FABRIC LOOP
-            Left & Right 18px fabric ribbons enter from Section 2 top (y: 0)
+            Left & Right 18px fabric ribbons emerge from behind the Stats Bar (y: -60)
             and pass BEHIND the metal ring
             ======================================================== */}
-        {/* Left Ribbon Strap: 18px wide, natural V slope */}
+        {/* Left Ribbon Strap: 18px wide, natural V slope extending behind Stats Bar */}
         <path
-          d="M 124 0 L 142 0 L 173 98 Q 171.4 102 167 100 L 124 0 Z"
+          d="M 98 -60 L 123 -60 L 142 0 L 173 98 Q 171.4 102 167 100 L 124 0 Z"
           fill="url(#lanyardStrapLeft)"
         />
 
-        {/* Right Ribbon Strap: 18px wide, natural V slope */}
+        {/* Right Ribbon Strap: 18px wide, natural V slope extending behind Stats Bar */}
         <path
-          d="M 218 0 L 200 0 L 170 98 Q 171.4 102 176 100 L 218 0 Z"
+          d="M 243 -60 L 219 -60 L 200 0 L 170 98 Q 171.4 102 176 100 L 218 0 Z"
           fill="url(#lanyardStrapRight)"
           filter="url(#suspensionShadow)"
         />

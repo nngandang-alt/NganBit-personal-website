@@ -18,6 +18,7 @@ import {
   Share2,
   Wrench,
   FolderKanban,
+  ArrowRight,
 } from 'lucide-react';
 
 interface CredentialsProps {
@@ -88,7 +89,7 @@ const ToolIcons = {
   ),
 };
 
-export const Credentials: React.FC<CredentialsProps> = ({ lang }) => {
+export const Credentials: React.FC<CredentialsProps> = ({ lang, onNavigateNext }) => {
   const formalDegree = EDUCATION_DATA[0];
   const humanItems = HUMAN_UNDERSTANDING_DATA;
   const capabilityGroups = PROFESSIONAL_CAPABILITIES_DATA;
@@ -192,9 +193,56 @@ export const Credentials: React.FC<CredentialsProps> = ({ lang }) => {
   return (
     <section
       id="education"
-      className="w-full py-10 sm:py-14 md:py-16 px-4 sm:px-8 md:px-12 lg:px-16 bg-white"
+      className="w-full py-10 sm:py-14 md:py-16 px-4 sm:px-8 md:px-12 lg:px-16 bg-[#f8fbff] relative overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto space-y-14 sm:space-y-18">
+      {/* ============================================================== */}
+      {/* PAGE-LEVEL ATMOSPHERIC LIGHTING SYSTEM                         */}
+      {/* Exact color recipe from Homepage Hero (Hero.tsx lines 40-64)   */}
+      {/* Restrained intensity to protect pastel cards                   */}
+      {/* ============================================================== */}
+      {/* PRIMARY GLOW: Opening / Hero (Soft restrained top-right) */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          right: '-40px',
+          top: '-20px',
+          width: '520px',
+          height: '400px',
+          background: 'radial-gradient(ellipse at center, rgba(175, 215, 255, 0.45) 0%, rgba(248, 251, 255, 0) 70%)',
+          zIndex: 0,
+        }}
+        aria-hidden="true"
+      />
+
+      {/* SECONDARY GLOW: Major transition between Learning Journey & Skills & Tools (Mid-left) */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          left: '-80px',
+          top: '750px',
+          width: '450px',
+          height: '520px',
+          background: 'radial-gradient(ellipse at center, rgba(185, 225, 255, 0.25) 0%, rgba(248, 251, 255, 0) 70%)',
+          zIndex: 0,
+        }}
+        aria-hidden="true"
+      />
+
+      {/* AMBIENT GLOW: Minimal lower whitespace atmospheric depth */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          right: '10%',
+          bottom: '-30px',
+          width: '400px',
+          height: '350px',
+          background: 'radial-gradient(ellipse at center, rgba(175, 215, 255, 0.18) 0%, rgba(248, 251, 255, 0) 70%)',
+          zIndex: 0,
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="max-w-6xl mx-auto space-y-14 sm:space-y-18 relative z-10">
         {/* ========================================================================= */}
         {/* HERO SECTION */}
         {/* ========================================================================= */}
@@ -628,6 +676,19 @@ export const Credentials: React.FC<CredentialsProps> = ({ lang }) => {
             </div>
           </div>
         </div>
+
+        {/* Guided Journey Next Section CTA */}
+        {onNavigateNext && (
+          <div className="pt-8 border-t border-slate-200 flex justify-end mt-12">
+            <button
+              onClick={onNavigateNext}
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#0068FF] hover:bg-[#0052CC] text-white text-xs font-semibold shadow-sm transition-all cursor-pointer"
+            >
+              <span>{lang === 'vi' ? 'TIẾP THEO: GHI NHẬN (RECOGNITION)' : 'NEXT: RECOGNITION'}</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

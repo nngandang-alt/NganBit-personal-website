@@ -142,15 +142,6 @@ export function App() {
             <WorkAndImpact
               lang={lang}
               activeCaseId={activeCaseId}
-              onNavigateNext={() => navigateTo('recognition')}
-            />
-          </div>
-        )}
-
-        {activeView === 'recognition' && (
-          <div className="pt-24 max-w-6xl mx-auto px-4">
-            <Recognition
-              lang={lang}
               onNavigateNext={() => navigateTo('education')}
             />
           </div>
@@ -159,6 +150,15 @@ export function App() {
         {activeView === 'education' && (
           <div className="pt-24 max-w-6xl mx-auto px-4">
             <Credentials
+              lang={lang}
+              onNavigateNext={() => navigateTo('recognition')}
+            />
+          </div>
+        )}
+
+        {activeView === 'recognition' && (
+          <div className="pt-24 max-w-6xl mx-auto px-4">
+            <Recognition
               lang={lang}
               onNavigateNext={() => navigateTo('connect')}
             />

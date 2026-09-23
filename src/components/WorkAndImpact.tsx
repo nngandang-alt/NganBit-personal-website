@@ -50,9 +50,55 @@ export const WorkAndImpact: React.FC<WorkAndImpactProps> = ({
   return (
     <section
       id="work"
-      className="w-full py-16 sm:py-24 md:py-28 px-4 sm:px-8 md:px-12 lg:px-16 bg-[#F8FAFC] border-b border-slate-200/70"
+      className="w-full py-16 sm:py-24 md:py-28 px-4 sm:px-8 md:px-12 lg:px-16 bg-[#f8fbff] border-b border-slate-200/70 relative overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto space-y-12">
+      {/* ============================================================== */}
+      {/* PAGE-LEVEL ATMOSPHERIC LIGHTING SYSTEM                         */}
+      {/* Exact color recipe from Homepage Hero (Hero.tsx lines 40-64)   */}
+      {/* ============================================================== */}
+      {/* PRIMARY GLOW: Opening / Hero (Asymmetric top-right) */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          right: '-50px',
+          top: '-30px',
+          width: '560px',
+          height: '420px',
+          background: 'radial-gradient(ellipse at center, rgba(175, 215, 255, 0.50) 0%, rgba(248, 251, 255, 0) 70%)',
+          zIndex: 0,
+        }}
+        aria-hidden="true"
+      />
+
+      {/* SECONDARY GLOW: Portfolio / Selected Work Transition Area (Mid-left) */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          left: '-70px',
+          top: '720px',
+          width: '460px',
+          height: '600px',
+          background: 'radial-gradient(ellipse at center, rgba(185, 225, 255, 0.30) 0%, rgba(248, 251, 255, 0) 70%)',
+          zIndex: 0,
+        }}
+        aria-hidden="true"
+      />
+
+      {/* AMBIENT GLOW: Lower Whitespace Depth (Lower-right) */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          right: '-80px',
+          bottom: '80px',
+          width: '450px',
+          height: '500px',
+          background: 'radial-gradient(ellipse at center, rgba(175, 215, 255, 0.22) 0%, rgba(248, 251, 255, 0) 70%)',
+          zIndex: 0,
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="max-w-6xl mx-auto space-y-12 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-3">
@@ -291,7 +337,7 @@ export const WorkAndImpact: React.FC<WorkAndImpactProps> = ({
               onClick={onNavigateNext}
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#0068FF] hover:bg-[#0052CC] text-white text-xs font-semibold shadow-sm transition-all cursor-pointer"
             >
-              <span>{lang === 'vi' ? 'TIẾP THEO: GHI NHẬN (RECOGNITION)' : 'NEXT: RECOGNITION'}</span>
+              <span>{lang === 'vi' ? 'TIẾP THEO: HỌC VẤN & PHÁT TRIỂN (EDUCATION & DEVELOPMENT)' : 'NEXT: EDUCATION & DEVELOPMENT'}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>

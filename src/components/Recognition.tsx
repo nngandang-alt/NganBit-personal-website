@@ -70,9 +70,67 @@ export const Recognition: React.FC<RecognitionProps> = ({ lang, onNavigateNext }
   return (
     <section
       id="recognition"
-      className="w-full py-16 sm:py-24 md:py-28 px-4 sm:px-8 md:px-12 lg:px-16 bg-white border-b border-slate-200/70"
+      className="w-full py-16 sm:py-24 md:py-28 px-4 sm:px-8 md:px-12 lg:px-16 bg-[#f8fbff] border-b border-slate-200/70 relative overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto">
+      {/* ============================================================== */}
+      {/* PAGE-LEVEL ATMOSPHERIC LIGHTING SYSTEM                         */}
+      {/* Exact color recipe from Homepage Hero (Hero.tsx lines 40-64)   */}
+      {/* ============================================================== */}
+      {/* PRIMARY GLOW: Opening / Hero (Soft but expressive top-right) */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          right: '-50px',
+          top: '-20px',
+          width: '580px',
+          height: '450px',
+          background: 'radial-gradient(ellipse at center, rgba(175, 215, 255, 0.55) 0%, rgba(248, 251, 255, 0) 70%)',
+          zIndex: 0,
+        }}
+        aria-hidden="true"
+      />
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          right: '50px',
+          top: '40px',
+          width: '420px',
+          height: '420px',
+          background: 'radial-gradient(circle at center, rgba(185, 225, 255, 0.40) 0%, rgba(248, 251, 255, 0) 65%)',
+          zIndex: 0,
+        }}
+        aria-hidden="true"
+      />
+
+      {/* SECONDARY GLOW: Key Recognition / Voice Wall Area (Mid-left) */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          left: '-80px',
+          top: '700px',
+          width: '480px',
+          height: '650px',
+          background: 'radial-gradient(ellipse at center, rgba(175, 215, 255, 0.35) 0%, rgba(248, 251, 255, 0) 70%)',
+          zIndex: 0,
+        }}
+        aria-hidden="true"
+      />
+
+      {/* AMBIENT GLOW: Lower Transition / Milestone Depth (Lower-right) */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          right: '-60px',
+          bottom: '120px',
+          width: '450px',
+          height: '520px',
+          background: 'radial-gradient(ellipse at center, rgba(185, 225, 255, 0.25) 0%, rgba(248, 251, 255, 0) 70%)',
+          zIndex: 0,
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="max-w-6xl mx-auto relative z-10">
         
         {/* Section Header */}
         <div className="flex flex-col gap-3 mb-14 sm:mb-16">
@@ -534,7 +592,7 @@ export const Recognition: React.FC<RecognitionProps> = ({ lang, onNavigateNext }
               onClick={onNavigateNext}
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#0068FF] hover:bg-[#0052CC] text-white text-xs font-semibold shadow-sm transition-all cursor-pointer"
             >
-              <span>{lang === 'vi' ? 'TIẾP THEO: HỌC VẤN & PHÁT TRIỂN' : 'NEXT: EDUCATION & CONTINUOUS GROWTH'}</span>
+              <span>{lang === 'vi' ? 'TIẾP THEO: KẾT NỐI (CONNECT)' : 'NEXT: CONNECT'}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>

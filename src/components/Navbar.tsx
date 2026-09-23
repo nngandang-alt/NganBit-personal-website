@@ -38,17 +38,17 @@ export const Navbar: React.FC<NavbarProps> = ({
       },
     },
     {
-      id: 'recognition',
-      label: {
-        vi: 'Ghi nhận',
-        en: 'Recognition',
-      },
-    },
-    {
       id: 'education',
       label: {
         vi: 'Học vấn & Phát triển',
         en: 'Education & Development',
+      },
+    },
+    {
+      id: 'recognition',
+      label: {
+        vi: 'Ghi nhận',
+        en: 'Recognition',
       },
     },
   ];

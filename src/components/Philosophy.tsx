@@ -40,9 +40,67 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ lang, onNavigateNext }) 
   return (
     <section
       id="philosophy"
-      className="w-full py-16 sm:py-24 md:py-28 px-4 sm:px-8 md:px-12 lg:px-16 bg-white border-b border-slate-200/70 relative scroll-mt-24"
+      className="w-full py-16 sm:py-24 md:py-28 px-4 sm:px-8 md:px-12 lg:px-16 bg-[#f8fbff] border-b border-slate-200/70 relative scroll-mt-24 overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto space-y-16 sm:space-y-24">
+      {/* ============================================================== */}
+      {/* PAGE-LEVEL ATMOSPHERIC LIGHTING SYSTEM                         */}
+      {/* Exact color recipe from Homepage Hero (Hero.tsx lines 40-64)   */}
+      {/* ============================================================== */}
+      {/* PRIMARY GLOW: Opening / Hero (Asymmetric top-right) */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          right: '-50px',
+          top: '-20px',
+          width: '580px',
+          height: '450px',
+          background: 'radial-gradient(ellipse at center, rgba(175, 215, 255, 0.55) 0%, rgba(248, 251, 255, 0) 70%)',
+          zIndex: 0,
+        }}
+        aria-hidden="true"
+      />
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          right: '50px',
+          top: '40px',
+          width: '420px',
+          height: '420px',
+          background: 'radial-gradient(circle at center, rgba(185, 225, 255, 0.40) 0%, rgba(248, 251, 255, 0) 65%)',
+          zIndex: 0,
+        }}
+        aria-hidden="true"
+      />
+
+      {/* SECONDARY GLOW: Framework / Methodology Area (Mid-left) */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          left: '-80px',
+          top: '520px',
+          width: '500px',
+          height: '650px',
+          background: 'radial-gradient(ellipse at center, rgba(175, 215, 255, 0.35) 0%, rgba(248, 251, 255, 0) 70%)',
+          zIndex: 0,
+        }}
+        aria-hidden="true"
+      />
+
+      {/* AMBIENT GLOW: Section Transition (Lower-right whitespace) */}
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          right: '-60px',
+          top: '1150px',
+          width: '520px',
+          height: '600px',
+          background: 'radial-gradient(ellipse at center, rgba(185, 225, 255, 0.25) 0%, rgba(248, 251, 255, 0) 70%)',
+          zIndex: 0,
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="max-w-6xl mx-auto space-y-16 sm:space-y-24 relative z-10">
         
         {/* ============================================================== */}
         {/* OPENING: PROFESSIONAL PHILOSOPHY                               */}

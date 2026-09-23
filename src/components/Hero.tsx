@@ -23,17 +23,18 @@ export const Hero: React.FC<HeroProps> = ({
           Zero leakage from Section 2; no lanyard in the first view.
           ======================================================== */}
       <section
-        className="relative w-full overflow-hidden bg-[#f8fbff]"
+        className="relative w-full bg-[#f8fbff]"
         id="hero"
         style={{
-          minHeight: 'max(782px, 100vh)',
+          height: '782px',
+          zIndex: 20,
         }}
       >
         <div
           className="relative mx-auto h-full"
           style={{
             width: '1024px',
-            minHeight: '782px',
+            height: '100%',
           }}
         >
           {/* LAYER 0: BACKGROUND RADIAL GLOWS */}
@@ -63,7 +64,7 @@ export const Hero: React.FC<HeroProps> = ({
             aria-hidden="true"
           />
 
-          {/* LAYER 1: HERO BLUE CURVE */}
+          {/* LAYER 1: HERO BLUE CURVE (VERSION D: ORGANIC S-CURVE FRAMING EXPERTISE BLOCK) */}
           <svg
             className="absolute pointer-events-none overflow-visible"
             style={{ left: 0, top: 0, width: '1024px', height: '667px', zIndex: 1 }}
@@ -73,7 +74,7 @@ export const Hero: React.FC<HeroProps> = ({
             aria-hidden="true"
           >
             <path
-              d="M 1024 122 C 968 268 876 405 767 521"
+              d="M 1024 115 C 990 200 1010 320 992 420 C 981 480 895 525 815 545"
               stroke="#0060ff"
               strokeWidth="1.2"
               strokeLinecap="round"
@@ -148,20 +149,20 @@ export const Hero: React.FC<HeroProps> = ({
           </h1>
 
           {/* LAYER 4: CORE AREAS & DASH
-              x: 741, y: 285, w: 230
+              x: 741, y: 280, w: 270
           */}
           <div
             className="absolute"
             style={{
               left: '741px',
-              top: '285px',
-              width: '230px',
+              top: '280px',
+              width: '270px',
               zIndex: 6,
             }}
           >
-            <div className="w-[41px] h-[2.5px] bg-[#05051f] mb-[28px]" />
+            <div className="w-[41px] h-[2.5px] bg-[#05051f] mb-[24px]" />
 
-            <div className="flex flex-col space-y-[0px] text-[20px] font-normal text-[#0060ff] leading-[30px]">
+            <div className="font-handwriting flex flex-col space-y-[4px] text-[27px] font-medium text-[#0060ff] leading-[34px] tracking-wide whitespace-nowrap -rotate-[1.5deg] origin-top-left select-none">
               <span>Internal Communication</span>
               <span>Corporate Culture</span>
               <span>Employee Engagement</span>
@@ -259,15 +260,16 @@ export const Hero: React.FC<HeroProps> = ({
 
       {/* ========================================================
           SECTION 2: NARRATIVE & ID CARD
-          Owns its own positioning context and containment.
-          The lanyard begins here and is clipped at the top boundary,
-          ensuring zero leakage into Hero / Section 1.
+          Owns its own positioning context.
+          The lanyard straps extend upward behind the Stats Bar,
+          creating the physical illusion of hanging from the white panel.
           ======================================================== */}
       <section
-        className="relative w-full overflow-hidden bg-[#f8fbff]"
+        className="relative w-full bg-[#f8fbff]"
         id="philosophy"
         style={{
           minHeight: '658px',
+          zIndex: 10,
         }}
       >
         <div
