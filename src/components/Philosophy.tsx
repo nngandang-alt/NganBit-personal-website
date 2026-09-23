@@ -154,7 +154,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ lang, onNavigateNext }) 
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0068FF]/10 border border-[#0068FF]/20 text-[#0068FF] text-xs font-mono font-bold uppercase tracking-wider mb-2">
                 <Layers className="w-3.5 h-3.5" />
-                <span>{lang === 'vi' ? 'CHAPTER I — HỆ THỐNG PHƯƠNG PHÁP CỐT LÕI' : 'CHAPTER I — CORE OPERATING SYSTEM'}</span>
+                <span>{lang === 'vi' ? 'CHAPTER I: HỆ THỐNG PHƯƠNG PHÁP CỐT LÕI' : 'CHAPTER I: CORE OPERATING SYSTEM'}</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
                 {lang === 'vi'
@@ -511,7 +511,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ lang, onNavigateNext }) 
           <div className="space-y-2 pb-4 border-b border-slate-200/80">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-[#0068FF] text-xs font-mono font-bold uppercase tracking-wider">
               <Compass className="w-3.5 h-3.5" />
-              <span>{lang === 'vi' ? 'CHAPTER II — ĐỊNH HƯỚNG & LĂNG KÍNH NGHỀ NGHIỆP' : 'CHAPTER II — HOW I NAVIGATE THE WORK'}</span>
+              <span>{lang === 'vi' ? 'CHAPTER II: ĐỊNH HƯỚNG & LĂNG KÍNH NGHỀ NGHIỆP' : 'CHAPTER II: HOW I NAVIGATE THE WORK'}</span>
             </div>
             <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
               {lang === 'vi'
@@ -532,7 +532,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ lang, onNavigateNext }) 
                 <div className="flex items-center gap-2 text-[#0068FF] mb-1">
                   <Eye className="w-4 h-4 text-[#0068FF]" />
                   <span className="text-[11px] font-bold font-mono uppercase tracking-wider">
-                    {lang === 'vi' ? 'MODULE A — LĂNG KÍNH TRẢI NGHIỆM & CẢM XÚC (CHECKING LENS)' : 'MODULE A — EXPERIENCE & EMOTION LENS (CHECKING LENS)'}
+                    {lang === 'vi' ? 'MODULE A: LĂNG KÍNH TRẢI NGHIỆM & CẢM XÚC (CHECKING LENS)' : 'MODULE A: EXPERIENCE & EMOTION LENS (CHECKING LENS)'}
                   </span>
                 </div>
                 <h4 className="text-xl sm:text-2xl font-bold text-slate-900">
@@ -575,7 +575,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ lang, onNavigateNext }) 
                 <div className="flex items-center gap-2 text-[#0068FF] mb-1">
                   <Bookmark className="w-4 h-4 text-[#0068FF]" />
                   <span className="text-[11px] font-bold font-mono uppercase tracking-wider">
-                    {lang === 'vi' ? 'MODULE B — NGUYÊN TẮC NGHỀ NGHIỆP (GUIDING PRINCIPLES)' : 'MODULE B — GUIDING PRINCIPLES'}
+                    {lang === 'vi' ? 'MODULE B: NGUYÊN TẮC NGHỀ NGHIỆP (GUIDING PRINCIPLES)' : 'MODULE B: GUIDING PRINCIPLES'}
                   </span>
                 </div>
                 <h4 className="text-xl sm:text-2xl font-bold text-slate-900">
@@ -647,7 +647,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ lang, onNavigateNext }) 
           <div className="space-y-2 pb-4 border-b border-slate-200/80">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-[#0068FF] text-xs font-mono font-bold uppercase tracking-wider">
               <Cpu className="w-3.5 h-3.5" />
-              <span>{lang === 'vi' ? 'CHAPTER III — CÔNG CỤ BỔ TRỢ & MINH CHỨNG THỰC TẾ' : 'CHAPTER III — ENABLERS & EVIDENCE'}</span>
+              <span>{lang === 'vi' ? 'CHAPTER III: CÔNG CỤ BỔ TRỢ & MINH CHỨNG THỰC TẾ' : 'CHAPTER III: ENABLERS & EVIDENCE'}</span>
             </div>
             <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
               {lang === 'vi'
@@ -656,8 +656,8 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ lang, onNavigateNext }) 
             </h3>
             <p className="text-xs sm:text-sm text-slate-500 max-w-2xl font-medium">
               {lang === 'vi'
-                ? 'Công cụ giúp mở rộng năng lực — và những minh chứng cho cách làm trong thực tế.'
-                : 'The tools that extend my capabilities — and the evidence that shows the work in practice.'}
+                ? 'Công cụ giúp mở rộng năng lực và những minh chứng cho cách làm trong thực tế.'
+                : 'The tools that extend my capabilities, and the evidence that shows the work in practice.'}
             </p>
           </div>
 
@@ -670,7 +670,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ lang, onNavigateNext }) 
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-xs font-mono font-semibold text-blue-300 mb-2">
                   <Cpu className="w-3.5 h-3.5" />
-                  <span>{lang === 'vi' ? 'MODULE A — NĂNG LỰC BỔ TRỢ (ENABLING CAPABILITY)' : 'MODULE A — ENABLING CAPABILITY'}</span>
+                  <span>{lang === 'vi' ? 'MODULE A: NĂNG LỰC BỔ TRỢ (ENABLING CAPABILITY)' : 'MODULE A: ENABLING CAPABILITY'}</span>
                 </div>
                 <h4 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
                   {lang === 'vi' ? 'AI trong Thực hành (AI in Practice)' : 'AI in Practice: Practical Multiplication'}
@@ -678,7 +678,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ lang, onNavigateNext }) 
               </div>
               <p className="text-xs text-slate-300 max-w-md leading-relaxed">
                 {lang === 'vi'
-                  ? 'AI không phải là định vị nghề nghiệp, mà là trợ lực đắc lực giúp tối ưu quy trình phân tích và mở rộng năng suất — giải phóng thời gian cho những kết nối con người có chiều sâu.'
+                  ? 'AI không phải là định vị nghề nghiệp, mà là trợ lực đắc lực giúp tối ưu quy trình phân tích và mở rộng năng suất, giải phóng thời gian cho những kết nối con người có chiều sâu.'
                   : 'AI is not a professional persona, but an operational force multiplier: synthesizing qualitative sentiment and scaling output to preserve focus on deep human empathy.'}
               </p>
             </div>
@@ -747,7 +747,7 @@ export const Philosophy: React.FC<PhilosophyProps> = ({ lang, onNavigateNext }) 
             <div className="space-y-2 max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-mono font-semibold border border-blue-400/30">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>{lang === 'vi' ? 'MODULE B — MINH CHỨNG THỰC TẾ (PRACTICAL EVIDENCE)' : 'MODULE B — EMPIRICAL EVIDENCE'}</span>
+                <span>{lang === 'vi' ? 'MODULE B: MINH CHỨNG THỰC TẾ (PRACTICAL EVIDENCE)' : 'MODULE B: EMPIRICAL EVIDENCE'}</span>
               </div>
               <h4 className="text-lg sm:text-xl font-bold tracking-tight">
                 {lang === 'vi'

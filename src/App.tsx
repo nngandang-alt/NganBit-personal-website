@@ -99,7 +99,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f8fbff] font-sans antialiased text-[#05051f] selection:bg-[#0060ff] selection:text-white">
+    <div className="min-h-screen w-full overflow-x-hidden bg-[#f8fbff] font-sans antialiased text-[#05051f] selection:bg-[#0060ff] selection:text-white">
       {/* 1. Navbar */}
       <Navbar
         lang={lang}

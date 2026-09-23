@@ -197,8 +197,8 @@ export const CareerStory: React.FC<CareerStoryProps> = ({
           id: 'case-techx',
           type: 'case-study',
           title: {
-            vi: 'TechX Camp — Trại Công Nghệ & Trải Nghiệm',
-            en: 'TechX Camp — Holistic Experiential Camp',
+            vi: 'TechX Camp: Trại Công Nghệ & Trải Nghiệm',
+            en: 'TechX Camp: Holistic Experiential Camp',
           },
           description: {
             vi: 'Trại công nghệ quy mô lớn và kích hoạt gắn kết cộng đồng sinh viên',
@@ -321,8 +321,8 @@ export const CareerStory: React.FC<CareerStoryProps> = ({
           id: 'sw-the-face',
           type: 'project',
           title: {
-            vi: 'The Face — Cuộc thi & Vinh danh Bản sắc Nhân tài Nội bộ',
-            en: 'The Face — Internal Talent & Culture Identification',
+            vi: 'The Face: Cuộc thi & Vinh danh Bản sắc Nhân tài Nội bộ',
+            en: 'The Face: Internal Talent & Culture Identification',
           },
           description: {
             vi: 'Chương trình nhận diện nhân vật đại diện cho giá trị văn hóa tổ chức',
@@ -360,7 +360,7 @@ export const CareerStory: React.FC<CareerStoryProps> = ({
           type: 'case-study',
           title: {
             vi: 'Chiến Lược Văn Hóa Gắn Kết "Together We Shine"',
-            en: 'Together We Shine — Frontline Retail Culture',
+            en: 'Together We Shine: Frontline Retail Culture',
           },
           description: {
             vi: 'Kích hoạt văn hóa và kết nối hội sở với hàng trăm cửa hàng bán lẻ',
@@ -372,7 +372,7 @@ export const CareerStory: React.FC<CareerStoryProps> = ({
           type: 'case-study',
           title: {
             vi: 'Chuyển Hóa 7 Thói Quen C7+ Vào Đời Sống Doanh Nghiệp',
-            en: 'C7+ Daily Habits — Translating Values into Action',
+            en: 'C7+ Daily Habits: Translating Values into Action',
           },
           description: {
             vi: 'Chuẩn hóa và đưa giá trị cốt lõi vào hành vi công việc hàng ngày',
@@ -628,6 +628,12 @@ export const CareerStory: React.FC<CareerStoryProps> = ({
                 </>
               )}
             </h1>
+
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl mt-4 font-normal">
+              {lang === 'vi'
+                ? 'Những tổ chức tôi từng gắn bó đều là một phần không thể thiếu trên hành trình trưởng thành của tôi. Sau mỗi chặng đường, tôi lại học thêm một điều mới, đóng góp thêm một giá trị nhỏ, và gói ghém những trải nghiệm quý giá ấy để tiếp tục trên con đường trở thành phiên bản tốt hơn của chính mình.'
+                : 'Every organization I have been part of holds a meaningful place in my journey. Each chapter gave me something to learn, something to contribute, and something worth carrying forward into the person and professional I am becoming.'}
+            </p>
           </div>
 
           {/* Right: Semantic Line-art Element embedded in atmospheric glow */}

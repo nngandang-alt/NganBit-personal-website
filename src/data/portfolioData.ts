@@ -112,8 +112,8 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
       en: 'NOW: LEADING EXPERIENCE AT SCALE (Student Relations Officer → Head of Student Relations Office)',
     },
     story: {
-      vi: 'Đảm nhiệm vai trò Trưởng phòng Công tác Sinh viên (Head of Student Relations Office), sau khi thăng tiến từ vị trí Cán bộ Công tác Sinh viên. Tôi dẫn dắt các hoạt động và chương trình hướng đến trải nghiệm, sự phát triển và gắn kết của sinh viên, xoay quanh ba trọng tâm: Hỗ trợ Phát triển – Truyền Cảm hứng – Kết nối Cộng đồng. Ở vai trò hiện tại, tôi tập trung xây dựng cách vận hành có hệ thống cho danh mục chương trình, cộng đồng sinh viên và các sáng kiến trải nghiệm, đồng thời ứng dụng dữ liệu và AI để nâng cao hiệu quả triển khai và trải nghiệm sinh viên.',
-      en: 'Serving as Head of Student Relations Office, advancing from Student Relations Officer. I lead programs and initiatives dedicated to student experience, personal development, and engagement around three core pillars: Developmental Support – Inspiration – Community Connection. In my current role, I focus on building systematic operations for the program portfolio, student communities, and experiential initiatives, while leveraging data and AI to elevate operational effectiveness and student experience.',
+      vi: 'Đảm nhiệm vai trò Trưởng phòng Công tác Sinh viên (Head of Student Relations Office), sau khi thăng tiến từ vị trí Cán bộ Công tác Sinh viên. Tôi dẫn dắt các hoạt động và chương trình hướng đến trải nghiệm, sự phát triển và gắn kết của sinh viên, xoay quanh ba trọng tâm: Hỗ trợ Phát triển, Truyền Cảm hứng và Kết nối Cộng đồng. Ở vai trò hiện tại, tôi tập trung xây dựng cách vận hành có hệ thống cho danh mục chương trình, cộng đồng sinh viên và các sáng kiến trải nghiệm, đồng thời ứng dụng dữ liệu và AI để nâng cao hiệu quả triển khai và trải nghiệm sinh viên.',
+      en: 'Serving as Head of Student Relations Office, advancing from Student Relations Officer. I lead programs and initiatives dedicated to student experience, personal development, and engagement around three core pillars: Developmental Support, Inspiration, and Community Connection. In my current role, I focus on building systematic operations for the program portfolio, student communities, and experiential initiatives, while leveraging data and AI to elevate operational effectiveness and student experience.',
     },
     coreShift: {
       from: { vi: 'Thực thi hoạt động đơn lẻ', en: 'Isolated program execution' },
@@ -155,8 +155,8 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
           },
         ],
         scopeDistinction: {
-          vi: 'Kiến tạo hệ sinh thái hỗ trợ sự phát triển và trải nghiệm của sinh viên, tập trung vào ba trọng tâm: Hỗ trợ Phát triển – Truyền Cảm hứng – Kết nối Cộng đồng, qua đó phát triển năng lực, nuôi dưỡng tinh thần học tập suốt đời và xây dựng cộng đồng sinh viên năng động, gắn kết.',
-          en: 'Building an ecosystem that supports student development and experience through three core pillars: Development Support – Inspiration – Community Connection, helping students strengthen their capabilities, cultivate lifelong learning, and thrive in an active, connected community.',
+          vi: 'Kiến tạo hệ sinh thái hỗ trợ sự phát triển và trải nghiệm của sinh viên, tập trung vào ba trọng tâm: Hỗ trợ Phát triển, Truyền Cảm hứng và Kết nối Cộng đồng, qua đó phát triển năng lực, nuôi dưỡng tinh thần học tập suốt đời và xây dựng cộng đồng sinh viên năng động, gắn kết.',
+          en: 'Building an ecosystem that supports student development and experience through three core pillars: Development Support, Inspiration, and Community Connection, helping students strengthen their capabilities, cultivate lifelong learning, and thrive in an active, connected community.',
         },
         actualScopeNote: {
           vi: 'Thăng tiến từ Cán bộ Công tác Sinh viên (Student Relations Officer) lên Trưởng phòng Công tác Sinh viên (Head of SRO): mở rộng từ trực tiếp điều phối hoạt động sang lãnh đạo chiến lược danh mục trải nghiệm, phát triển sinh viên và quản trị vận hành tổ chức.',
@@ -169,7 +169,7 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
         mandateScope: {
           vi: [
             'Hệ sinh thái CLB Học thuật & Phát triển Năng lực: Quản lý và định hướng hơn 20 câu lạc bộ học thuật với khoảng 700 thành viên; tạo bệ phóng rèn luyện năng lực chuyên môn, chuẩn bị cho các cuộc thi học thuật trong nước/quốc tế, thúc đẩy nghiên cứu khoa học sinh viên và hướng tới công bố bài báo quốc tế.',
-            'Vinh danh & Khen thưởng — Kỷ luật Sinh viên: Chỉ đạo chương trình vinh danh định kỳ Top 100 Sinh viên tiêu biểu (Top 100 Student Achievement Awards) mỗi học kỳ; quản lý công tác khen thưởng, kỷ luật và hỗ trợ tâm lý/đời sống sinh viên.',
+            'Vinh danh & Khen thưởng, Kỷ luật Sinh viên: Chỉ đạo chương trình vinh danh định kỳ Top 100 Sinh viên tiêu biểu (Top 100 Student Achievement Awards) mỗi học kỳ; quản lý công tác khen thưởng, kỷ luật và hỗ trợ tâm lý/đời sống sinh viên.',
             'Trải nghiệm Sinh viên & Danh mục Chương trình Trọng điểm: Thiết kế và chỉ đạo danh mục các sự kiện trải nghiệm sinh viên quy mô lớn (trong đó TechX Camp là một flagship project tiêu biểu trong danh mục).',
             'Gắn kết Cộng đồng & Hoạt động Tân sinh viên: Tổ chức các chương trình định hướng (Orientation), tư vấn học tập, chăm sóc sinh viên và nuôi dưỡng môi trường văn hóa năng động, hòa nhập.',
             'Tối ưu Hóa Vận Hành, Dữ Liệu & AI: Ứng dụng công nghệ, phân tích dữ liệu khảo sát và các workflow hỗ trợ bởi AI để nâng cao hiệu suất xử lý thông tin, chuẩn hóa dịch vụ và tối ưu trải nghiệm sinh viên.',
@@ -216,8 +216,8 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
     number: '05',
     period: 'Jul 2024 — Mar 2025',
     title: {
-      vi: 'transcosmos Vietnam: Vượt trên văn hóa — Kiến tạo hệ thống',
-      en: 'transcosmos Vietnam: Beyond Culture — Building the System',
+      vi: 'transcosmos Vietnam: Vượt trên văn hóa: Kiến tạo hệ thống',
+      en: 'transcosmos Vietnam: Beyond Culture: Building the System',
     },
     tagline: {
       vi: 'BEYOND CULTURE: BUILDING THE SYSTEM (Senior Specialist, Organizational Development)',
@@ -386,8 +386,8 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
       en: 'FROM COMMUNICATION TO CULTURE (Progression: F88 → CMC → Vua Nệm)',
     },
     story: {
-      vi: 'Giai đoạn tiến hóa bản lề với hành trình trải qua 3 môi trường kinh doanh đặc thù (F88 → CMC → Vua Nệm). Tôi chuyển mình rõ rệt từ Truyền thông nội bộ (F88) sang Phát triển văn hóa doanh nghiệp (CMC) và tiến đến Kích hoạt văn hóa, dẫn dắt thay đổi và quản lý (Vua Nệm - Acting Internal Communication Lead). Tại Vua Nệm, tôi hiện thực hóa việc chuyển đổi giá trị thành hành vi hàng ngày thông qua chương trình Happy Journey, chiến lược văn hóa gắn kết Together We Shine và các điểm chạm truyền thông kết nối hội sở với hàng trăm cửa hàng bán lẻ toàn quốc.',
-      en: 'A decisive developmental trajectory spanning three distinct business landscapes (F88 → CMC → Vua Nệm). Progressed from foundational Internal Communications (F88) to corporate culture development (CMC), and culminated in culture activation, change leadership, and team management (Vua Nệm - Acting Internal Communication Lead). At Vua Nệm, activated culture and employee engagement through Happy Journey, Together We Shine EVP alignment, and omnichannel touchpoints uniting HQ with nationwide retail stores.',
+      vi: 'Giai đoạn tiến hóa bản lề với hành trình trải qua 3 môi trường kinh doanh đặc thù (F88 → CMC → Vua Nệm). Tôi chuyển mình rõ rệt từ Truyền thông nội bộ (F88) sang Phát triển văn hóa doanh nghiệp (CMC) và tiến đến Kích hoạt văn hóa, dẫn dắt thay đổi và quản lý (Vua Nệm: Acting Internal Communication Lead). Tại Vua Nệm, tôi hiện thực hóa việc chuyển đổi giá trị thành hành vi hàng ngày thông qua chương trình Happy Journey, chiến lược văn hóa gắn kết Together We Shine và các điểm chạm truyền thông kết nối hội sở với hàng trăm cửa hàng bán lẻ toàn quốc.',
+      en: 'A decisive developmental trajectory spanning three distinct business landscapes (F88 → CMC → Vua Nệm). Progressed from foundational Internal Communications (F88) to corporate culture development (CMC), and culminated in culture activation, change leadership, and team management (Vua Nệm: Acting Internal Communication Lead). At Vua Nệm, activated culture and employee engagement through Happy Journey, Together We Shine EVP alignment, and omnichannel touchpoints uniting HQ with nationwide retail stores.',
     },
     coreShift: {
       from: { vi: 'Sản xuất nội dung truyền thông (Communication)', en: 'Communication output & content creation' },
@@ -552,7 +552,7 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
       en: 'FINDING MY VOICE IN COMMUNICATION (Internal Communication Specialist)',
     },
     story: {
-      vi: 'Đảm nhiệm vai trò Chuyên viên Truyền thông nội bộ tại Bellsystem24-Hoasao — môi trường dịch vụ contact center quy mô lớn với hàng nghìn nhân sự làm việc theo ca. Tôi rèn giũa nghệ thuật kể chuyện (storytelling), tổ chức sự kiện nội bộ, sản xuất nội dung đa phương tiện (video nội bộ, bản tin phát thanh/radio), và thiết lập mạng lưới truyền thông kết nối các chi nhánh trên toàn quốc.',
+      vi: 'Đảm nhiệm vai trò Chuyên viên Truyền thông nội bộ tại Bellsystem24-Hoasao, môi trường dịch vụ contact center quy mô lớn với hàng nghìn nhân sự làm việc theo ca. Tôi rèn giũa nghệ thuật kể chuyện (storytelling), tổ chức sự kiện nội bộ, sản xuất nội dung đa phương tiện (video nội bộ, bản tin phát thanh/radio), và thiết lập mạng lưới truyền thông kết nối các chi nhánh trên toàn quốc.',
       en: 'Served as Internal Communication Specialist at Bellsystem24-Hoasao within a large-scale 24/7 contact center operations environment. Honed the craft of empathetic storytelling, internal engagement events, multimedia content production (internal video, radio broadcasts), and established nationwide branch communication networks.',
     },
     coreShift: {
@@ -651,8 +651,8 @@ export const CAREER_CHAPTERS: CareerChapter[] = [
         location: 'TP. Hồ Chí Minh',
         workType: 'Full-time',
         milestoneTag: {
-          vi: 'WHERE IT ALL STARTED — THE FOUNDATION',
-          en: 'WHERE IT ALL STARTED — THE FOUNDATION',
+          vi: 'WHERE IT ALL STARTED: THE FOUNDATION',
+          en: 'WHERE IT ALL STARTED: THE FOUNDATION',
         },
         actualScopeNote: {
           vi: 'Khởi đầu sự nghiệp với trọng tâm sâu sắc vào sự phát triển cá nhân, lắng nghe con người và nuôi dưỡng cộng đồng sinh viên.',
@@ -877,8 +877,8 @@ export const EXPERIENCE_ROLES: ExperienceRole[] = [
     workType: 'Full-time',
     tier: 'flagship',
     scopeDistinction: {
-      vi: 'Kiến tạo hệ sinh thái hỗ trợ sự phát triển và trải nghiệm của sinh viên, tập trung vào ba trọng tâm: Hỗ trợ Phát triển – Truyền Cảm hứng – Kết nối Cộng đồng, qua đó phát triển năng lực, nuôi dưỡng tinh thần học tập suốt đời và xây dựng cộng đồng sinh viên năng động, gắn kết.',
-      en: 'Building an ecosystem that supports student development and experience through three core pillars: Development Support – Inspiration – Community Connection, helping students strengthen their capabilities, cultivate lifelong learning, and thrive in an active, connected community.',
+      vi: 'Kiến tạo hệ sinh thái hỗ trợ sự phát triển và trải nghiệm của sinh viên, tập trung vào ba trọng tâm: Hỗ trợ Phát triển, Truyền Cảm hứng và Kết nối Cộng đồng, qua đó phát triển năng lực, nuôi dưỡng tinh thần học tập suốt đời và xây dựng cộng đồng sinh viên năng động, gắn kết.',
+      en: 'Building an ecosystem that supports student development and experience through three core pillars: Development Support, Inspiration, and Community Connection, helping students strengthen their capabilities, cultivate lifelong learning, and thrive in an active, connected community.',
     },
     mandateScope: {
       vi: [
@@ -1174,8 +1174,8 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     id: 'case-top100-awards',
     title: {
-      vi: 'Top 100 Student Achievement Awards — FPT University',
-      en: 'Top 100 Student Achievement Awards — FPT University',
+      vi: 'Top 100 Student Achievement Awards: FPT University',
+      en: 'Top 100 Student Achievement Awards: FPT University',
     },
     subtitle: {
       vi: 'Chương trình vinh danh sinh viên xuất sắc định kỳ: Thiết kế trải nghiệm ghi nhận đa điểm chạm, giàu cảm xúc và mang tính cá nhân.',
@@ -1194,8 +1194,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverImage: {
       src: top100GrandCeremony,
       alt: {
-        vi: 'Đêm vinh danh Top 100 Student Achievement Awards — Vinh Quy Bái Tổ trên sân khấu lớn ngoài trời',
-        en: 'Top 100 Student Achievement Awards Ceremony — The Triumphant Return Grand Outdoor Stage',
+        vi: 'Đêm vinh danh Top 100 Student Achievement Awards: Vinh Quy Bái Tổ trên sân khấu lớn ngoài trời',
+        en: 'Top 100 Student Achievement Awards Ceremony: The Triumphant Return Grand Outdoor Stage',
       },
       category: 'event',
       recommendedRatio: '16:9',
@@ -1205,12 +1205,12 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
     },
     context: {
-      vi: 'Top 100 Student Achievement Awards là chương trình vinh danh sinh viên xuất sắc được tổ chức định kỳ mỗi học kỳ tại Trường Đại học FPT TP.HCM, thuộc phạm vi công việc hiện tại của tôi tại Phòng Công tác Sinh viên (Student Relations Office - SRO). Không chỉ dừng lại ở một buổi lễ trao giải sự vụ, chương trình được định vị là một cột mốc trải nghiệm mang tính biểu tượng trong hành trình sinh viên: ghi nhận nỗ lực học thuật và hoạt động phong trào, khơi dậy niềm tự hào cá nhân và truyền cảm hứng học tập suốt đời cho toàn thể cộng đồng người học.',
+      vi: 'Top 100 Student Achievement Awards là chương trình vinh danh sinh viên xuất sắc được tổ chức định kỳ mỗi học kỳ tại Trường Đại học FPT TP.HCM, thuộc phạm vi công việc hiện tại của tôi tại Phòng Công tác Sinh viên (Student Relations Office, SRO). Không chỉ dừng lại ở một buổi lễ trao giải sự vụ, chương trình được định vị là một cột mốc trải nghiệm mang tính biểu tượng trong hành trình sinh viên: ghi nhận nỗ lực học thuật và hoạt động phong trào, khơi dậy niềm tự hào cá nhân và truyền cảm hứng học tập suốt đời cho toàn thể cộng đồng người học.',
       en: 'The Top 100 Student Achievement Awards is a flagship student recognition program held every semester at FPT University HCMC, within my current leadership mandate at the Student Relations Office (SRO). Far from an ordinary award event, the program is architected as an iconic experiential milestone in the student journey: celebrating academic excellence and leadership, igniting individual pride, and inspiring lifelong learning across the university community.',
     },
     challenge: {
       vi: 'Việc tổ chức định kỳ theo từng học kỳ đòi hỏi tính chuẩn xác cao trong điều phối đa bên: từ kiểm chứng danh sách sinh viên xuất sắc, thiết kế kỷ vật vinh danh cá nhân hóa từng sinh viên, dàn dựng nghi lễ sân khấu đến điều phối khách mời và gia đình. Thách thức cốt lõi là chuyển hóa một lễ tổng kết thuần túy thành một trải nghiệm công nhận (Recognition Experience) sâu sắc và đáng nhớ đối với từng cá nhân sinh viên và phụ huynh, đồng thời tối ưu hóa khối lượng vận hành đồ sộ của đội ngũ tổ chức.',
-      en: 'Organized every semester, the program requires a high level of precision across multiple stakeholders — from verifying the list of outstanding students and creating personalized recognition keepsakes for each student, to staging the ceremony and coordinating guests and families. The core challenge is to transform what could otherwise be a conventional end-of-semester recognition ceremony into a meaningful and memorable Recognition Experience for each student and their family, while managing the substantial operational workload behind the program.',
+      en: 'Organized every semester, the program requires a high level of precision across multiple stakeholders, from verifying the list of outstanding students and creating personalized recognition keepsakes for each student, to staging the ceremony and coordinating guests and families. The core challenge is to transform what could otherwise be a conventional end-of-semester recognition ceremony into a meaningful and memorable Recognition Experience for each student and their family, while managing the substantial operational workload behind the program.',
     },
     insight: {
       vi: 'Sự công nhận (Recognition) chỉ thực sự tạo ra động lực nội tại khi nó được chuyển hóa thành một trải nghiệm cảm xúc trọn vẹn: từ cảm giác tự hào khi cầm trên tay chiếc huy hiệu kim loại danh dự, khoảnh khắc bước lên sân khấu trước thầy cô bạn bè, đến ánh mắt xúc động của phụ huynh khi chứng kiến con em mình được tôn vinh.',
@@ -1241,8 +1241,8 @@ export const CASE_STUDIES: CaseStudy[] = [
           en: 'Ceremony Experience:',
         },
         desc: {
-          vi: 'Thiết kế sân khấu và kịch bản nghệ thuật theo từng chủ đề học kỳ (như Vinh Quy Bái Tổ, The Prompt to Lead, Build Up — Upward — Rise Up) tạo cảm xúc tự hào và truyền cảm hứng.',
-          en: 'Thematic stage narratives adapted each semester (such as The Triumphant Return, The Prompt to Lead, Build Up — Upward — Rise Up) evoking deep pride and institutional belonging.',
+          vi: 'Thiết kế sân khấu và kịch bản nghệ thuật theo từng chủ đề học kỳ (như Vinh Quy Bái Tổ, The Prompt to Lead, Build Up, Upward, Rise Up) tạo cảm xúc tự hào và truyền cảm hứng.',
+          en: 'Thematic stage narratives adapted each semester (such as The Triumphant Return, The Prompt to Lead, Build Up, Upward, Rise Up) evoking deep pride and institutional belonging.',
         },
       },
       {
@@ -1251,8 +1251,8 @@ export const CASE_STUDIES: CaseStudy[] = [
           en: 'Tangible Artifacts:',
         },
         desc: {
-          vi: 'Thiết kế và trao tặng huy hiệu danh dự kim loại Top 100 Student Achievement Awards được cá nhân hóa cho từng sinh viên được vinh danh — biểu trưng vật lý lưu giữ dấu ấn học tập bền bỉ.',
-          en: 'Designing and bestowing bespoke metallic Top 100 Student Achievement Awards pins personalized for each honored student — tangible keepsakes cementing lasting achievement.',
+          vi: 'Thiết kế và trao tặng huy hiệu danh dự kim loại Top 100 Student Achievement Awards được cá nhân hóa cho từng sinh viên được vinh danh, biểu trưng vật lý lưu giữ dấu ấn học tập bền bỉ.',
+          en: 'Designing and bestowing bespoke metallic Top 100 Student Achievement Awards pins personalized for each honored student, tangible keepsakes cementing lasting achievement.',
         },
       },
       {
@@ -1286,8 +1286,8 @@ export const CASE_STUDIES: CaseStudy[] = [
         category: 'material',
         recommendedRatio: '4:3',
         caption: {
-          vi: 'Huy hiệu kim loại danh dự — Kỷ vật cầm tay được cá nhân hóa biểu trưng cho sự công nhận thành tích học tập và rèn luyện.',
-          en: 'Bespoke metallic honor pin — A personalized artifact symbolizing academic and extracurricular dedication.',
+          vi: 'Huy hiệu kim loại danh dự: Kỷ vật cầm tay được cá nhân hóa biểu trưng cho sự công nhận thành tích học tập và rèn luyện.',
+          en: 'Bespoke metallic honor pin: A personalized artifact symbolizing academic and extracurricular dedication.',
         },
       },
       {
@@ -1299,8 +1299,8 @@ export const CASE_STUDIES: CaseStudy[] = [
         category: 'event',
         recommendedRatio: '4:3',
         caption: {
-          vi: 'Khoảnh khắc tìm thấy tên mình trên bức tường vinh danh — một điểm chạm nhỏ nhưng khiến sự ghi nhận trở nên hữu hình và mang tính cá nhân hơn.',
-          en: 'Finding their names on the Recognition Wall — a small touchpoint that makes recognition feel more tangible and personal.',
+          vi: 'Khoảnh khắc tìm thấy tên mình trên bức tường vinh danh, một điểm chạm nhỏ nhưng khiến sự ghi nhận trở nên hữu hình và mang tính cá nhân hơn.',
+          en: 'Finding their names on the Recognition Wall, a small touchpoint that makes recognition feel more tangible and personal.',
         },
       },
       {
@@ -1319,8 +1319,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         src: top100StageSpring2026,
         alt: {
-          vi: 'Sân khấu visual LED chủ đề Build Up — Upward — Rise Up, Top 100 Spring 2026',
-          en: 'LED visual stage themed Build Up — Upward — Rise Up, Top 100 Spring 2026',
+          vi: 'Sân khấu visual LED chủ đề Build Up, Upward, Rise Up, Top 100 Spring 2026',
+          en: 'LED visual stage themed Build Up, Upward, Rise Up, Top 100 Spring 2026',
         },
         category: 'event',
         recommendedRatio: '16:9',
@@ -1351,8 +1351,8 @@ export const CASE_STUDIES: CaseStudy[] = [
         en: 'Experience & Emotion',
       },
       caption: {
-        vi: 'Cảm xúc của người được vinh danh là một phần cốt lõi của Recognition Experience — từ khoảnh khắc bước lên sân khấu, nhận sự ghi nhận đến việc chia sẻ niềm tự hào cùng gia đình và những người quan trọng với họ.',
-        en: 'The emotions of those being recognized are a core part of the Recognition Experience — from stepping onto the stage and receiving recognition to sharing that sense of pride with family and the people who matter to them.',
+        vi: 'Cảm xúc của người được vinh danh là một phần cốt lõi của Recognition Experience, từ khoảnh khắc bước lên sân khấu, nhận sự ghi nhận đến việc chia sẻ niềm tự hào cùng gia đình và những người quan trọng với họ.',
+        en: 'The emotions of those being recognized are a core part of the Recognition Experience, from stepping onto the stage and receiving recognition to sharing that sense of pride with family and the people who matter to them.',
       },
     },
     aiFeature: {
@@ -1454,15 +1454,15 @@ export const CASE_STUDIES: CaseStudy[] = [
       ],
     },
     learning: {
-      vi: 'Tôn vinh không đơn thuần là trao đi một phần thưởng, mà là kiến tạo một khoảnh khắc được công nhận trọn vẹn — nơi nỗ lực của người trẻ được chứng kiến, trân trọng và tiếp thêm động lực cho những chặng đường tương lai.',
-      en: 'True recognition is not merely bestowing an award; it is crafting an indelible moment of validation — where human dedication is witnessed, celebrated, and empowered for the future.',
+      vi: 'Tôn vinh không đơn thuần là trao đi một phần thưởng, mà là kiến tạo một khoảnh khắc được công nhận trọn vẹn, nơi nỗ lực của người trẻ được chứng kiến, trân trọng và tiếp thêm động lực cho những chặng đường tương lai.',
+      en: 'True recognition is not merely bestowing an award; it is crafting an indelible moment of validation, where human dedication is witnessed, celebrated, and empowered for the future.',
     },
   },
   {
     id: 'case-techx',
     title: {
-      vi: 'FPTU Tech XCamp — Thiết kế Trải nghiệm & Dẫn dắt Chương trình',
-      en: 'FPTU Tech XCamp — Experience Design & Program Leadership',
+      vi: 'FPTU Tech XCamp: Thiết kế Trải nghiệm & Dẫn dắt Chương trình',
+      en: 'FPTU Tech XCamp: Experience Design & Program Leadership',
     },
     subtitle: {
       vi: 'Thiết kế chương trình trại nhập vai công nghệ quy mô lớn kết nối sinh viên, chuyên gia và doanh nghiệp',
@@ -1513,8 +1513,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       en: 'Employed a 3-stage Journey Mapping framework: Provoke Curiosity (Pre-camp) → Deep Immersion & Challenge (In-camp) → Enduring Pride & Community (Post-camp).',
     },
     systemFramework: {
-      vi: 'Mô hình 4E trong thiết kế trải nghiệm: Entertainment (Hào hứng) - Education (Học hỏi) - Escapism (Hóa thân vào bối cảnh) - Esthetics (Môi trường thẩm mỹ ấn tượng).',
-      en: '4E Experience Design Architecture: Entertainment - Education - Escapism - Esthetics applied to every program touchpoint.',
+      vi: 'Mô hình 4E trong thiết kế trải nghiệm: Entertainment (Hào hứng), Education (Học hỏi), Escapism (Hóa thân vào bối cảnh), Esthetics (Môi trường thẩm mỹ ấn tượng).',
+      en: '4E Experience Design Architecture: Entertainment, Education, Escapism, Esthetics applied to every program touchpoint.',
     },
     impact: {
       vi: [
@@ -1536,8 +1536,8 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     id: 'case-transcosmos-retention',
     title: {
-      vi: 'Trải nghiệm Nhân viên Dựa trên Dữ liệu — Hành trình 15/60/90 Ngày',
-      en: 'Data-driven Employee Experience — 15/60/90-Day Journey',
+      vi: 'Trải nghiệm Nhân viên Dựa trên Dữ liệu: Hành trình 15/60/90 Ngày',
+      en: 'Data-driven Employee Experience: 15/60/90-Day Journey',
     },
     subtitle: {
       vi: 'Thiết kế hành trình hội nhập và giữ chân nhân sự qua các điểm chạm đo lường cảm nhận và phân tích insight',
@@ -1611,8 +1611,8 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     id: 'case-savvycom',
     title: {
-      vi: 'People & Culture tại Savvycom — Gắn kết Tổ chức Công nghệ',
-      en: 'People & Culture at Savvycom — High-Tech Engagement',
+      vi: 'People & Culture tại Savvycom: Gắn kết Tổ chức Công nghệ',
+      en: 'People & Culture at Savvycom: High-Tech Engagement',
     },
     subtitle: {
       vi: 'Dẫn dắt truyền thông nội bộ, văn hóa học tập, EVP và gắn kết nhân sự trong môi trường làm việc linh hoạt (hybrid)',
@@ -1663,8 +1663,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       en: 'Redesigned All-Hands meetings into dynamic, open Ask-Me-Anything forums with executives; crafted spotlight engineering stories, and led tech-for-good CSR campaigns.',
     },
     systemFramework: {
-      vi: 'Khung gắn kết nhân tài công nghệ 3 trụ cột: Transparency (Minh bạch thông tin) - Recognition (Ghi nhận chuyên môn) - Growth (Cơ hội học tập và đóng góp cộng đồng).',
-      en: '3-Pillar Tech Talent Engagement: Transparency (Open dialogue) - Recognition (Technical mastery) - Growth (Learning & purpose-driven impact).',
+      vi: 'Khung gắn kết nhân tài công nghệ 3 trụ cột: Transparency (Minh bạch thông tin), Recognition (Ghi nhận chuyên môn), Growth (Cơ hội học tập và đóng góp cộng đồng).',
+      en: '3-Pillar Tech Talent Engagement: Transparency (Open dialogue), Recognition (Technical mastery), Growth (Learning & purpose-driven impact).',
     },
     impact: {
       vi: [
@@ -1680,14 +1680,14 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
     learning: {
       vi: 'Văn hóa công nghệ mạnh mẽ không phụ thuộc vào không gian văn phòng cố định, mà được nuôi dưỡng bằng sự tin tưởng trao quyền và dòng chảy thông tin thông suốt.',
-      en: 'A vibrant tech culture does not depend on a physical office—it is nurtured through autonomous trust and unimpeded, candid communication channels.',
+      en: 'A vibrant tech culture does not depend on a physical office; it is nurtured through autonomous trust and unimpeded, candid communication channels.',
     },
   },
   {
     id: 'case-vuanem-culture',
     title: {
-      vi: 'Hệ thống hóa Giá trị thành Hành vi: Happy Journey + C7+ Habits — Vua Nệm',
-      en: 'Values Into Behaviors: Happy Journey + C7+ Habits — Vua Nệm',
+      vi: 'Hệ thống hóa Giá trị thành Hành vi: Happy Journey + C7+ Habits: Vua Nệm',
+      en: 'Values Into Behaviors: Happy Journey + C7+ Habits: Vua Nệm',
     },
     subtitle: {
       vi: 'Chuyển hóa giá trị cốt lõi thành thói quen hành vi hàng ngày và cơ chế vinh danh kết nối hội sở với mạng lưới bán lẻ toàn quốc',
@@ -1761,8 +1761,8 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     id: 'case-cmc-c7',
     title: {
-      vi: 'Together We Shine — Nền tảng Truyền thông & Thương hiệu Nhà Tuyển dụng',
-      en: 'Together We Shine — EVP, Brand & Internal Communication Platform',
+      vi: 'Together We Shine: Nền tảng Truyền thông & Thương hiệu Nhà Tuyển dụng',
+      en: 'Together We Shine: EVP, Brand & Internal Communication Platform',
     },
     subtitle: {
       vi: 'Xây dựng nền tảng truyền thông kết nối đa kênh, lan tỏa giá trị EVP và tôn vinh câu chuyện nhân sự trên toàn hệ thống',
@@ -1813,8 +1813,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       en: 'Architected a multi-format content ecosystem: Weekly Digest, Spotlight Heroes video features, lunchtime internal radio broadcasts, and interactive digital engagement contests.',
     },
     systemFramework: {
-      vi: 'Mô hình truyền thông 3 nhịp: Inform (Thông tin chính xác) - Inspire (Truyền cảm hứng qua câu chuyện) - Involve (Khuyến khích đối thoại và đóng góp ý kiến).',
-      en: '3-Beat Communication Cadence: Inform (Accurate updates) - Inspire (Human stories) - Involve (Interactive feedback and dialogue).',
+      vi: 'Mô hình truyền thông 3 nhịp: Inform (Thông tin chính xác), Inspire (Truyền cảm hứng qua câu chuyện), Involve (Khuyến khích đối thoại và đóng góp ý kiến).',
+      en: '3-Beat Communication Cadence: Inform (Accurate updates), Inspire (Human stories), Involve (Interactive feedback and dialogue).',
     },
     impact: {
       vi: [
@@ -1839,8 +1839,8 @@ export const SELECTED_WORK_DATA: SelectedWorkItem[] = [
   {
     id: 'sw-the-face',
     title: {
-      vi: 'The Face — Cuộc thi & Vinh danh Bản sắc Nhân tài Nội bộ',
-      en: 'The Face — Internal Talent & Culture Identification Program',
+      vi: 'The Face: Cuộc thi & Vinh danh Bản sắc Nhân tài Nội bộ',
+      en: 'The Face: Internal Talent & Culture Identification Program',
     },
     category: {
       vi: 'Gắn kết & Tôn vinh Văn hóa',
@@ -2135,11 +2135,11 @@ export const RECOGNITION_DATA: RecognitionItem[] = [
     },
     source: {
       vi: 'Ban tổ chức Convocation Day FPTU HCM',
-      en: 'Convocation Day Organizing Committee — FPTU HCMC',
+      en: 'Convocation Day Organizing Committee, FPTU HCMC',
     },
     context: {
-      vi: 'Certificate of Recognition — Tổ chức thành công Convocation Days',
-      en: 'Certificate of Recognition — Successful Delivery of Convocation Days',
+      vi: 'Certificate of Recognition: Tổ chức thành công Convocation Days',
+      en: 'Certificate of Recognition: Successful Delivery of Convocation Days',
     },
     image: recognitionConvocationTeam,
     year: '2025',
@@ -2270,8 +2270,8 @@ export const RECOGNITION_DATA: RecognitionItem[] = [
       en: 'Culture Touchpoint',
     },
     source: {
-      vi: 'Thank You Card — từ thiết kế đến trải nghiệm thực tế',
-      en: 'Thank You Card — From Culture Design to Real Experience',
+      vi: 'Thank You Card: từ thiết kế đến trải nghiệm thực tế',
+      en: 'Thank You Card: From Culture Design to Real Experience',
     },
     context: {
       vi: 'Một điểm chạm được triển khai trong dự án Phát triển Văn hóa tại Vua Nệm, giúp sự ghi nhận và lời cảm ơn trở nên hữu hình trong trải nghiệm làm việc hằng ngày.',
@@ -2563,7 +2563,7 @@ export const CONTINUOUS_LEARNING_DATA: FactualLearningItem[] = [
 export const INTERDISCIPLINARY_LEARNING_DATA = HUMAN_UNDERSTANDING_DATA;
 export const PROFESSIONAL_CERTIFICATIONS_DATA = CONTINUOUS_LEARNING_DATA;
 
-// PROFESSIONAL CAPABILITIES (Năng lực nghề nghiệp — 4 nhóm x 6 năng lực)
+// PROFESSIONAL CAPABILITIES (Năng lực nghề nghiệp: 4 nhóm x 6 năng lực)
 export interface CapabilityPillar {
   id: string;
   order: string;
@@ -2879,13 +2879,13 @@ export const OPERATING_SYSTEM_STAGES: OperatingSystemStage[] = [
       vi: [
         'Tạo sự thống nhất đa chiều giữa ban điều hành, quản lý trực tiếp và các bộ phận',
         'Lãnh đạo các cấp chủ động làm gương và cam kết đồng hành từ sớm',
-        'Bảo đảm sự nhất quán tuyệt đối: Nói - Làm gương - Trải nghiệm thực tế',
+        'Bảo đảm sự nhất quán tuyệt đối: Nói, Làm gương, Trải nghiệm thực tế',
         'Phân định rõ ràng vai trò và cơ chế phối hợp trước khi truyền thông rộng',
       ],
       en: [
         'Multi-directional alignment across executive leadership and departmental leads',
         'Leaders across all levels actively modeling expected behaviors and ownership',
-        'Ensuring complete congruence: What we say - What leaders model - What people live',
+        'Ensuring complete congruence: What we say, What leaders model, What people live',
         'Clarifying reciprocal roles, protocols, and accountability before launch',
       ],
     },
@@ -2959,7 +2959,7 @@ export const OPERATING_SYSTEM_STAGES: OperatingSystemStage[] = [
     actionFlow: ['COMMUNICATE', 'EXPERIENCE', 'LEARN', 'PRACTICE'],
     action: {
       vi: 'Chuyển định hướng và giá trị chung thành: hành vi, nghi thức, câu chuyện, hoạt động, truyền thông, chương trình đào tạo/học tập, và các cơ chế thực hành, giúp con người không chỉ biết tổ chức mong đợi điều gì mà còn hiểu cách áp dụng điều đó vào công việc hằng ngày.',
-      en: 'Operationalizing shared direction and core values into: observable behaviors, living rituals, inspiring narratives, experiential activities, learning programs, and daily practice mechanisms—empowering individuals to not merely understand what is expected, but intuitively apply it in their daily routines.',
+      en: 'Operationalizing shared direction and core values into: observable behaviors, living rituals, inspiring narratives, experiential activities, learning programs, and daily practice mechanisms, empowering individuals to not merely understand what is expected, but intuitively apply it in their daily routines.',
     },
     actionPoints: {
       vi: [

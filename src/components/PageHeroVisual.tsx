@@ -18,7 +18,7 @@ export const PageHeroVisual: React.FC<PageHeroVisualProps> = ({
 }) => {
   return (
     <div
-      className={`relative shrink-0 flex items-center justify-center w-[280px] sm:w-[320px] lg:w-[340px] h-[180px] sm:h-[200px] lg:h-[220px] select-none pointer-events-none ${className}`}
+      className={`relative shrink-0 flex items-center justify-center w-[260px] sm:w-[300px] lg:w-[340px] h-[160px] sm:h-[190px] lg:h-[220px] mx-auto lg:mx-0 select-none pointer-events-none ${className}`}
       aria-hidden="true"
     >
       {/* Shared Atmospheric Blue Glow Backdrop (exact Homepage blue recipe) */}

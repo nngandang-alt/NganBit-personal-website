@@ -71,8 +71,8 @@ export const Contact: React.FC<ContactProps> = ({ lang }) => {
 
           <p className="text-base sm:text-lg md:text-xl text-slate-300 mt-6 leading-relaxed max-w-2xl font-normal">
             {lang === 'vi'
-              ? 'Dù bạn muốn trao đổi về chiến lược văn hóa doanh nghiệp, thiết kế trải nghiệm sự kiện gắn kết, hay ứng dụng AI trong truyền thông nội bộ — tôi luôn sẵn lòng lắng nghe.'
-              : 'Whether you seek to discuss corporate culture transformation, experiential townhalls, or practical AI in internal comms — I am always glad to connect.'}
+              ? 'Dù bạn muốn trao đổi về chiến lược văn hóa doanh nghiệp, thiết kế trải nghiệm sự kiện gắn kết, hay ứng dụng AI trong truyền thông nội bộ, tôi luôn sẵn lòng lắng nghe.'
+              : 'Whether you seek to discuss corporate culture transformation, experiential townhalls, or practical AI in internal comms, I am always glad to connect.'}
           </p>
         </div>
 

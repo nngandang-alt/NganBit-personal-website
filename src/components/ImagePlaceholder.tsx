@@ -122,7 +122,7 @@ export const ImagePlaceholder: React.FC<ImagePlaceholderProps> = ({
           {actualHint[lang]}
         </p>
         <p className="text-[11px] text-slate-500 mt-1 font-mono">
-          {lang === 'vi' ? 'Không dùng stock photo — chờ cập nhật ảnh thực' : 'No stock photos — waiting for authentic visual'}
+          {lang === 'vi' ? 'Không dùng stock photo, chờ cập nhật ảnh thực' : 'No stock photos, waiting for authentic visual'}
         </p>
       </div>
 

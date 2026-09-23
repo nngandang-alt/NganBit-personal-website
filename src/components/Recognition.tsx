@@ -159,8 +159,8 @@ export const Recognition: React.FC<RecognitionProps> = ({ lang, onNavigateNext }
 
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl">
               {lang === 'vi'
-                ? 'Từ sự ghi nhận của tổ chức, những phản hồi chân thật từ người trực tiếp trải nghiệm, đến các điểm chạm văn hóa đã thực sự đi vào đời sống — đây là bằng chứng sống động cho giá trị của công việc.'
-                : 'From formal institutional commendations and heartfelt reflections of participants, to culture touchpoints lived and embraced — this is the authentic human evidence of the work.'}
+                ? 'Từ sự ghi nhận của tổ chức, những phản hồi chân thật từ người trực tiếp trải nghiệm, đến các điểm chạm văn hóa đã thực sự đi vào đời sống, đây là bằng chứng sống động cho giá trị của công việc.'
+                : 'From formal institutional commendations and heartfelt reflections of participants, to culture touchpoints lived and embraced, this is the authentic human evidence of the work.'}
             </p>
           </div>
 
@@ -531,8 +531,8 @@ export const Recognition: React.FC<RecognitionProps> = ({ lang, onNavigateNext }
                       openModal(
                         cultureItem,
                         lang === 'vi'
-                          ? 'Thank You Card — từ thiết kế đến trải nghiệm thực tế'
-                          : 'Thank You Card — From Culture Design to Real Experience',
+                          ? 'Thank You Card: từ thiết kế đến trải nghiệm thực tế'
+                          : 'Thank You Card: From Culture Design to Real Experience',
                         cultureItem.context[lang],
                         true
                       )
@@ -541,7 +541,7 @@ export const Recognition: React.FC<RecognitionProps> = ({ lang, onNavigateNext }
                   >
                     <img
                       src={cultureItem.image}
-                      alt={lang === 'vi' ? 'Thank You Card — Điểm chạm văn hóa Vua Nệm' : 'Vua Nệm Thank You Card artifact'}
+                      alt={lang === 'vi' ? 'Thank You Card: Điểm chạm văn hóa Vua Nệm' : 'Vua Nệm Thank You Card artifact'}
                       className="w-full h-auto max-h-[380px] object-contain rounded group-hover:scale-[1.02] transition-transform duration-300"
                       loading="lazy"
                     />
@@ -564,8 +564,8 @@ export const Recognition: React.FC<RecognitionProps> = ({ lang, onNavigateNext }
 
                   <h4 className="text-xl sm:text-2xl font-bold text-slate-900 leading-snug">
                     {lang === 'vi'
-                      ? 'Thank You Card — từ thiết kế đến trải nghiệm thực tế'
-                      : 'Thank You Card — From Culture Design to Real Experience'}
+                      ? 'Thank You Card: từ thiết kế đến trải nghiệm thực tế'
+                      : 'Thank You Card: From Culture Design to Real Experience'}
                   </h4>
 
                   <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
@@ -577,8 +577,8 @@ export const Recognition: React.FC<RecognitionProps> = ({ lang, onNavigateNext }
                   <div className="p-4 rounded-2xl bg-white border border-amber-200/60 shadow-2xs">
                     <p className="text-xs text-slate-600 leading-relaxed italic">
                       {lang === 'vi'
-                        ? '“Tấm card trong ảnh là một card thực tế do quản lý của tôi viết cho tôi — minh chứng cho việc điểm chạm văn hóa này đã được sử dụng trong thực tế.”'
-                        : '“The card shown here was personally written to me by my manager — an authentic example of the culture touchpoint being used in practice.”'}
+                        ? '“Tấm card trong ảnh là một card thực tế do quản lý của tôi viết cho tôi, minh chứng cho việc điểm chạm văn hóa này đã được sử dụng trong thực tế.”'
+                        : '“The card shown here was personally written to me by my manager, an authentic example of the culture touchpoint being used in practice.”'}
                     </p>
                   </div>
                 </div>

@@ -3,9 +3,23 @@ import { PortraitSlot } from './PortraitSlot';
 
 interface LanyardAssemblyProps {
   className?: string;
+  idPrefix?: string;
 }
 
-export const LanyardAssembly: React.FC<LanyardAssemblyProps> = ({ className = '' }) => {
+export const LanyardAssembly: React.FC<LanyardAssemblyProps> = ({
+  className = '',
+  idPrefix,
+}) => {
+  const reactId = React.useId().replace(/:/g, '');
+  const prefix = idPrefix || `lanyard-${reactId}`;
+
+  const strapLeftId = `lanyardStrapLeft-${prefix}`;
+  const strapRightId = `lanyardStrapRight-${prefix}`;
+  const loopGradId = `fabricLoopGrad-${prefix}`;
+  const ringGradId = `metalRingGrad-${prefix}`;
+  const clipGradId = `metalClipGrad-${prefix}`;
+  const shadowId = `suspensionShadow-${prefix}`;
+
   return (
     <div
       className={`relative ${className} lanyard-hanging-assembly`}
@@ -35,40 +49,40 @@ export const LanyardAssembly: React.FC<LanyardAssemblyProps> = ({ className = ''
         aria-hidden="true"
       >
         <defs>
-          <linearGradient id="lanyardStrapLeft" x1="98" y1="-60" x2="171" y2="110" gradientUnits="userSpaceOnUse">
+          <linearGradient id={strapLeftId} x1="98" y1="-60" x2="171" y2="110" gradientUnits="userSpaceOnUse">
             <stop offset="0%" stopColor="#0047b8" />
             <stop offset="50%" stopColor="#005cdf" />
             <stop offset="100%" stopColor="#003e9f" />
           </linearGradient>
           
-          <linearGradient id="lanyardStrapRight" x1="243" y1="-60" x2="171" y2="110" gradientUnits="userSpaceOnUse">
+          <linearGradient id={strapRightId} x1="243" y1="-60" x2="171" y2="110" gradientUnits="userSpaceOnUse">
             <stop offset="0%" stopColor="#0060ff" />
             <stop offset="45%" stopColor="#0054db" />
             <stop offset="85%" stopColor="#0044b3" />
             <stop offset="100%" stopColor="#003185" />
           </linearGradient>
 
-          <linearGradient id="fabricLoopGrad" x1="162" y1="94" x2="180" y2="116" gradientUnits="userSpaceOnUse">
+          <linearGradient id={loopGradId} x1="162" y1="94" x2="180" y2="116" gradientUnits="userSpaceOnUse">
             <stop offset="0%" stopColor="#0044b5" />
             <stop offset="50%" stopColor="#0052cf" />
             <stop offset="100%" stopColor="#002d82" />
           </linearGradient>
           
-          <linearGradient id="metalRingGrad" x1="162" y1="108" x2="181" y2="126" gradientUnits="userSpaceOnUse">
+          <linearGradient id={ringGradId} x1="162" y1="108" x2="181" y2="126" gradientUnits="userSpaceOnUse">
             <stop offset="0%" stopColor="#94a3b8" />
             <stop offset="35%" stopColor="#f8fafc" />
             <stop offset="70%" stopColor="#64748b" />
             <stop offset="100%" stopColor="#cbd5e1" />
           </linearGradient>
           
-          <linearGradient id="metalClipGrad" x1="166" y1="123" x2="178" y2="140" gradientUnits="userSpaceOnUse">
+          <linearGradient id={clipGradId} x1="166" y1="123" x2="178" y2="140" gradientUnits="userSpaceOnUse">
             <stop offset="0%" stopColor="#cbd5e1" />
             <stop offset="30%" stopColor="#f8fafc" />
             <stop offset="70%" stopColor="#64748b" />
             <stop offset="100%" stopColor="#475569" />
           </linearGradient>
 
-          <filter id="suspensionShadow" x="-20%" y="-20%" width="140%" height="140%">
+          <filter id={shadowId} x="-20%" y="-20%" width="140%" height="140%">
             <feDropShadow dx="1" dy="2" stdDeviation="2" floodColor="#002166" floodOpacity="0.2" />
           </filter>
         </defs>
@@ -81,14 +95,14 @@ export const LanyardAssembly: React.FC<LanyardAssemblyProps> = ({ className = ''
         {/* Left Ribbon Strap: 18px wide, natural V slope extending behind Stats Bar */}
         <path
           d="M 98 -60 L 123 -60 L 142 0 L 173 98 Q 171.4 102 167 100 L 124 0 Z"
-          fill="url(#lanyardStrapLeft)"
+          fill={`url(#${strapLeftId})`}
         />
 
         {/* Right Ribbon Strap: 18px wide, natural V slope extending behind Stats Bar */}
         <path
           d="M 243 -60 L 219 -60 L 200 0 L 170 98 Q 171.4 102 176 100 L 218 0 Z"
-          fill="url(#lanyardStrapRight)"
-          filter="url(#suspensionShadow)"
+          fill={`url(#${strapRightId})`}
+          filter={`url(#${shadowId})`}
         />
 
         {/* Smooth fabric convergence & Rear Loop:
@@ -99,7 +113,7 @@ export const LanyardAssembly: React.FC<LanyardAssemblyProps> = ({ className = ''
              C 162.4 114.5, 180.4 114.5, 180.4 111 
              C 180.4 104, 180 96, 180 96 
              Z"
-          fill="url(#fabricLoopGrad)"
+          fill={`url(#${loopGradId})`}
         />
 
         {/* ========================================================
@@ -111,7 +125,7 @@ export const LanyardAssembly: React.FC<LanyardAssemblyProps> = ({ className = ''
           cy="117"
           rx="9"
           ry="8.5"
-          stroke="url(#metalRingGrad)"
+          stroke={`url(#${ringGradId})`}
           strokeWidth="2.4"
           fill="none"
         />
@@ -160,7 +174,7 @@ export const LanyardAssembly: React.FC<LanyardAssemblyProps> = ({ className = ''
           width="8"
           height="5"
           rx="1.5"
-          fill="url(#metalClipGrad)"
+          fill={`url(#${clipGradId})`}
           stroke="#475569"
           strokeWidth="0.6"
         />
@@ -168,7 +182,7 @@ export const LanyardAssembly: React.FC<LanyardAssemblyProps> = ({ className = ''
         {/* Metal Clip Neck */}
         <path
           d="M 168 128 L 174.8 128 L 173.8 132 L 169 132 Z"
-          fill="url(#metalClipGrad)"
+          fill={`url(#${clipGradId})`}
           stroke="#475569"
           strokeWidth="0.6"
         />
@@ -177,7 +191,7 @@ export const LanyardAssembly: React.FC<LanyardAssemblyProps> = ({ className = ''
         <g transform="rotate(7.5 171.4 135.4)">
           <path
             d="M 169.5 130 C 169.5 133 167.5 135.5 167.5 137 C 167.5 139 170.5 139.5 172.5 139 C 174.5 138.5 175 136.5 175 134.5 L 173 130"
-            stroke="url(#metalClipGrad)"
+            stroke={`url(#${clipGradId})`}
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -190,7 +204,7 @@ export const LanyardAssembly: React.FC<LanyardAssemblyProps> = ({ className = ''
             width="14.8"
             height="4"
             rx="1.5"
-            fill="url(#metalRingGrad)"
+            fill={`url(#${ringGradId})`}
             stroke="#475569"
             strokeWidth="0.6"
           />

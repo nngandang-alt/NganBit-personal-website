@@ -127,7 +127,7 @@ export const WorkAndImpact: React.FC<WorkAndImpactProps> = ({
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl">
               {lang === 'vi'
                 ? 'Tuyển tập các công trình thực tiễn kết hợp giữa các nghiên cứu điển hình chuyên sâu và các sáng kiến thực thi đa dạng: từ hệ thống văn hóa, thiết kế vinh danh, trại công nghệ đến ấn phẩm và nội dung truyền thông.'
-                : 'A unified body of work combining in-depth organizational case studies and versatile operational initiatives—from culture systems, recognition design, and tech camp activations to multimedia storytelling and publications.'}
+                : 'A unified body of work combining in-depth organizational case studies and versatile operational initiatives, from culture systems, recognition design, and tech camp activations to multimedia storytelling and publications.'}
             </p>
           </div>
 

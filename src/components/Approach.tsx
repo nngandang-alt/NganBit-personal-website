@@ -20,7 +20,7 @@ export const Approach: React.FC<ApproachProps> = ({ lang, onNavigateNext }) => {
         <div className="flex flex-col gap-3 mb-12 sm:mb-16">
           <div className="flex items-center gap-3">
             <span className="text-xs font-bold tracking-widest text-[#0068FF] uppercase">
-              {lang === 'vi' ? '07 — Phương pháp Làm việc' : '07 — How I Work'}
+              {lang === 'vi' ? '07 · Phương pháp Làm việc' : '07 · How I Work'}
             </span>
             <div className="h-px w-12 bg-[#0068FF]/30" />
           </div>
@@ -116,8 +116,8 @@ export const Approach: React.FC<ApproachProps> = ({ lang, onNavigateNext }) => {
 
               <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white leading-tight">
                 {lang === 'vi'
-                  ? 'AI là trợ lực đắc lực — Trái tim luôn thuộc về sự thấu cảm con người.'
-                  : 'AI as a Capability Multiplier — Grounded in Human Empathy.'}
+                  ? 'AI là trợ lực đắc lực, trái tim luôn thuộc về sự thấu cảm con người.'
+                  : 'AI as a Capability Multiplier, Grounded in Human Empathy.'}
               </h3>
 
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl">

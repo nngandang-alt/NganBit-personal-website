@@ -339,7 +339,7 @@ export const Credentials: React.FC<CredentialsProps> = ({ lang, onNavigateNext }
 
                 <p className="text-xs text-slate-600 leading-relaxed pt-2">
                   {lang === 'vi'
-                    ? 'Trang bị tư duy hệ thống, năng lực phân tích đa chiều, hiểu biết sâu sắc về bối cảnh văn hóa – xã hội và kỹ năng giao tiếp, đối thoại.'
+                    ? 'Trang bị tư duy hệ thống, năng lực phân tích đa chiều, hiểu biết sâu sắc về bối cảnh văn hóa - xã hội và kỹ năng giao tiếp, đối thoại.'
                     : formalDegree.description[lang]}
                 </p>
               </div>
@@ -517,7 +517,7 @@ export const Credentials: React.FC<CredentialsProps> = ({ lang, onNavigateNext }
           {/* 5 Groups in TWO rows (Row 1: 4 category cards | Row 2: 1 full-width AI card) */}
           <div className="space-y-5">
             {/* ROW 1: 4 categories (Work & Productivity | Project & Performance | Design & Content | Internal Platforms) */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 items-stretch">
               {/* GROUP 1: WORK & PRODUCTIVITY */}
               <div className="bg-white border border-slate-200/90 rounded-2xl p-5 shadow-2xs flex flex-col justify-between">
                 <div>
