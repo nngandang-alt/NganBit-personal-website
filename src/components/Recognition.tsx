@@ -4,6 +4,13 @@ import { Language, RecognitionItem } from '../types';
 import { PageHeroVisual } from './PageHeroVisual';
 import { ArrowRight, Maximize2, X, Award, MessageSquareHeart, Sparkles } from 'lucide-react';
 
+import thankyouCardsCollection from '../assets/recognition/thankyou-cards-collection.jpg';
+import thankyouCardSavvycom from '../assets/recognition/thankyou-card-savvycom.jpg';
+import thankyouCardVuanemBlue from '../assets/recognition/thankyou-card-vuanem-blue.jpg';
+import thankyouCardFptTuanem from '../assets/recognition/thankyou-card-fpt-tuanem.png';
+import thankyouCardFptStack from '../assets/recognition/thankyou-card-fpt-stack.png';
+import recognitionVuanemThankyouCard from '../assets/recognition/recognition-vuanem-thankyou-card.png';
+
 interface RecognitionProps {
   lang: Language;
   onNavigateNext?: () => void;
@@ -43,7 +50,6 @@ export const Recognition: React.FC<RecognitionProps> = ({ lang, onNavigateNext }
   // Filtering chapters
   const formalItems = items.filter(item => item.id.startsWith('rec-formal'));
   const voiceItems = items.filter(item => item.id.startsWith('rec-voice'));
-  const cultureItem = items.find(item => item.id.startsWith('rec-culture'));
 
   // Voice Wall items
   const featuredVoice = voiceItems.find(i => i.id === 'rec-voice-01');
@@ -520,72 +526,75 @@ export const Recognition: React.FC<RecognitionProps> = ({ lang, onNavigateNext }
             </h3>
           </div>
 
-          {cultureItem && (
-            <div className="bg-[#FAF8F5] border border-amber-200/70 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xs hover:shadow-md transition-shadow">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                
-                {/* Physical Artifact Photo (preserving the authentic hand holding card) */}
-                <div className="lg:col-span-6 flex justify-center">
-                  <div
-                    onClick={() =>
-                      openModal(
-                        cultureItem,
-                        lang === 'vi'
-                          ? 'Thank You Card: từ thiết kế đến trải nghiệm thực tế'
-                          : 'Thank You Card: From Culture Design to Real Experience',
-                        cultureItem.context[lang],
-                        true
-                      )
-                    }
-                    className="relative rounded-2xl overflow-hidden border border-amber-200/80 bg-white group cursor-pointer shadow-sm p-3 max-w-sm w-full flex items-center justify-center"
-                  >
+          <div className="bg-[#FAF8F5] border border-amber-200/70 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xs">
+            {/* Story copy — 3 paragraphs */}
+            <div className="max-w-3xl space-y-4 mb-8 sm:mb-10 text-slate-700 leading-relaxed font-normal text-sm sm:text-[15px]">
+              {lang === 'vi' ? (
+                <>
+                  <p>
+                    Trong hành trình làm nghề, tôi đã có cơ hội xây dựng và triển khai nhiều hoạt động ghi nhận tại các tổ chức mình từng đồng hành, tạo ra những không gian để mọi người nhìn thấy, trân trọng và nói lời cảm ơn với những đóng góp của nhau.
+                  </p>
+                  <p className="font-medium text-slate-900 italic">
+                    Nhưng điều khiến tôi trân quý nhất lại là khi sự ghi nhận ấy quay trở lại với chính mình.
+                  </p>
+                  <p>
+                    Những tấm thiệp viết tay này là những lời cảm ơn tôi nhận được từ đồng nghiệp và những người từng làm việc cùng, trong đó có những tấm thiệp đến từ chính các hoạt động ghi nhận mà tôi đã góp phần tạo nên. Với tôi, đó là những minh chứng nhỏ nhưng rất thật rằng văn hóa chỉ thực sự hiện hữu khi sự ghi nhận không còn là một chương trình được tổ chức, mà trở thành điều mọi người tự nhiên muốn dành cho nhau.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p>
+                    I have designed and delivered recognition initiatives across different organizations, creating opportunities for people to notice, appreciate and celebrate one another’s contributions.
+                  </p>
+                  <p className="font-medium text-slate-900 italic">
+                    What has stayed with me most, however, is something much more personal: sometimes, the recognition found its way back to me.
+                  </p>
+                  <p>
+                    These handwritten thank-you cards were given to me by colleagues and people I worked with, some through the very recognition initiatives I helped create. To me, they are small but meaningful evidence that culture becomes real when appreciation is not simply a program we organize, but something people genuinely choose to give to one another.
+                  </p>
+                </>
+              )}
+            </div>
+
+            {/* Exactly 6 Equal Thank You Card Photographs in 3x2 Desktop Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+              {[
+                thankyouCardsCollection,
+                thankyouCardSavvycom,
+                thankyouCardVuanemBlue,
+                thankyouCardFptTuanem,
+                thankyouCardFptStack,
+                recognitionVuanemThankyouCard,
+              ].map((img, idx) => (
+                <div
+                  key={idx}
+                  onClick={() =>
+                    setActiveLightbox({
+                      src: img,
+                      title: lang === 'vi' ? 'Kỷ vật thiệp viết tay' : 'Handwritten Thank-You Card',
+                      caption: '',
+                    })
+                  }
+                  className="group relative rounded-2xl border border-slate-200/90 bg-white p-2.5 sm:p-3 shadow-2xs hover:shadow-md cursor-pointer transition-all duration-300 flex flex-col items-center justify-center"
+                >
+                  <div className="w-full aspect-[4/3] rounded-xl bg-slate-100 flex items-center justify-center p-2.5 sm:p-3 overflow-hidden">
                     <img
-                      src={cultureItem.image}
-                      alt={lang === 'vi' ? 'Thank You Card: Điểm chạm văn hóa Vua Nệm' : 'Vua Nệm Thank You Card artifact'}
-                      className="w-full h-auto max-h-[380px] object-contain rounded group-hover:scale-[1.02] transition-transform duration-300"
+                      src={img}
+                      alt={lang === 'vi' ? 'Thiệp cảm ơn viết tay' : 'Handwritten Thank You Card'}
+                      className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-300"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <span className="px-3.5 py-1.5 rounded-full bg-white/95 text-slate-900 text-xs font-semibold shadow-sm flex items-center gap-1.5">
-                        <Maximize2 className="w-3.5 h-3.5 text-amber-600" />
-                        {lang === 'vi' ? 'Xem kỷ vật' : 'View Artifact'}
-                      </span>
-                    </div>
                   </div>
-                </div>
-
-                {/* Editorial Context & Narrative */}
-                <div className="lg:col-span-6 flex flex-col justify-center space-y-4">
-                  <div>
-                    <span className="px-3 py-1 rounded-full bg-amber-100/70 text-amber-800 text-xs font-bold font-mono tracking-wide">
-                      Culture Touchpoint
+                  <div className="absolute inset-0 bg-slate-900/10 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl flex items-center justify-center pointer-events-none">
+                    <span className="px-3 py-1.5 rounded-full bg-white/95 text-slate-900 text-xs font-semibold shadow-sm flex items-center gap-1.5">
+                      <Maximize2 className="w-3.5 h-3.5 text-amber-600" />
+                      {lang === 'vi' ? 'Xem kỷ vật' : 'View Artifact'}
                     </span>
                   </div>
-
-                  <h4 className="text-xl sm:text-2xl font-bold text-slate-900 leading-snug">
-                    {lang === 'vi'
-                      ? 'Thank You Card: từ thiết kế đến trải nghiệm thực tế'
-                      : 'Thank You Card: From Culture Design to Real Experience'}
-                  </h4>
-
-                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-                    {lang === 'vi'
-                      ? 'Một điểm chạm được triển khai trong dự án Phát triển Văn hóa tại Vua Nệm, giúp sự ghi nhận và lời cảm ơn trở nên hữu hình trong trải nghiệm làm việc hằng ngày.'
-                      : 'A tangible touchpoint developed as part of Vua Nệm’s Culture Development project, designed to make recognition and appreciation visible within everyday employee experience.'}
-                  </p>
-
-                  <div className="p-4 rounded-2xl bg-white border border-amber-200/60 shadow-2xs">
-                    <p className="text-xs text-slate-600 leading-relaxed italic">
-                      {lang === 'vi'
-                        ? '“Tấm card trong ảnh là một card thực tế do quản lý của tôi viết cho tôi, minh chứng cho việc điểm chạm văn hóa này đã được sử dụng trong thực tế.”'
-                        : '“The card shown here was personally written to me by my manager, an authentic example of the culture touchpoint being used in practice.”'}
-                    </p>
-                  </div>
                 </div>
-
-              </div>
+              ))}
             </div>
-          )}
+          </div>
         </div>
 
         {/* Guided Journey Next Section CTA */}
